@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8061E2B3BF600A4F5E0 /* Settings.swift */; };
+		2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */; };
+		2A27D80F1E2B60E600A4F5E0 /* ReminderTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */; };
+		2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8101E2B669500A4F5E0 /* DateViewController.swift */; };
+		2A27D8131E2B79DF00A4F5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A27D8121E2B79DF00A4F5E0 /* Assets.xcassets */; };
+		2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35FB971E2F09F30051CCED /* ProgressViewController.swift */; };
+		2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A426E391E2624CA005A12B4 /* Parser.swift */; };
+		2A6E66391E29D3650067D711 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6E66381E29D3650067D711 /* Quotes.swift */; };
 		2A7509481E24894900B9B31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7509471E24894900B9B31D /* AppDelegate.swift */; };
-		2A75094A1E24894900B9B31D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7509491E24894900B9B31D /* ViewController.swift */; };
 		2A75094D1E24894900B9B31D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A75094B1E24894900B9B31D /* Main.storyboard */; };
-		2A75094F1E24894900B9B31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A75094E1E24894900B9B31D /* Assets.xcassets */; };
 		2A7509521E24894900B9B31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7509501E24894900B9B31D /* LaunchScreen.storyboard */; };
 		2A75095D1E24894900B9B31D /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75095C1E24894900B9B31D /* CountdownTests.swift */; };
 		2A7509681E24894900B9B31D /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7509671E24894900B9B31D /* CountdownUITests.swift */; };
+		2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */; };
+		2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */; };
+		2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A27D8061E2B3BF600A4F5E0 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTimeViewController.swift; sourceTree = "<group>"; };
+		2A27D8101E2B669500A4F5E0 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		2A27D8121E2B79DF00A4F5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A35FB971E2F09F30051CCED /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		2A426E391E2624CA005A12B4 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		2A6E66381E29D3650067D711 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509471E24894900B9B31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A7509491E24894900B9B31D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A75094C1E24894900B9B31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A75094E1E24894900B9B31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7509511E24894900B9B31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A7509531E24894900B9B31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A7509581E24894900B9B31D /* CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +62,9 @@
 		2A7509631E24894900B9B31D /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509671E24894900B9B31D /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		2A7509691E24894900B9B31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
+		2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A24C27D1E24CB18005D0644 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A27D8121E2B79DF00A4F5E0 /* Assets.xcassets */,
+				2A7509501E24894900B9B31D /* LaunchScreen.storyboard */,
+				2A7509531E24894900B9B31D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A27D80A1E2B4B0600A4F5E0 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		2A27D80B1E2B4B1800A4F5E0 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				2A6E66381E29D3650067D711 /* Quotes.swift */,
+				2A426E391E2624CA005A12B4 /* Parser.swift */,
+			);
+			name = CustomClass;
+			sourceTree = "<group>";
+		};
 		2A75093B1E24894900B9B31D = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +143,17 @@
 			isa = PBXGroup;
 			children = (
 				2A7509471E24894900B9B31D /* AppDelegate.swift */,
-				2A7509491E24894900B9B31D /* ViewController.swift */,
+				2A35FB971E2F09F30051CCED /* ProgressViewController.swift */,
+				2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */,
+				2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */,
+				2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */,
+				2A27D8101E2B669500A4F5E0 /* DateViewController.swift */,
+				2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */,
+				2A27D8061E2B3BF600A4F5E0 /* Settings.swift */,
 				2A75094B1E24894900B9B31D /* Main.storyboard */,
-				2A75094E1E24894900B9B31D /* Assets.xcassets */,
-				2A7509501E24894900B9B31D /* LaunchScreen.storyboard */,
-				2A7509531E24894900B9B31D /* Info.plist */,
+				2A27D80B1E2B4B1800A4F5E0 /* CustomClass */,
+				2A27D80A1E2B4B0600A4F5E0 /* CustomView */,
+				2A24C27D1E24CB18005D0644 /* Supporting Files */,
 			);
 			path = Countdown;
 			sourceTree = "<group>";
@@ -236,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7509521E24894900B9B31D /* LaunchScreen.storyboard in Resources */,
-				2A75094F1E24894900B9B31D /* Assets.xcassets in Resources */,
+				2A27D8131E2B79DF00A4F5E0 /* Assets.xcassets in Resources */,
 				2A75094D1E24894900B9B31D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A75094A1E24894900B9B31D /* ViewController.swift in Sources */,
+				2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */,
+				2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */,
+				2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */,
+				2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */,
+				2A6E66391E29D3650067D711 /* Quotes.swift in Sources */,
 				2A7509481E24894900B9B31D /* AppDelegate.swift in Sources */,
+				2A27D80F1E2B60E600A4F5E0 /* ReminderTimeViewController.swift in Sources */,
+				2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */,
+				2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */,
+				2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */,
+				2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +572,7 @@
 				2A75096E1E24894900B9B31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A75096F1E24894900B9B31D /* Build configuration list for PBXNativeTarget "CountdownTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +581,7 @@
 				2A7509711E24894900B9B31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A7509721E24894900B9B31D /* Build configuration list for PBXNativeTarget "CountdownUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +590,7 @@
 				2A7509741E24894900B9B31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
