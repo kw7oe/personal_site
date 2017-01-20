@@ -12,7 +12,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: Storyboard
     private struct Storyboard {
-        static let ReminderDetails = "Reminder Details"
+        static let ReminderContent = "Reminder Content"
         static let ReminderTime = "Reminder Time"
         static let SetStartDate = "Set Start Date"
         static let SetGoal = "Set Goal"
@@ -34,6 +34,16 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = UIColor.white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -45,8 +55,9 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = super.tableView(tableView, cellForRowAt: indexPath)
-        if cell.reuseIdentifier == Storyboard.ReminderDetails {
+        if cell.reuseIdentifier == Storyboard.ReminderContent {
             cell.enable(on: Settings.isReminderOn)
+            customizeCell(cell: &cell, title: "Set Reminder Content", text: Settings.reminderContent)
         }
         else if cell.reuseIdentifier == Storyboard.ReminderTime {
             cell.enable(on: Settings.isReminderOn)
@@ -67,6 +78,7 @@ class SettingsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = text
         cell.detailTextLabel?.textColor = UIColor.gray
     }
+
     
 }
 

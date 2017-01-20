@@ -16,6 +16,7 @@ class Settings {
     struct Key {
         static let Goal = "Goal"
         static let Date = "Date"
+        static let GoalDate = "Goal Date"
         static let ReminderOn = "Reminder On"
         static let ReminderContent = "Reminder Content"
         static let ReminderTime = "Reminder Time"
@@ -48,6 +49,10 @@ class Settings {
         set {
             settings.set(newValue, forKey: Key.Date)
         }
+    }
+    
+    static var goalDate: Date {
+        return date.addingTimeInterval(Double(goal * 24 * 60 * 60))
     }
     
     

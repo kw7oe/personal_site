@@ -87,6 +87,13 @@ class Parser {
         return result
     }
     
+    /**
+     Parse Time into String format based on Your Format.
+     - Parameter time: the time you want to parse.
+     - Parameter basedOn: the format
+     - Returns: A Tuple of String. E.g. ("7", " days ")
+     
+     */
     class func parse(time: Int, basedOn format: String) -> (time: String, unit: String) {
         return (String(time), String.pluralize(time, input: format))
     }

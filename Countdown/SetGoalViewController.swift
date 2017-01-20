@@ -26,7 +26,9 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     }
     
     @IBAction func setGoal(_ sender: UIButton) {
-        Settings.goal = day
+        Settings.goal = day        
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        delegate?.scheduleNotification(at: Settings.goalDate, with: "You have achieve your goal.", with: .full)
         let alertController = UIAlertController(title: "Your goal has been set to \(day) days.", message: nil, preferredStyle: .alert)
         alertController.addAction(
             UIAlertAction(
@@ -35,13 +37,20 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
                 handler: nil
             )
         )
+        
         present(alertController, animated: true, completion: nil)
     }
       
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 1 { return "days" }
-        return String(data[row])
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 37))
+        label.text = String(data[row]) + String.pluralize(data[row], input: "day")
+        label.textAlignment = .center
+        return label
     }
+    
+ 
+   
+
     
     
     /*
@@ -59,11 +68,11 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
 extension SetGoalViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 1 { return 1 }
+        
         return data.count
     }
     
