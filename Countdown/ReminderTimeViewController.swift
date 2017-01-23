@@ -19,11 +19,10 @@ class ReminderTimeViewController: UIViewController {
        
         let time = Parser.parse(time: selectedTime)
         Settings.reminderTime = selectedTime
-        
-        
-        // Code Smell: Code Duplication
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.scheduleNotification(at: selectedTime, with: Settings.reminderContent)
+
+        let notificationService = NotificationServices()
+        notificationService.delegate = self
+        notificationService.scheduleNotification()
         
         // Setup Alert Controller
         // Code Smell: Code Duplication
@@ -47,3 +46,12 @@ class ReminderTimeViewController: UIViewController {
         datePicker.date = Settings.reminderTime
     }
 }
+
+extension ReminderTimeViewController: NotificationServicesDelegate {
+    func nameOfIdentifiers() -> String { return "reminderNotifications" }
+    func contentOfNotification() -> String { return "An apple a day, keep the doctor away." }
+    func willRepeat() -> Bool { return true }
+    func dateFormat() -> DateComponentFormat { return DateComponentFormat.short }
+    func date() -> Date { return datePicker.date }
+}
+

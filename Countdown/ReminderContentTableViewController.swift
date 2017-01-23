@@ -38,18 +38,26 @@ extension ReminderContentTableViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         Settings.reminderContent = textField.text!
         
-        // Code Smell: Code Duplication
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.scheduleNotification(at: Settings.date, with: textField.text!)
+        let notificationService = NotificationServices()
+        notificationService.delegate = self
+        notificationService.scheduleNotification()
+        
         return true
     }
     
 }
 
 extension UITableViewController {
-    
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.backgroundColor = UIColor.white
     }
+}
+
+extension ReminderContentTableViewController: NotificationServicesDelegate {
+    func nameOfIdentifiers() -> String { return "reminderNotifications" }
+    func contentOfNotification() -> String { return Settings.reminderContent }
+    func willRepeat() -> Bool { return true }
+    func dateFormat() -> DateComponentFormat { return DateComponentFormat.short }
+    func date() -> Date { return Settings.reminderTime }
 }

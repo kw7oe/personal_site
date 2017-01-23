@@ -26,9 +26,11 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     }
     
     @IBAction func setGoal(_ sender: UIButton) {
-        Settings.goal = day        
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.scheduleNotification(at: Settings.goalDate, with: "You have achieve your goal.", with: .full)
+        Settings.goal = day
+        
+        let notificationService = NotificationServices()
+        notificationService.delegate = self
+        notificationService.scheduleNotification()
         let alertController = UIAlertController(title: "Your goal has been set to \(day) days.", message: nil, preferredStyle: .alert)
         alertController.addAction(
             UIAlertAction(
@@ -76,6 +78,13 @@ extension SetGoalViewController: UIPickerViewDataSource {
         return data.count
     }
     
-    
+}
+
+extension SetGoalViewController: NotificationServicesDelegate {
+    func nameOfIdentifiers() -> String { return "goalNotification" }
+    func contentOfNotification() -> String { return "Congratulations" }
+    func willRepeat() -> Bool { return false }
+    func dateFormat() -> DateComponentFormat { return DateComponentFormat.full }
+    func date() -> Date { return Settings.goalDate }
 }
 

@@ -180,7 +180,7 @@
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
                         <barButtonItem key="leftBarButtonItem" image="Bar Chart" id="4NN-i1-RjA">
                             <connections>
-                                <segue destination="1sv-Vo-5yJ" kind="show" identifier="Progress Segue" id="oii-hJ-Fti"/>
+                                <segue destination="1sv-Vo-5yJ" kind="presentation" identifier="Progress Segue" id="oii-hJ-Fti"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Menu" id="O4Q-mY-PeU">

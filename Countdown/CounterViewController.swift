@@ -62,6 +62,7 @@ class CounterViewController: UIViewController {
         
         // Code Smell: Code Duplication
         let alertController = UIAlertController(title: "Are you sure you want to reset?", message: nil, preferredStyle: .alert)
+        alertController.transitioningDelegate = self
         alertController.addAction(
             UIAlertAction(
                 title: "OK",
@@ -77,6 +78,9 @@ class CounterViewController: UIViewController {
         
     }
     
+    // MARK: Custom Animation   
+//    let customNavigationAnimationController = CustomNavigationAnimationController()
+
     
     // MARK: View Controller Life Cycle
     override func viewDidLayoutSubviews() {
@@ -88,7 +92,7 @@ class CounterViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
+//        navigationController?.delegate = self
         updateUI()
         updateQuote()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
@@ -97,7 +101,28 @@ class CounterViewController: UIViewController {
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "Progress Segue" {
+//            let toViewController = segue.destination
+//            toViewController.transitioningDelegate = self
+//        }
 //    }
+
+}
+
+//extension CounterViewController: UINavigationControllerDelegate {
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if operation == .pop {
+//            customNavigationAnimationController.direction = 1.0
+//        }
+//        return customNavigationAnimationController
+//    }
+//}
+
+extension CounterViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentAnimationController()
+    }
 }
 
 

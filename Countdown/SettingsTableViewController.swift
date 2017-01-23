@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingsTableViewController: UITableViewController {
     
@@ -25,11 +26,35 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleReminderSwitch(_ sender: UISwitch) {
-        Settings.isReminderOn = sender.isOn
-        if !sender.isOn {
-            let delegate = UIApplication.shared.delegate as! AppDelegate
-            delegate.removeNotification()
+    // Refactoring needed?
+    @IBAction func toggleReminderSwitch(_ sender: UISwitch) {        
+        let notificationService = NotificationServices()
+        if sender.isOn {
+            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                if (settings.authorizationStatus == .authorized) {
+                    Settings.isReminderOn = sender.isOn
+                } else {
+                    let alertController = UIAlertController(title: "To enable reminder, you need to turn on notification.", message: nil, preferredStyle: .alert)
+                    alertController.addAction(
+                        UIAlertAction(
+                            title: "Enable Notification",
+                            style: .default,
+                            handler: { (action) in
+                                let url = URL(string: UIApplicationOpenSettingsURLString)
+                                UIApplication.shared.open(url!, options: [:]) { _ in
+                                    Settings.isReminderOn = sender.isOn
+                                }
+                            }
+                        )
+                    )
+                    self.present(alertController, animated: true, completion: nil)
+
+                }
+                self.tableView.reloadData()
+            }
+
+        } else {
+            notificationService.removeNotification(withIdentifiers: ["countdownNotification"])
         }
         tableView.reloadData()
     }

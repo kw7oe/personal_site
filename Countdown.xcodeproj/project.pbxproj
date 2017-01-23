@@ -21,8 +21,12 @@
 		2A7509521E24894900B9B31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7509501E24894900B9B31D /* LaunchScreen.storyboard */; };
 		2A75095D1E24894900B9B31D /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75095C1E24894900B9B31D /* CountdownTests.swift */; };
 		2A7509681E24894900B9B31D /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7509671E24894900B9B31D /* CountdownUITests.swift */; };
+		2A76F2E51E3304B8005FC48C /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */; };
+		2A76F2E71E330C3C005FC48C /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */; };
 		2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */; };
 		2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */; };
+		2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */; };
+		2ACEDF521E347DD7006B5CC5 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */; };
 		2AD2D6F91E30561B00F444C8 /* ReminderContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */; };
 		2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */; };
 /* End PBXBuildFile section */
@@ -65,8 +69,12 @@
 		2A7509631E24894900B9B31D /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509671E24894900B9B31D /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		2A7509691E24894900B9B31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
 		2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
+		2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationServicesDelegate.swift; sourceTree = "<group>"; };
 		2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderContentTableViewController.swift; sourceTree = "<group>"; };
 		2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +126,8 @@
 		2A27D80B1E2B4B1800A4F5E0 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
-				2A6E66381E29D3650067D711 /* Quotes.swift */,
+				2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */,
+				2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */,
 				2A426E391E2624CA005A12B4 /* Parser.swift */,
 			);
 			name = CustomClass;
@@ -155,8 +164,9 @@
 				2A27D8101E2B669500A4F5E0 /* DateViewController.swift */,
 				2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */,
 				2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */,
-				2A27D8061E2B3BF600A4F5E0 /* Settings.swift */,
 				2A75094B1E24894900B9B31D /* Main.storyboard */,
+				2A76F2E91E330DDF005FC48C /* Model */,
+				2A76F2E81E330DD3005FC48C /* Custom Animation */,
 				2A27D80B1E2B4B1800A4F5E0 /* CustomClass */,
 				2A27D80A1E2B4B0600A4F5E0 /* CustomView */,
 				2A24C27D1E24CB18005D0644 /* Supporting Files */,
@@ -180,6 +190,24 @@
 				2A7509691E24894900B9B31D /* Info.plist */,
 			);
 			path = CountdownUITests;
+			sourceTree = "<group>";
+		};
+		2A76F2E81E330DD3005FC48C /* Custom Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */,
+				2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */,
+			);
+			name = "Custom Animation";
+			sourceTree = "<group>";
+		};
+		2A76F2E91E330DDF005FC48C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A6E66381E29D3650067D711 /* Quotes.swift */,
+				2A27D8061E2B3BF600A4F5E0 /* Settings.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */,
 				2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */,
+				2A76F2E51E3304B8005FC48C /* CustomNavigationAnimationController.swift in Sources */,
 				2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */,
 				2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */,
 				2A4380FA1E30C9800088E239 /* ProgresBarView.swift in Sources */,
@@ -330,6 +360,8 @@
 				2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */,
 				2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */,
 				2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */,
+				2A76F2E71E330C3C005FC48C /* CustomPresentAnimationController.swift in Sources */,
+				2ACEDF521E347DD7006B5CC5 /* NoticationServicesDelegate.swift in Sources */,
 				2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */,
 				2AD2D6F91E30561B00F444C8 /* ReminderContentTableViewController.swift in Sources */,
 			);
@@ -483,8 +515,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3HCDAT8QN;
 				INFOPLIST_FILE = Countdown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.Countdown;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -496,8 +529,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3HCDAT8QN;
 				INFOPLIST_FILE = Countdown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.Countdown;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
