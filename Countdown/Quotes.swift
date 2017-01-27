@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: Quotes Model
+// MARK: Quote Model
 struct Quote {
     var author: String?
     var content: String
@@ -23,12 +23,12 @@ class Quotes {
     ]
     
     static func getRandomQuotes() -> Quote {
-        return quotes[Int.random(upperBound: 3)]
+        return quotes[Int.random(upperBound: quotes.count)]
     }
 }
 
+// MARK: Int Extension 
 extension Int {
-    
     static func random(upperBound: Int) -> Int {
         return Int(arc4random_uniform(UInt32(upperBound)))
     }

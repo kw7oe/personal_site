@@ -10,6 +10,7 @@ import Foundation
 
 class Parser {
     
+    // TODO: Move To ENUM
     struct Format {
         static let Hour = "hour"
         static let Day = "day"
@@ -33,6 +34,8 @@ class Parser {
         })
     ]
     
+    // REFACTORING: The following methods can be made into a single method.
+    
     /**
      Parse Date into String format.
      - Parameter date: the date you want to parse.
@@ -51,11 +54,12 @@ class Parser {
         - Returns: A String with Time format. E.g. 7:29 AM
      
      */
-    class func parse(time: Date) -> String {
+    class func parse(time: Date?) -> String {
+        if time == nil { return "" }
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        return dateFormatter.string(from: time)
+        return dateFormatter.string(from: time!)
     }
     
     class func parseToArray(time: Int, basedOn format: String) -> [(time: String, unit: String)] {

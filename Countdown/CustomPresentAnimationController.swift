@@ -23,9 +23,9 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         containerView.addSubview(toVC.view)
         toVC.view.frame = finalFrame.offsetBy(dx: 0, dy: bounds.height)
         
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 0.7,
                        delay: 0,
-                       usingSpringWithDamping: 0.4,
+                       usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0,
                        options: UIViewAnimationOptions.curveEaseInOut,
                        animations: { 

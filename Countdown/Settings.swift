@@ -12,7 +12,7 @@ import Foundation
 class Settings {
     
     static var settings = UserDefaults.standard
-    
+    static let reminderCounts = 3
     struct Key {
         static let Goal = "Goal"
         static let Date = "Date"
@@ -20,6 +20,7 @@ class Settings {
         static let ReminderOn = "Reminder On"
         static let ReminderContent = "Reminder Content"
         static let ReminderTime = "Reminder Time"
+        static let Reminders = "Reminders"
     }
     
     static var goal: Int {
@@ -68,6 +69,42 @@ class Settings {
         set {
             settings.set(newValue, forKey: Key.ReminderOn)
         }
+    }
+    
+    static var reminders: [Reminder]? {
+        get {
+            if let result = settings.object(forKey: Key.Reminders) as? Data {
+                let data = NSKeyedUnarchiver.unarchiveObject(with: result as Data)
+                return data as! [Reminder]?
+            }
+            return nil
+        }
+        set {
+            let data = NSKeyedArchiver.archivedData(withRootObject: newValue as Any)
+            settings.set(data, forKey: Key.Reminders)
+        }
+    }
+
+    static func appendReminder(reminder: Reminder) -> Bool {
+        var result: Bool;
+        if let count = reminders?.count, count < reminderCounts {
+            reminders!.append(reminder)
+            result = false
+        } else {
+            let identifier = reminders!.first!.identifier
+            reminder.identifier = identifier
+            reminders!.removeFirst()
+            reminders!.append(reminder)
+            result = true
+        }
+        
+        NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
+        return result
+    }
+    
+    static func updateReminderAt(index: Int, with reminder: Reminder) {
+        reminders![index] = reminder
+        NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
     }
     
     static var reminderContent: String {

@@ -57,10 +57,22 @@ class NotificationServices {
         }
     }
     
-    // TO BE IMPLEMENTED
-//    func updateNotification() {
-//        
-//    }
+    func scheduleNotification(with reminder: Reminder, basedOn format: DateComponentFormat) {
+        let dateComponent = getDateComponentFor(date: reminder.time, basedOn: format)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
+        let content = UNMutableNotificationContent()
+        content.body = reminder.content
+        content.sound = UNNotificationSound.default()
+        
+        removeNotification(withIdentifiers: [reminder.identifier])
+        
+        let request = UNNotificationRequest(identifier: reminder.identifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
+    }
     
     func promptToAllowNotification(completionHandler: @escaping (Bool, Error?) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: completionHandler)

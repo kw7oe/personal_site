@@ -12,23 +12,13 @@ class DateViewController: UIViewController {
 
 
     @IBOutlet weak var datePicker: UIDatePicker! {
-        didSet {
+        didSet {           
             datePicker.locale = Locale.current
         }
     }
-
-    @IBAction func setDate(_ sender: UIButton) {
-        Settings.date = datePicker.date
-        
-        let alertController = UIAlertController(title: "Your start date has been reset.", message: nil, preferredStyle: .alert)
-        alertController.addAction(
-            UIAlertAction(
-                title: "OK",
-                style: .default,
-                handler: nil
-            )
-        )
-        present(alertController, animated: true, completion: nil)
+    
+    @IBAction func dateDidSelected(_ sender: UIDatePicker) {
+        Settings.date = sender.date
     }
     
     override func viewDidLoad() {
