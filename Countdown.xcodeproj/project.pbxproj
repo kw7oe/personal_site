@@ -10,7 +10,6 @@
 		2A0D40481E35916A0076A4E0 /* ReminderConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0D40471E3591690076A4E0 /* ReminderConfigurationTableViewController.swift */; };
 		2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8061E2B3BF600A4F5E0 /* Settings.swift */; };
 		2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */; };
-		2A27D80F1E2B60E600A4F5E0 /* ReminderTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */; };
 		2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8101E2B669500A4F5E0 /* DateViewController.swift */; };
 		2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35FB971E2F09F30051CCED /* ProgressViewController.swift */; };
 		2A3DB15D1E37930C0052DC79 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3DB15C1E37930C0052DC79 /* RemindersTableViewController.swift */; };
@@ -31,7 +30,6 @@
 		2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */; };
 		2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */; };
 		2ACEDF521E347DD7006B5CC5 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */; };
-		2AD2D6F91E30561B00F444C8 /* ReminderContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */; };
 		2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +54,6 @@
 		2A0D40471E3591690076A4E0 /* ReminderConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		2A27D8061E2B3BF600A4F5E0 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
-		2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTimeViewController.swift; sourceTree = "<group>"; };
 		2A27D8101E2B669500A4F5E0 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		2A35FB971E2F09F30051CCED /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		2A3DB15C1E37930C0052DC79 /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationServicesDelegate.swift; sourceTree = "<group>"; };
-		2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderContentTableViewController.swift; sourceTree = "<group>"; };
 		2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,8 +113,6 @@
 			children = (
 				2A3DB15C1E37930C0052DC79 /* RemindersTableViewController.swift */,
 				2A0D40471E3591690076A4E0 /* ReminderConfigurationTableViewController.swift */,
-				2A27D80E1E2B60E600A4F5E0 /* ReminderTimeViewController.swift */,
-				2AD2D6F81E30561B00F444C8 /* ReminderContentTableViewController.swift */,
 			);
 			name = Reminder;
 			sourceTree = "<group>";
@@ -384,7 +378,6 @@
 				2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */,
 				2A6E66391E29D3650067D711 /* Quotes.swift in Sources */,
 				2A7509481E24894900B9B31D /* AppDelegate.swift in Sources */,
-				2A27D80F1E2B60E600A4F5E0 /* ReminderTimeViewController.swift in Sources */,
 				2A0D40481E35916A0076A4E0 /* ReminderConfigurationTableViewController.swift in Sources */,
 				2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */,
 				2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */,
@@ -395,7 +388,6 @@
 				2ACEDF521E347DD7006B5CC5 /* NoticationServicesDelegate.swift in Sources */,
 				2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */,
 				2A3DED9B1E36F93700B9F52B /* Reminder.swift in Sources */,
-				2AD2D6F91E30561B00F444C8 /* ReminderContentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

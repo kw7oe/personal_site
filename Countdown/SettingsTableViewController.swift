@@ -19,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
         static let SetGoal = "Set Goal"
     }
     
-    // MARK: View
+    // MARK: Target Action
     @IBOutlet weak var reminderOnSwitch: UISwitch! {
         didSet {
             reminderOnSwitch.isOn = Settings.isReminderOn
@@ -61,7 +61,6 @@ class SettingsTableViewController: UITableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.AddReminder {
             cell.enable(on: Settings.isReminderOn)
-            cell.addGrayDetail(text: Settings.reminderContent)
         }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
             cell.enable(on: Settings.isReminderOn)

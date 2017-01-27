@@ -31,8 +31,7 @@ class Settings {
             settings.set(7, forKey: Key.Goal)
             return 7
         }
-        set {
-            settings.set(newValue, forKey: Key.Goal)        }
+        set { settings.set(newValue, forKey: Key.Goal) }
         
     }
     
@@ -47,9 +46,7 @@ class Settings {
             settings.set(date, forKey: Key.Date)
             return date
         }
-        set {
-            settings.set(newValue, forKey: Key.Date)
-        }
+        set { settings.set(newValue, forKey: Key.Date) }
     }
     
     static var goalDate: Date {
@@ -66,9 +63,7 @@ class Settings {
             return true
         }
         
-        set {
-            settings.set(newValue, forKey: Key.ReminderOn)
-        }
+        set { settings.set(newValue, forKey: Key.ReminderOn) }
     }
     
     static var reminders: [Reminder]? {
@@ -107,35 +102,4 @@ class Settings {
         NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
     }
     
-    static var reminderContent: String {
-        get {
-            if let result = settings.object(forKey: Key.ReminderContent) as? String {
-                return result
-            }
-            let content = "Nothing can stop the man with the right mental attitude from achieving his goal."
-            settings.set(content, forKey: Key.ReminderContent)
-            return content
-        }
-        
-        set {
-            settings.set(newValue, forKey: Key.ReminderContent)
-        }
-    }
-    
-    static var reminderTime: Date {
-        get {
-            if let result = settings.object(forKey: Key.ReminderTime) as? Date {
-                return result
-            }
-            
-            // Code Smell: Code Duplication
-            let date = Date.init()
-            settings.set(date, forKey: Key.ReminderTime)
-            return date
-        }
-        
-        set {
-            settings.set(newValue, forKey: Key.ReminderTime)
-        }
-    }
-}
+  }

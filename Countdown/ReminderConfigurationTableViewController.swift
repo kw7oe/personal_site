@@ -10,30 +10,37 @@ import UIKit
 
 // Change this to modal 
 class ReminderConfigurationTableViewController: UITableViewController {
-   
-    @IBOutlet weak var button: UIButton!
-    var buttonTitle = ""
-    var alertTitle = ""
-    
-    func set(alertTitle: String, buttonTitle: String) {
-        self.alertTitle = alertTitle
-        self.buttonTitle = buttonTitle
-    }
     
     // MARK: Model
     var reminder: Reminder?
     var reminderIndex: Int?
+    var buttonTitle = ""
+    var alertTitle = ""
+   
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var reminderContentTextField: UITextField! {
+        didSet {
+            reminderContentTextField.text = reminder?.content
+        }
+    }
+    @IBOutlet weak var datePicker: UIDatePicker!
     
-    // CODE SMELLLL!!!
+    // MARK: Custom Methods
+    func set(alertTitle: String, buttonTitle: String) {
+        self.alertTitle = alertTitle
+        self.buttonTitle = buttonTitle
+    }
+        
+    // MARK: Target Action
     @IBAction func addReminder(_ sender: UIButton) {
         let alertController = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
 
         if let reminder = self.reminder {
-            reminder.content = Settings.reminderContent
-            reminder.time = Settings.reminderTime
+            reminder.content = reminderContentTextField.text!
+            reminder.time = datePicker.date
             Settings.updateReminderAt(index: reminderIndex!, with: reminder)
         } else {
-            let reminder = Reminder(identifier: "Reminder 1", content: Settings.reminderContent, time: Settings.reminderTime, willRepeat: true)
+            let reminder = Reminder(identifier: "Reminder 1", content: reminderContentTextField.text!, time: datePicker.date, willRepeat: true)
             
             
             if let reminders = Settings.reminders {
@@ -51,26 +58,6 @@ class ReminderConfigurationTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-    
-    // MARK: Storyboard
-    private struct Storyboard {
-        static let ReminderContent = "Reminder Content"
-        static let ReminderTime = "Reminder Time"
-    }
-    
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
-
-         if cell.reuseIdentifier == Storyboard.ReminderContent {
-            cell.addGrayDetail(text: reminder?.content ?? "")
-         }
-         else if cell.reuseIdentifier == Storyboard.ReminderTime {
-            cell.addGrayDetail(text: Parser.parse(time: reminder?.time))
-         }
-        return cell
-    }
-    
 
     // MARK: View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -78,24 +65,20 @@ class ReminderConfigurationTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        datePicker.date = reminder?.time ?? Date.init()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         button.setTitle(buttonTitle, for: UIControlState.normal)
         button.sizeToFit()
     }
-    
-    // MARK: Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let rctvc = segue.destination as? ReminderContentTableViewController {
-            rctvc.content = reminder?.content ?? "Nothing can stop the man with the right mental attitude from achieving his goal."
-        } else if let rtvc = segue.destination as? ReminderTimeViewController {
-            rtvc.time = reminder?.time ?? Date.init()
-        }
-    }
 }
 
+// MARK: UIViewControllerTransitioning Delegate
 extension ReminderConfigurationTableViewController: UIViewControllerTransitioningDelegate {
-    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimationController()
     }
