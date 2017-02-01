@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509431E24894900B9B31D"
-               BuildableName = "Countdown.app"
-               BlueprintName = "Countdown"
-               ReferencedContainer = "container:Countdown.xcodeproj">
+               BuildableName = "Up.app"
+               BlueprintName = "Up"
+               ReferencedContainer = "container:Up.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509571E24894900B9B31D"
-               BuildableName = "CountdownTests.xctest"
-               BlueprintName = "CountdownTests"
-               ReferencedContainer = "container:Countdown.xcodeproj">
+               BuildableName = "UpTests.xctest"
+               BlueprintName = "UpTests"
+               ReferencedContainer = "container:Up.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509621E24894900B9B31D"
-               BuildableName = "CountdownUITests.xctest"
-               BlueprintName = "CountdownUITests"
-               ReferencedContainer = "container:Countdown.xcodeproj">
+               BuildableName = "UpUITests.xctest"
+               BlueprintName = "UpUITests"
+               ReferencedContainer = "container:Up.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Countdown.app"
-            BlueprintName = "Countdown"
-            ReferencedContainer = "container:Countdown.xcodeproj">
+            BuildableName = "Up.app"
+            BlueprintName = "Up"
+            ReferencedContainer = "container:Up.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Countdown.app"
-            BlueprintName = "Countdown"
-            ReferencedContainer = "container:Countdown.xcodeproj">
+            BuildableName = "Up.app"
+            BlueprintName = "Up"
+            ReferencedContainer = "container:Up.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Countdown.app"
-            BlueprintName = "Countdown"
-            ReferencedContainer = "container:Countdown.xcodeproj">
+            BuildableName = "Up.app"
+            BlueprintName = "Up"
+            ReferencedContainer = "container:Up.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

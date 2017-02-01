@@ -103,8 +103,7 @@ class Parser {
     }
 }
 
-extension String {
-    
+extension String {    
     static func pluralize(_ number: Int, input: String) -> String {
         var string = "  " + input
         if number > 1 {

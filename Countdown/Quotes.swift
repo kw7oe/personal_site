@@ -14,7 +14,7 @@ struct Quote {
     var content: String
 }
 
-class Quotes {
+struct Quotes {
     
     static var quotes: [Quote] = [
         Quote(author: "Og Mandino", content: "Failure will never overtake me if my determination to succeed is strong enough."),

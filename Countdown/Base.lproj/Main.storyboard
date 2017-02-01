@@ -13,7 +13,7 @@
         <!--Set Goal View Controller-->
         <scene sceneID="Jbq-mc-lLT">
             <objects>
-                <viewController id="AXN-TR-b8J" customClass="SetGoalViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AXN-TR-b8J" customClass="SetGoalViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jes-Lu-i3w"/>
                         <viewControllerLayoutGuide type="bottom" id="T6W-Dr-p9H"/>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV1-hK-dpn" customClass="RadiusButton" customModule="Countdown" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV1-hK-dpn" customClass="RadiusButton" customModule="Up" customModuleProvider="target">
                                 <rect key="frame" x="134.5" y="561" width="107" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -53,12 +53,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeX-Af-ESj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382" y="-645"/>
+            <point key="canvasLocation" x="2320.8000000000002" y="-645.42728635682158"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="hUI-tL-9yh">
             <objects>
-                <viewController id="1sv-Vo-5yJ" customClass="ProgressViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1sv-Vo-5yJ" customClass="ProgressViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nes-wv-G1S"/>
                         <viewControllerLayoutGuide type="bottom" id="Bgc-iq-QOg"/>
@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6G-6q-Ajj" customClass="RadiusButton" customModule="Countdown" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6G-6q-Ajj" customClass="RadiusButton" customModule="Up" customModuleProvider="target">
                                 <rect key="frame" x="115" y="551" width="145" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -88,18 +88,25 @@
                             <constraint firstItem="o6G-6q-Ajj" firstAttribute="centerX" secondItem="EJ0-4f-D9V" secondAttribute="centerX" id="Rek-3P-rdk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1Ea-6Z-MWy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="waf-gl-eoh">
+                            <connections>
+                                <action selector="done:" destination="1sv-Vo-5yJ" id="91M-bF-ObP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="setNewGoalButton" destination="o6G-6q-Ajj" id="832-2d-XCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fB-hK-dim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="-645"/>
+            <point key="canvasLocation" x="1540" y="-645.42728635682158"/>
         </scene>
         <!--Counter View Controller-->
         <scene sceneID="my9-GK-ANl">
             <objects>
-                <viewController id="9VN-cr-0Qb" customClass="CounterViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9VN-cr-0Qb" customClass="CounterViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4U1-0Z-49Z"/>
                         <viewControllerLayoutGuide type="bottom" id="UGg-Lx-MCx"/>
@@ -126,7 +133,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-OP-0Qp" customClass="RadiusButton" customModule="Countdown" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-OP-0Qp" customClass="RadiusButton" customModule="Up" customModuleProvider="target">
                                 <rect key="frame" x="147.5" y="561" width="80" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -180,7 +187,7 @@
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
                         <barButtonItem key="leftBarButtonItem" image="Bar Chart" id="4NN-i1-RjA">
                             <connections>
-                                <segue destination="1sv-Vo-5yJ" kind="show" identifier="Progress Segue" id="oii-hJ-Fti"/>
+                                <segue destination="YxF-lg-fzi" kind="presentation" identifier="Progress Segue" id="oii-hJ-Fti"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Menu" id="O4Q-mY-PeU">
@@ -204,7 +211,7 @@
         <!--Settings-->
         <scene sceneID="I5F-uX-dQW">
             <objects>
-                <tableViewController id="076-7C-ni5" customClass="SettingsTableViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="076-7C-ni5" customClass="SettingsTableViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="MAk-10-prs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,21 +355,28 @@
         <!--Reminders Table View Controller-->
         <scene sceneID="zLi-Ey-ABl">
             <objects>
-                <tableViewController id="b6h-xE-yjP" customClass="RemindersTableViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="b6h-xE-yjP" customClass="RemindersTableViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="09Y-mn-PiS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Reminder Cell" textLabel="T96-qu-UDt" style="IBUITableViewCellStyleDefault" id="FQp-V4-aGw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reminder Cell" textLabel="T96-qu-UDt" detailTextLabel="Ev1-Ev-1jY" style="IBUITableViewCellStyleValue1" id="FQp-V4-aGw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQp-V4-aGw" id="u1w-lN-hTP">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T96-qu-UDt">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ev1-Ev-1jY">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -371,7 +385,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xCX-Sw-JeH" kind="show" identifier="Edit Reminder Segue" id="FrI-Eg-KNn"/>
+                                    <segue destination="PyK-XX-ror" kind="show" identifier="Edit Reminder Segue" id="FrI-Eg-KNn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -384,7 +398,7 @@
                     <navigationItem key="navigationItem" id="NkV-2h-v8t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RPW-Dy-Dzj">
                             <connections>
-                                <segue destination="xCX-Sw-JeH" kind="show" identifier="Add Reminder Segue" id="PKJ-9A-O1p"/>
+                                <segue destination="PyK-XX-ror" kind="presentation" identifier="Add Reminder Segue" id="PKJ-9A-O1p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -397,7 +411,7 @@
         <!--Reminder Configuration Table View Controller-->
         <scene sceneID="Xh3-n8-4n7">
             <objects>
-                <tableViewController id="xCX-Sw-JeH" customClass="ReminderConfigurationTableViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xCX-Sw-JeH" customClass="ReminderConfigurationTableViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lF4-dS-PVY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,10 +420,10 @@
                             <tableViewSection headerTitle="Reminder Content" id="nVa-Gn-oYm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Reminder Time" id="y6h-n4-i8O">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y6h-n4-i8O" id="8dC-57-TJH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Some Encouraging Words For Yourself" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Mt-iO-sO1">
@@ -432,10 +446,10 @@
                             <tableViewSection headerTitle="Reminder Time" id="ecB-pD-Leu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="V1e-tg-00j">
-                                        <rect key="frame" x="0.0" y="157" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1e-tg-00j" id="nGD-ra-MPU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-J1-Brl">
@@ -456,30 +470,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="mbz-Wt-o6o">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Button Cell" id="onW-2c-AfK">
-                                        <rect key="frame" x="0.0" y="393" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="onW-2c-AfK" id="sTs-zw-yhm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adE-AP-Hju">
-                                                    <rect key="frame" x="123" y="12" width="113" height="18"/>
-                                                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                                                    <state key="normal" title="Add Reminder"/>
-                                                    <connections>
-                                                        <action selector="addReminder:" destination="xCX-Sw-JeH" eventType="touchUpInside" id="Mr6-8t-FTi"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="adE-AP-Hju" firstAttribute="centerX" secondItem="sTs-zw-yhm" secondAttribute="centerX" constant="-8" id="AWY-46-KSI"/>
-                                                <constraint firstItem="adE-AP-Hju" firstAttribute="centerY" secondItem="sTs-zw-yhm" secondAttribute="centerY" id="fkx-0M-ygv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -487,15 +478,26 @@
                             <outlet property="delegate" destination="xCX-Sw-JeH" id="Hdk-gv-kgn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="TMb-XX-n4s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jmr-EV-tUT">
+                            <connections>
+                                <action selector="cancel:" destination="xCX-Sw-JeH" id="Dqa-hU-N4M"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="65x-xm-w4F">
+                            <connections>
+                                <action selector="saveReminder:" destination="xCX-Sw-JeH" id="loO-de-FOO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="button" destination="adE-AP-Hju" id="0qr-sa-0aK"/>
                         <outlet property="datePicker" destination="X7y-J1-Brl" id="lWW-zB-C8B"/>
                         <outlet property="reminderContentTextField" destination="9Mt-iO-sO1" id="MZ8-BB-Pxo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yD6-bj-u5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382" y="898"/>
+            <point key="canvasLocation" x="2273" y="898"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rCY-9u-JKe">
@@ -518,7 +520,7 @@
         <!--Date View Controller-->
         <scene sceneID="dKn-N9-HvN">
             <objects>
-                <viewController id="CdV-SD-fb3" customClass="DateViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CdV-SD-fb3" customClass="DateViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1yh-qw-pbK"/>
                         <viewControllerLayoutGuide type="bottom" id="2Hh-2B-IUl"/>
@@ -559,13 +561,49 @@
             </objects>
             <point key="canvasLocation" x="1382" y="139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h8Z-JM-Ido">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YxF-lg-fzi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hC1-nx-Bqi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1sv-Vo-5yJ" kind="relationship" relationship="rootViewController" id="ZTE-RQ-wnz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJJ-Q8-1oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600.79999999999995" y="-645.42728635682158"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AYy-AF-TPC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PyK-XX-ror" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1p-N2-PWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xCX-Sw-JeH" kind="relationship" relationship="rootViewController" id="TMJ-eC-cFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1t1-gF-3W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="898"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bar Chart" width="16" height="18"/>
         <image name="Menu" width="19" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PKJ-9A-O1p"/>
         <segue reference="lHe-mK-oMp"/>
-        <segue reference="FrI-Eg-KNn"/>
     </inferredMetricsTieBreakers>
 </document>

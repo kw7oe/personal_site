@@ -21,6 +21,7 @@ class RemindersTableViewController: UITableViewController {
         static let AddReminderSegue = "Add Reminder Segue"
         static let EditReminderSegue = "Edit Reminder Segue"
     }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
@@ -47,12 +48,12 @@ class RemindersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.ReminderCell, for: indexPath)
 
         cell.textLabel?.text = data?[indexPath.row].identifier
+        cell.addGrayDetail(text: Parser.parse(time: data?[indexPath.row].time))
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
  
@@ -74,14 +75,16 @@ class RemindersTableViewController: UITableViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationController = segue.destination as? ReminderConfigurationTableViewController {
+        if let navController = segue.destination as? UINavigationController,
+            let destinationController = navController.visibleViewController as? ReminderConfigurationTableViewController
+        {
             if let identifier = segue.identifier {
                 switch identifier {
-                case Storyboard.AddReminderSegue:
-                    destinationController.set(alertTitle: "Reminder Added", buttonTitle: "Add Reminder")
-                case Storyboard.EditReminderSegue:
-                    destinationController.set(alertTitle: "Reminder Updated", buttonTitle: "Update Reminder")
-                default: break;
+                    case Storyboard.AddReminderSegue:
+                        destinationController.alertTitle = "Reminder Added"
+                    case Storyboard.EditReminderSegue:
+                        destinationController.alertTitle = "Reminder Updated"
+                    default: break;
                 }
             }
             

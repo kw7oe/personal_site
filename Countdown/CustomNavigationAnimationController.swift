@@ -18,7 +18,6 @@ class CustomNavigationAnimationController: NSObject, UIViewControllerAnimatedTra
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         let toVC = transitionContext.viewController(forKey: .to)!
-//        let fromVC = transitionContext.viewController(forKey: .from)!
         let containerView = transitionContext.containerView
         let finalFrame = transitionContext.finalFrame(for: toVC)
         let bounds = UIScreen.main.bounds

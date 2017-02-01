@@ -14,27 +14,20 @@ class ReminderConfigurationTableViewController: UITableViewController {
     // MARK: Model
     var reminder: Reminder?
     var reminderIndex: Int?
-    var buttonTitle = ""
     var alertTitle = ""
    
-    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var reminderContentTextField: UITextField! {
         didSet {
+            reminderContentTextField.delegate = self
             reminderContentTextField.text = reminder?.content
         }
     }
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    // MARK: Custom Methods
-    func set(alertTitle: String, buttonTitle: String) {
-        self.alertTitle = alertTitle
-        self.buttonTitle = buttonTitle
-    }
-        
+            
     // MARK: Target Action
-    @IBAction func addReminder(_ sender: UIButton) {
+    @IBAction func saveReminder(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
-
+        
         if let reminder = self.reminder {
             reminder.content = reminderContentTextField.text!
             reminder.time = datePicker.date
@@ -55,10 +48,21 @@ class ReminderConfigurationTableViewController: UITableViewController {
         }
         alertController.transitioningDelegate = self
         alertController.modalPresentationStyle = .custom
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.dismissModal()
+        })
         present(alertController, animated: true, completion: nil)
+        
     }
-
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismissModal()
+    }
+    
+    private func dismissModal() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,12 +73,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
         super.viewDidLoad()
         datePicker.date = reminder?.time ?? Date.init()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.setTitle(buttonTitle, for: UIControlState.normal)
-        button.sizeToFit()
-    }
+
 }
 
 // MARK: UIViewControllerTransitioning Delegate
@@ -83,5 +82,16 @@ extension ReminderConfigurationTableViewController: UIViewControllerTransitionin
         return CustomPresentAnimationController()
     }
 }
+
+// MARK: UITextField Delegate
+extension ReminderConfigurationTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        reminder?.content = textField.text!
+        return true
+    }
+}
+
+
 
 

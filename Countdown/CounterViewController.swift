@@ -12,10 +12,8 @@ class CounterViewController: UIViewController {
     
     var time: Int {
         return -Int(Settings.date.timeIntervalSinceNow)
-    }
-    
+    }    
     var timer = Timer()
-    
     
     // MARK : View
     @IBOutlet weak var timeLabel: UILabel!
@@ -24,7 +22,6 @@ class CounterViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     
-    // TODO: Add in Animation
     private func updateUI() {
         updateTime()
         updateDescription()
@@ -82,15 +79,7 @@ class CounterViewController: UIViewController {
 //    let customNavigationAnimationController = CustomNavigationAnimationController()
 
     
-    // MARK: View Controller Life Cycle
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let navigationBar =  self.navigationController?.navigationBar
-        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar?.barTintColor = UIColor.white
-        navigationBar?.shadowImage = UIImage()
-    }
-    
+    // MARK: View Controller Life Cycle    
     override func viewDidLoad() {
 //        navigationController?.delegate = self
         updateUI()
@@ -119,11 +108,11 @@ class CounterViewController: UIViewController {
 //}
 
 extension CounterViewController: UIViewControllerTransitioningDelegate {
-    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimationController()
     }
 }
+
 
 
 
