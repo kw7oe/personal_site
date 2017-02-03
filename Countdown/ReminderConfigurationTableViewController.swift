@@ -16,10 +16,11 @@ class ReminderConfigurationTableViewController: UITableViewController {
     var reminderIndex: Int?
     var alertTitle = ""
    
+    // MARK: View Outlet
     @IBOutlet weak var reminderContentTextField: UITextField! {
         didSet {
             reminderContentTextField.delegate = self
-            reminderContentTextField.text = reminder?.content
+            reminderContentTextField.text = reminder?.content ?? "Nothing can stop the man with the right mental attitude from achieving his goal."
         }
     }
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -59,6 +60,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
         dismissModal()
     }
     
+    // MARK: Private Method
     private func dismissModal() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

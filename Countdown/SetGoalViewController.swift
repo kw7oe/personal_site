@@ -11,7 +11,6 @@ import UIKit
 class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     
     var data: [Int] = Array(1...31)
-    var day: Int = 7
 
     @IBOutlet weak var pickerView: UIPickerView! {
         didSet {
@@ -22,16 +21,12 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        day = data[row]
-    }
-    
-    @IBAction func setGoal(_ sender: UIButton) {
-        Settings.goal = day
+        Settings.goal = data[row]
         
         let notificationService = NotificationServices()
         notificationService.delegate = self
         notificationService.scheduleNotification()
-        let alertController = UIAlertController(title: "Your goal has been set to \(day) days.", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Your goal has been set to \(data[row]) days.", message: nil, preferredStyle: .alert)
         alertController.addAction(
             UIAlertAction(
                 title: "OK",
@@ -41,6 +36,7 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
         )
         
         present(alertController, animated: true, completion: nil)
+
     }
       
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

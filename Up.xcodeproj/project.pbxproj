@@ -11,11 +11,9 @@
 		2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8061E2B3BF600A4F5E0 /* Settings.swift */; };
 		2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */; };
 		2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27D8101E2B669500A4F5E0 /* DateViewController.swift */; };
-		2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35FB971E2F09F30051CCED /* ProgressViewController.swift */; };
 		2A3DB15D1E37930C0052DC79 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3DB15C1E37930C0052DC79 /* RemindersTableViewController.swift */; };
 		2A3DED9B1E36F93700B9F52B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3DED9A1E36F93700B9F52B /* Reminder.swift */; };
 		2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A426E391E2624CA005A12B4 /* Parser.swift */; };
-		2A4380FA1E30C9800088E239 /* ProgresBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4380F91E30C9800088E239 /* ProgresBarView.swift */; };
 		2A4E747A1E2F50120093F49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E74791E2F50120093F49F /* Assets.xcassets */; };
 		2A509B701E3CA40D00FECBE6 /* ProgressPieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */; };
 		2A6E66391E29D3650067D711 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6E66381E29D3650067D711 /* Quotes.swift */; };
@@ -24,10 +22,8 @@
 		2A7509521E24894900B9B31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7509501E24894900B9B31D /* LaunchScreen.storyboard */; };
 		2A75095D1E24894900B9B31D /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A75095C1E24894900B9B31D /* CountdownTests.swift */; };
 		2A7509681E24894900B9B31D /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7509671E24894900B9B31D /* CountdownUITests.swift */; };
-		2A76F2E51E3304B8005FC48C /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */; };
 		2A76F2E71E330C3C005FC48C /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */; };
 		2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */; };
-		2AC525FD1E3B029B0064E5B6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC525FC1E3B029B0064E5B6 /* ProgressBarView.swift */; };
 		2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */; };
 		2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */; };
 		2ACEDF521E347DD7006B5CC5 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */; };
@@ -56,11 +52,9 @@
 		2A27D8061E2B3BF600A4F5E0 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		2A27D8101E2B669500A4F5E0 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
-		2A35FB971E2F09F30051CCED /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		2A3DB15C1E37930C0052DC79 /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
 		2A3DED9A1E36F93700B9F52B /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		2A426E391E2624CA005A12B4 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		2A4380F91E30C9800088E239 /* ProgresBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgresBarView.swift; sourceTree = "<group>"; };
 		2A4E74791E2F50120093F49F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPieView.swift; sourceTree = "<group>"; };
 		2A6E66381E29D3650067D711 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
@@ -75,10 +69,8 @@
 		2A7509631E24894900B9B31D /* UpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509671E24894900B9B31D /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		2A7509691E24894900B9B31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
 		2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
-		2AC525FC1E3B029B0064E5B6 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		2ACD05121E2B1E9F005F9E56 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationServicesDelegate.swift; sourceTree = "<group>"; };
@@ -142,8 +134,8 @@
 		2A27D80A1E2B4B0600A4F5E0 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */,
 				2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */,
-				2A4380F91E30C9800088E239 /* ProgresBarView.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -151,8 +143,6 @@
 		2A27D80B1E2B4B1800A4F5E0 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
-				2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */,
-				2AC525FC1E3B029B0064E5B6 /* ProgressBarView.swift */,
 				2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */,
 				2ACEDF511E347DD7006B5CC5 /* NoticationServicesDelegate.swift */,
 				2A426E391E2624CA005A12B4 /* Parser.swift */,
@@ -185,15 +175,13 @@
 			isa = PBXGroup;
 			children = (
 				2A7509471E24894900B9B31D /* AppDelegate.swift */,
-				2A35FB971E2F09F30051CCED /* ProgressViewController.swift */,
 				2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */,
 				2A75094B1E24894900B9B31D /* Main.storyboard */,
 				2A0D40461E358FF80076A4E0 /* Settings */,
 				2A0D40451E358FE60076A4E0 /* Reminder */,
 				2A76F2E91E330DDF005FC48C /* Model */,
-				2A76F2E81E330DD3005FC48C /* Custom Animation */,
+				2A9A77C01E41C3F700DD041E /* Custom UI */,
 				2A27D80B1E2B4B1800A4F5E0 /* CustomClass */,
-				2A27D80A1E2B4B0600A4F5E0 /* CustomView */,
 				2A24C27D1E24CB18005D0644 /* Supporting Files */,
 			);
 			path = Countdown;
@@ -220,7 +208,6 @@
 		2A76F2E81E330DD3005FC48C /* Custom Animation */ = {
 			isa = PBXGroup;
 			children = (
-				2A76F2E41E3304B8005FC48C /* CustomNavigationAnimationController.swift */,
 				2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */,
 			);
 			name = "Custom Animation";
@@ -241,6 +228,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A9A77C01E41C3F700DD041E /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				2A76F2E81E330DD3005FC48C /* Custom Animation */,
+				2A27D80A1E2B4B0600A4F5E0 /* CustomView */,
+			);
+			name = "Custom UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,17 +384,13 @@
 				2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */,
 				2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */,
 				2A509B701E3CA40D00FECBE6 /* ProgressPieView.swift in Sources */,
-				2A76F2E51E3304B8005FC48C /* CustomNavigationAnimationController.swift in Sources */,
 				2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */,
 				2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */,
-				2A4380FA1E30C9800088E239 /* ProgresBarView.swift in Sources */,
-				2A35FB981E2F09F30051CCED /* ProgressViewController.swift in Sources */,
 				2A6E66391E29D3650067D711 /* Quotes.swift in Sources */,
 				2A7509481E24894900B9B31D /* AppDelegate.swift in Sources */,
 				2A0D40481E35916A0076A4E0 /* ReminderConfigurationTableViewController.swift in Sources */,
 				2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */,
 				2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */,
-				2AC525FD1E3B029B0064E5B6 /* ProgressBarView.swift in Sources */,
 				2A3DB15D1E37930C0052DC79 /* RemindersTableViewController.swift in Sources */,
 				2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */,
 				2A76F2E71E330C3C005FC48C /* CustomPresentAnimationController.swift in Sources */,

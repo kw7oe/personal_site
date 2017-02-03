@@ -12,11 +12,21 @@ class ProgressPieView: UIView {
     
     let progressLayer = CAShapeLayer()
     private let initialLayer = CAShapeLayer()
+    var label: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let path = UIBezierPath(arcCenter: self.center , radius: frame.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY - bounds.width / 12)
+        let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
         
         initialLayer.path = path.cgPath
         initialLayer.strokeColor = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 0.5).cgColor
@@ -31,8 +41,12 @@ class ProgressPieView: UIView {
         
         self.layer.addSublayer(initialLayer)
         self.layer.addSublayer(progressLayer)
+        
+        setupLabel()
+        label.center = center
     }
     
+    // MARK: Public Method
     func setProgress(with percentage: CGFloat) {
         let endAnimation = CABasicAnimation(keyPath: "strokeEnd")
         endAnimation.duration = 1.3
@@ -41,10 +55,20 @@ class ProgressPieView: UIView {
         endAnimation.fillMode = kCAFillModeBoth
         endAnimation.isRemovedOnCompletion = false
         progressLayer.add(endAnimation, forKey: nil)
+        
+        var percentageText = "100"
+        if percentage < 1 {
+            percentageText = String.init(format: "%.1f", percentage * 100)
+        }
+        
+        label.text = "\(percentageText)\n percent"
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    // MARK: Private Method
+    private func setupLabel() {
+        label.frame = frame
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        addSubview(label)
     }
-
 }

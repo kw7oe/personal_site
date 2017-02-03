@@ -17,12 +17,14 @@ class Settings {
         static let Goal = "Goal"
         static let Date = "Date"
         static let GoalDate = "Goal Date"
+        static let DateStarted = "Date Started"
         static let ReminderOn = "Reminder On"
         static let ReminderContent = "Reminder Content"
         static let ReminderTime = "Reminder Time"
         static let Reminders = "Reminders"
     }
     
+    // MARK: Static Computed Properties
     static var goal: Int {
         get {
             if let result = settings.object(forKey: Key.Goal) as? Int {
@@ -46,7 +48,19 @@ class Settings {
             settings.set(date, forKey: Key.Date)
             return date
         }
-        set { settings.set(newValue, forKey: Key.Date) }
+        set {
+            settings.set(newValue, forKey: Key.Date)
+            dateStarted = true
+        }
+    }
+    
+    static var dateStarted: Bool {
+        get {
+            return settings.bool(forKey: Key.DateStarted)
+        }
+        set {
+            settings.set(newValue, forKey: Key.DateStarted)
+        }
     }
     
     static var goalDate: Date {
@@ -79,10 +93,15 @@ class Settings {
             settings.set(data, forKey: Key.Reminders)
         }
     }
-
+    
+    // MAKR: Static Functions
     static func appendReminder(reminder: Reminder) -> Bool {
         var result: Bool;
-        if let count = reminders?.count, count < reminderCounts {
+        
+        if reminders == nil { // Reminders Does Not Exists yet
+            reminders = [reminder]
+            result = false
+        } else if reminders!.count < reminderCounts { // Reminders Count < reminderCounts
             reminders!.append(reminder)
             result = false
         } else {

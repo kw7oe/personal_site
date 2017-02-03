@@ -25,8 +25,7 @@ class RemindersTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
-        
-        if data?.count == 0 {
+        if data == nil || data?.count == 0 {
             label?.text = "No Reminder Available"
             label?.textColor = UIColor.black
             label?.textAlignment = .center

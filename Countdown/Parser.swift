@@ -20,7 +20,7 @@ class Parser {
     
     enum Operation {
         case Single((Int) -> Int)
-        case Multiple((Int) -> [Int]) // E.g. 3 Days 3 Hours 24 Minutes 3 Seconds 
+        case Multiple((Int) -> [Int]) // E.g. 3 Days 3 Hours
     }
     
     static let converter: Dictionary<String, Operation> = [
@@ -34,12 +34,10 @@ class Parser {
         })
     ]
     
-    // REFACTORING: The following methods can be made into a single method.
-    
-    /**
+       /**
      Parse Date into String format.
      - Parameter date: the date you want to parse.
-     - Returns: A String with Date format. E.g. Jan 17, 2017
+     - Returns: Date in String. E.g. Jan 17, 2017
      
      */
     class func parse(date: Date) -> String {
@@ -51,7 +49,7 @@ class Parser {
     /**
         Parse Time into String format.
         - Parameter time: the time you want to parse.
-        - Returns: A String with Time format. E.g. 7:29 AM
+        - Returns: Time in String. E.g. 7:29 AM
      
      */
     class func parse(time: Date?) -> String {
@@ -66,28 +64,26 @@ class Parser {
         var unit: [Int] = [0];
         var result: [(String, String)] = []
         if let operation = converter[format] {
+            
             switch operation {
+                
             case .Single(let function):
                 unit[0] =  function(time)
-                
-                // Code Smell: Duplicated Method
                 result.append(Parser.parse(time: unit[0], basedOn: format))
+                
             case .Multiple(let function):
                 unit = function(time)
                 let string = format.components(separatedBy: " ")
                 
-                // Code Smell: Duplicated Method
                 let firstFormat = string[0]
                 let firstResult = Parser.parse(time: unit[0], basedOn: firstFormat)
                 
-                // Code Smell: Duplicated Method
                 let secondFormat = string[1]
                 let secondResult = Parser.parse(time: unit[1], basedOn: secondFormat)
                 result.append(firstResult)
                 result.append(secondResult)
             }
         }
-        
         return result
     }
     
@@ -95,7 +91,7 @@ class Parser {
      Parse Time into String format based on Your Format.
      - Parameter time: the time you want to parse.
      - Parameter basedOn: the format
-     - Returns: A Tuple of String. E.g. ("7", " days ")
+     - Returns: A Tuple of String. E.g. ("7", "  days  ")
      
      */
     class func parse(time: Int, basedOn format: String) -> (time: String, unit: String) {
