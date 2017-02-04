@@ -46,6 +46,11 @@ class SettingsTableViewController: UITableViewController {
     }
     
     // MARK: View Life Cycle  
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = UIColor.white
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()

@@ -120,7 +120,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-OP-0Qp" customClass="RadiusButton" customModule="Up" customModuleProvider="target">
                                                 <rect key="frame" x="67.5" y="160" width="82" height="40"/>
-                                                <color key="backgroundColor" red="0.5311228965" green="0.70608049750000001" blue="0.74841370559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="MWw-b7-S8q"/>
                                                 </constraints>
@@ -150,7 +150,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
                         <barButtonItem key="rightBarButtonItem" image="Settings" id="O4Q-mY-PeU">
-                            <color key="tintColor" red="0.53112289651629441" green="0.70608049749009905" blue="0.74841370558375631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.25882352941176467" green="0.49019607843137253" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="076-7C-ni5" kind="show" identifier="Settings Segue" id="YHu-M6-VWQ"/>
                             </connections>
@@ -359,6 +359,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NkV-2h-v8t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RPW-Dy-Dzj">
+                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="PyK-XX-ror" kind="presentation" identifier="Add Reminder Segue" id="PKJ-9A-O1p"/>
                             </connections>
@@ -442,11 +443,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="TMb-XX-n4s">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jmr-EV-tUT">
+                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="xCX-Sw-JeH" id="Dqa-hU-N4M"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="65x-xm-w4F">
+                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveReminder:" destination="xCX-Sw-JeH" id="loO-de-FOO"/>
                             </connections>

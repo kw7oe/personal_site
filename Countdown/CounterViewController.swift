@@ -102,7 +102,7 @@ class CounterViewController: UIViewController {
         super.viewDidLayoutSubviews()
         let navigationBar =  self.navigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar?.tintColor = UIColor.black // TO Change
+        navigationBar?.tintColor = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
         navigationBar?.barTintColor = UIColor.white
         navigationBar?.shadowImage = UIImage()
     }
