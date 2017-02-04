@@ -98,6 +98,15 @@ class CounterViewController: UIViewController {
     }
     
     // MARK: View Controller Life Cycle
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let navigationBar =  self.navigationController?.navigationBar
+        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationBar?.tintColor = UIColor.black // TO Change
+        navigationBar?.barTintColor = UIColor.white
+        navigationBar?.shadowImage = UIImage()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
