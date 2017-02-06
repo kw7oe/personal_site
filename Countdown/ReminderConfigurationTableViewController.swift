@@ -37,15 +37,15 @@ class ReminderConfigurationTableViewController: UITableViewController {
         }
         else // Reminder in Add Mode
         {
-            let reminder = Reminder(identifier: "Reminder 1", content: reminderContentTextField.text!, time: datePicker.date, willRepeat: true)
+            let reminder = Reminder(identifier: Settings.reminderIdentifier.removeFirst(), content: reminderContentTextField.text!, time: datePicker.date, willRepeat: true)
             
             // Check if Settings.reminders exists
-            if let reminders = Settings.reminders { // If yes, change reminder's identifier
-                reminder.identifier = "Reminder \(reminders.count + 1)"
+            if Settings.reminders != nil { // If yes, change reminder's identifier
                 Settings.appendReminder(reminder: reminder)
             } else { // if no, directly append
                 Settings.appendReminder(reminder: reminder)
             }
+           
         }
         
         // Alert Controller

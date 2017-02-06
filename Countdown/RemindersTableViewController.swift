@@ -60,7 +60,7 @@ class RemindersTableViewController: UITableViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == Storyboard.AddReminderSegue {
             if let count = Settings.reminders?.count, count >= 3 {
-                let alertController = UIAlertController(title: "Note", message: "Only a maximum of 3 reminders are allow.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Note", message: "You can only add a maximum amount of 3 reminders. Less is more.", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -118,9 +118,10 @@ extension RemindersTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let identifier = data![indexPath.row].identifier
-            Settings.reminders?.remove(at: indexPath.row)
+            Settings.removeReminder(at: indexPath.row, withIdentifier: identifier)
             NotificationServices().removeNotification(withIdentifiers: [identifier])
             tableView.deleteRows(at: [indexPath], with: .fade)
+            print(Settings.reminderIdentifier)
             let rowLeft = tableView.numberOfRows(inSection: 0)
             if rowLeft == 0 {
                  tableView.reloadSections(IndexSet.init(integer: 0), with: UITableViewRowAnimation.automatic)

@@ -22,6 +22,7 @@ class Settings {
         static let ReminderContent = "Reminder Content"
         static let ReminderTime = "Reminder Time"
         static let Reminders = "Reminders"
+        static let ReminderIdentifiers = "Reminder Identifiers"
     }
     
     // MARK: Static Computed Properties
@@ -93,9 +94,28 @@ class Settings {
         }
     }
     
+    
+    static var reminderIdentifier: [String] {
+        get {
+            if let result = settings.object(forKey: Key.ReminderIdentifiers) as? [String] {
+                return result
+            }
+            
+            let array = [
+                "Reminder 1",
+                "Reminder 2",
+                "Reminder 3"
+            ]
+            settings.set(array, forKey: Key.ReminderIdentifiers)
+            return array
+        }
+        set {
+            settings.set(newValue, forKey: Key.ReminderIdentifiers)
+        }
+    }
+    
     // MAKR: Static Functions
     static func appendReminder(reminder: Reminder)  {
-        
         if reminders == nil { // Reminders Does Not Exists yet
             reminders = [reminder]
         } else if reminders!.count < reminderCounts { // Reminders Count < reminderCounts
@@ -105,9 +125,22 @@ class Settings {
         NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
     }
     
+    static func removeReminder(at index: Int, withIdentifier identifier: String) {
+        reminderIdentifier.prepend(element: identifier)
+        Settings.reminders?.remove(at: index)
+    }
+    
     static func updateReminderAt(index: Int, with reminder: Reminder) {
         reminders![index] = reminder
         NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
     }
     
-  }
+}
+
+extension Array {
+    mutating func prepend(element: Element) {
+        self.insert(element, at: 0)
+    }
+}
+
+
