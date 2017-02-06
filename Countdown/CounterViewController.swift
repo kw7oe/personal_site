@@ -37,13 +37,12 @@ class CounterViewController: UIViewController {
                     style: .default,
                     handler: { (action) in
                         Settings.date = Date.init()
-                        self.updateUI()
+                        self.setProgress()
                         self.timer = Timer.scheduledTimer(
                             withTimeInterval: 1,
                             repeats: true,
                             block: { (timer) in
                                 self.updateUI()
-                                self.setProgress()
                         })
                 }
                 )
@@ -52,7 +51,6 @@ class CounterViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         } else {
             Settings.date = Date.init()
-            updateUI()
             button.setTitle("RESET", for: .normal)
             timer = Timer.scheduledTimer(
                 withTimeInterval: 1,
@@ -91,37 +89,35 @@ class CounterViewController: UIViewController {
     }
     
     private func setProgress() {
-        let parseResult = Parser.parseToArray(time: time, basedOn: Parser.Format.Day)[0]
-        let progressDay = Int(parseResult.time)!
-        let percentage = (CGFloat(progressDay) / CGFloat(Settings.goal))
+        let parseResult = Parser.parseToArray(time: time, basedOn: Parser.Format.Hour)[0]
+        let progressHour = Int(parseResult.time)!
+        let percentage = (CGFloat(progressHour) / CGFloat(Settings.goal * 24))
         progressView.setProgress(with: percentage)
     }
     
     // MARK: View Controller Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let navigationBar =  self.navigationController?.navigationBar
-        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar?.tintColor = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
-        navigationBar?.barTintColor = UIColor.white
-        navigationBar?.shadowImage = UIImage()
+        self.navigationController?.navigationBar.none()
+        self.view.window?.tintColor = Color.primaryColor
+        self.view.backgroundColor = Color.backgroundColor
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         updateQuote()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setProgress()
         if Settings.dateStarted {
             button.setTitle("RESET", for: .normal)
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
                 self.updateUI()
             })
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setProgress()
     }
 }
 
@@ -132,6 +128,17 @@ extension CounterViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
+extension UINavigationBar {
+    
+    /** 
+    Remove Background and Bottom Border of Nagivation Bar
+     */
+    func none() {
+        self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.barTintColor = UIColor.white
+        self.shadowImage = UIImage()
+    }
+}
 
 
 

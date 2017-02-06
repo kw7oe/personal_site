@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509431E24894900B9B31D"
-               BuildableName = "Up.app"
-               BlueprintName = "Up"
-               ReferencedContainer = "container:Up.xcodeproj">
+               BuildableName = "Progressus.app"
+               BlueprintName = "Progressus"
+               ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509571E24894900B9B31D"
-               BuildableName = "UpTests.xctest"
-               BlueprintName = "UpTests"
-               ReferencedContainer = "container:Up.xcodeproj">
+               BuildableName = "ProgressusTests.xctest"
+               BlueprintName = "ProgressusTests"
+               ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7509621E24894900B9B31D"
-               BuildableName = "UpUITests.xctest"
-               BlueprintName = "UpUITests"
-               ReferencedContainer = "container:Up.xcodeproj">
+               BuildableName = "ProgressusUITests.xctest"
+               BlueprintName = "ProgressusUITests"
+               ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Up.app"
-            BlueprintName = "Up"
-            ReferencedContainer = "container:Up.xcodeproj">
+            BuildableName = "Progressus.app"
+            BlueprintName = "Progressus"
+            ReferencedContainer = "container:Progressus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Up.app"
-            BlueprintName = "Up"
-            ReferencedContainer = "container:Up.xcodeproj">
+            BuildableName = "Progressus.app"
+            BlueprintName = "Progressus"
+            ReferencedContainer = "container:Progressus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7509431E24894900B9B31D"
-            BuildableName = "Up.app"
-            BlueprintName = "Up"
-            ReferencedContainer = "container:Up.xcodeproj">
+            BuildableName = "Progressus.app"
+            BlueprintName = "Progressus"
+            ReferencedContainer = "container:Progressus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Chu-Wm-oWj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-9a-ob5">
-                                <rect key="frame" x="16" y="211" width="343" height="245"/>
+                                <rect key="frame" x="16" y="167" width="343" height="333"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,13 +52,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oJQ-YS-3xU">
-                                <rect key="frame" x="16" y="64" width="343" height="563"/>
+                                <rect key="frame" x="16" y="20" width="343" height="607"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRq-92-Dof" customClass="ProgressPieView" customModule="Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-zo-ebF">
-                                                <rect key="frame" x="116.5" y="294.5" width="111" height="41.5"/>
+                                                <rect key="frame" x="116" y="294" width="111" height="41.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Kr-7J8">
                                                         <rect key="frame" x="0.0" y="0.0" width="111" height="20.5"/>
@@ -74,7 +70,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0s-29-M8D">
-                                                                <rect key="frame" x="49.5" y="0.0" width="61.5" height="20.5"/>
+                                                                <rect key="frame" x="49" y="0.0" width="61.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -82,7 +78,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="3 days 23 hours" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5V-1r-Chl">
-                                                        <rect key="frame" x="0.0" y="25.5" width="111" height="16"/>
+                                                        <rect key="frame" x="0.0" y="25" width="111" height="16"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -98,19 +94,19 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="16J-bH-xlv">
-                                        <rect key="frame" x="63" y="363" width="217.5" height="200"/>
+                                        <rect key="frame" x="58" y="363" width="226.5" height="244"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="YID-g8-nNI">
-                                                <rect key="frame" x="0.0" y="0.0" width="217.5" height="60.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="226.5" height="60.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Don't Give Up. Don't Lose Hope. Don't Sell Out." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="rir-PN-7l7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="217.5" height="35.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Don't Give Progressus. Don't Lose Hope. Don't Sell Out." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="rir-PN-7l7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="35.5"/>
                                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Christopher Reeve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzz-2M-Ec8">
-                                                        <rect key="frame" x="59.5" y="44.5" width="98.5" height="16"/>
+                                                        <rect key="frame" x="64" y="44" width="98.5" height="16"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -119,10 +115,10 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-OP-0Qp" customClass="RadiusButton" customModule="Up" customModuleProvider="target">
-                                                <rect key="frame" x="67.5" y="160" width="82" height="40"/>
+                                                <rect key="frame" x="72" y="208" width="82" height="36"/>
                                                 <color key="backgroundColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="MWw-b7-S8q"/>
+                                                    <constraint firstAttribute="height" constant="36" id="MWw-b7-S8q"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
@@ -140,7 +136,7 @@
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oJQ-YS-3xU" firstAttribute="top" secondItem="4U1-0Z-49Z" secondAttribute="bottom" id="Xov-41-iIy"/>
                             <constraint firstItem="oJQ-YS-3xU" firstAttribute="trailing" secondItem="oqK-TC-gMn" secondAttribute="trailingMargin" id="ckA-bp-02N"/>
@@ -150,7 +146,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
                         <barButtonItem key="rightBarButtonItem" image="Settings" id="O4Q-mY-PeU">
-                            <color key="tintColor" red="0.25882352941176467" green="0.49019607843137253" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="076-7C-ni5" kind="show" identifier="Settings Segue" id="YHu-M6-VWQ"/>
                             </connections>
@@ -318,13 +313,13 @@
         <scene sceneID="zLi-Ey-ABl">
             <objects>
                 <tableViewController id="b6h-xE-yjP" customClass="RemindersTableViewController" customModule="Up" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="09Y-mn-PiS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="09Y-mn-PiS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reminder Cell" textLabel="T96-qu-UDt" detailTextLabel="Ev1-Ev-1jY" style="IBUITableViewCellStyleValue1" id="FQp-V4-aGw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQp-V4-aGw" id="u1w-lN-hTP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -359,7 +354,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NkV-2h-v8t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RPW-Dy-Dzj">
-                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="PyK-XX-ror" kind="presentation" identifier="Add Reminder Segue" id="PKJ-9A-O1p"/>
                             </connections>
@@ -393,7 +387,7 @@
                                                     <rect key="frame" x="8" y="8" width="359" height="27"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardType="alphabet"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -443,13 +437,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="TMb-XX-n4s">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jmr-EV-tUT">
-                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="xCX-Sw-JeH" id="Dqa-hU-N4M"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="65x-xm-w4F">
-                            <color key="tintColor" red="0.25882352939999997" green="0.49019607840000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveReminder:" destination="xCX-Sw-JeH" id="loO-de-FOO"/>
                             </connections>
@@ -458,6 +450,7 @@
                     <connections>
                         <outlet property="datePicker" destination="X7y-J1-Brl" id="lWW-zB-C8B"/>
                         <outlet property="reminderContentTextField" destination="9Mt-iO-sO1" id="MZ8-BB-Pxo"/>
+                        <outlet property="saveButton" destination="65x-xm-w4F" id="7Xd-LF-flH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yD6-bj-u5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,7 +499,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="heC-zE-nAo">
-                                <rect key="frame" x="16" y="225.5" width="343" height="216"/>
+                                <rect key="frame" x="16" y="225" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="505819213.16282302">
                                     <!--2017-01-11 09:20:13 +0000-->
                                 </date>
@@ -553,7 +546,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Settings" width="25" height="24"/>
+        <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PKJ-9A-O1p"/>

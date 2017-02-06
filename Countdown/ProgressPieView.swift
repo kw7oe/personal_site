@@ -25,6 +25,7 @@ class ProgressPieView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.backgroundColor = Color.backgroundColor
         let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY - bounds.width / 12)
         let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
         setProgressLayer(with: path)
@@ -45,8 +46,8 @@ class ProgressPieView: UIView {
     
     // MARK: Private Method
     private func setProgressLayer(with path: UIBezierPath) {
-        initialLayer.drawProgress(with: path, color: UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 0.5))
-        progressLayer.drawProgress(with: path, color:  UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1), strokeEnd: 0)
+        initialLayer.drawProgress(with: path, color: Color.lighterPrimaryColor)
+        progressLayer.drawProgress(with: path, color: Color.primaryColor, strokeEnd: 0)
         self.layer.addSublayer(initialLayer)
         self.layer.addSublayer(progressLayer)
     }
@@ -56,7 +57,18 @@ class ProgressPieView: UIView {
         if percentage < 1 {
             percentageText = String.init(format: "%.1f", percentage * 100)
         }
-        label.text = "\(percentageText)\n percent"
+        label.attributedText = styleString(percentageText, unit: "percent")
+    }
+    
+    private func styleString(_ text: String, unit: String) -> NSMutableAttributedString {
+        let bold: [String:Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 36)]
+        let italic: [String:Any] = [NSFontAttributeName: UIFont.italicSystemFont(ofSize: 16)]
+        let result = NSMutableAttributedString()
+        let string = NSMutableAttributedString(string: "\(text)\n", attributes: bold)
+        let unitString = NSMutableAttributedString(string: unit, attributes: italic)
+        result.append(string)
+        result.append(unitString)
+        return result
     }
     
     private func setupLabel(at position: CGPoint) {

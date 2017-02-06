@@ -23,9 +23,6 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         Settings.goal = data[row]
         
-        let notificationService = NotificationServices()
-        notificationService.delegate = self
-        notificationService.scheduleNotification()
         let alertController = UIAlertController(title: "Your goal has been set to \(data[row]) days.", message: nil, preferredStyle: .alert)
         alertController.addAction(
             UIAlertAction(
@@ -34,9 +31,7 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
                 handler: nil
             )
         )
-        
         present(alertController, animated: true, completion: nil)
-
     }
       
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -45,11 +40,17 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
         label.textAlignment = .center
         return label
     }
+    
+    
+    // MARK: View Life Cycle
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = Color.backgroundColor
+    }
 
 }
 
 extension SetGoalViewController: UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -57,15 +58,7 @@ extension SetGoalViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return data.count
-    }
-    
+    }    
 }
 
-extension SetGoalViewController: NotificationServicesDelegate {
-    func nameOfIdentifiers() -> String { return "goalNotification" }
-    func contentOfNotification() -> String { return "Congratulations" }
-    func willRepeat() -> Bool { return false }
-    func dateFormat() -> DateComponentFormat { return DateComponentFormat.full }
-    func date() -> Date { return Settings.goalDate }
-}
 

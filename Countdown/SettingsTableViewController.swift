@@ -48,7 +48,7 @@ class SettingsTableViewController: UITableViewController {
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Color.backgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

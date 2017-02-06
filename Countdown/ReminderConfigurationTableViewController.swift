@@ -23,30 +23,33 @@ class ReminderConfigurationTableViewController: UITableViewController {
             reminderContentTextField.text = reminder?.content ?? "Nothing can stop the man with the right mental attitude from achieving his goal."
         }
     }
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var datePicker: UIDatePicker!
             
     // MARK: Target Action
     @IBAction func saveReminder(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
         
-        if let reminder = self.reminder {
+        if let reminder = self.reminder // Reminder In Edit Mode
+        {
             reminder.content = reminderContentTextField.text!
             reminder.time = datePicker.date
             Settings.updateReminderAt(index: reminderIndex!, with: reminder)
-        } else {
+        }
+        else // Reminder in Add Mode
+        {
             let reminder = Reminder(identifier: "Reminder 1", content: reminderContentTextField.text!, time: datePicker.date, willRepeat: true)
             
-            
-            if let reminders = Settings.reminders {
+            // Check if Settings.reminders exists
+            if let reminders = Settings.reminders { // If yes, change reminder's identifier
                 reminder.identifier = "Reminder \(reminders.count + 1)"
-                let needDisplayAlert = Settings.appendReminder(reminder: reminder)
-                if needDisplayAlert {
-                    alertController.message = "Note: Only a maximum of 3 reminders are allow. The first reminder will be removed."
-                }
-            } else {
-                _ = Settings.appendReminder(reminder: reminder)
+                Settings.appendReminder(reminder: reminder)
+            } else { // if no, directly append
+                Settings.appendReminder(reminder: reminder)
             }
         }
+        
+        // Alert Controller
+        let alertController = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
         alertController.transitioningDelegate = self
         alertController.modalPresentationStyle = .custom
         alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
@@ -65,15 +68,23 @@ class ReminderConfigurationTableViewController: UITableViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    
     // MARK: View Life Cycle
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = Color.backgroundColor
+        self.navigationController?.navigationBar.none()
+        saveButton.style = .done
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        datePicker.date = reminder?.time ?? Date.init()
         tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.date = reminder?.time ?? Date.init()
     }
 
 }

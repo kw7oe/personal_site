@@ -43,7 +43,6 @@ class Settings {
                 return result
             }
             
-            // Code Smell: Code Duplication
             let date = Date.init()
             settings.set(date, forKey: Key.Date)
             return date
@@ -95,25 +94,15 @@ class Settings {
     }
     
     // MAKR: Static Functions
-    static func appendReminder(reminder: Reminder) -> Bool {
-        var result: Bool;
+    static func appendReminder(reminder: Reminder)  {
         
         if reminders == nil { // Reminders Does Not Exists yet
             reminders = [reminder]
-            result = false
         } else if reminders!.count < reminderCounts { // Reminders Count < reminderCounts
             reminders!.append(reminder)
-            result = false
-        } else {
-            let identifier = reminders!.first!.identifier
-            reminder.identifier = identifier
-            reminders!.removeFirst()
-            reminders!.append(reminder)
-            result = true
         }
         
         NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
-        return result
     }
     
     static func updateReminderAt(index: Int, with reminder: Reminder) {
