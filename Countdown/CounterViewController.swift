@@ -27,39 +27,42 @@ class CounterViewController: UIViewController {
     
     // MARK: Target Action
     @IBAction func resetTime(_ sender: UIButton) {
-        
         if Settings.dateStarted {
-            let alertController = UIAlertController(title: "Are you sure you want to reset?", message: nil, preferredStyle: .alert)
-            alertController.transitioningDelegate = self
-            alertController.addAction(
-                UIAlertAction(
-                    title: "OK",
-                    style: .default,
-                    handler: { (action) in
-                        Settings.date = Date.init()
-                        self.setProgress()
-                        self.timer = Timer.scheduledTimer(
-                            withTimeInterval: 1,
-                            repeats: true,
-                            block: { (timer) in
-                                self.updateUI()
-                        })
-                }
-                )
-            )
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            present(alertController, animated: true, completion: nil)
+            resetTimer()
         } else {
-            Settings.date = Date.init()
-            button.setTitle("RESET", for: .normal)
-            timer = Timer.scheduledTimer(
-                withTimeInterval: 1,
-                repeats: true,
-                block: { (timer) in
-                    self.updateUI()
-            })
-
+            startTimer()
         }
+    }
+    
+    private func resetTimer() {
+        let alertController = UIAlertController(title: "Are you sure you want to reset?", message: nil, preferredStyle: .alert)
+        alertController.transitioningDelegate = self
+        alertController.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: { (action) in
+                    Settings.date = Date.init()
+                    Settings.dateStarted = false
+                    self.button.setTitle("START", for: .normal)
+                    self.setProgress()
+                    self.updateUI()
+                }
+            )
+        )
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func startTimer() {
+        Settings.date = Date.init()
+        button.setTitle("RESET", for: .normal)
+        timer = Timer.scheduledTimer(
+            withTimeInterval: 1,
+            repeats: true,
+            block: { (timer) in
+                self.updateUI()
+        })
     }
     
     // MARK: Private Methods

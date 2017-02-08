@@ -15,12 +15,13 @@ class ReminderConfigurationTableViewController: UITableViewController {
     var reminder: Reminder?
     var reminderIndex: Int?
     var alertTitle = ""
+    let defaultContent = "Nothing can stop the man with the right mental attitude from achieving his goal."
    
     // MARK: View Outlet
     @IBOutlet weak var reminderContentTextField: UITextField! {
         didSet {
             reminderContentTextField.delegate = self
-            reminderContentTextField.text = reminder?.content ?? "Nothing can stop the man with the right mental attitude from achieving his goal."
+            reminderContentTextField.text = reminder?.content ?? defaultContent
         }
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -28,16 +29,19 @@ class ReminderConfigurationTableViewController: UITableViewController {
             
     // MARK: Target Action
     @IBAction func saveReminder(_ sender: UIBarButtonItem) {
-        
+        var content = reminderContentTextField.text
+        if content == nil || content == "" {
+            content = defaultContent
+        }
         if let reminder = self.reminder // Reminder In Edit Mode
         {
-            reminder.content = reminderContentTextField.text!
+            reminder.content = content!
             reminder.time = datePicker.date
             Settings.updateReminderAt(index: reminderIndex!, with: reminder)
         }
         else // Reminder in Add Mode
         {
-            let reminder = Reminder(identifier: Settings.reminderIdentifier.removeFirst(), content: reminderContentTextField.text!, time: datePicker.date, willRepeat: true)
+            let reminder = Reminder(identifier: Settings.reminderIdentifier.removeFirst(), content: content!, time: datePicker.date, willRepeat: true)
             
             // Check if Settings.reminders exists
             if Settings.reminders != nil { // If yes, change reminder's identifier
