@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import MessageUI
 
 class SettingsTableViewController: UITableViewController {
     
@@ -45,6 +46,29 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func sendEmail(_ sender: UIButton) {
+        if MFMailComposeViewController.canSendMail() {
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            
+            mailVC.setToRecipients(["choongkwern@hotmail.com"])
+            mailVC.setSubject("Progressus - Feedback")
+            
+            present(mailVC, animated: true, completion: nil)
+
+        } else {
+            let alertController = UIAlertController(title: "Sorry", message: "Mail services are not available", preferredStyle: .alert)
+            alertController.transitioningDelegate = self
+            alertController.addAction(
+                UIAlertAction(
+                    title: "OK",
+                    style: .default,
+                    handler: nil
+                )
+            )
+            present(alertController, animated: true, completion: nil)
+        }
+    }
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -75,7 +99,41 @@ class SettingsTableViewController: UITableViewController {
         }
         return cell
     }
-    
+}
+
+// MARK: MFMailCompose View Controller Delegate Extension
+extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alertController.transitioningDelegate = self
+        alertController.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: nil
+            )
+        )
+        switch result {
+        case .sent:
+            alertController.message = "Successfully send email. Thank you for the feedback."
+        case .failed:
+            alertController.message = "Fail to send email. Please try again later."
+        default:
+            break;
+        }
+        controller.dismiss(animated: true) { completed in
+            if alertController.message != nil  {
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+}
+
+// MARK: UIViewController Transitioning Delegate Extension
+extension SettingsTableViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentAnimationController()
+    }
 }
 
 // MARK: Table View Cell Extension

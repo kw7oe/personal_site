@@ -61,6 +61,7 @@ class RemindersTableViewController: UITableViewController {
         if identifier == Storyboard.AddReminderSegue {
             if let count = Settings.reminders?.count, count >= 3 {
                 let alertController = UIAlertController(title: "Note", message: "You can only add a maximum amount of 3 reminders. Less is more.", preferredStyle: .alert)
+                alertController.transitioningDelegate = self
                 alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -129,5 +130,13 @@ extension RemindersTableViewController {
            
         }
     }
-
 }
+
+// MARK: UIViewControllerTransitioning Delegate
+extension RemindersTableViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentAnimationController()
+    }
+}
+
+

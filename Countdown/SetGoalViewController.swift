@@ -24,6 +24,7 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
         Settings.goal = data[row]
         
         let alertController = UIAlertController(title: "Your goal has been set to \(data[row]) days.", message: nil, preferredStyle: .alert)
+        alertController.transitioningDelegate = self
         alertController.addAction(
             UIAlertAction(
                 title: "OK",
@@ -48,6 +49,13 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
         self.view.backgroundColor = Color.backgroundColor
     }
 
+}
+
+// MARK: UIViewController Transitioning Delegate Extension
+extension SetGoalViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentAnimationController()
+    }
 }
 
 extension SetGoalViewController: UIPickerViewDataSource {
