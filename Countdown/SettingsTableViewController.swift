@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: Storyboard
     private struct Storyboard {
-        static let AddReminder = "Add Reminder"
+        static let EnableReminder = "Enable Reminder"
         static let ViewAllReminders = "View All Reminders"
         static let SetStartDate = "Set Start Date"
         static let SetGoal = "Set Goal"
@@ -83,8 +83,8 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        if cell.reuseIdentifier == Storyboard.AddReminder {
-            cell.enable(on: Settings.isReminderOn)
+        if cell.reuseIdentifier == Storyboard.EnableReminder {
+            
         }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
             cell.enable(on: Settings.isReminderOn)
@@ -97,6 +97,9 @@ class SettingsTableViewController: UITableViewController {
         else if cell.reuseIdentifier == Storyboard.SetGoal {
             cell.addGrayDetail(text: String(Settings.goal) + " Days")
         }
+        
+        // Dark Theme
+        cell.black()
         return cell
     }
 }
@@ -148,5 +151,11 @@ extension UITableViewCell {
     func addGrayDetail(text: String) {
         self.detailTextLabel?.text = text
         self.detailTextLabel?.textColor = UIColor.gray
+    }
+    
+    // Dark Theme
+    func black() {
+        self.backgroundColor = Color.backgroundColor
+        self.textLabel?.textColor = UIColor.init(white: 0.98, alpha: 1)
     }
 }

@@ -39,6 +39,9 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width, height: 37))
         label.text = String(data[row]) + String.pluralize(data[row], input: "day")
         label.textAlignment = .center
+        
+        // Dark Theme
+        label.updateFontColor()
         return label
     }
     

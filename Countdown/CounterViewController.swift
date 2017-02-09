@@ -104,6 +104,13 @@ class CounterViewController: UIViewController {
         self.navigationController?.navigationBar.none()
         self.view.window?.tintColor = Color.primaryColor
         self.view.backgroundColor = Color.backgroundColor
+        
+        // Dark Theme
+        descriptionLabel.updateFontColor()
+        timeLabel.updateFontColor()
+        timeUnitLabel.updateFontColor()
+        authorLabel.updateFontColor()
+        quoteLabel.updateFontColor()
     }
 
     override func viewDidLoad() {
@@ -132,7 +139,6 @@ extension CounterViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension UINavigationBar {
-    
     /** 
     Remove Background and Bottom Border of Nagivation Bar
      */
@@ -140,6 +146,14 @@ extension UINavigationBar {
         self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.barTintColor = UIColor.white
         self.shadowImage = UIImage()
+    }
+}
+
+extension UILabel {
+    
+    // Dark Theme
+    func updateFontColor() {
+        self.textColor = UIColor.init(white: 0.98, alpha: 1)
     }
 }
 

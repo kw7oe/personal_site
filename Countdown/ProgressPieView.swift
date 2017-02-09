@@ -76,6 +76,7 @@ class ProgressPieView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 2
         label.center = position
+        label.updateFontColor()
         addSubview(label)
     }
 }

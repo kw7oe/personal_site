@@ -22,6 +22,11 @@ class ReminderConfigurationTableViewController: UITableViewController {
         didSet {
             reminderContentTextField.delegate = self
             reminderContentTextField.text = reminder?.content ?? defaultContent
+            
+            // Dark Theme
+            reminderContentTextField.textColor = UIColor.white
+            reminderContentTextField.attributedPlaceholder =
+                NSAttributedString(string: "Write Some Encouraging Words For Yourself", attributes: [NSForegroundColorAttributeName : UIColor.init(white: 0.60, alpha: 1)])
         }
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -72,6 +77,15 @@ class ReminderConfigurationTableViewController: UITableViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Table
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        // Dark Theme
+        cell.black()
+        return cell
+    }
+    
     
     // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
@@ -84,6 +98,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         datePicker.date = reminder?.time ?? Date.init()
+        datePicker.changeToWhiteFont()
         tableView.reloadData()
     }
     

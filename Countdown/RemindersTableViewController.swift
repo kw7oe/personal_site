@@ -109,6 +109,8 @@ extension RemindersTableViewController {
         cell.textLabel?.text = data?[indexPath.row].identifier
         cell.addGrayDetail(text: Parser.parse(time: data?[indexPath.row].time))
         
+        // Dark Theme
+        cell.black()
         return cell
     }
     

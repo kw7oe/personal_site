@@ -32,5 +32,17 @@ class DateViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.view.backgroundColor = Color.backgroundColor        
         datePicker.maximumDate = Date.init()
+        
+        // Dark Theme
+        datePicker.changeToWhiteFont()
+    }
+}
+
+extension UIDatePicker {
+    
+    // Dark Theme
+    func changeToWhiteFont() {
+        self.setValue(UIColor.white, forKey: "textColor")
+        self.setValue(false, forKey: "highlightsToday")
     }
 }
