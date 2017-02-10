@@ -25,7 +25,7 @@ class ProgressPieView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = Color.backgroundColor
+        self.backgroundColor = Color.backgroundColor()
         let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY - bounds.width / 12)
         let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
         setProgressLayer(with: path)
@@ -46,8 +46,8 @@ class ProgressPieView: UIView {
     
     // MARK: Private Method
     private func setProgressLayer(with path: UIBezierPath) {
-        initialLayer.drawProgress(with: path, color: Color.lighterPrimaryColor)
-        progressLayer.drawProgress(with: path, color: Color.primaryColor, strokeEnd: 0)
+        initialLayer.drawProgress(with: path, color: Color.lighterPrimaryColor())
+        progressLayer.drawProgress(with: path, color: Color.primaryColor(), strokeEnd: 0)
         self.layer.addSublayer(initialLayer)
         self.layer.addSublayer(progressLayer)
     }

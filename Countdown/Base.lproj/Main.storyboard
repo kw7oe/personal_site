@@ -297,10 +297,45 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Styling" id="BCN-F9-MgD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Enable Dark Theme" id="dqC-vT-Z8d">
+                                        <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="dqC-vT-Z8d" id="owu-tk-9Bc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66p-aJ-n71">
+                                                    <rect key="frame" x="15" y="11" width="138" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="138" id="Yyr-br-taa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9D-ee-Pzp">
+                                                    <rect key="frame" x="311" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleDarkTheme:" destination="076-7C-ni5" eventType="valueChanged" id="mIL-wN-him"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="d9D-ee-Pzp" firstAttribute="trailing" secondItem="owu-tk-9Bc" secondAttribute="trailingMargin" id="3gy-Y1-bCO"/>
+                                                <constraint firstItem="66p-aJ-n71" firstAttribute="centerY" secondItem="owu-tk-9Bc" secondAttribute="centerY" id="PYH-jB-zCt"/>
+                                                <constraint firstItem="66p-aJ-n71" firstAttribute="leading" secondItem="owu-tk-9Bc" secondAttribute="leadingMargin" id="ZCO-s8-M4s"/>
+                                                <constraint firstItem="66p-aJ-n71" firstAttribute="centerY" secondItem="d9D-ee-Pzp" secondAttribute="centerY" id="xPy-n2-gg3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="S3O-da-pCo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Yjq-At-T1r">
-                                        <rect key="frame" x="0.0" y="323.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="423.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yjq-At-T1r" id="dF1-SG-FBo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -331,6 +366,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="zdV-6C-epS"/>
                     <connections>
+                        <outlet property="darkThemeLabel" destination="66p-aJ-n71" id="WZh-xp-X8B"/>
+                        <outlet property="darkThemeSwitch" destination="d9D-ee-Pzp" id="bLj-dM-tTS"/>
+                        <outlet property="enableReminderLabel" destination="TWS-fA-iqm" id="TJd-zC-Wz9"/>
                         <outlet property="reminderOnSwitch" destination="o5S-oL-c9g" id="mcx-1k-TIf"/>
                     </connections>
                 </tableViewController>

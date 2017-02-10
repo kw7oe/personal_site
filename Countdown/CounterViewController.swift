@@ -102,8 +102,8 @@ class CounterViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.navigationBar.none()
-        self.view.window?.tintColor = Color.primaryColor
-        self.view.backgroundColor = Color.backgroundColor
+        self.view.window?.tintColor = Color.primaryColor()
+        self.view.backgroundColor = Color.backgroundColor()
         
         // Dark Theme
         descriptionLabel.updateFontColor()
@@ -153,7 +153,7 @@ extension UILabel {
     
     // Dark Theme
     func updateFontColor() {
-        self.textColor = UIColor.init(white: 0.98, alpha: 1)
+        self.textColor = Color.textColor()
     }
 }
 

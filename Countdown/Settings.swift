@@ -23,6 +23,7 @@ class Settings {
         static let ReminderTime = "Reminder Time"
         static let Reminders = "Reminders"
         static let ReminderIdentifiers = "Reminder Identifiers"
+        static let Theme = "Theme"
     }
     
     // MARK: Static Computed Properties
@@ -114,7 +115,20 @@ class Settings {
         }
     }
     
-    // MAKR: Static Functions
+    // MARK: DARK THEME
+    static var theme: Theme {
+        get {
+            if let result = settings.object(forKey: Key.Theme) as? String {
+                return Theme(rawValue: result)!
+            }
+            return .blue
+        }
+        set {
+            settings.set(newValue.rawValue, forKey: Key.Theme)
+        }
+    }
+    
+    // MARK: Static Functions
     static func appendReminder(reminder: Reminder)  {
         if reminders == nil { // Reminders Does Not Exists yet
             reminders = [reminder]
@@ -141,6 +155,11 @@ extension Array {
     mutating func prepend(element: Element) {
         self.insert(element, at: 0)
     }
+}
+
+enum Theme: String {
+    case blue = "Blue"
+    case dark = "Dark"
 }
 
 

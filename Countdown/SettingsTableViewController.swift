@@ -15,18 +15,27 @@ class SettingsTableViewController: UITableViewController {
     // MARK: Storyboard
     private struct Storyboard {
         static let EnableReminder = "Enable Reminder"
+        static let EnableDarkTheme = "Enable Dark Theme"
         static let ViewAllReminders = "View All Reminders"
         static let SetStartDate = "Set Start Date"
         static let SetGoal = "Set Goal"
     }
     
-    // MARK: Target Action
+    // MARK: View Outlet
     @IBOutlet weak var reminderOnSwitch: UISwitch! {
         didSet {
             reminderOnSwitch.isOn = Settings.isReminderOn
         }
     }
+    @IBOutlet weak var darkThemeSwitch: UISwitch! {
+        didSet {
+            darkThemeSwitch.isOn = Settings.theme == .dark
+        }
+    }
+    @IBOutlet weak var enableReminderLabel: UILabel!
+    @IBOutlet weak var darkThemeLabel: UILabel!
     
+    // MARK: Target Action
     @IBAction func toggleReminderSwitch(_ sender: UISwitch) {
         let notificationService = NotificationServices()
         
@@ -46,6 +55,18 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func toggleDarkTheme(_ sender: UISwitch) {
+        if sender.isOn {
+            Settings.theme = .dark
+        } else {
+            Settings.theme = .blue
+        }
+        
+        view.setNeedsDisplay()
+        view.setNeedsLayout()
+        tableView.reloadData()
+    }
+
     @IBAction func sendEmail(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             let mailVC = MFMailComposeViewController()
@@ -72,7 +93,7 @@ class SettingsTableViewController: UITableViewController {
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = Color.backgroundColor
+        self.view.backgroundColor = Color.backgroundColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +105,10 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.EnableReminder {
-            
+            enableReminderLabel.updateFontColor()
+        }
+        else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {            
+            darkThemeLabel.updateFontColor()
         }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
             cell.enable(on: Settings.isReminderOn)
@@ -155,7 +179,7 @@ extension UITableViewCell {
     
     // Dark Theme
     func black() {
-        self.backgroundColor = Color.backgroundColor
-        self.textLabel?.textColor = UIColor.init(white: 0.98, alpha: 1)
+        self.backgroundColor = Color.backgroundColor()
+        self.textLabel?.textColor = Color.textColor()
     }
 }

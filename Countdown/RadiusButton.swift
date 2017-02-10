@@ -16,7 +16,7 @@ class RadiusButton: UIButton {
         super.layoutSubviews()
         self.layer.cornerRadius = 18.0
         self.layer.shadowRadius = 5.0
-        self.backgroundColor = Color.primaryColor        
+        self.backgroundColor = Color.primaryColor()
     }
 
 }

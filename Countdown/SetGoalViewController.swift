@@ -49,7 +49,7 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = Color.backgroundColor
+        self.view.backgroundColor = Color.backgroundColor()
     }
 
 }
