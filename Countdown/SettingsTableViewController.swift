@@ -62,9 +62,7 @@ class SettingsTableViewController: UITableViewController {
             Settings.theme = .blue
         }
         
-        view.setNeedsDisplay()
-        view.setNeedsLayout()
-        tableView.reloadData()
+        updateUI()
     }
 
     @IBAction func sendEmail(_ sender: UIButton) {
@@ -125,6 +123,14 @@ class SettingsTableViewController: UITableViewController {
         // Dark Theme
         cell.black()
         return cell
+    }
+    
+    // MARK: Private Method 
+    private func updateUI() {
+        view.setNeedsDisplay()
+        view.setNeedsLayout()
+        view.window?.tintColor = Color.primaryColor()
+        tableView.reloadData()
     }
 }
 

@@ -10,35 +10,48 @@ import Foundation
 import UIKit
 
 struct Color {
+    
+    private struct Colors {
+        static var white = UIColor.init(white: 0.98, alpha: 1)
+        static var black = UIColor.init(white: 0.02, alpha: 1)
+        static var gray = UIColor.init(white: 0.60, alpha: 1)
+        // #427dd6
+        static var blue = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
+        // #42a2d6
+        static var moderateBlue = UIColor.init(red: 0.259, green: 0.635, blue: 0.839, alpha: 1)
+        // #42c7d6
+        static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
+    }
+    
     static func backgroundColor() -> UIColor {
         if Settings.theme == .blue {
-            return UIColor.init(white: 0.98, alpha: 1)
+            return Colors.white
         }
-        return UIColor.init(white: 0.02, alpha: 1)
+        return Colors.black
     }
     
     static func textColor() -> UIColor {
         if Settings.theme == .blue {
-            return UIColor.init(white: 0.02, alpha: 1)
+            return Colors.black
         }
-        return UIColor.init(white: 0.98, alpha: 1)
+        return Colors.white
     }
     
     static func placeholderColor() -> UIColor {
-        return UIColor.init(white: 0.60, alpha: 1)
+        return Colors.gray
     }
     
     static func primaryColor() -> UIColor {
         if Settings.theme == .blue {
-            return UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
+            return Colors.blue
         }
-        return UIColor.init(red: 0.839, green: 0.753, blue: 0.259, alpha: 1) // #d69b42
+        return Colors.moderateBlue
     }
     
     static func lighterPrimaryColor() -> UIColor {
         if Settings.theme == .blue {
-            return UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 0.5)
+            return Colors.blue.withAlphaComponent(0.5)
         }
-        return UIColor.init(red: 0.839, green: 0.753, blue: 0.259, alpha: 0.5)
+        return Colors.moderateBlue.withAlphaComponent(0.5)
     }
 }
