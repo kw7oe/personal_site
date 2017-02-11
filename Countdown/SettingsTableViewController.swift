@@ -91,7 +91,7 @@ class SettingsTableViewController: UITableViewController {
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = Color.backgroundColor()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +105,7 @@ class SettingsTableViewController: UITableViewController {
         if cell.reuseIdentifier == Storyboard.EnableReminder {
             enableReminderLabel.updateFontColor()
         }
-        else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {            
+        else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {
             darkThemeLabel.updateFontColor()
         }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
@@ -129,9 +129,11 @@ class SettingsTableViewController: UITableViewController {
     private func updateUI() {
         view.setNeedsDisplay()
         view.setNeedsLayout()
-        view.window?.tintColor = Color.primaryColor()
+        view.window?.tintColor = CustomTheme.primaryColor()
         tableView.reloadData()
+        navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
+
 }
 
 // MARK: MFMailCompose View Controller Delegate Extension
@@ -185,7 +187,7 @@ extension UITableViewCell {
     
     // Dark Theme
     func black() {
-        self.backgroundColor = Color.backgroundColor()
-        self.textLabel?.textColor = Color.textColor()
+        self.backgroundColor = CustomTheme.backgroundColor()
+        self.textLabel?.textColor = CustomTheme.textColor()
     }
 }

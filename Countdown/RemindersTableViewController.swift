@@ -25,7 +25,7 @@ class RemindersTableViewController: UITableViewController {
     // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = Color.backgroundColor()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {

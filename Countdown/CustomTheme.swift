@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Color {
+struct CustomTheme {
     
     private struct Colors {
         static var white = UIColor.init(white: 0.98, alpha: 1)
@@ -28,6 +28,13 @@ struct Color {
             return Colors.white
         }
         return Colors.black
+    }
+    
+    static func barStyle() -> UIBarStyle {
+        if Settings.theme == .blue {
+            return UIBarStyle.default
+        }
+        return UIBarStyle.black
     }
     
     static func textColor() -> UIColor {

@@ -24,9 +24,9 @@ class ReminderConfigurationTableViewController: UITableViewController {
             reminderContentTextField.text = reminder?.content ?? defaultContent
             
             // Dark Theme
-            reminderContentTextField.textColor = Color.textColor()
+            reminderContentTextField.textColor = CustomTheme.textColor()
             reminderContentTextField.attributedPlaceholder =
-                NSAttributedString(string: "Write Some Encouraging Words For Yourself", attributes: [NSForegroundColorAttributeName : Color.placeholderColor()])
+                NSAttributedString(string: "Write Some Encouraging Words For Yourself", attributes: [NSForegroundColorAttributeName : CustomTheme.placeholderColor()])
         }
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -90,7 +90,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
     // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = Color.backgroundColor()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
         self.navigationController?.navigationBar.none()
         saveButton.style = .done
     }

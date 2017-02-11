@@ -151,15 +151,4 @@ class Settings {
     
 }
 
-extension Array {
-    mutating func prepend(element: Element) {
-        self.insert(element, at: 0)
-    }
-}
-
-enum Theme: String {
-    case blue = "Blue"
-    case dark = "Dark"
-}
-
 

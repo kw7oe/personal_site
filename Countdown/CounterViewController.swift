@@ -102,8 +102,8 @@ class CounterViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.navigationBar.none()
-        self.view.window?.tintColor = Color.primaryColor()
-        self.view.backgroundColor = Color.backgroundColor()
+        self.view.window?.tintColor = CustomTheme.primaryColor()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
         
         // Dark Theme
         descriptionLabel.updateFontColor()
@@ -138,24 +138,6 @@ extension CounterViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension UINavigationBar {
-    /** 
-    Remove Background and Bottom Border of Nagivation Bar
-     */
-    func none() {
-        self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.barTintColor = UIColor.white
-        self.shadowImage = UIImage()
-    }
-}
-
-extension UILabel {
-    
-    // Dark Theme
-    func updateFontColor() {
-        self.textColor = Color.textColor()
-    }
-}
 
 
 
