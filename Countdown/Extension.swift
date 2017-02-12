@@ -22,7 +22,6 @@ extension Int {
         return Int(arc4random_uniform(UInt32(upperBound)))
     }
 }
-
 // MARK: String Extension
 extension String {
     static func pluralize(_ number: Int, input: String) -> String {
@@ -33,7 +32,30 @@ extension String {
         return string + "  "
     }
 }
+
 // MARK: UIKit Extension
+
+// MARK: TableViewCell Extension
+extension UITableViewCell {
+    func enable(on status: Bool) {
+        self.isUserInteractionEnabled = status
+        for view in self.contentView.subviews {
+            view.alpha = status ? 1 : 0.4
+        }
+    }
+    
+    func addGrayDetail(text: String) {
+        self.detailTextLabel?.text = text
+        self.detailTextLabel?.textColor = UIColor.gray
+    }
+    
+    // Dark Theme
+    func black() {
+        self.backgroundColor = CustomTheme.backgroundColor()
+        self.textLabel?.textColor = CustomTheme.textColor()
+    }
+}
+
 extension UINavigationBar {
     /**
      Remove Background and Bottom Border of Nagivation Bar
@@ -45,6 +67,7 @@ extension UINavigationBar {
         self.barStyle = CustomTheme.barStyle()
     }
 }
+
 // MARK: UIKit Extension for CustomTheme
 enum Theme: String {
     case blue = "Blue"

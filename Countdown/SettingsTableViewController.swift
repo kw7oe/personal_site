@@ -19,6 +19,7 @@ class SettingsTableViewController: UITableViewController {
         static let ViewAllReminders = "View All Reminders"
         static let SetStartDate = "Set Start Date"
         static let SetGoal = "Set Goal"
+        static let InAppPurchase = "In-App Purchase"
     }
     
     // MARK: View Outlet
@@ -88,6 +89,7 @@ class SettingsTableViewController: UITableViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
+    
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -168,26 +170,5 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
 extension SettingsTableViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimationController()
-    }
-}
-
-// MARK: Table View Cell Extension
-extension UITableViewCell {
-    func enable(on status: Bool) {
-        self.isUserInteractionEnabled = status
-        for view in self.contentView.subviews {
-            view.alpha = status ? 1 : 0.4
-        }
-    }
-    
-    func addGrayDetail(text: String) {
-        self.detailTextLabel?.text = text
-        self.detailTextLabel?.textColor = UIColor.gray
-    }
-    
-    // Dark Theme
-    func black() {
-        self.backgroundColor = CustomTheme.backgroundColor()
-        self.textLabel?.textColor = CustomTheme.textColor()
     }
 }
