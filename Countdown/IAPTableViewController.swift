@@ -12,7 +12,7 @@ import StoreKit
 class IAPTableViewController: UITableViewController {
 
     var products = [SKProduct]()
-    
+    var spinner: UIActivityIndicatorView!
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -35,10 +35,21 @@ class IAPTableViewController: UITableViewController {
             name: NSNotification.Name(rawValue: IAPHelper.IAPHelperPurchaseNotification),
             object: nil)
         
+        spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinner.color = CustomTheme.textColor()
+        tableView.backgroundView = spinner
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        tableView.separatorStyle = .none
+        spinner.startAnimating()
         reload()
     }
     
@@ -53,6 +64,10 @@ class IAPTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             self.refreshControl?.endRefreshing()
+            self.tableView.separatorStyle = .singleLine
+            if self.spinner.isAnimating {
+                self.spinner.stopAnimating()
+            }
         }
     }
     
@@ -90,6 +105,7 @@ extension IAPTableViewController {
         let product = products[indexPath.row]
         
         if let productCell = cell as? ProductTableViewCell {
+            productCell.black()
             productCell.product = product
             productCell.buyButtonHandler = { product in
                 Products.store.buyProduct(product)

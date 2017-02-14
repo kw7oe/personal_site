@@ -53,6 +53,7 @@ extension UITableViewCell {
     func black() {
         self.backgroundColor = CustomTheme.backgroundColor()
         self.textLabel?.textColor = CustomTheme.textColor()
+        self.detailTextLabel?.textColor = CustomTheme.textColor()
     }
 }
 

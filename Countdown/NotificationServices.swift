@@ -76,7 +76,6 @@ class NotificationServices {
     
     func promptToAllowNotification(completionHandler: @escaping (Bool, Error?) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: completionHandler)
-        
     }
     
     // MARK: Helper Function

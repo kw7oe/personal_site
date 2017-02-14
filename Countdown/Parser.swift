@@ -10,7 +10,6 @@ import Foundation
 
 class Parser {
     
-    // TODO: Move To ENUM
     struct Format {
         static let Hour = "hour"
         static let Day = "day"

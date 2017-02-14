@@ -13,7 +13,7 @@ import MessageUI
 class SettingsTableViewController: UITableViewController {
     
     // MARK: Storyboard
-    private struct Storyboard {
+    fileprivate struct Storyboard {
         static let EnableReminder = "Enable Reminder"
         static let EnableDarkTheme = "Enable Dark Theme"
         static let ViewAllReminders = "View All Reminders"
@@ -101,7 +101,27 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Table view data source
+    // MARK: Private Method 
+    private func updateUI() {
+        view.setNeedsDisplay()
+        view.setNeedsLayout()
+        view.window?.tintColor = CustomTheme.primaryColor()
+        tableView.reloadData()
+        navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
+    }
+
+}
+
+// MARK: - Table view data source
+extension SettingsTableViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if Products.store.isProductPurchased(Products.DarkTheme) {
+            return 4
+        }
+        return 3
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.EnableReminder {
@@ -125,15 +145,6 @@ class SettingsTableViewController: UITableViewController {
         // Dark Theme
         cell.black()
         return cell
-    }
-    
-    // MARK: Private Method 
-    private func updateUI() {
-        view.setNeedsDisplay()
-        view.setNeedsLayout()
-        view.window?.tintColor = CustomTheme.primaryColor()
-        tableView.reloadData()
-        navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
 
 }

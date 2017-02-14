@@ -79,9 +79,10 @@ extension RemindersTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         if data == nil || data?.count == 0 {
-            label?.text = "No Reminder Available"
-            label?.textColor = UIColor.black
+            label?.text = "No Reminder Available.\nPress '+' to add new reminders.\nYou can add up to 3 reminders."
+            label?.textColor = CustomTheme.textColor()
             label?.textAlignment = .center
+            label?.numberOfLines = 3
             tableView.backgroundView = label
             tableView.separatorStyle = .none
         } else {

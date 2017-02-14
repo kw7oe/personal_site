@@ -98,12 +98,11 @@ class CounterViewController: UIViewController {
         progressView.setProgress(with: percentage)
     }
     
-    // MARK: View Controller Life Cycle
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    private func updateColorScheme() {
         self.navigationController?.navigationBar.none()
         self.view.window?.tintColor = CustomTheme.primaryColor()
         self.view.backgroundColor = CustomTheme.backgroundColor()
+        self.progressView.updateUI()
         
         // Dark Theme
         descriptionLabel.updateFontColor()
@@ -112,16 +111,25 @@ class CounterViewController: UIViewController {
         authorLabel.updateFontColor()
         quoteLabel.updateFontColor()
     }
+    
+    // MARK: View Controller Life Cycle
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateColorScheme()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         updateQuote()
+        let count = Int(Parser.parseToArray(time: time, basedOn: Parser.Format.Day)[0].time)
+        UIApplication.shared.applicationIconBadgeNumber = count!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setProgress()
+        updateColorScheme()
         if Settings.dateStarted {
             button.setTitle("RESET", for: .normal)
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in

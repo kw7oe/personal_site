@@ -44,6 +44,13 @@ class ProgressPieView: UIView {
         setLabelText(with: percentage)
     }
     
+    func updateUI() {
+        self.backgroundColor = CustomTheme.backgroundColor()
+        label.updateFontColor()
+        initialLayer.strokeColor = CustomTheme.lighterPrimaryColor().cgColor
+        progressLayer.strokeColor = CustomTheme.primaryColor().cgColor
+    }
+    
     // MARK: Private Method
     private func setProgressLayer(with path: UIBezierPath) {
         initialLayer.drawProgress(with: path, color: CustomTheme.lighterPrimaryColor())
