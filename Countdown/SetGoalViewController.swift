@@ -11,17 +11,18 @@ import UIKit
 class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     
     var data: [Int] = Array(1...31)
-
+    var challenge: Challenge!
+    
     @IBOutlet weak var pickerView: UIPickerView! {
         didSet {
             pickerView.dataSource = self
             pickerView.delegate = self
-            pickerView.selectRow(Settings.goal - 1, inComponent: 0, animated: true)
+            pickerView.selectRow(challenge.goal - 1, inComponent: 0, animated: true)
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        Settings.goal = data[row]
+        challenge.goal = data[row]
         
         let alertController = UIAlertController(title: "Your goal has been set to \(data[row]) days.", message: nil, preferredStyle: .alert)
         alertController.transitioningDelegate = self

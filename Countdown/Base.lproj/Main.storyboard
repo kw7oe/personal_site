@@ -178,21 +178,21 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Product" textLabel="VPM-nh-9MN" detailTextLabel="Rd1-BK-Nge" style="IBUITableViewCellStyleSubtitle" id="Q7a-Ka-GPF" customClass="ProductTableViewCell" customModule="Progressus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q7a-Ka-GPF" id="DoX-ls-yW4">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VPM-nh-9MN">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rd1-BK-Nge">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -271,7 +271,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CdV-SD-fb3" kind="show" id="oub-yQ-PbX"/>
+                                            <segue destination="CdV-SD-fb3" kind="show" identifier="Set Date Segue" id="oub-yQ-PbX"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Set Goal" textLabel="mRM-zM-QhM" detailTextLabel="bc4-nf-Etj" style="IBUITableViewCellStyleValue1" id="An7-7i-UMr">
@@ -298,7 +298,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="AXN-TR-b8J" kind="show" id="bb1-ji-85i"/>
+                                            <segue destination="AXN-TR-b8J" kind="show" identifier="Set Goal Segue" id="bb1-ji-85i"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -597,7 +597,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Chu-Wm-oWj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BRq-km-90u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BRq-km-90u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -659,14 +659,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rA-3y-7uc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2273" y="-264"/>
+            <point key="canvasLocation" x="2273" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AYy-AF-TPC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PyK-XX-ror" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j1p-N2-PWB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1p-N2-PWB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

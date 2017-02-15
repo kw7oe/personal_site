@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum Theme: String {
+    case blue = "Blue"
+    case dark = "Dark"
+}
+
 struct CustomTheme {
     
     private struct Colors {

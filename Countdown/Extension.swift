@@ -10,20 +10,23 @@ import Foundation
 import UIKit
 
 
-// MARK: Array Extension
+// MARK: General Extension
 extension Array {
+    
     mutating func prepend(element: Element) {
         self.insert(element, at: 0)
     }
+    
 }
-// MARK: Int Extension
 extension Int {
+    
     static func random(upperBound: Int) -> Int {
         return Int(arc4random_uniform(UInt32(upperBound)))
     }
+    
 }
-// MARK: String Extension
 extension String {
+    
     static func pluralize(_ number: Int, input: String) -> String {
         var string = "  " + input
         if number > 1 {
@@ -31,6 +34,7 @@ extension String {
         }
         return string + "  "
     }
+    
 }
 
 // MARK: UIKit Extension
@@ -70,11 +74,6 @@ extension UINavigationBar {
 }
 
 // MARK: UIKit Extension for CustomTheme
-enum Theme: String {
-    case blue = "Blue"
-    case dark = "Dark"
-}
-
 extension UILabel {
     func updateFontColor() {
         self.textColor = CustomTheme.textColor()

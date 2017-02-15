@@ -11,6 +11,7 @@ import UserNotifications
 import MessageUI
 
 class SettingsTableViewController: UITableViewController {
+    var challenge: Challenge!
     
     // MARK: Storyboard
     fileprivate struct Storyboard {
@@ -109,7 +110,25 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
-
+    
+    // MARK: Navigation
+    private struct Segue {
+        static let SetGoal = "Set Goal Segue"
+        static let SetDate = "Set Date Segue"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  Segue.SetGoal {
+            if let dvc = segue.destination as? SetGoalViewController {
+                dvc.challenge = challenge
+            }
+        }
+        else if segue.identifier == Segue.SetDate {
+            if let dvc = segue.destination as? DateViewController {
+                dvc.challenge = challenge
+            }
+        }
+    }
 }
 
 // MARK: - Table view data source
@@ -136,10 +155,10 @@ extension SettingsTableViewController {
             cell.addGrayDetail(text: String(count) + String.pluralize(count, input: "Reminder"))
         }
         else if cell.reuseIdentifier == Storyboard.SetStartDate {
-            cell.addGrayDetail(text: Parser.parse(date: Settings.date))
+            cell.addGrayDetail(text: Parser.parse(date: challenge.date))
         }
         else if cell.reuseIdentifier == Storyboard.SetGoal {
-            cell.addGrayDetail(text: String(Settings.goal) + " Days")
+            cell.addGrayDetail(text: String(challenge.goal) + " Days")
         }
         
         // Dark Theme

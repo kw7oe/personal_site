@@ -10,6 +10,8 @@ import UIKit
 
 class DateViewController: UIViewController {
     
+    var challenge: Challenge!
+    
     // MARK: View Outlet
     @IBOutlet weak var datePicker: UIDatePicker! {
         didSet {           
@@ -19,13 +21,13 @@ class DateViewController: UIViewController {
     
     // MARK: Target Action
     @IBAction func dateDidSelected(_ sender: UIDatePicker) {
-        Settings.date = sender.date
+        challenge.date = sender.date
     }
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.date = Settings.date
+        datePicker.date = challenge.date
     }
 
     override func viewDidLayoutSubviews() {

@@ -31,6 +31,7 @@
 		2ACEDF501E34796D006B5CC5 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */; };
 		2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */; };
 		2AF4DDE81E4EE3D1008BD621 /* IAPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF4DDE71E4EE3D1008BD621 /* IAPTableViewController.swift */; };
+		2AF869E41E52F70100A6B9DE /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF869E31E52F70100A6B9DE /* Challenge.swift */; };
 		2AFBE0D81E45BB8400D12C35 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFBE0D71E45BB8400D12C35 /* NoticationServicesDelegate.swift */; };
 		2AFBE0DA1E45BFCA00D12C35 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFBE0D91E45BFCA00D12C35 /* CustomTheme.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		2ACEDF4F1E34796D006B5CC5 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
 		2AF4DDE71E4EE3D1008BD621 /* IAPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPTableViewController.swift; sourceTree = "<group>"; };
+		2AF869E31E52F70100A6B9DE /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = ../Challenge.swift; sourceTree = "<group>"; };
 		2AFBE0D71E45BB8400D12C35 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationServicesDelegate.swift; sourceTree = "<group>"; };
 		2AFBE0D91E45BFCA00D12C35 /* CustomTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 			children = (
 				2AFBE0D91E45BFCA00D12C35 /* CustomTheme.swift */,
 				2ABD1F2A1E4EC33E002DE0CF /* Extension.swift */,
+				2AF869E31E52F70100A6B9DE /* Challenge.swift */,
 				2A27D8061E2B3BF600A4F5E0 /* Settings.swift */,
 				2A3DED9A1E36F93700B9F52B /* Reminder.swift */,
 				2A6E66381E29D3650067D711 /* Quotes.swift */,
@@ -407,6 +410,7 @@
 				2ACD05131E2B1E9F005F9E56 /* SettingsTableViewController.swift in Sources */,
 				2AA27E821E502315006CE6CE /* IAPHelper.swift in Sources */,
 				2A3DED9B1E36F93700B9F52B /* Reminder.swift in Sources */,
+				2AF869E41E52F70100A6B9DE /* Challenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

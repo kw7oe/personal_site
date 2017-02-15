@@ -10,9 +10,10 @@ import UIKit
 
 class CounterViewController: UIViewController {
     
+    var challenge = Settings.challenges?.first ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
     var time: Int {
-        if !Settings.dateStarted { return 0 }
-        return -Int(Settings.date.timeIntervalSinceNow)
+        if !challenge.started { return 0 }
+        return -Int(challenge.date.timeIntervalSinceNow)
     }    
     var timer = Timer()
     
@@ -42,8 +43,8 @@ class CounterViewController: UIViewController {
                 title: "OK",
                 style: .default,
                 handler: { (action) in
-                    Settings.date = Date.init()
-                    Settings.dateStarted = false
+                    self.challenge.date = Date.init()
+                    self.challenge.started = false
                     self.button.setTitle("START", for: .normal)
                     self.setProgress()
                     self.updateUI()
@@ -55,7 +56,7 @@ class CounterViewController: UIViewController {
     }
     
     private func startTimer() {
-        Settings.date = Date.init()
+        challenge.date = Date.init()
         button.setTitle("RESET", for: .normal)
         timer = Timer.scheduledTimer(
             withTimeInterval: 1,
@@ -94,7 +95,7 @@ class CounterViewController: UIViewController {
     private func setProgress() {
         let parseResult = Parser.parseToArray(time: time, basedOn: Parser.Format.Hour)[0]
         let progressHour = Int(parseResult.time)!
-        let percentage = (CGFloat(progressHour) / CGFloat(Settings.goal * 24))
+        let percentage = (CGFloat(progressHour) / CGFloat(challenge.goal * 24))
         progressView.setProgress(with: percentage)
     }
     
@@ -135,6 +136,19 @@ class CounterViewController: UIViewController {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
                 self.updateUI()
             })
+        }
+    }
+    
+    // MARK: Navigation
+    private struct Storyboard {
+        static let SettingsSegue = "Settings Segue"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.SettingsSegue {
+            if let dvc = segue.destination as? SettingsTableViewController {
+                dvc.challenge = challenge
+            }
         }
     }
 }
