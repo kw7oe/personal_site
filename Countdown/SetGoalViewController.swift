@@ -12,6 +12,7 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     
     var data: [Int] = Array(1...31)
     var challenge: Challenge!
+    var challengeIndex = 0
     
     @IBOutlet weak var pickerView: UIPickerView! {
         didSet {
@@ -22,7 +23,12 @@ class SetGoalViewController: UIViewController, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        challenge.goal = data[row]
+        challenge.update(
+            at: challengeIndex,
+            with: [
+                "goal": data[row]
+            ]            
+        )
         
         let alertController = UIAlertController(title: "Your goal has been set to \(data[row]) days.", message: nil, preferredStyle: .alert)
         alertController.transitioningDelegate = self

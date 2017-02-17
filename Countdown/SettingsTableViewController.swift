@@ -11,7 +11,9 @@ import UserNotifications
 import MessageUI
 
 class SettingsTableViewController: UITableViewController {
+    
     var challenge: Challenge!
+    var challengeIndex: Int = 0
     
     // MARK: Storyboard
     fileprivate struct Storyboard {
@@ -121,11 +123,13 @@ class SettingsTableViewController: UITableViewController {
         if segue.identifier ==  Segue.SetGoal {
             if let dvc = segue.destination as? SetGoalViewController {
                 dvc.challenge = challenge
+                dvc.challengeIndex = challengeIndex
             }
         }
         else if segue.identifier == Segue.SetDate {
             if let dvc = segue.destination as? DateViewController {
                 dvc.challenge = challenge
+                dvc.challengeIndex = challengeIndex
             }
         }
     }

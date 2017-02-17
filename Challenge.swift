@@ -9,16 +9,33 @@
 import Foundation
 
 class Challenge: NSObject, NSCoding {
-    var name: String
-    var date: Date
-    var goal: Int
-    var started: Bool
+    private(set) var name: String
+    private(set) var date: Date
+    private(set) var goal: Int
+    private(set) var started: Bool
     
     init(name: String, date: Date, goal: Int, started: Bool) {
         self.name = name
         self.date = date
         self.goal = goal
         self.started = started
+    }
+    
+    private func set_date(_ date: Date) {
+        self.date = date
+        started = true
+    }
+    
+    func update(at position: Int, with dict: [String:Any]) {
+        for (key,value) in dict {
+            switch key {
+                case "goal": self.goal = value as! Int
+                case "date": self.set_date(value as! Date)
+                case "started": self.started = value as! Bool
+            default: break
+            }
+        }
+        Settings.updateChallenges(at: position, with: self)
     }
     
     // MARK: NSCoding

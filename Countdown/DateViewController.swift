@@ -11,6 +11,7 @@ import UIKit
 class DateViewController: UIViewController {
     
     var challenge: Challenge!
+    var challengeIndex = 0
     
     // MARK: View Outlet
     @IBOutlet weak var datePicker: UIDatePicker! {
@@ -21,7 +22,10 @@ class DateViewController: UIViewController {
     
     // MARK: Target Action
     @IBAction func dateDidSelected(_ sender: UIDatePicker) {
-        challenge.date = sender.date
+        challenge.update(
+            at: challengeIndex,
+            with: ["date" : sender.date]
+        )
     }
     
     // MARK: View Life Cycle

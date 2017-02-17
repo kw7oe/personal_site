@@ -186,12 +186,10 @@
 				2A7509471E24894900B9B31D /* AppDelegate.swift */,
 				2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */,
 				2A75094B1E24894900B9B31D /* Main.storyboard */,
-				2AF4DDE91E4EE42E008BD621 /* In App Purchase */,
-				2A0D40461E358FF80076A4E0 /* Settings */,
-				2A0D40451E358FE60076A4E0 /* Reminder */,
 				2A76F2E91E330DDF005FC48C /* Model */,
-				2A9A77C01E41C3F700DD041E /* Custom UI */,
-				2A27D80B1E2B4B1800A4F5E0 /* CustomClass */,
+				2A0D40461E358FF80076A4E0 /* Settings */,
+				2AF4DDE91E4EE42E008BD621 /* In App Purchase */,
+				2A7F20101E54943400E07567 /* Stable */,
 				2A24C27D1E24CB18005D0644 /* Supporting Files */,
 			);
 			path = Countdown;
@@ -216,6 +214,16 @@
 				2A6E66381E29D3650067D711 /* Quotes.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		2A7F20101E54943400E07567 /* Stable */ = {
+			isa = PBXGroup;
+			children = (
+				2A0D40451E358FE60076A4E0 /* Reminder */,
+				2A9A77C01E41C3F700DD041E /* Custom UI */,
+				2A27D80B1E2B4B1800A4F5E0 /* CustomClass */,
+			);
+			name = Stable;
 			sourceTree = "<group>";
 		};
 		2A80BE161E41893F0008485C /* Frameworks */ = {

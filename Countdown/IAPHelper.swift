@@ -24,9 +24,6 @@ open class IAPHelper: NSObject {
             let purchased = UserDefaults.standard.bool(forKey: productIdentifier)
             if purchased {
                 purchasedProductIdentifiers.insert(productIdentifier)
-                print("Previously purchased: \(productIdentifier)")
-            } else {
-                print("Not purchased: \(productIdentifier)")
             }
         }
         
@@ -47,7 +44,6 @@ extension IAPHelper {
     }
     
     public func buyProduct(_ product: SKProduct) {
-        print("Buying \(product.productIdentifier)...")
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
@@ -71,18 +67,17 @@ extension IAPHelper {
 extension IAPHelper: SKProductsRequestDelegate {
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         let products = response.products
-        print("Loaded list of products...")
         productsRequestCompletionHandler?(true, products)
         clearRequestAndHandler()
         
-        for p in products {
-            print("Found product: \(p.productIdentifier)")
-        }
+//        for p in products {
+//            print("Found product: \(p.productIdentifier)")
+//        }
     }
     
     public func request(_ request: SKRequest, didFailWithError error: Error) {
-        print("Falied to load list of products")
-        print("Error: \(error.localizedDescription)")
+//        print("Falied to load list of products")
+//        print("Error: \(error.localizedDescription)")
         productsRequestCompletionHandler?(false,nil)
     }
     
@@ -116,21 +111,17 @@ extension IAPHelper: SKPaymentTransactionObserver {
     }
     
     private func complete(transaction: SKPaymentTransaction) {
-        print("complete....")
         deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
     
     private func restore(transaction: SKPaymentTransaction) {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else {return}
-        
-        print("restore.. \(productIdentifier)")
         deliverPurchaseNotificationFor(identifier: productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
     
     private func fail(transaction: SKPaymentTransaction) {
-        print("fail....")
         if let transactionError = transaction.error as? NSError {
             if transactionError.code != SKError.paymentCancelled.rawValue {
                 print("Transaction Error: \(transaction.error?.localizedDescription)")

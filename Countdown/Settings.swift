@@ -24,9 +24,18 @@ class Settings {
         static let Reminders = "Reminders"
         static let ReminderIdentifiers = "Reminder Identifiers"
         static let Theme = "Theme"
+        static let Migrated = "Migrated"
     }
     
     // Migration of Data
+    static var migrated: Bool {
+        get {
+            return settings.bool(forKey: Key.Migrated)
+        }
+        set {
+            settings.set(newValue, forKey: Key.Migrated)
+        }
+    }
     static func migrateData() {
         let started = settings.bool(forKey: "Date Started")
         guard let goal = settings.object(forKey: "Goal") as? Int,
@@ -35,8 +44,10 @@ class Settings {
         
         let challenge = Challenge(name: "", date: date, goal: goal, started: started)
         challenges = [challenge]
+        migrated = true
     }
     
+    // MARK: Challenges
     static var challenges: [Challenge]? {
         get {
             if let result = settings.object(forKey: Key.Challenges) as? Data {
@@ -49,6 +60,12 @@ class Settings {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue as Any)
             settings.set(data, forKey: Key.Challenges)
         }
+    }
+    
+    static func updateChallenges(at position: Int, with challenge: Challenge) {
+        
+        challenges?[position] = challenge
+        print("Updated Challenge \(position)")
     }
 
     // MARK: Reminders

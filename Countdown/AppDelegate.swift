@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Settings.isReminderOn = false
             }
         }
-        Settings.migrateData()
+        
+        if !Settings.migrated {
+            Settings.migrateData()
+        }
+        
         return true
     }
 }

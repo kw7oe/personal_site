@@ -10,7 +10,8 @@ import UIKit
 
 class CounterViewController: UIViewController {
     
-    var challenge = Settings.challenges?.first ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
+    var challengeIndex = 0 
+    var challenge = Settings.challenges?[0] ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
     var time: Int {
         if !challenge.started { return 0 }
         return -Int(challenge.date.timeIntervalSinceNow)
@@ -28,7 +29,7 @@ class CounterViewController: UIViewController {
     
     // MARK: Target Action
     @IBAction func resetTime(_ sender: UIButton) {
-        if Settings.dateStarted {
+        if challenge.started {
             resetTimer()
         } else {
             startTimer()
@@ -43,8 +44,13 @@ class CounterViewController: UIViewController {
                 title: "OK",
                 style: .default,
                 handler: { (action) in
-                    self.challenge.date = Date.init()
-                    self.challenge.started = false
+                    self.challenge.update(
+                        at: self.challengeIndex,
+                        with: [
+                            "date": Date.init(),
+                            "started": false                        
+                        ]
+                    )
                     self.button.setTitle("START", for: .normal)
                     self.setProgress()
                     self.updateUI()
@@ -56,7 +62,12 @@ class CounterViewController: UIViewController {
     }
     
     private func startTimer() {
-        challenge.date = Date.init()
+        challenge.update(
+            at: self.challengeIndex,
+            with: [
+                "date": Date.init()
+            ]
+        )
         button.setTitle("RESET", for: .normal)
         timer = Timer.scheduledTimer(
             withTimeInterval: 1,
@@ -131,7 +142,7 @@ class CounterViewController: UIViewController {
         super.viewWillAppear(animated)
         setProgress()
         updateColorScheme()
-        if Settings.dateStarted {
+        if challenge.started {
             button.setTitle("RESET", for: .normal)
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
                 self.updateUI()
@@ -148,6 +159,7 @@ class CounterViewController: UIViewController {
         if segue.identifier == Storyboard.SettingsSegue {
             if let dvc = segue.destination as? SettingsTableViewController {
                 dvc.challenge = challenge
+                dvc.challengeIndex = challengeIndex
             }
         }
     }
