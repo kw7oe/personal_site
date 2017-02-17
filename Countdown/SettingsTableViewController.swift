@@ -138,13 +138,6 @@ class SettingsTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension SettingsTableViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if Products.store.isProductPurchased(Products.DarkTheme) {
-            return 4
-        }
-        return 3
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.EnableReminder {
