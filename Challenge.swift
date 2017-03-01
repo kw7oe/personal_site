@@ -38,6 +38,10 @@ class Challenge: NSObject, NSCoding {
         Settings.updateChallenges(at: position, with: self)
     }
     
+//    override var description: String {
+//        return "Date: \(date), Goal: \(goal), Started: \(started)"
+//    }
+    
     // MARK: NSCoding
     required convenience init?(coder aDecoder: NSCoder) {
         let started = aDecoder.decodeBool(forKey: "started")

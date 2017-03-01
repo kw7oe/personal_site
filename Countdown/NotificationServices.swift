@@ -21,6 +21,10 @@ class NotificationServices {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
     }
     
+    func removeAllNotificationRequests() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
     /**
     Schedule Notification. To call this method, first, you must implement the `NotificationServices Delegate`:
      

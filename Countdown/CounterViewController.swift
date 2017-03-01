@@ -134,8 +134,6 @@ class CounterViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         updateQuote()
-        let count = Int(Parser.parseToArray(time: time, basedOn: Parser.Format.Day)[0].time)
-        UIApplication.shared.applicationIconBadgeNumber = count!
     }
     
     override func viewWillAppear(_ animated: Bool) {

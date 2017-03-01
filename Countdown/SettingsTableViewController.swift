@@ -28,11 +28,13 @@ class SettingsTableViewController: UITableViewController {
     // MARK: View Outlet
     @IBOutlet weak var reminderOnSwitch: UISwitch! {
         didSet {
+            reminderOnSwitch.customizeColor()
             reminderOnSwitch.isOn = Settings.isReminderOn
         }
     }
     @IBOutlet weak var darkThemeSwitch: UISwitch! {
         didSet {
+            darkThemeSwitch.customizeColor()
             darkThemeSwitch.isOn = Settings.theme == .dark
         }
     }
@@ -49,10 +51,7 @@ class SettingsTableViewController: UITableViewController {
                     notificationService.scheduleNotification(with: reminder, basedOn: .short)
                 }
             } else {
-                let identifiers = reminders.map({ (reminder) -> String in
-                    return reminder.identifier
-                })
-                notificationService.removeNotification(withIdentifiers: identifiers)
+                notificationService.removeAllNotificationRequests()
             }
         }        
         Settings.isReminderOn = sender.isOn
@@ -109,6 +108,8 @@ class SettingsTableViewController: UITableViewController {
         view.setNeedsDisplay()
         view.setNeedsLayout()
         view.window?.tintColor = CustomTheme.primaryColor()
+        darkThemeSwitch.customizeColor()
+        reminderOnSwitch.customizeColor()
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }

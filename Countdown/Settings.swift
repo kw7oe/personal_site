@@ -63,9 +63,11 @@ class Settings {
     }
     
     static func updateChallenges(at position: Int, with challenge: Challenge) {
-        
-        challenges?[position] = challenge
-        print("Updated Challenge \(position)")
+        if challenges == nil {
+            challenges = [challenge]
+        } else {
+            challenges![position] = challenge
+        }
     }
 
     // MARK: Reminders

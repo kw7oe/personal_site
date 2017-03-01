@@ -87,5 +87,11 @@ extension UIDatePicker {
     }
 }
 
+extension UISwitch {
+    func customizeColor() {
+        self.onTintColor = CustomTheme.primaryColor()
+    }
+}
+
 
 
