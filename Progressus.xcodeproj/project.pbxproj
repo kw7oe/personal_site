@@ -156,7 +156,7 @@
 		2A75093B1E24894900B9B31D = {
 			isa = PBXGroup;
 			children = (
-				2A7509461E24894900B9B31D /* Countdown */,
+				2A7509461E24894900B9B31D /* Progressus */,
 				2A7509451E24894900B9B31D /* Products */,
 				2A80BE161E41893F0008485C /* Frameworks */,
 			);
@@ -172,7 +172,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A7509461E24894900B9B31D /* Countdown */ = {
+		2A7509461E24894900B9B31D /* Progressus */ = {
 			isa = PBXGroup;
 			children = (
 				2A7509471E24894900B9B31D /* AppDelegate.swift */,
@@ -183,6 +183,7 @@
 				2A7F20101E54943400E07567 /* Stable */,
 				2A24C27D1E24CB18005D0644 /* Supporting Files */,
 			);
+			name = Progressus;
 			path = Countdown;
 			sourceTree = "<group>";
 		};

@@ -160,7 +160,7 @@ extension SettingsTableViewController {
         }
         
         // Dark Theme
-        cell.black()
+        cell.customize()
         return cell
     }
 

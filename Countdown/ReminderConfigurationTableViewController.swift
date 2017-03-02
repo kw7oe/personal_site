@@ -82,7 +82,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         // Dark Theme
-        cell.black()
+        cell.customize()
         return cell
     }
     

@@ -19,13 +19,25 @@ struct CustomTheme {
     private struct Colors {
         static var white = UIColor.init(white: 0.98, alpha: 1)
         static var black = UIColor.init(white: 0.02, alpha: 1)
+        static var lightGray = UIColor.init(white: 0.90, alpha: 1)
         static var gray = UIColor.init(white: 0.60, alpha: 1)
+        static var darkGray = UIColor.init(white: 0.20, alpha: 1)
         // #427dd6
         static var blue = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
         // #42a2d6
         static var moderateBlue = UIColor.init(red: 0.259, green: 0.635, blue: 0.839, alpha: 1)
         // #42c7d6
         static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
+    }
+    
+    static func cellSelectedView() -> UIView {
+        let view = UIView()
+        if Settings.theme == .blue {
+            view.backgroundColor = Colors.lightGray
+        } else {
+            view.backgroundColor = Colors.darkGray
+        }
+        return view
     }
     
     static func backgroundColor() -> UIColor {

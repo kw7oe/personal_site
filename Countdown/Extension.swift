@@ -54,10 +54,11 @@ extension UITableViewCell {
     }
     
     // Dark Theme
-    func black() {
+    func customize() {
         self.backgroundColor = CustomTheme.backgroundColor()
         self.textLabel?.textColor = CustomTheme.textColor()
         self.detailTextLabel?.textColor = CustomTheme.textColor()
+        self.selectedBackgroundView = CustomTheme.cellSelectedView()
     }
 }
 

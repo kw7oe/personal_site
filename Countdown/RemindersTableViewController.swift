@@ -111,7 +111,7 @@ extension RemindersTableViewController {
         cell.addGrayDetail(text: Parser.parse(time: data?[indexPath.row].time))
         
         // Dark Theme
-        cell.black()
+        cell.customize()
         return cell
     }
     
