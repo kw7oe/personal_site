@@ -79,7 +79,7 @@ class CounterViewController: UIViewController {
     
     // MARK: Private Methods
     private func updateUI() {
-        updateDescription()
+        descriptionLabel.text = challenge.progressDescription
         updateTime()
     }
     
@@ -91,12 +91,6 @@ class CounterViewController: UIViewController {
         }
     }
     
-    private func updateDescription() {
-        let results = Parser.parseToArray(time: time, basedOn: Parser.Format.DayHour)
-        descriptionLabel.text = results[0].time + results[0].unit + results[1].time + results[1].unit
-    }
-    
-    
     private func updateQuote() {
         let quote = Quotes.getRandomQuotes()
         quoteLabel.text = quote.content
@@ -104,17 +98,13 @@ class CounterViewController: UIViewController {
     }
     
     private func setProgress() {
-        let parseResult = Parser.parseToArray(time: time, basedOn: Parser.Format.Hour)[0]
-        let progressHour = Int(parseResult.time)!
-        let percentage = (CGFloat(progressHour) / CGFloat(challenge.goal * 24))
-        progressView.setProgress(with: percentage)
+        progressView.setProgress(with: CGFloat(challenge.progressPercentage))
     }
     
     private func updateColorScheme() {
-        self.navigationController?.navigationBar.none()
+        self.progressView.updateUI()
         self.view.window?.tintColor = CustomTheme.primaryColor()
         self.view.backgroundColor = CustomTheme.backgroundColor()
-        self.progressView.updateUI()
         
         // Dark Theme
         descriptionLabel.updateFontColor()

@@ -21,6 +21,8 @@
 		2A75094D1E24894900B9B31D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A75094B1E24894900B9B31D /* Main.storyboard */; };
 		2A7509521E24894900B9B31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7509501E24894900B9B31D /* LaunchScreen.storyboard */; };
 		2A76F2E71E330C3C005FC48C /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */; };
+		2A878B621E6BDC5F002897E3 /* ChallengesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A878B611E6BDC5F002897E3 /* ChallengesCollectionViewController.swift */; };
+		2A878B641E6BDD1A002897E3 /* ChallengeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A878B631E6BDD1A002897E3 /* ChallengeCollectionViewCell.swift */; };
 		2A8ECB131E2E163400290B70 /* SetGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */; };
 		2AB43DBF1E48355700CBA840 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
 		2ABD1F2B1E4EC33E002DE0CF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD1F2A1E4EC33E002DE0CF /* Extension.swift */; };
@@ -68,6 +70,8 @@
 		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509631E24894900B9B31D /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A76F2E61E330C3C005FC48C /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		2A878B611E6BDC5F002897E3 /* ChallengesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengesCollectionViewController.swift; path = ../ChallengesCollectionViewController.swift; sourceTree = "<group>"; };
+		2A878B631E6BDD1A002897E3 /* ChallengeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A8ECB121E2E163400290B70 /* SetGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGoalViewController.swift; sourceTree = "<group>"; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2ABD1F2A1E4EC33E002DE0CF /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -137,7 +141,6 @@
 		2A27D80A1E2B4B0600A4F5E0 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */,
 				2ADC80DE1E288B0C00FA6FE7 /* RadiusButton.swift */,
 			);
 			name = CustomView;
@@ -175,9 +178,12 @@
 		2A7509461E24894900B9B31D /* Progressus */ = {
 			isa = PBXGroup;
 			children = (
+				2A878B611E6BDC5F002897E3 /* ChallengesCollectionViewController.swift */,
 				2A7509471E24894900B9B31D /* AppDelegate.swift */,
 				2A27D8081E2B4A5500A4F5E0 /* CounterViewController.swift */,
 				2A75094B1E24894900B9B31D /* Main.storyboard */,
+				2A878B631E6BDD1A002897E3 /* ChallengeCollectionViewCell.swift */,
+				2A509B6F1E3CA40D00FECBE6 /* ProgressPieView.swift */,
 				2A76F2E91E330DDF005FC48C /* Model */,
 				2A0D40461E358FF80076A4E0 /* Settings */,
 				2A7F20101E54943400E07567 /* Stable */,
@@ -383,12 +389,14 @@
 				2A509B701E3CA40D00FECBE6 /* ProgressPieView.swift in Sources */,
 				2A27D8111E2B669500A4F5E0 /* DateViewController.swift in Sources */,
 				2AFBE0D81E45BB8400D12C35 /* NoticationServicesDelegate.swift in Sources */,
+				2A878B641E6BDD1A002897E3 /* ChallengeCollectionViewCell.swift in Sources */,
 				2A27D8071E2B3BF600A4F5E0 /* Settings.swift in Sources */,
 				2A6E66391E29D3650067D711 /* Quotes.swift in Sources */,
 				2A7509481E24894900B9B31D /* AppDelegate.swift in Sources */,
 				2ABD1F2B1E4EC33E002DE0CF /* Extension.swift in Sources */,
 				2A0D40481E35916A0076A4E0 /* ReminderConfigurationTableViewController.swift in Sources */,
 				2ADC80DF1E288B0C00FA6FE7 /* RadiusButton.swift in Sources */,
+				2A878B621E6BDC5F002897E3 /* ChallengesCollectionViewController.swift in Sources */,
 				2A426E3A1E2624CA005A12B4 /* Parser.swift in Sources */,
 				2A3DB15D1E37930C0052DC79 /* RemindersTableViewController.swift in Sources */,
 				2A27D8091E2B4A5500A4F5E0 /* CounterViewController.swift in Sources */,

@@ -60,6 +60,8 @@ class ProgressPieView: UIView {
     }
     
     private func setLabelText(with percentage: CGFloat) {
+        
+        // Refactor needed
         var percentageText = "100"
         if percentage < 1 {
             percentageText = String.init(format: "%.1f", percentage * 100)
