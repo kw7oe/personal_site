@@ -14,9 +14,6 @@ class Settings {
     static var settings = UserDefaults.standard
     static let reminderCounts = 3
     struct Key {
-        static let Goal = "Goal"
-        static let Date = "Date"
-        static let DateStarted = "Date Started"
         static let Challenges = "Challenges"
         static let ReminderOn = "Reminder On"
         static let ReminderContent = "Reminder Content"
@@ -62,10 +59,17 @@ class Settings {
         }
     }
     
-    static func updateChallenges(at position: Int, with challenge: Challenge) {
+    static func prependChallenge(with challenge: Challenge) {
         if challenges == nil {
             challenges = [challenge]
         } else {
+            challenges!.prepend(element: challenge)
+            print(challenges!.count)
+        }
+    }
+    
+    static func updateChallenge(at position: Int, with challenge: Challenge) {
+        if challenges != nil {
             challenges![position] = challenge
         }
     }
@@ -148,46 +152,7 @@ class Settings {
         set {
             settings.set(newValue.rawValue, forKey: Key.Theme)
         }
-    }
-    
-    // DEPECRATED : TO BE REMOVED
-    static var goal: Int {
-        get {
-            if let result = settings.object(forKey: Key.Goal) as? Int {
-                return result
-            }
-            settings.set(7, forKey: Key.Goal)
-            return 7
-        }
-        set { settings.set(newValue, forKey: Key.Goal) }
-        
-    }
-    
-    static var date: Date {
-        get {
-            if let result = settings.object(forKey: Key.Date) as? Date {
-                return result
-            }
-            
-            let date = Date.init()
-            settings.set(date, forKey: Key.Date)
-            return date
-        }
-        set {
-            settings.set(newValue, forKey: Key.Date)
-            dateStarted = true
-        }
-    }
-    
-    static var dateStarted: Bool {
-        get {
-            return settings.bool(forKey: Key.DateStarted)
-        }
-        set {
-            settings.set(newValue, forKey: Key.DateStarted)
-        }
-    }
-    
+    }    
 }
 
 

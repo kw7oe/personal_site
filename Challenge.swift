@@ -61,7 +61,7 @@ class Challenge: NSObject, NSCoding {
             default: break
             }
         }
-        Settings.updateChallenges(at: position, with: self)
+        Settings.updateChallenge(at: position, with: self)
     }
     
 //    override var description: String {

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !Settings.migrated {
             Settings.migrateData()
-        }
+        }        
         
         return true
     }

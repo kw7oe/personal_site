@@ -11,7 +11,9 @@ import UIKit
 class CounterViewController: UIViewController {
     
     var challengeIndex = 0 
-    var challenge = Settings.challenges?[0] ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
+    var challenge: Challenge {
+        return Settings.challenges?[challengeIndex] ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
+    }
     var time: Int {
         if !challenge.started { return 0 }
         return -Int(challenge.date.timeIntervalSinceNow)

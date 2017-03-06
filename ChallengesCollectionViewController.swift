@@ -11,7 +11,10 @@ import UIKit
 private let reuseIdentifier = "Challenge Cell"
 
 class ChallengesCollectionViewController: UICollectionViewController {
-
+    
+    private struct Storyboard {
+        static let ChallengeCellSegue = "Challenge Cell Segue"
+    }
     
     var challenges: [Challenge]? {
         return Settings.challenges
@@ -31,7 +34,6 @@ class ChallengesCollectionViewController: UICollectionViewController {
     
     
     // MARK: UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -47,6 +49,19 @@ class ChallengesCollectionViewController: UICollectionViewController {
             challengeCell.challenge = challenges?[indexPath.row]
         }        
         return cell
+    }
+    
+    
+    // MARK: Navigation 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.ChallengeCellSegue {
+            if let vc = segue.destination as? CounterViewController {
+                if let cell = sender as? ChallengeCollectionViewCell {
+                    let index = collectionView?.indexPath(for: cell)
+                    vc.challengeIndex = index!.row
+                }
+            }
+        }
     }
 }
 

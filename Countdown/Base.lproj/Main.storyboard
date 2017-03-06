@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeX-Af-ESj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2423" y="139"/>
         </scene>
         <!--Challenges Collection View Controller-->
         <scene sceneID="zTV-se-xjc">
@@ -99,7 +99,7 @@
                                     <outlet property="challengeNameLabel" destination="JuV-La-We9" id="ATC-Hs-2Zr"/>
                                     <outlet property="dayTimeLabel" destination="doi-eF-Zai" id="phN-mb-FKD"/>
                                     <outlet property="percentageLabel" destination="vK4-TR-Jhi" id="T7o-pI-geW"/>
-                                    <segue destination="9VN-cr-0Qb" kind="show" id="nPk-mn-o1o"/>
+                                    <segue destination="9VN-cr-0Qb" kind="show" identifier="Challenge Cell Segue" id="nPk-mn-o1o"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -109,12 +109,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="zS4-EE-ykp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="tPZ-vH-MDg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tPZ-vH-MDg">
+                            <connections>
+                                <segue destination="954-sN-hww" kind="presentation" id="xei-54-iv8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qps-g0-HAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="138.98050974512745"/>
+            <point key="canvasLocation" x="191" y="139"/>
         </scene>
         <!--Counter View Controller-->
         <scene sceneID="my9-GK-ANl">
@@ -240,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bu-A4-2YN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="138.98050974512745"/>
+            <point key="canvasLocation" x="945" y="139"/>
         </scene>
         <!--Settings-->
         <scene sceneID="I5F-uX-dQW">
@@ -448,7 +452,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klO-MM-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1686" y="139"/>
         </scene>
         <!--Reminders Table View Controller-->
         <scene sceneID="zLi-Ey-ABl">
@@ -504,7 +508,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TS-PZ-our" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="899"/>
+            <point key="canvasLocation" x="945" y="896"/>
         </scene>
         <!--Reminder Configuration Table View Controller-->
         <scene sceneID="Xh3-n8-4n7">
@@ -596,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yD6-bj-u5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2273" y="898"/>
+            <point key="canvasLocation" x="2463" y="896"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="dKn-N9-HvN">
@@ -643,14 +647,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rA-3y-7uc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="138.98050974512745"/>
+            <point key="canvasLocation" x="3134" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AYy-AF-TPC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PyK-XX-ror" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j1p-N2-PWB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j1p-N2-PWB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -661,14 +665,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1t1-gF-3W3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="898"/>
+            <point key="canvasLocation" x="1686" y="896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="40M-ZF-d01">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wRl-uf-Tjs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X5Q-8m-Jz8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5Q-8m-Jz8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -679,7 +683,141 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aId-5H-HfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="139"/>
+            <point key="canvasLocation" x="-620" y="139"/>
+        </scene>
+        <!--Add Challenge Table View Controller-->
+        <scene sceneID="IHt-ov-Wdm">
+            <objects>
+                <tableViewController id="EeW-Uv-AlE" customClass="AddChallengeTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="aaY-zV-Fkf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name" id="Z64-OF-gdn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Reminder Time" id="WLi-yx-eN8">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WLi-yx-eN8" id="Uud-VL-i8P">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="bottom" secondItem="Uud-VL-i8P" secondAttribute="bottomMargin" id="4NN-b2-lUa"/>
+                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="top" secondItem="Uud-VL-i8P" secondAttribute="topMargin" id="57p-Ye-WwK"/>
+                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="trailing" secondItem="Uud-VL-i8P" secondAttribute="trailingMargin" id="P4w-qQ-0b3"/>
+                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="leading" secondItem="Uud-VL-i8P" secondAttribute="leadingMargin" id="z5u-O0-xfx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Start Date" id="hAV-3k-xQn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="YD2-7V-kUn">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YD2-7V-kUn" id="bcT-1M-9ot">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Jh-zx-gbk">
+                                                    <rect key="frame" x="16" y="-9" width="343" height="216"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="505819213.16282302">
+                                                        <!--2017-01-11 09:20:13 +0000-->
+                                                    </date>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                                        <!--2037-12-31 11:00:00 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Jh-zx-gbk" firstAttribute="centerY" secondItem="bcT-1M-9ot" secondAttribute="centerY" id="ISd-9b-9tt"/>
+                                                <constraint firstItem="0Jh-zx-gbk" firstAttribute="leading" secondItem="bcT-1M-9ot" secondAttribute="leadingMargin" constant="8" id="ZUf-Eq-wVg"/>
+                                                <constraint firstItem="0Jh-zx-gbk" firstAttribute="centerX" secondItem="bcT-1M-9ot" secondAttribute="centerX" id="vMj-H1-Dyq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Goal" id="hrQ-Vc-VDl">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="43M-If-2TO">
+                                        <rect key="frame" x="0.0" y="411.5" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="43M-If-2TO" id="bjF-WZ-gia">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDy-pC-6Ge">
+                                                    <rect key="frame" x="16" y="-9" width="343" height="216"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nDy-pC-6Ge" firstAttribute="centerY" secondItem="bjF-WZ-gia" secondAttribute="centerY" id="8dm-54-YaZ"/>
+                                                <constraint firstItem="nDy-pC-6Ge" firstAttribute="centerX" secondItem="bjF-WZ-gia" secondAttribute="centerX" id="TC4-Ss-Xd9"/>
+                                                <constraint firstItem="nDy-pC-6Ge" firstAttribute="leading" secondItem="bjF-WZ-gia" secondAttribute="leadingMargin" constant="8" id="mds-Fy-0DA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="XU1-T1-7FR">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EeW-Uv-AlE" id="QfS-KX-sTy"/>
+                            <outlet property="delegate" destination="EeW-Uv-AlE" id="RRG-Pl-BzS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gt7-Lv-CFh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="W9f-hP-w21">
+                            <connections>
+                                <action selector="cancel:" destination="EeW-Uv-AlE" id="Wcl-Uk-MUR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KIh-8u-goT">
+                            <connections>
+                                <action selector="saveChallenge:" destination="EeW-Uv-AlE" id="VdY-wJ-bgQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="goalPicker" destination="nDy-pC-6Ge" id="xIn-SL-RaX"/>
+                        <outlet property="nameTextField" destination="wpX-mI-Mb1" id="m7q-Qi-9uR"/>
+                        <outlet property="startDatePicker" destination="0Jh-zx-gbk" id="5b8-PC-MGS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pa9-Ud-oyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="-537"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WNa-5c-MLu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="954-sN-hww" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dBZ-y2-jx6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EeW-Uv-AlE" kind="relationship" relationship="rootViewController" id="tqR-E2-PrH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFA-di-HYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.79999999999995" y="-537.48125937031489"/>
         </scene>
     </scenes>
     <resources>
