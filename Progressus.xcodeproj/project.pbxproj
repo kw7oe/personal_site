@@ -114,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				2A33AA471E6D3D08003F8C13 /* AddChallengeTableViewController.swift */,
-				2A33AA4B1E6D3D08003F8C13 /* Challenge.swift */,
 				2A33AA4C1E6D3D08003F8C13 /* ChallengeCollectionViewCell.swift */,
 				2A33AA4D1E6D3D08003F8C13 /* ChallengesCollectionViewController.swift */,
 				2A33AA4E1E6D3D08003F8C13 /* CounterViewController.swift */,
@@ -134,6 +133,7 @@
 		2A33AA7D1E6D3DB6003F8C13 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A33AA4B1E6D3D08003F8C13 /* Challenge.swift */,
 				2A33AA521E6D3D08003F8C13 /* Extension.swift */,
 				2A33AA501E6D3D08003F8C13 /* CustomTheme.swift */,
 				2A33AA581E6D3D08003F8C13 /* Quotes.swift */,
@@ -166,13 +166,29 @@
 			isa = PBXGroup;
 			children = (
 				2A33AA4F1E6D3D08003F8C13 /* CustomPresentAnimationController.swift */,
+				2A33AABA1E6D4111003F8C13 /* Custom UI */,
+				2A33AABB1E6D411E003F8C13 /* Helper */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		2A33AABA1E6D4111003F8C13 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
 				2A33AA571E6D3D08003F8C13 /* ProgressPieView.swift */,
 				2A33AA591E6D3D08003F8C13 /* RadiusButton.swift */,
+			);
+			name = "Custom UI";
+			sourceTree = "<group>";
+		};
+		2A33AABB1E6D411E003F8C13 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
 				2A33AA541E6D3D08003F8C13 /* NoticationServicesDelegate.swift */,
 				2A33AA551E6D3D08003F8C13 /* NotificationServices.swift */,
 				2A33AA561E6D3D08003F8C13 /* Parser.swift */,
 			);
-			name = Custom;
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		2A75093B1E24894900B9B31D = {
@@ -202,8 +218,8 @@
 				2A33AA7B1E6D3D97003F8C13 /* Challenges */,
 				2A33AA7D1E6D3DB6003F8C13 /* Model */,
 				2A33AA7F1E6D3DDA003F8C13 /* Settings */,
-				2A33AA801E6D3DE7003F8C13 /* Custom */,
 				2A33AA7E1E6D3DC5003F8C13 /* Reminders */,
+				2A33AA801E6D3DE7003F8C13 /* Custom */,
 				2A33AA7C1E6D3DA2003F8C13 /* Supporting Files */,
 			);
 			name = Progressus;
