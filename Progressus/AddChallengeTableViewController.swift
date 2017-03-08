@@ -8,10 +8,22 @@
 
 import UIKit
 
+enum ViewMode {
+    case add, edit
+}
+
 class AddChallengeTableViewController: UITableViewController {
     
     var challenge: Challenge?
+    var challengeIndex: Int?
+    var mode: ViewMode {
+        if challenge != nil {
+            return .edit
+        }
+        return .add
+    }
     var goalRange: [Int] = Array(1...31)
+    
     
     // MARK: View Outlet
     @IBOutlet weak var nameTextField: UITextField!
@@ -21,7 +33,7 @@ class AddChallengeTableViewController: UITableViewController {
             goalPicker.dataSource = self
             goalPicker.delegate = self
             var goalIndex: Int = 6
-            if challenge != nil {
+            if mode == .edit {
                 goalIndex = challenge!.goal - 1
             }
             goalPicker.selectRow(goalIndex, inComponent: 0, animated: true)
@@ -30,12 +42,20 @@ class AddChallengeTableViewController: UITableViewController {
     
     // MARK: Target Action
     @IBAction func saveChallenge(_ sender: UIBarButtonItem) {
+        print(mode)
         let challenge = Challenge.init(
             name: nameTextField.text ?? "Challenge",
-            date: startDatePicker.date,
+            date: Date.init(),
             goal: goalPicker.selectedRow(inComponent: 0) + 1,
             started: true)
-        Settings.prependChallenge(with: challenge)
+        
+        switch mode {
+          case .add: Settings.prependChallenge(with: challenge)
+          case .edit:
+            challenge.set_date(startDatePicker.date)
+            Settings.updateChallenge(at: challengeIndex!, with: challenge)
+        }
+        
         dismiss()
     }
    
@@ -45,6 +65,36 @@ class AddChallengeTableViewController: UITableViewController {
     
     private func dismiss() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Table View Delegate
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if section == 1 && mode == .add {
+//            return nil
+//        }
+//        return super.tableView(tableView, titleForHeaderInSection: section)
+//    }
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 1 && mode == .add {
+//            return 0.1
+//        }
+//        return super.tableView(tableView, heightForHeaderInSection: section)
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 1 && mode == .add {
+//            return 0.1
+//        }
+//        return super.tableView(tableView, heightForRowAt: indexPath)
+//    }
+    
+    // MARK: View Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if mode == .edit {
+            startDatePicker.date = challenge!.date
+            nameTextField.text = challenge!.name
+        }
     }
 }
 

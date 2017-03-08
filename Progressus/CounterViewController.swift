@@ -142,12 +142,12 @@ class CounterViewController: UIViewController {
     
     // MARK: Navigation
     private struct Storyboard {
-        static let SettingsSegue = "Settings Segue"
+        static let EditChallenge = "Edit Challenge Segue"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.SettingsSegue {
-            if let dvc = segue.destination as? SettingsTableViewController {
+        if segue.identifier == Storyboard.EditChallenge {
+            if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
                 dvc.challenge = challenge
                 dvc.challengeIndex = challengeIndex
             }

@@ -46,7 +46,7 @@ class Challenge: NSObject, NSCoding {
         self.started = started
     }
     
-    private func set_date(_ date: Date) {
+    func set_date(_ date: Date) {
         self.date = date
         started = true
     }

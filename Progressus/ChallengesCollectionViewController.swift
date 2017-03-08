@@ -14,6 +14,8 @@ class ChallengesCollectionViewController: UICollectionViewController {
     
     private struct Storyboard {
         static let ChallengeCellSegue = "Challenge Cell Segue"
+        static let SettingsSegue = "Settings Segue"
+        static let AddChallengeSegue = "Add Challenge Segue"
     }
     
     var challenges: [Challenge]? {

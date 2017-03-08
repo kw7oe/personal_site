@@ -38,6 +38,16 @@ extension String {
 }
 
 // MARK: UIKit Extension
+extension UIViewController {
+    var contentViewController: UIViewController {
+        if let navController = self as? UINavigationController {
+            return navController.visibleViewController ?? navController
+        } else {
+            return self
+        }
+    }
+}
+
 
 // MARK: TableViewCell Extension
 extension UITableViewCell {

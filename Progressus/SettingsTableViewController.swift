@@ -12,16 +12,11 @@ import MessageUI
 
 class SettingsTableViewController: UITableViewController {
     
-    var challenge: Challenge!
-    var challengeIndex: Int = 0
-    
     // MARK: Storyboard
     fileprivate struct Storyboard {
         static let EnableReminder = "Enable Reminder"
         static let EnableDarkTheme = "Enable Dark Theme"
         static let ViewAllReminders = "View All Reminders"
-        static let SetStartDate = "Set Start Date"
-        static let SetGoal = "Set Goal"
         static let InAppPurchase = "In-App Purchase"
     }
     
@@ -113,27 +108,7 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
-    
-    // MARK: Navigation
-    private struct Segue {
-        static let SetGoal = "Set Goal Segue"
-        static let SetDate = "Set Date Segue"
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier ==  Segue.SetGoal {
-            if let dvc = segue.destination as? SetGoalViewController {
-                dvc.challenge = challenge
-                dvc.challengeIndex = challengeIndex
-            }
-        }
-        else if segue.identifier == Segue.SetDate {
-            if let dvc = segue.destination as? DateViewController {
-                dvc.challenge = challenge
-                dvc.challengeIndex = challengeIndex
-            }
-        }
-    }
+
 }
 
 // MARK: - Table view data source
@@ -151,12 +126,6 @@ extension SettingsTableViewController {
             cell.enable(on: Settings.isReminderOn)
             let count = Settings.reminders?.count ?? 0
             cell.addGrayDetail(text: String(count) + String.pluralize(count, input: "Reminder"))
-        }
-        else if cell.reuseIdentifier == Storyboard.SetStartDate {
-            cell.addGrayDetail(text: Parser.parse(date: challenge.date))
-        }
-        else if cell.reuseIdentifier == Storyboard.SetGoal {
-            cell.addGrayDetail(text: String(challenge.goal) + " Days")
         }
         
         // Dark Theme

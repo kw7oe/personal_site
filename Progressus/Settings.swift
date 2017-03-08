@@ -35,10 +35,10 @@ class Settings {
     }
     static func migrateData() {
         let started = settings.bool(forKey: "Date Started")
+        print(started)
         guard let goal = settings.object(forKey: "Goal") as? Int,
               let date = settings.object(forKey: "Date") as? Date
               else { return }
-        
         let challenge = Challenge(name: "", date: date, goal: goal, started: started)
         challenges = [challenge]
         migrated = true
