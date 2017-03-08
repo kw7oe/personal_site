@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController {
         static let EnableReminder = "Enable Reminder"
         static let EnableDarkTheme = "Enable Dark Theme"
         static let ViewAllReminders = "View All Reminders"
+        static let StartOnReset = "Start On Reset"
         static let InAppPurchase = "In-App Purchase"
     }
     
@@ -33,9 +34,16 @@ class SettingsTableViewController: UITableViewController {
             darkThemeSwitch.isOn = Settings.theme == .dark
         }
     }
+    @IBOutlet weak var startOnResetSwitch: UISwitch! {
+        didSet {
+            startOnResetSwitch.customizeColor()
+            startOnResetSwitch.isOn = Settings.startOnReset
+        }
+    }
     @IBOutlet weak var enableReminderLabel: UILabel!
     @IBOutlet weak var darkThemeLabel: UILabel!
     
+    @IBOutlet weak var startOnResetLabel: UILabel!
     // MARK: Target Action
     @IBAction func toggleReminderSwitch(_ sender: UISwitch) {
         let notificationService = NotificationServices()
@@ -51,6 +59,10 @@ class SettingsTableViewController: UITableViewController {
         }        
         Settings.isReminderOn = sender.isOn
         tableView.reloadData()
+    }
+    
+    @IBAction func toggleStartOnReset(_ sender: UISwitch) {
+        Settings.startOnReset = sender.isOn
     }
     
     @IBAction func toggleDarkTheme(_ sender: UISwitch) {
@@ -119,14 +131,18 @@ extension SettingsTableViewController {
         if cell.reuseIdentifier == Storyboard.EnableReminder {
             enableReminderLabel.updateFontColor()
         }
-        else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {
-            darkThemeLabel.updateFontColor()
-        }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
             cell.enable(on: Settings.isReminderOn)
             let count = Settings.reminders?.count ?? 0
             cell.addGrayDetail(text: String(count) + String.pluralize(count, input: "Reminder"))
         }
+        else if cell.reuseIdentifier == Storyboard.StartOnReset {
+            startOnResetLabel.updateFontColor()
+        }
+        else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {
+            darkThemeLabel.updateFontColor()
+        }
+        
         
         // Dark Theme
         cell.customize()

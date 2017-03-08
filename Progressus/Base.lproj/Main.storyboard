@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bu-A4-2YN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="1017"/>
+            <point key="canvasLocation" x="190" y="909"/>
         </scene>
         <!--Settings-->
         <scene sceneID="I5F-uX-dQW">
@@ -294,10 +294,45 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection footerTitle="When turned on, the counter will restart automatically when 'RESET' button is pressed." id="8MQ-jH-W63">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Start On Reset" id="Xav-e2-8ek">
+                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Xav-e2-8ek" id="2TN-Eh-QD9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start On Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-w5-sFU">
+                                                    <rect key="frame" x="15" y="11" width="138" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="138" id="MqK-JQ-vzY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-Ev-cRj">
+                                                    <rect key="frame" x="311" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleStartOnReset:" destination="076-7C-ni5" eventType="valueChanged" id="Olm-Xu-nqH"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ghr-Ev-cRj" firstAttribute="trailing" secondItem="2TN-Eh-QD9" secondAttribute="trailingMargin" id="1c1-Ve-9WG"/>
+                                                <constraint firstItem="Ame-w5-sFU" firstAttribute="centerY" secondItem="ghr-Ev-cRj" secondAttribute="centerY" id="BZN-DQ-HLC"/>
+                                                <constraint firstItem="Ame-w5-sFU" firstAttribute="centerY" secondItem="2TN-Eh-QD9" secondAttribute="centerY" id="qd8-h1-jZ8"/>
+                                                <constraint firstItem="Ame-w5-sFU" firstAttribute="leading" secondItem="2TN-Eh-QD9" secondAttribute="leadingMargin" id="xD3-0O-cTw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="BCN-F9-MgD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Enable Dark Theme" id="dqC-vT-Z8d">
-                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="267" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="dqC-vT-Z8d" id="owu-tk-9Bc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -332,7 +367,7 @@
                             <tableViewSection id="S3O-da-pCo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Yjq-At-T1r">
-                                        <rect key="frame" x="0.0" y="239" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="347" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yjq-At-T1r" id="dF1-SG-FBo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -367,6 +402,8 @@
                         <outlet property="darkThemeSwitch" destination="d9D-ee-Pzp" id="bLj-dM-tTS"/>
                         <outlet property="enableReminderLabel" destination="TWS-fA-iqm" id="TJd-zC-Wz9"/>
                         <outlet property="reminderOnSwitch" destination="o5S-oL-c9g" id="mcx-1k-TIf"/>
+                        <outlet property="startOnResetLabel" destination="Ame-w5-sFU" id="6rC-U1-DtG"/>
+                        <outlet property="startOnResetSwitch" destination="ghr-Ev-cRj" id="HRE-Ul-Ut7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klO-MM-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -689,7 +726,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFA-di-HYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621" y="1017"/>
+            <point key="canvasLocation" x="-620" y="909"/>
         </scene>
     </scenes>
     <resources>

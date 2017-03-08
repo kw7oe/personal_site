@@ -20,6 +20,7 @@ class Settings {
         static let ReminderTime = "Reminder Time"
         static let Reminders = "Reminders"
         static let ReminderIdentifiers = "Reminder Identifiers"
+        static let StartOnReset = "Start On Reset"
         static let Theme = "Theme"
         static let Migrated = "Migrated"
     }
@@ -35,7 +36,6 @@ class Settings {
     }
     static func migrateData() {
         let started = settings.bool(forKey: "Date Started")
-        print(started)
         guard let goal = settings.object(forKey: "Goal") as? Int,
               let date = settings.object(forKey: "Date") as? Date
               else { return }
@@ -139,6 +139,19 @@ class Settings {
     static func updateReminderAt(index: Int, with reminder: Reminder) {
         reminders![index] = reminder
         NotificationServices().scheduleNotification(with: reminder, basedOn: .short)
+    }
+    
+    // MARK: Utility
+    static var startOnReset: Bool {
+        get {
+            if let result = settings.object(forKey: Key.StartOnReset) as? Bool {
+                return result
+            }
+            return false
+        }
+        set {
+            settings.set(newValue, forKey: Key.StartOnReset)
+        }
     }
     
     // MARK: DARK THEME

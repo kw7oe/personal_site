@@ -46,14 +46,18 @@ class CounterViewController: UIViewController {
                 title: "OK",
                 style: .default,
                 handler: { (action) in
+                    var title = "START"
+                    if Settings.startOnReset {
+                        title = "RESET"
+                    }
                     self.challenge.update(
                         at: self.challengeIndex,
                         with: [
                             "date": Date.init(),
-                            "started": false                        
+                            "started": Settings.startOnReset
                         ]
                     )
-                    self.button.setTitle("START", for: .normal)
+                    self.button.setTitle(title, for: .normal)
                     self.setProgress()
                     self.updateUI()
                 }
