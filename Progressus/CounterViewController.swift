@@ -12,8 +12,14 @@ class CounterViewController: UIViewController {
     
     var challengeIndex = 0 
     var challenge: Challenge {
-        return Settings.challenges?[challengeIndex] ?? Challenge(name: "", date: Date.init(), goal: 7, started: false)
+        if let challenges = Settings.challenges {
+            if !challenges.isEmpty {
+                return challenges[challengeIndex]
+            }
+        }
+        return Challenge(name: "", date: Date.init(), goal: 7, started: false)
     }
+    
     var time: Int {
         if !challenge.started { return 0 }
         return -Int(challenge.date.timeIntervalSinceNow)
@@ -30,6 +36,10 @@ class CounterViewController: UIViewController {
     @IBOutlet weak var progressView: ProgressPieView! 
     
     // MARK: Target Action
+    @IBAction func deleteChallenge(_ sender: UIBarButtonItem) {
+        Settings.removeChallenge(at: challengeIndex)
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func resetTime(_ sender: UIButton) {
         if challenge.started {
             resetTimer()

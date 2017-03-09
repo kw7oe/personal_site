@@ -73,6 +73,10 @@ class Settings {
             challenges![position] = challenge
         }
     }
+    
+    static func removeChallenge(at position: Int) {
+        challenges?.remove(at: position)
+    }
 
     // MARK: Reminders
     static var reminders: [Reminder]? {

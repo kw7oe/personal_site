@@ -203,11 +203,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="O4Q-mY-PeU">
-                            <connections>
-                                <segue destination="954-sN-hww" kind="presentation" identifier="Edit Challenge Segue" id="ofM-KY-CwO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="F5C-wM-q2F">
+                                <connections>
+                                    <action selector="deleteChallenge:" destination="9VN-cr-0Qb" id="VVM-jW-KPO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="compose" id="O4Q-mY-PeU">
+                                <connections>
+                                    <segue destination="954-sN-hww" kind="presentation" identifier="Edit Challenge Segue" id="ofM-KY-CwO"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="gzz-2M-Ec8" id="SnW-Gj-PkM"/>
@@ -612,18 +619,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-Wd-GWF">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="27.5"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardType="alphabet"/>
+                                                        </textField>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-n7-lp8">
+                                                            <rect key="frame" x="348.5" y="0.0" width="10.5" height="27.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="bottom" secondItem="Uud-VL-i8P" secondAttribute="bottomMargin" id="4NN-b2-lUa"/>
-                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="top" secondItem="Uud-VL-i8P" secondAttribute="topMargin" id="57p-Ye-WwK"/>
-                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="trailing" secondItem="Uud-VL-i8P" secondAttribute="trailingMargin" id="P4w-qQ-0b3"/>
-                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="leading" secondItem="Uud-VL-i8P" secondAttribute="leadingMargin" id="z5u-O0-xfx"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="fP9-Wd-GWF" secondAttribute="leading" id="4RF-Ss-dPc"/>
+                                                <constraint firstItem="wpX-mI-Mb1" firstAttribute="top" secondItem="Uud-VL-i8P" secondAttribute="topMargin" id="5DW-bd-56K"/>
+                                                <constraint firstItem="fP9-Wd-GWF" firstAttribute="centerX" secondItem="Uud-VL-i8P" secondAttribute="centerX" id="8E8-ZG-4ZC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fP9-Wd-GWF" secondAttribute="bottom" id="KUz-A2-WC0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -704,11 +722,12 @@
                         <outlet property="goalPicker" destination="uub-Dk-oXd" id="TeV-ly-g7Q"/>
                         <outlet property="nameTextField" destination="wpX-mI-Mb1" id="m7q-Qi-9uR"/>
                         <outlet property="startDatePicker" destination="EPw-Za-UmT" id="89f-Ox-b2j"/>
+                        <outlet property="textCountLabel" destination="Lh6-n7-lp8" id="WHi-Ib-5f1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pa9-Ud-oyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622" y="1838"/>
+            <point key="canvasLocation" x="-623.20000000000005" y="1837.3313343328336"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WNa-5c-MLu">
@@ -733,7 +752,7 @@
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xei-54-iv8"/>
         <segue reference="PKJ-9A-O1p"/>
-        <segue reference="ofM-KY-CwO"/>
     </inferredMetricsTieBreakers>
 </document>

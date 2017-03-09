@@ -26,8 +26,13 @@ class AddChallengeTableViewController: UITableViewController {
     
     
     // MARK: View Outlet
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.delegate = self
+        }
+    }
     @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var goalPicker: UIPickerView! {
         didSet {
             goalPicker.dataSource = self
@@ -42,7 +47,6 @@ class AddChallengeTableViewController: UITableViewController {
     
     // MARK: Target Action
     @IBAction func saveChallenge(_ sender: UIBarButtonItem) {
-        print(mode)
         let challenge = Challenge.init(
             name: nameTextField.text ?? "Challenge",
             date: Date.init(),
@@ -67,26 +71,15 @@ class AddChallengeTableViewController: UITableViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: Table View Delegate
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 1 && mode == .add {
-//            return nil
-//        }
-//        return super.tableView(tableView, titleForHeaderInSection: section)
-//    }
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 1 && mode == .add {
-//            return 0.1
-//        }
-//        return super.tableView(tableView, heightForHeaderInSection: section)
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 1 && mode == .add {
-//            return 0.1
-//        }
-//        return super.tableView(tableView, heightForRowAt: indexPath)
-//    }
+    fileprivate func updateCountFor(editing: Bool) {
+        var count = nameTextField.text?.characters.count ?? 0
+        if editing {
+            count += 1
+            if count > 20 { count = 20 }
+        }
+        textCountLabel.text = "\(count)/20"
+    }
+
     
     // MARK: View Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -95,9 +88,26 @@ class AddChallengeTableViewController: UITableViewController {
             startDatePicker.date = challenge!.date
             nameTextField.text = challenge!.name
         }
+        updateCountFor(editing: false)
     }
 }
 
+extension AddChallengeTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentCharacterCount = textField.text?.characters.count ?? 0
+        if (range.length + range.location > currentCharacterCount) {
+            return false
+        }
+        let newLength = currentCharacterCount + string.characters.count - range.length
+        updateCountFor(editing: true)
+        return newLength < 21
+    }
+}
 
 extension AddChallengeTableViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

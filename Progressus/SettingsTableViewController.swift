@@ -117,6 +117,7 @@ class SettingsTableViewController: UITableViewController {
         view.window?.tintColor = CustomTheme.primaryColor()
         darkThemeSwitch.customizeColor()
         reminderOnSwitch.customizeColor()
+        startOnResetSwitch.customizeColor()
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
