@@ -31,7 +31,11 @@ class AddChallengeTableViewController: UITableViewController {
             nameTextField.delegate = self
         }
     }
-    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var startDatePicker: UIDatePicker! {
+        didSet {
+            startDatePicker.maximumDate = Date.init()
+        }
+    }
     @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var goalPicker: UIPickerView! {
         didSet {
@@ -62,7 +66,11 @@ class AddChallengeTableViewController: UITableViewController {
         
         dismiss()
     }
-   
+    
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        updateCountFor()
+    }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss()
     }
@@ -71,12 +79,8 @@ class AddChallengeTableViewController: UITableViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    fileprivate func updateCountFor(editing: Bool) {
-        var count = nameTextField.text?.characters.count ?? 0
-        if editing {
-            count += 1
-            if count > 20 { count = 20 }
-        }
+    fileprivate func updateCountFor() {
+        let count = nameTextField.text?.characters.count ?? 0
         textCountLabel.text = "\(count)/20"
     }
 
@@ -88,7 +92,7 @@ class AddChallengeTableViewController: UITableViewController {
             startDatePicker.date = challenge!.date
             nameTextField.text = challenge!.name
         }
-        updateCountFor(editing: false)
+        updateCountFor()
     }
 }
 
@@ -100,11 +104,7 @@ extension AddChallengeTableViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentCharacterCount = textField.text?.characters.count ?? 0
-        if (range.length + range.location > currentCharacterCount) {
-            return false
-        }
         let newLength = currentCharacterCount + string.characters.count - range.length
-        updateCountFor(editing: true)
         return newLength < 21
     }
 }

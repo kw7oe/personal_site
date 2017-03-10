@@ -37,7 +37,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p80-R2-JK6">
                                             <rect key="frame" x="8" y="15.5" width="161" height="59.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-La-We9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-La-We9">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -64,6 +64,7 @@
                                     <constraint firstItem="vK4-TR-Jhi" firstAttribute="trailing" secondItem="FOC-ke-qeu" secondAttribute="trailingMargin" id="UtT-gK-cjb"/>
                                     <constraint firstItem="vK4-TR-Jhi" firstAttribute="centerY" secondItem="FOC-ke-qeu" secondAttribute="centerY" id="WG5-Ck-pzi"/>
                                     <constraint firstItem="p80-R2-JK6" firstAttribute="leading" secondItem="FOC-ke-qeu" secondAttribute="leadingMargin" id="cEr-rf-c1u"/>
+                                    <constraint firstItem="vK4-TR-Jhi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JuV-La-We9" secondAttribute="trailing" constant="20" id="eXL-ia-Xu9"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="challengeNameLabel" destination="JuV-La-We9" id="ATC-Hs-2Zr"/>
@@ -626,7 +627,10 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="348.5" height="27.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardType="alphabet"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                                                            <connections>
+                                                                <action selector="textFieldEditingChanged:" destination="EeW-Uv-AlE" eventType="editingChanged" id="NJW-h9-mzv"/>
+                                                            </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-n7-lp8">
                                                             <rect key="frame" x="348.5" y="0.0" width="10.5" height="27.5"/>
