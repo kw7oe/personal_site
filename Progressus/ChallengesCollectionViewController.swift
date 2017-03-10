@@ -30,10 +30,9 @@ class ChallengesCollectionViewController: UICollectionViewController {
     
     private func updateColorScheme() {        
         self.navigationController?.navigationBar.none()
-        self.collectionView?.window?.tintColor = CustomTheme.primaryColor() // Bugs
+        self.navigationController?.view.window?.tintColor = CustomTheme.primaryColor()
         self.collectionView?.backgroundColor = CustomTheme.backgroundColor()
     }
-    
     
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -67,8 +66,3 @@ class ChallengesCollectionViewController: UICollectionViewController {
     }
 }
 
-extension ChallengesCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width - 30, height: 97)
-    }
-}

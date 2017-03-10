@@ -29,6 +29,10 @@ class AddChallengeTableViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.delegate = self
+            nameTextField.textColor = CustomTheme.textColor()
+            // Refactor needed
+            nameTextField.attributedPlaceholder =
+                NSAttributedString(string: "Challenge Name", attributes: [NSForegroundColorAttributeName : CustomTheme.placeholderColor()])
         }
     }
     @IBOutlet weak var startDatePicker: UIDatePicker! {
@@ -36,7 +40,11 @@ class AddChallengeTableViewController: UITableViewController {
             startDatePicker.maximumDate = Date.init()
         }
     }
-    @IBOutlet weak var textCountLabel: UILabel!
+    @IBOutlet weak var textCountLabel: UILabel! {
+        didSet {
+            textCountLabel.textColor = CustomTheme.textColor()
+        }
+    }
     @IBOutlet weak var goalPicker: UIPickerView! {
         didSet {
             goalPicker.dataSource = self
@@ -92,7 +100,22 @@ class AddChallengeTableViewController: UITableViewController {
             startDatePicker.date = challenge!.date
             nameTextField.text = challenge!.name
         }
+        startDatePicker.changeToWhiteFont()
         updateCountFor()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
+        self.navigationController?.navigationBar.none()
+    }
+}
+
+extension AddChallengeTableViewController {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.customize()
+        return cell
     }
 }
 
