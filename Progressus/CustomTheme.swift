@@ -22,12 +22,30 @@ struct CustomTheme {
         static var lightGray = UIColor.init(white: 0.90, alpha: 1)
         static var gray = UIColor.init(white: 0.60, alpha: 1)
         static var darkGray = UIColor.init(white: 0.20, alpha: 1)
+        // #283440
+        static var gunmetal = UIColor.init(red: 0.157, green: 0.204, blue: 0.251, alpha: 1)
+        // #344250
+        static var charchoal = UIColor.init(red: 0.204, green: 0.259, blue: 0.314, alpha: 1)
         // #427dd6
         static var blue = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
         // #42a2d6
         static var moderateBlue = UIColor.init(red: 0.259, green: 0.635, blue: 0.839, alpha: 1)
         // #42c7d6
         static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
+    }
+    
+    static func borderColor() -> UIColor {
+        if Settings.theme == .blue {
+            return Colors.darkGray
+        }
+        return Colors.lightGray
+    }
+    
+    static func cellBackgroundColor() -> UIColor {
+        if Settings.theme == .blue {
+            return Colors.white
+        }
+        return Colors.charchoal
     }
     
     static func cellSelectedView() -> UIView {
@@ -44,7 +62,7 @@ struct CustomTheme {
         if Settings.theme == .blue {
             return Colors.white
         }
-        return Colors.black
+        return Colors.gunmetal
     }
     
     static func barStyle() -> UIBarStyle {

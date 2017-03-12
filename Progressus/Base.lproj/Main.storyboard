@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wRl-uf-Tjs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="src-H9-0QA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,92 +12,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Challenges Collection View Controller-->
-        <scene sceneID="zTV-se-xjc">
-            <objects>
-                <collectionViewController id="fqz-l5-bTQ" customClass="ChallengesCollectionViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Lk-AX-sIv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fE1-qn-mtL">
-                            <size key="itemSize" width="365" height="95"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Challenge Cell" id="FOC-ke-qeu" customClass="ChallengeCollectionViewCell" customModule="Progressus" customModuleProvider="target">
-                                <rect key="frame" x="5" y="5" width="365" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="365" height="95"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p80-R2-JK6">
-                                            <rect key="frame" x="8" y="18" width="161" height="59.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-La-We9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days 8 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="doi-eF-Zai">
-                                                    <rect key="frame" x="0.0" y="39" width="161" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vK4-TR-Jhi">
-                                            <rect key="frame" x="260.5" y="26" width="96.5" height="43"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="p80-R2-JK6" firstAttribute="centerY" secondItem="FOC-ke-qeu" secondAttribute="centerY" id="KS8-Se-hwH"/>
-                                    <constraint firstItem="vK4-TR-Jhi" firstAttribute="trailing" secondItem="FOC-ke-qeu" secondAttribute="trailingMargin" id="UtT-gK-cjb"/>
-                                    <constraint firstItem="vK4-TR-Jhi" firstAttribute="centerY" secondItem="FOC-ke-qeu" secondAttribute="centerY" id="WG5-Ck-pzi"/>
-                                    <constraint firstItem="p80-R2-JK6" firstAttribute="leading" secondItem="FOC-ke-qeu" secondAttribute="leadingMargin" id="cEr-rf-c1u"/>
-                                    <constraint firstItem="vK4-TR-Jhi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JuV-La-We9" secondAttribute="trailing" constant="20" id="eXL-ia-Xu9"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="challengeNameLabel" destination="JuV-La-We9" id="ATC-Hs-2Zr"/>
-                                    <outlet property="dayTimeLabel" destination="doi-eF-Zai" id="phN-mb-FKD"/>
-                                    <outlet property="percentageLabel" destination="vK4-TR-Jhi" id="T7o-pI-geW"/>
-                                    <segue destination="9VN-cr-0Qb" kind="show" identifier="Challenge Cell Segue" id="nPk-mn-o1o"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="fqz-l5-bTQ" id="gOv-dz-slQ"/>
-                            <outlet property="delegate" destination="fqz-l5-bTQ" id="9vc-2P-ZPb"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="zS4-EE-ykp">
-                        <rightBarButtonItems>
-                            <barButtonItem image="Settings" id="nxJ-Cm-nfQ">
-                                <connections>
-                                    <segue destination="076-7C-ni5" kind="show" identifier="Settings Segue" id="d3k-Iw-pUE"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="tPZ-vH-MDg">
-                                <connections>
-                                    <segue destination="954-sN-hww" kind="presentation" identifier="Add Challenge Segue" id="xei-54-iv8"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qps-g0-HAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="189.59999999999999" y="138.98050974512745"/>
-        </scene>
         <!--Counter View Controller-->
         <scene sceneID="my9-GK-ANl">
             <objects>
@@ -230,6 +144,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bu-A4-2YN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="909"/>
+        </scene>
+        <!--Challenges Table View Controller-->
+        <scene sceneID="Laj-d7-HMc">
+            <objects>
+                <tableViewController id="y1k-zv-1cn" customClass="ChallengesTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="h1R-tr-PEA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Challenge Cell" id="J5m-wg-59g" customClass="ChallengeTableViewCell" customModule="Progressus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5m-wg-59g" id="byp-nN-MCd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-kV-a2x">
+                                            <rect key="frame" x="8" y="10" width="161" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days 8 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-lh-B1t">
+                                                    <rect key="frame" x="0.0" y="39" width="161" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Co-KJ-lCq">
+                                            <rect key="frame" x="270.5" y="19" width="96.5" height="43"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="centerY" secondItem="3Co-KJ-lCq" secondAttribute="centerY" id="0uB-fm-aYS"/>
+                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" id="N4H-j2-pmm"/>
+                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="leading" secondItem="byp-nN-MCd" secondAttribute="leadingMargin" id="Uxo-hh-MW1"/>
+                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="trailing" secondItem="byp-nN-MCd" secondAttribute="trailingMargin" id="YPT-BM-Nbc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="challengeNameLabel" destination="OHh-uT-9eH" id="SEm-Go-RGj"/>
+                                    <outlet property="dayTimeLabel" destination="Rjd-lh-B1t" id="A9K-8c-LAW"/>
+                                    <outlet property="percentageLabel" destination="3Co-KJ-lCq" id="9Oi-gD-5hB"/>
+                                    <segue destination="9VN-cr-0Qb" kind="show" id="tX7-xu-FvN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="y1k-zv-1cn" id="Kzx-bm-Eir"/>
+                            <outlet property="delegate" destination="y1k-zv-1cn" id="z5Y-gs-Tiq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="97l-g1-OOG">
+                        <rightBarButtonItems>
+                            <barButtonItem image="Settings" id="KSZ-xy-Caz">
+                                <connections>
+                                    <segue destination="076-7C-ni5" kind="show" identifier="Settings Segue" id="fbt-RX-jZP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="0OE-Ah-u72">
+                                <connections>
+                                    <segue destination="954-sN-hww" kind="show" identifier="Add Challenge Segue" id="qzE-A6-qdN"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPK-XE-bb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="138.98050974512745"/>
         </scene>
         <!--Settings-->
         <scene sceneID="I5F-uX-dQW">
@@ -416,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klO-MM-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949" y="139"/>
+            <point key="canvasLocation" x="948" y="139"/>
         </scene>
         <!--Reminders Table View Controller-->
         <scene sceneID="zLi-Ey-ABl">
@@ -428,7 +421,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reminder Cell" textLabel="T96-qu-UDt" detailTextLabel="Ev1-Ev-1jY" style="IBUITableViewCellStyleValue1" id="FQp-V4-aGw">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQp-V4-aGw" id="u1w-lN-hTP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -584,24 +577,6 @@
             </objects>
             <point key="canvasLocation" x="2433" y="139"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="40M-ZF-d01">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wRl-uf-Tjs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X5Q-8m-Jz8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fqz-l5-bTQ" kind="relationship" relationship="rootViewController" id="UMH-vD-m8M"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aId-5H-HfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-620" y="139"/>
-        </scene>
         <!--Add Challenge Table View Controller-->
         <scene sceneID="IHt-ov-Wdm">
             <objects>
@@ -751,12 +726,30 @@
             </objects>
             <point key="canvasLocation" x="-620" y="909"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nGu-R0-flE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="src-H9-0QA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9WU-vI-Bjf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="y1k-zv-1cn" kind="relationship" relationship="rootViewController" id="XWV-8P-Kf3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJC-J3-qhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-585" y="139"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xei-54-iv8"/>
-        <segue reference="PKJ-9A-O1p"/>
+        <segue reference="FrI-Eg-KNn"/>
+        <segue reference="qzE-A6-qdN"/>
     </inferredMetricsTieBreakers>
 </document>
