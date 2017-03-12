@@ -48,6 +48,31 @@ extension UIViewController {
     }
 }
 
+extension UIColor {
+    
+    convenience init(hexString: String) {
+        var string:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if string.hasPrefix("#") {
+            string.remove(at: string.startIndex)
+        }
+        
+        var rgbValue: UInt32 = 0
+        Scanner(string: string).scanHexInt32(&rgbValue)
+        
+        let r = CGFloat((rgbValue & 0xFF0000) >> 16)
+        let g = CGFloat((rgbValue & 0x00FF00) >> 8)
+        let b = CGFloat((rgbValue & 0x0000FF) >> 0)
+        
+        self.init(
+            red: r / 255.0,
+            green: g / 255.0,
+            blue: b / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+}
+
 
 // MARK: TableViewCell Extension
 extension UITableViewCell {

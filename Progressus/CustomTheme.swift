@@ -18,27 +18,18 @@ struct CustomTheme {
     
     private struct Colors {
         static var white = UIColor.init(white: 0.98, alpha: 1)
-        static var black = UIColor.init(white: 0.02, alpha: 1)
+        static var ultraLightGray = UIColor.init(white: 0.95, alpha: 1)
         static var lightGray = UIColor.init(white: 0.90, alpha: 1)
         static var gray = UIColor.init(white: 0.60, alpha: 1)
-        static var darkGray = UIColor.init(white: 0.20, alpha: 1)
-        // #283440
-        static var gunmetal = UIColor.init(red: 0.157, green: 0.204, blue: 0.251, alpha: 1)
-        // #344250
-        static var charchoal = UIColor.init(red: 0.204, green: 0.259, blue: 0.314, alpha: 1)
-        // #427dd6
-        static var blue = UIColor.init(red: 0.247, green: 0.482, blue: 0.851, alpha: 1)
-        // #42a2d6
-        static var moderateBlue = UIColor.init(red: 0.259, green: 0.635, blue: 0.839, alpha: 1)
+        static var darkGray = UIColor.init(white: 0.15, alpha: 1)
+
+        static var gunmetal = UIColor.init(hexString: "#283440")
+        static var charchoal = UIColor.init(hexString: "#344250")
+        static var blue = UIColor.init(hexString: "#427dd6")
+        static var steelBlue = UIColor.init(hexString: "#0067A5")
+        static var moderateBlue = UIColor.init(hexString: "#42a2d6")
         // #42c7d6
         static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
-    }
-    
-    static func borderColor() -> UIColor {
-        if Settings.theme == .blue {
-            return Colors.darkGray
-        }
-        return Colors.lightGray
     }
     
     static func cellBackgroundColor() -> UIColor {
@@ -50,17 +41,13 @@ struct CustomTheme {
     
     static func cellSelectedView() -> UIView {
         let view = UIView()
-        if Settings.theme == .blue {
-            view.backgroundColor = Colors.lightGray
-        } else {
-            view.backgroundColor = Colors.darkGray
-        }
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         return view
     }
     
     static func backgroundColor() -> UIColor {
         if Settings.theme == .blue {
-            return Colors.white
+            return Colors.ultraLightGray
         }
         return Colors.gunmetal
     }
@@ -74,9 +61,9 @@ struct CustomTheme {
     
     static func textColor() -> UIColor {
         if Settings.theme == .blue {
-            return Colors.black
+            return Colors.darkGray
         }
-        return Colors.white
+        return Colors.lightGray
     }
     
     static func placeholderColor() -> UIColor {
@@ -91,9 +78,6 @@ struct CustomTheme {
     }
     
     static func lighterPrimaryColor() -> UIColor {
-        if Settings.theme == .blue {
-            return Colors.blue.withAlphaComponent(0.5)
-        }
-        return Colors.moderateBlue.withAlphaComponent(0.5)
+        return primaryColor().withAlphaComponent(0.5)
     }
 }

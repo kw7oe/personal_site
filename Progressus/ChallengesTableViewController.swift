@@ -28,23 +28,23 @@ class ChallengesTableViewController: UITableViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()        
-        tableView.separatorStyle = .none
         updateColorScheme()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.separatorStyle = .none
         tableView.reloadData()
     }
 
-    // MARK: - Table view data source
+    // MARK: Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return challenges?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return challenges?.count ?? 0
+        return 1
     }
 
     
@@ -52,14 +52,15 @@ class ChallengesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
 
         if let challengeCell = cell as? ChallengeTableViewCell {
-            challengeCell.challenge = challenges?[indexPath.row]
+            challengeCell.challenge = challenges?[indexPath.section]
         }
 
         return cell
     }
-
     
-    // MARK: - Navigation
+    // MARK: Table View Delegate
+    
+    // MARK: Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,7 +68,7 @@ class ChallengesTableViewController: UITableViewController {
             if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
-                    vc.challengeIndex = index!.row
+                    vc.challengeIndex = index!.section
                 }
             }
         }

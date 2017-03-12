@@ -30,6 +30,8 @@ class ChallengeTableViewCell: UITableViewCell {
     override func customize() {
         backgroundColor = CustomTheme.cellBackgroundColor()
         selectedBackgroundView = CustomTheme.cellSelectedView()
+        contentView.layoutMargins.left = 25
+        contentView.layoutMargins.right = 25
         challengeNameLabel.textColor = CustomTheme.textColor()
         percentageLabel.textColor = CustomTheme.textColor()
         dayTimeLabel.textColor = CustomTheme.textColor()

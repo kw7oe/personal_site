@@ -149,22 +149,22 @@
         <scene sceneID="Laj-d7-HMc">
             <objects>
                 <tableViewController id="y1k-zv-1cn" customClass="ChallengesTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="h1R-tr-PEA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="95" sectionHeaderHeight="18" sectionFooterHeight="18" id="h1R-tr-PEA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Challenge Cell" id="J5m-wg-59g" customClass="ChallengeTableViewCell" customModule="Progressus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Challenge Cell" rowHeight="95" id="J5m-wg-59g" customClass="ChallengeTableViewCell" customModule="Progressus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5m-wg-59g" id="byp-nN-MCd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-kV-a2x">
-                                            <rect key="frame" x="8" y="10" width="161" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-kV-a2x">
+                                            <rect key="frame" x="8" y="15.5" width="161" height="59.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -179,17 +179,17 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Co-KJ-lCq">
-                                            <rect key="frame" x="270.5" y="19" width="96.5" height="43"/>
+                                            <rect key="frame" x="270.5" y="26" width="96.5" height="43"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="centerY" secondItem="3Co-KJ-lCq" secondAttribute="centerY" id="0uB-fm-aYS"/>
-                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" id="N4H-j2-pmm"/>
-                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="leading" secondItem="byp-nN-MCd" secondAttribute="leadingMargin" id="Uxo-hh-MW1"/>
-                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="trailing" secondItem="byp-nN-MCd" secondAttribute="trailingMargin" id="YPT-BM-Nbc"/>
+                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="trailing" secondItem="byp-nN-MCd" secondAttribute="trailingMargin" id="U00-Dt-ARW"/>
+                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" id="kgq-ST-ctU"/>
+                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" constant="-2" id="qtH-bJ-wro"/>
+                                        <constraint firstItem="h6H-kV-a2x" firstAttribute="leading" secondItem="byp-nN-MCd" secondAttribute="leadingMargin" id="yiO-VZ-hKP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -421,7 +421,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reminder Cell" textLabel="T96-qu-UDt" detailTextLabel="Ev1-Ev-1jY" style="IBUITableViewCellStyleValue1" id="FQp-V4-aGw">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQp-V4-aGw" id="u1w-lN-hTP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
