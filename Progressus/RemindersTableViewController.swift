@@ -13,7 +13,7 @@ class RemindersTableViewController: UITableViewController {
     var data: [Reminder]? {
         return Settings.reminders
     }
-    var label: UILabel?
+    var blankView: BlankView!
     
     // MARK: Storyboard
     struct Storyboard {
@@ -30,7 +30,8 @@ class RemindersTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        label  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
+        blankView = BlankView(frame: tableView.frame)
+        blankView.dataSource = self
         tableView.reloadData()
     }
     
@@ -79,11 +80,7 @@ extension RemindersTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         if data == nil || data?.count == 0 {
-            label?.text = "No Reminder Available.\nPress '+' to add new reminders.\nYou can add up to 3 reminders."
-            label?.textColor = CustomTheme.textColor()
-            label?.textAlignment = .center
-            label?.numberOfLines = 3
-            tableView.backgroundView = label
+            tableView.backgroundView = blankView
             tableView.separatorStyle = .none
         } else {
             tableView.backgroundView = nil
@@ -133,6 +130,11 @@ extension RemindersTableViewController {
            
         }
     }
+}
+
+extension RemindersTableViewController: BlankViewDataSource {
+    var mainTitle: String { return "No Reminder Available" }
+    var detail: String? { return "You can add up to 3 reminders" }
 }
 
 // MARK: UIViewControllerTransitioning Delegate

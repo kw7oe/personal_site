@@ -14,11 +14,6 @@ class ProgressPieView: UIView {
     private let initialLayer = CAShapeLayer()
     var label: UILabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -26,7 +21,7 @@ class ProgressPieView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = CustomTheme.backgroundColor()
-        let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY - bounds.width / 12)
+        let center = CGPoint(x: bounds.midX, y: bounds.midY - bounds.width / 12)
         let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
         setProgressLayer(with: path)
         setupLabel(at: center)

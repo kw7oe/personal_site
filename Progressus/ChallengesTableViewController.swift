@@ -19,6 +19,7 @@ class ChallengesTableViewController: UITableViewController {
     var challenges: [Challenge]? {
         return Settings.challenges
     }
+    var blankView: BlankView!
     
     private func updateColorScheme() {
         navigationController?.navigationBar.none()
@@ -33,6 +34,8 @@ class ChallengesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        blankView = BlankView.init(frame: tableView.frame)
+        blankView.dataSource = self
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
@@ -40,7 +43,13 @@ class ChallengesTableViewController: UITableViewController {
     // MARK: Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return challenges?.count ?? 0
+        if challenges == nil || challenges?.count == 0 {
+            tableView.backgroundView = blankView
+        } else {
+            tableView.backgroundView = nil
+            return challenges!.count
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,14 +67,11 @@ class ChallengesTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: Table View Delegate
-    
     // MARK: Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.ChallengeCellSegue {
-            if let vc = segue.destination as? CounterViewController {
+        if segue.identifier == Storyboard.ChallengeCellSegue {            if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
                     vc.challengeIndex = index!.section
@@ -74,5 +80,22 @@ class ChallengesTableViewController: UITableViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == Storyboard.AddChallengeSegue {
+            if let count = Settings.challenges?.count, count >= 4 {
+                let alertController = UIAlertController(title: "Note", message: "You can only add a maximum amount of 4 challenges. Less is more.", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                present(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
+    }
+}
 
+extension ChallengesTableViewController: BlankViewDataSource {
+    var mainTitle: String { return "No Challenge Available" }
+    var detail: String? { return "You can add up to 4 challenges" }
 }

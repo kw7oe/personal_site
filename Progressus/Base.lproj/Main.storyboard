@@ -155,16 +155,16 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Challenge Cell" rowHeight="95" id="J5m-wg-59g" customClass="ChallengeTableViewCell" customModule="Progressus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5m-wg-59g" id="byp-nN-MCd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-kV-a2x">
                                             <rect key="frame" x="8" y="15.5" width="161" height="59.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stop Smoking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stop Smoking" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -188,6 +188,7 @@
                                     <constraints>
                                         <constraint firstItem="3Co-KJ-lCq" firstAttribute="trailing" secondItem="byp-nN-MCd" secondAttribute="trailingMargin" id="U00-Dt-ARW"/>
                                         <constraint firstItem="3Co-KJ-lCq" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" id="kgq-ST-ctU"/>
+                                        <constraint firstItem="3Co-KJ-lCq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h6H-kV-a2x" secondAttribute="trailing" constant="30" id="kmI-mj-dc0"/>
                                         <constraint firstItem="h6H-kV-a2x" firstAttribute="centerY" secondItem="byp-nN-MCd" secondAttribute="centerY" constant="-2" id="qtH-bJ-wro"/>
                                         <constraint firstItem="h6H-kV-a2x" firstAttribute="leading" secondItem="byp-nN-MCd" secondAttribute="leadingMargin" id="yiO-VZ-hKP"/>
                                     </constraints>
@@ -196,7 +197,7 @@
                                     <outlet property="challengeNameLabel" destination="OHh-uT-9eH" id="SEm-Go-RGj"/>
                                     <outlet property="dayTimeLabel" destination="Rjd-lh-B1t" id="A9K-8c-LAW"/>
                                     <outlet property="percentageLabel" destination="3Co-KJ-lCq" id="9Oi-gD-5hB"/>
-                                    <segue destination="9VN-cr-0Qb" kind="show" id="tX7-xu-FvN"/>
+                                    <segue destination="9VN-cr-0Qb" kind="show" identifier="Challenge Cell Segue" id="tX7-xu-FvN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
