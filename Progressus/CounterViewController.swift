@@ -37,9 +37,14 @@ class CounterViewController: UIViewController {
     
     // MARK: Target Action
     @IBAction func deleteChallenge(_ sender: UIBarButtonItem) {
-        Settings.removeChallenge(at: challengeIndex)
-        _ = self.navigationController?.popViewController(animated: true)
+        let alertController = createDestrutiveAlert(title: "Delete Challenge") { (action) in
+            Settings.removeChallenge(at: self.challengeIndex)
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        alertController.transitioningDelegate = self
+        present(alertController, animated: true, completion: nil)
     }
+    
     @IBAction func resetTime(_ sender: UIButton) {
         if challenge.started {
             resetTimer()
@@ -49,31 +54,24 @@ class CounterViewController: UIViewController {
     }
     
     private func resetTimer() {
-        let alertController = UIAlertController(title: "Are you sure you want to reset?", message: nil, preferredStyle: .alert)
-        alertController.transitioningDelegate = self
-        alertController.addAction(
-            UIAlertAction(
-                title: "OK",
-                style: .default,
-                handler: { (action) in
-                    var title = "START"
-                    if Settings.startOnReset {
-                        title = "RESET"
-                    }
-                    self.challenge.update(
-                        at: self.challengeIndex,
-                        with: [
-                            "date": Date.init(),
-                            "started": Settings.startOnReset
-                        ]
-                    )
-                    self.button.setTitle(title, for: .normal)
-                    self.setProgress()
-                    self.updateUI()
-                }
+        let alertController = createDestrutiveAlert(title: "Reset Challenge") { (action) in
+            var title = "START"
+            if Settings.startOnReset {
+                title = "RESET"
+            }
+            self.challenge.update(
+                at: self.challengeIndex,
+                with: [
+                    "date": Date.init(),
+                    "started": Settings.startOnReset
+                ]
             )
-        )
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.button.setTitle(title, for: .normal)
+            self.setProgress()
+            self.updateUI()
+        }
+        
+        alertController.transitioningDelegate = self
         present(alertController, animated: true, completion: nil)
     }
     
@@ -94,6 +92,23 @@ class CounterViewController: UIViewController {
     }
     
     // MARK: Private Methods
+    private func createDestrutiveAlert(title: String, completionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+        let alertController = UIAlertController(
+            title: title,
+            message: "Are you sure? This action cannot be undone.",
+            preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(
+                title: "YES",
+                style: .destructive,
+                handler: completionHandler
+            )
+        )
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        return alertController
+    }
+    
     private func updateUI() {
         descriptionLabel.text = challenge.progressDescription
         updateTime()

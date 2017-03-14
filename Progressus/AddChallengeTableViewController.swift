@@ -59,8 +59,12 @@ class AddChallengeTableViewController: UITableViewController {
     
     // MARK: Target Action
     @IBAction func saveChallenge(_ sender: UIBarButtonItem) {
+        var name: String = "Challenge"
+        if (nameTextField.text != nil && nameTextField.text! != "") {
+            name = nameTextField.text!
+        }
         let challenge = Challenge.init(
-            name: nameTextField.text ?? "Challenge",
+            name: name,
             date: Date.init(),
             goal: goalPicker.selectedRow(inComponent: 0) + 1,
             started: true)

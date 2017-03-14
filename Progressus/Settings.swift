@@ -64,7 +64,6 @@ class Settings {
             challenges = [challenge]
         } else {
             challenges!.prepend(element: challenge)
-            print(challenges!.count)
         }
     }
     

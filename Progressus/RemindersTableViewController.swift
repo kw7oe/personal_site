@@ -30,8 +30,11 @@ class RemindersTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        blankView = BlankView(frame: tableView.frame)
-        blankView.dataSource = self
+        blankView = BlankView(
+            frame: tableView.frame,
+            title: "No Reminder Available",
+            detail: "You can add up to 3 reminders."
+        )
         tableView.reloadData()
     }
     
@@ -122,7 +125,6 @@ extension RemindersTableViewController {
             Settings.removeReminder(at: indexPath.row, withIdentifier: identifier)
             NotificationServices().removeNotification(withIdentifiers: [identifier])
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print(Settings.reminderIdentifier)
             let rowLeft = tableView.numberOfRows(inSection: 0)
             if rowLeft == 0 {
                  tableView.reloadSections(IndexSet.init(integer: 0), with: UITableViewRowAnimation.automatic)
@@ -130,11 +132,6 @@ extension RemindersTableViewController {
            
         }
     }
-}
-
-extension RemindersTableViewController: BlankViewDataSource {
-    var mainTitle: String { return "No Reminder Available" }
-    var detail: String? { return "You can add up to 3 reminders" }
 }
 
 // MARK: UIViewControllerTransitioning Delegate

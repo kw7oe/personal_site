@@ -27,6 +27,7 @@ class ChallengesTableViewController: UITableViewController {
         tableView.backgroundColor = CustomTheme.backgroundColor()
     }
     
+    // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()        
         updateColorScheme()
@@ -34,42 +35,16 @@ class ChallengesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        blankView = BlankView.init(frame: tableView.frame)
-        blankView.dataSource = self
+        blankView = BlankView(
+            frame: tableView.frame,
+            title: "No Challenge Available",
+            detail: "You can add up to 3 challenges."
+        )
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
-
-    // MARK: Table View Data Source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if challenges == nil || challenges?.count == 0 {
-            tableView.backgroundView = blankView
-        } else {
-            tableView.backgroundView = nil
-            return challenges!.count
-        }
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
-
-        if let challengeCell = cell as? ChallengeTableViewCell {
-            challengeCell.challenge = challenges?[indexPath.section]
-        }
-
-        return cell
-    }
     
     // MARK: Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ChallengeCellSegue {            if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
@@ -95,7 +70,46 @@ class ChallengesTableViewController: UITableViewController {
     }
 }
 
-extension ChallengesTableViewController: BlankViewDataSource {
-    var mainTitle: String { return "No Challenge Available" }
-    var detail: String? { return "You can add up to 4 challenges" }
+// MARK: Table View Data Source
+extension ChallengesTableViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if challenges == nil || challenges?.count == 0 {
+            tableView.backgroundView = blankView
+        } else {
+            tableView.backgroundView = nil
+            return challenges!.count
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
+        
+        if let challengeCell = cell as? ChallengeTableViewCell {
+            challengeCell.challenge = challenges?[indexPath.section]
+        }
+        
+        return cell
+    }
+    
+    // Editing
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle  {
+        case .delete:
+            let index = indexPath.section
+            Settings.removeChallenge(at: index)
+            tableView.deleteSections(IndexSet([index]), with: .fade)
+        default: break
+        }
+    }
 }

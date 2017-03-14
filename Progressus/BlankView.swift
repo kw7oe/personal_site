@@ -10,18 +10,11 @@ import UIKit
 
 class BlankView: UIView {
     
-    var dataSource: BlankViewDataSource! {
-        didSet {
-            updateUI()
-        }
-    }
+
     var label: UILabel = UILabel()
     var detailLabel: UILabel = UILabel()
     
     func updateUI() {
-        label.text = dataSource.mainTitle
-        detailLabel.text = dataSource.detail        
-        
         let boldFont = UIFont.boldSystemFont(ofSize: 24.0)
         label.font = boldFont
         let italicFont = UIFont.italicSystemFont(ofSize: 16.0)
@@ -44,10 +37,17 @@ class BlankView: UIView {
         detailLabel.center = CGPoint(x: center.x, y: center.y + tempFrame.height)
         detailLabel.textAlignment = .center
         
+        updateUI()        
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    convenience init(frame: CGRect, title: String, detail: String?) {
+        self.init(frame: frame)
+        label.text = title
+        detailLabel.text = detail
         addSubview(label)
         addSubview(detailLabel)
     }
@@ -58,7 +58,3 @@ class BlankView: UIView {
 
 }
 
-protocol BlankViewDataSource {
-    var mainTitle: String { get }
-    var detail: String? { get }
-}

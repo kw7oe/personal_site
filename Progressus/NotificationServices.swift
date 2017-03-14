@@ -29,7 +29,7 @@ class NotificationServices {
     Schedule Notification. To call this method, first, you must implement the `NotificationServices Delegate`:
      
      ```
-      class ViewController: NotificationServicesDelegate {
+      extension ViewController: NotificationServicesDelegate {
          func nameOfIdentifiers() -> String
          func contentOfNotification() -> String
          func willRepeat() -> Bool

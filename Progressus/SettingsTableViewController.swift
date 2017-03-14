@@ -127,6 +127,12 @@ class SettingsTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension SettingsTableViewController {
     
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let footerView = view as? UITableViewHeaderFooterView {
+            footerView.textLabel?.textColor = CustomTheme.textColor().withAlphaComponent(0.8)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.EnableReminder {
