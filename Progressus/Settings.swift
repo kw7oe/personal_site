@@ -23,6 +23,7 @@ class Settings {
         static let StartOnReset = "Start On Reset"
         static let Theme = "Theme"
         static let Migrated = "Migrated"
+        static let RemovePendingNotifications = "Remove Pending Notifications"
     }
     
     // Migration of Data
@@ -42,6 +43,22 @@ class Settings {
         let challenge = Challenge(name: "", date: date, goal: goal, started: started)
         challenges = [challenge]
         migrated = true
+    }
+    
+    // Previous Reminders
+    static var shouldRemovedPendingNotifications: Bool {
+        print(!pendingNotificationsRemoved)
+        print(reminders?.isEmpty ?? true)
+        return !pendingNotificationsRemoved && (reminders?.isEmpty ?? true)
+    }
+    
+    static var pendingNotificationsRemoved: Bool {
+        get {
+            return settings.bool(forKey: Key.RemovePendingNotifications)
+        }
+        set {
+            settings.set(newValue, forKey: Key.RemovePendingNotifications)
+        }
     }
     
     // MARK: Challenges
@@ -123,7 +140,7 @@ class Settings {
         set { settings.set(newValue, forKey: Key.ReminderOn) }
     }
     
-    // MARK: Static Functions
+    // MARK: Class Functions
     static func appendReminder(reminder: Reminder)  {
         if reminders == nil { // Reminders Does Not Exists yet
             reminders = [reminder]

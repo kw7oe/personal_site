@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Settings.migrateData()
         }
         
+        if Settings.shouldRemovedPendingNotifications {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            print("Removing...")
+            Settings.pendingNotificationsRemoved = true
+        }
+        
         return true
     }
 }
