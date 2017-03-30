@@ -32,6 +32,13 @@ struct CustomTheme {
         static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
     }
     
+    static let colors: [UIColor] = [
+        Colors.blue,
+        Colors.steelBlue,
+        Colors.moderateBlue,
+        Colors.moderateCyan
+    ]
+    
     static func cellBackgroundColor() -> UIColor {
         if Settings.theme == .blue {
             return Colors.white

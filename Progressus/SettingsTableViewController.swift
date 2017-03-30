@@ -16,6 +16,7 @@ class SettingsTableViewController: UITableViewController {
     fileprivate struct Storyboard {
         static let EnableReminder = "Enable Reminder"
         static let EnableDarkTheme = "Enable Dark Theme"
+        static let ColorSelection = "Color Selection"
         static let ViewAllReminders = "View All Reminders"
         static let StartOnReset = "Start On Reset"
         static let InAppPurchase = "In-App Purchase"
@@ -148,6 +149,15 @@ extension SettingsTableViewController {
         }
         else if cell.reuseIdentifier == Storyboard.EnableDarkTheme {
             darkThemeLabel.updateFontColor()
+        }
+        else if cell.reuseIdentifier == Storyboard.ColorSelection {
+            var x = 10
+            CustomTheme.colors.forEach({ (color) in
+                x += 45
+                let button = ColorButton(frame: CGRect(x: x, y: 10, width: 30, height: 30), color: color)
+                cell.addSubview(button)
+            })
+            
         }
         
         
