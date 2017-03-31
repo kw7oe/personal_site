@@ -12,6 +12,8 @@ import MessageUI
 
 class SettingsTableViewController: UITableViewController {
     
+    var colorButtons: [ColorButton] = []
+    
     // MARK: Storyboard
     fileprivate struct Storyboard {
         static let EnableReminder = "Enable Reminder"
@@ -70,7 +72,7 @@ class SettingsTableViewController: UITableViewController {
         if sender.isOn {
             Settings.theme = .dark
         } else {
-            Settings.theme = .blue
+            Settings.theme = .light
         }
         
         updateUI()
@@ -100,6 +102,18 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    func updateTheme(sender: ColorButton) {
+        colorButtons.forEach { (button) in
+            button.unselect()
+        }
+        sender.selected()
+        let index = colorButtons.index(of: sender) ?? 0
+        print(index)
+        CustomTheme.color = CustomTheme.colors[index]
+        updateTintColor()
+        startOnResetSwitch.customizeColor()
+    }
+    
     // MARK: View Life Cycle  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -112,13 +126,17 @@ class SettingsTableViewController: UITableViewController {
     }
     
     // MARK: Private Method 
-    private func updateUI() {
-        view.setNeedsDisplay()
-        view.setNeedsLayout()
+    fileprivate func updateTintColor() {
         view.window?.tintColor = CustomTheme.primaryColor()
         darkThemeSwitch.customizeColor()
         reminderOnSwitch.customizeColor()
         startOnResetSwitch.customizeColor()
+    }
+    
+    fileprivate func updateUI() {
+        view.setNeedsDisplay()
+        view.setNeedsLayout()
+        updateTintColor()
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
@@ -152,10 +170,19 @@ extension SettingsTableViewController {
         }
         else if cell.reuseIdentifier == Storyboard.ColorSelection {
             var x = 10
-            CustomTheme.colors.forEach({ (color) in
+            colorButtons.removeAll()
+            CustomTheme.colors.forEach({ (colorArray) in
                 x += 45
+                var color: UIColor;
+                if Settings.theme == .light {
+                    color = colorArray[0]
+                } else {
+                    color = colorArray[1]
+                }
                 let button = ColorButton(frame: CGRect(x: x, y: 10, width: 30, height: 30), color: color)
+                button.addTarget(self, action: #selector(SettingsTableViewController.updateTheme), for: .touchUpInside)
                 cell.addSubview(button)
+                colorButtons.append(button)
             })
             
         }

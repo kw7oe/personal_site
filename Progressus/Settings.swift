@@ -180,7 +180,7 @@ class Settings {
             if let result = settings.object(forKey: Key.Theme) as? String {
                 return Theme(rawValue: result)!
             }
-            return .blue
+            return .light
         }
         set {
             settings.set(newValue.rawValue, forKey: Key.Theme)

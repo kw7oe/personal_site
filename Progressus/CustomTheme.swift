@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Theme: String {
-    case blue = "Blue"
+    case light = "Light"
     case dark = "Dark"
 }
 
@@ -22,7 +22,7 @@ struct CustomTheme {
         static var lightGray = UIColor.init(white: 0.90, alpha: 1)
         static var gray = UIColor.init(white: 0.60, alpha: 1)
         static var darkGray = UIColor.init(white: 0.15, alpha: 1)
-
+        
         static var gunmetal = UIColor.init(hexString: "#283440")
         static var charchoal = UIColor.init(hexString: "#344250")
         static var blue = UIColor.init(hexString: "#427dd6")
@@ -32,15 +32,15 @@ struct CustomTheme {
         static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
     }
     
-    static let colors: [UIColor] = [
-        Colors.blue,
-        Colors.steelBlue,
-        Colors.moderateBlue,
-        Colors.moderateCyan
+    static let colors: [[UIColor]] = [
+        [Colors.blue, Colors.moderateBlue],
+        [Colors.steelBlue, Colors.moderateCyan]
     ]
     
+    static var color: [UIColor] = colors[0]
+    
     static func cellBackgroundColor() -> UIColor {
-        if Settings.theme == .blue {
+        if Settings.theme == .light {
             return Colors.white
         }
         return Colors.charchoal
@@ -53,21 +53,21 @@ struct CustomTheme {
     }
     
     static func backgroundColor() -> UIColor {
-        if Settings.theme == .blue {
+        if Settings.theme == .light {
             return Colors.ultraLightGray
         }
         return Colors.gunmetal
     }
     
     static func barStyle() -> UIBarStyle {
-        if Settings.theme == .blue {
+        if Settings.theme == .light {
             return UIBarStyle.default
         }
         return UIBarStyle.black
     }
     
     static func textColor() -> UIColor {
-        if Settings.theme == .blue {
+        if Settings.theme == .light {
             return Colors.darkGray
         }
         return Colors.lightGray
@@ -78,10 +78,10 @@ struct CustomTheme {
     }
     
     static func primaryColor() -> UIColor {
-        if Settings.theme == .blue {
-            return Colors.blue
+        if Settings.theme == .light {
+            return color[0]
         }
-        return Colors.moderateBlue
+        return color[1]
     }
     
     static func lighterPrimaryColor() -> UIColor {
