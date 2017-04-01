@@ -29,10 +29,10 @@
 		2A33AA781E6D3D08003F8C13 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5F1E6D3D08003F8C13 /* SettingsTableViewController.swift */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
+		2A92816D1E8F7CE300FC203A /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92816C1E8F7CE300FC203A /* ColorButton.swift */; };
 		2AAABBB51E75053600A46C1D /* ChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAABBB31E75053600A46C1D /* ChallengesTableViewController.swift */; };
 		2AAABBB61E75053600A46C1D /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAABBB41E75053600A46C1D /* ChallengeTableViewCell.swift */; };
 		2AB43DBF1E48355700CBA840 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
-		2ABC53E21E8CAAFB00EC8866 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC53E11E8CAAFB00EC8866 /* ColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +78,10 @@
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509631E24894900B9B31D /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A92816C1E8F7CE300FC203A /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorButton.swift; path = Progressus/ColorButton.swift; sourceTree = SOURCE_ROOT; };
 		2AAABBB31E75053600A46C1D /* ChallengesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengesTableViewController.swift; path = Progressus/ChallengesTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		2AAABBB41E75053600A46C1D /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeTableViewCell.swift; path = Progressus/ChallengeTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		2ABC53E11E8CAAFB00EC8866 /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +171,7 @@
 		2A33AABA1E6D4111003F8C13 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				2A92816C1E8F7CE300FC203A /* ColorButton.swift */,
 				2A22EEFD1E767DD700F0F062 /* BlankView.swift */,
 				2A33AA571E6D3D08003F8C13 /* ProgressPieView.swift */,
 				2A33AA591E6D3D08003F8C13 /* RadiusButton.swift */,
@@ -191,7 +192,6 @@
 		2A740DBF1E6E683200A59D38 /* Progressus */ = {
 			isa = PBXGroup;
 			children = (
-				2ABC53E11E8CAAFB00EC8866 /* ColorButton.swift */,
 				2A740DBC1E6E680400A59D38 /* Main.storyboard */,
 				2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */,
 				2A33AA7B1E6D3D97003F8C13 /* Challenges */,
@@ -375,7 +375,7 @@
 				2A33AA711E6D3D08003F8C13 /* Quotes.swift in Sources */,
 				2A33AA691E6D3D08003F8C13 /* CustomTheme.swift in Sources */,
 				2A33AA741E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift in Sources */,
-				2ABC53E21E8CAAFB00EC8866 /* ColorButton.swift in Sources */,
+				2A92816D1E8F7CE300FC203A /* ColorButton.swift in Sources */,
 				2A33AA641E6D3D08003F8C13 /* Challenge.swift in Sources */,
 				2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */,
 				2AAABBB51E75053600A46C1D /* ChallengesTableViewController.swift in Sources */,

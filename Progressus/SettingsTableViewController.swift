@@ -108,7 +108,6 @@ class SettingsTableViewController: UITableViewController {
         }
         sender.selected()
         Settings.colorIndex = colorButtons.index(of: sender) ?? 0
-        CustomTheme.color = CustomTheme.colors[Settings.colorIndex]
         updateTintColor()
         startOnResetSwitch.customizeColor()
     }
@@ -117,6 +116,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.backgroundColor = CustomTheme.backgroundColor()
+        tableView.separatorColor = CustomTheme.seperatorColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,9 +145,17 @@ class SettingsTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension SettingsTableViewController {
     
+    // Customize Footer Text Color
     override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if let footerView = view as? UITableViewHeaderFooterView {
             footerView.textLabel?.textColor = CustomTheme.textColor().withAlphaComponent(0.8)
+        }
+    }
+    
+    // Customize Header Text Color
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textColor = CustomTheme.textColor().withAlphaComponent(0.8)
         }
     }
     
@@ -168,6 +176,7 @@ extension SettingsTableViewController {
             darkThemeLabel.updateFontColor()
         }
         else if cell.reuseIdentifier == Storyboard.ColorSelection {
+            // TODO: Refactoring needed
             var x = 10
             colorButtons.removeAll()
             CustomTheme.colors.forEach({ (colorArray) in

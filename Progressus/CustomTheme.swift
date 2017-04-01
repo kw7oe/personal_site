@@ -23,22 +23,40 @@ struct CustomTheme {
         static var gray = UIColor.init(white: 0.60, alpha: 1)
         static var darkGray = UIColor.init(white: 0.15, alpha: 1)
         
+        // Background Color Combination
         static var gunmetal = UIColor.init(hexString: "#283440")
         static var charchoal = UIColor.init(hexString: "#344250")
+        static var lighterCharchoal = UIColor.init(hexString: "#52687e")
+        
+        // Color Combination 1: Blue
         static var blue = UIColor.init(hexString: "#427dd6")
+        static var darkThemeBlue = UIColor.init(hexString: "#42a2d6")
+        
+        // Color Combination 2: Green
+        static var green = UIColor.init(hexString: "#00897B")
+        static var darkThemeGreen = UIColor.init(hexString: "#42d6c0")
+        
+        // Color Combination 3: Red
+        static var red = UIColor.init(hexString: "#d64258")
+        static var darkThemeRed = UIColor.init(hexString: "#EB5160")
+        
+        // Others
         static var steelBlue = UIColor.init(hexString: "#0067A5")
-        static var moderateBlue = UIColor.init(hexString: "#42a2d6")
-        // #42c7d6
-        static var moderateCyan = UIColor.init(red: 0.259, green: 0.78, blue: 0.839, alpha: 1)
+        static var moderateCyan = UIColor.init(hexString: "#42c7d6")
     }
     
+    // MARK: Colors Selection
     static let colors: [[UIColor]] = [
-        [Colors.blue, Colors.moderateBlue],
-        [Colors.steelBlue, Colors.moderateCyan]
+        [Colors.blue, Colors.darkThemeBlue],
+        [Colors.green, Colors.darkThemeGreen],
+        [Colors.red, Colors.darkThemeRed]
     ]
     
-    static var color: [UIColor] = colors[Settings.colorIndex]
+    static var color: [UIColor] {
+        return colors[Settings.colorIndex]
+    }
     
+    // MARK: TableViewCell Visual Customization
     static func cellBackgroundColor() -> UIColor {
         if Settings.theme == .light {
             return Colors.white
@@ -52,18 +70,28 @@ struct CustomTheme {
         return view
     }
     
-    static func backgroundColor() -> UIColor {
+    // MARK: TableView Visual Customization
+    static func seperatorColor() -> UIColor? {
         if Settings.theme == .light {
-            return Colors.ultraLightGray
+            return nil
         }
-        return Colors.gunmetal
+        return Colors.lighterCharchoal
     }
     
+    // MARK: UINavigationBar Visual Customization
     static func barStyle() -> UIBarStyle {
         if Settings.theme == .light {
             return UIBarStyle.default
         }
         return UIBarStyle.black
+    }
+    
+    // MARK: General Visual Customization
+    static func backgroundColor() -> UIColor {
+        if Settings.theme == .light {
+            return Colors.ultraLightGray
+        }
+        return Colors.gunmetal
     }
     
     static func textColor() -> UIColor {
