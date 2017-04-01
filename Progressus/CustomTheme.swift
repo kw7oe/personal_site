@@ -37,7 +37,7 @@ struct CustomTheme {
         [Colors.steelBlue, Colors.moderateCyan]
     ]
     
-    static var color: [UIColor] = colors[0]
+    static var color: [UIColor] = colors[Settings.colorIndex]
     
     static func cellBackgroundColor() -> UIColor {
         if Settings.theme == .light {

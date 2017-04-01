@@ -22,6 +22,8 @@ class Settings {
         static let ReminderIdentifiers = "Reminder Identifiers"
         static let StartOnReset = "Start On Reset"
         static let Theme = "Theme"
+        static let ColorIndex = "Color Index"
+        // Internal
         static let Migrated = "Migrated"
         static let RemovePendingNotifications = "Remove Pending Notifications"
     }
@@ -185,7 +187,17 @@ class Settings {
         set {
             settings.set(newValue.rawValue, forKey: Key.Theme)
         }
-    }    
+    }
+    
+    // MARK: Color Selection
+    static var colorIndex: Int {
+        get {
+            return settings.integer(forKey: Key.ColorIndex)
+        }
+        set {
+            settings.set(newValue, forKey: Key.ColorIndex)
+        }
+    }
 }
 
 

@@ -107,9 +107,8 @@ class SettingsTableViewController: UITableViewController {
             button.unselect()
         }
         sender.selected()
-        let index = colorButtons.index(of: sender) ?? 0
-        print(index)
-        CustomTheme.color = CustomTheme.colors[index]
+        Settings.colorIndex = colorButtons.index(of: sender) ?? 0
+        CustomTheme.color = CustomTheme.colors[Settings.colorIndex]
         updateTintColor()
         startOnResetSwitch.customizeColor()
     }
@@ -184,6 +183,7 @@ extension SettingsTableViewController {
                 cell.addSubview(button)
                 colorButtons.append(button)
             })
+            colorButtons[Settings.colorIndex].selected()
             
         }
         
