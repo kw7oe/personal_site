@@ -106,6 +106,7 @@ class CounterViewController: UIViewController {
             )
         )
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.view.tintColor = CustomTheme.defaultTintColor()
         return alertController
     }
     
@@ -167,6 +168,11 @@ class CounterViewController: UIViewController {
                 self.updateUI()
             })
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
     // MARK: Navigation

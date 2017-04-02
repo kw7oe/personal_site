@@ -13,6 +13,7 @@ import MessageUI
 class SettingsTableViewController: UITableViewController {
     
     var colorButtons: [ColorButton] = []
+    var colorButtonsStackView: UIStackView!
     
     // MARK: Storyboard
     fileprivate struct Storyboard {
@@ -45,8 +46,8 @@ class SettingsTableViewController: UITableViewController {
     }
     @IBOutlet weak var enableReminderLabel: UILabel!
     @IBOutlet weak var darkThemeLabel: UILabel!
-    
     @IBOutlet weak var startOnResetLabel: UILabel!
+    
     // MARK: Target Action
     @IBAction func toggleReminderSwitch(_ sender: UISwitch) {
         let notificationService = NotificationServices()
@@ -139,6 +140,38 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
     }
+    
+    fileprivate func createButton(colors: [UIColor]) -> ColorButton {
+        var color: UIColor;
+        if Settings.theme == .light {
+            color = colors[0]
+        } else {
+            color = colors[1]
+        }
+        let button = ColorButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30), color: color)
+        button.addTarget(self, action: #selector(SettingsTableViewController.updateTheme), for: .touchUpInside)
+        return button
+    }
+    
+    fileprivate func initializeStackView(parentView: UIView) {
+        let width = CGFloat(CustomTheme.colors.count) * 40
+        let x = (parentView.bounds.width - width) / 2
+        colorButtonsStackView = UIStackView(frame: CGRect(x: x, y: 10, width: width, height: 30))
+        colorButtonsStackView.distribution = .equalSpacing
+
+    }
+    
+    fileprivate func setupColorButtons(cell: inout UITableViewCell) {
+        initializeStackView(parentView: cell)
+        colorButtons.removeAll()
+        CustomTheme.colors.forEach({ (colorArray) in
+            let button = createButton(colors: colorArray)
+            colorButtons.append(button)
+            colorButtonsStackView.addArrangedSubview(button)
+        })
+        cell.addSubview(colorButtonsStackView)
+        colorButtons[Settings.colorIndex].selected()
+    }
 
 }
 
@@ -159,8 +192,15 @@ extension SettingsTableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 3  {
+            return 50.0
+        }
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        var cell = super.tableView(tableView, cellForRowAt: indexPath)
         if cell.reuseIdentifier == Storyboard.EnableReminder {
             enableReminderLabel.updateFontColor()
         }
@@ -176,26 +216,8 @@ extension SettingsTableViewController {
             darkThemeLabel.updateFontColor()
         }
         else if cell.reuseIdentifier == Storyboard.ColorSelection {
-            // TODO: Refactoring needed
-            var x = 10
-            colorButtons.removeAll()
-            CustomTheme.colors.forEach({ (colorArray) in
-                x += 45
-                var color: UIColor;
-                if Settings.theme == .light {
-                    color = colorArray[0]
-                } else {
-                    color = colorArray[1]
-                }
-                let button = ColorButton(frame: CGRect(x: x, y: 10, width: 30, height: 30), color: color)
-                button.addTarget(self, action: #selector(SettingsTableViewController.updateTheme), for: .touchUpInside)
-                cell.addSubview(button)
-                colorButtons.append(button)
-            })
-            colorButtons[Settings.colorIndex].selected()
-            
+            setupColorButtons(cell: &cell)
         }
-        
         
         // Dark Theme
         cell.customize()

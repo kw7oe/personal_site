@@ -27,19 +27,7 @@ struct CustomTheme {
         static var gunmetal = UIColor.init(hexString: "#283440")
         static var charchoal = UIColor.init(hexString: "#344250")
         static var lighterCharchoal = UIColor.init(hexString: "#52687e")
-        
-        // Color Combination 1: Blue
-        static var blue = UIColor.init(hexString: "#427dd6")
-        static var darkThemeBlue = UIColor.init(hexString: "#42a2d6")
-        
-        // Color Combination 2: Green
-        static var green = UIColor.init(hexString: "#00897B")
-        static var darkThemeGreen = UIColor.init(hexString: "#42d6c0")
-        
-        // Color Combination 3: Red
-        static var red = UIColor.init(hexString: "#d64258")
-        static var darkThemeRed = UIColor.init(hexString: "#EB5160")
-        
+               
         // Others
         static var steelBlue = UIColor.init(hexString: "#0067A5")
         static var moderateCyan = UIColor.init(hexString: "#42c7d6")
@@ -47,9 +35,14 @@ struct CustomTheme {
     
     // MARK: Colors Selection
     static let colors: [[UIColor]] = [
-        [Colors.blue, Colors.darkThemeBlue],
-        [Colors.green, Colors.darkThemeGreen],
-        [Colors.red, Colors.darkThemeRed]
+        [UIColor.init(hexString: "#427dd6"), UIColor.init(hexString: "#42a2d6")], // Blue
+        [UIColor.init(hexString: "#00897B"), UIColor.init(hexString: "#42d6c0")], // Green
+        [UIColor.init(hexString: "#5C6BC0"), UIColor.init(hexString: "#536DFE")], // Indigo
+        [UIColor.init(hexString: "#F06292"), UIColor.init(hexString: "#FF4081")], // Pink
+        [UIColor.init(hexString: "#D64258"), UIColor.init(hexString: "#EB5160")], // Red
+        [UIColor.init(hexString: "#FB8C00"), UIColor.init(hexString: "#FFB300")], // Orange
+        [UIColor.init(hexString: "#8D6E63"), UIColor.init(hexString: "#A1887F")], // Brown
+        
     ]
     
     static var color: [UIColor] {
@@ -114,5 +107,9 @@ struct CustomTheme {
     
     static func lighterPrimaryColor() -> UIColor {
         return primaryColor().withAlphaComponent(0.5)
+    }
+    
+    static func defaultTintColor() -> UIColor {
+        return UIColor(hexString: "#007AFF")
     }
 }

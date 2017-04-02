@@ -369,10 +369,10 @@
                             <tableViewSection headerTitle="Color Selection" id="iUQ-2E-Sqt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Color Selection" id="rzV-PH-cCp">
-                                        <rect key="frame" x="0.0" y="367" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="368" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="rzV-PH-cCp" id="IEz-ey-kdV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -381,7 +381,7 @@
                             <tableViewSection id="S3O-da-pCo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Yjq-At-T1r">
-                                        <rect key="frame" x="0.0" y="447" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="448" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yjq-At-T1r" id="dF1-SG-FBo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -389,6 +389,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mq-Uq-vyP">
                                                     <rect key="frame" x="8" y="6" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Contact Us"/>
                                                     <connections>
                                                         <action selector="sendEmail:" destination="076-7C-ni5" eventType="touchUpInside" id="zsS-ea-ox8"/>
@@ -422,7 +423,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klO-MM-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="139"/>
+            <point key="canvasLocation" x="946.875" y="138.38028169014083"/>
         </scene>
         <!--Reminders Table View Controller-->
         <scene sceneID="zLi-Ey-ABl">
