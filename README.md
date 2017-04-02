@@ -3,27 +3,26 @@
 
 ## Features
 * Beautiful progress circle for visualising streak
-* Create up to 4 challenges _(will be available on version 2.0)_
+* Create up to 4 challenges
 * Customise start date
 * Set a goal
 * Create up to 3 reminders
 * Dark theme
 
 ## Limitation 
-* The maximum goals now is limited to 31 days. _(will be changed in the future)_
+* The maximum goals now is limited to 31 days.
 * User can create only up to 3 reminders. 
-* No customization of colors available for user. _(will be added in the future)_
 * User can create only up to 4 challenges.
 
 ## To Do
 
-- [X] Multiple Challenges. _(will be available on version 2.0)_ 
-- [ ] User can select Custom Theme.
+- [X] Multiple Challenges. 
+- [X] User can select custom color.  
 - [ ] Track Previous Record.
 - [ ] Social Sharing.
 - [ ] Widget.
 - [ ] Walkthrough.
-- [X] Beautiful and Clean UI. _(beauty is subjective)_
+- [X] Beautiful and Clean UI. _beauty is subjective_
 
 ## Feedback 
 If you encounter any issues or have any feedback:
