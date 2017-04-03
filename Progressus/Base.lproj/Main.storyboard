@@ -349,18 +349,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9D-ee-Pzp">
-                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWc-Ek-xWT">
+                                                    <rect key="frame" x="255" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="toggleDarkTheme:" destination="076-7C-ni5" eventType="valueChanged" id="mIL-wN-him"/>
+                                                        <action selector="toggleDarkTheme:" destination="076-7C-ni5" eventType="valueChanged" id="QB9-is-gvk"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="d9D-ee-Pzp" firstAttribute="trailing" secondItem="owu-tk-9Bc" secondAttribute="trailingMargin" id="3gy-Y1-bCO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wWc-Ek-xWT" secondAttribute="trailing" id="43z-75-hEf"/>
                                                 <constraint firstItem="66p-aJ-n71" firstAttribute="centerY" secondItem="owu-tk-9Bc" secondAttribute="centerY" id="PYH-jB-zCt"/>
+                                                <constraint firstItem="wWc-Ek-xWT" firstAttribute="centerY" secondItem="owu-tk-9Bc" secondAttribute="centerY" id="SaV-57-XaO"/>
                                                 <constraint firstItem="66p-aJ-n71" firstAttribute="leading" secondItem="owu-tk-9Bc" secondAttribute="leadingMargin" id="ZCO-s8-M4s"/>
-                                                <constraint firstItem="66p-aJ-n71" firstAttribute="centerY" secondItem="d9D-ee-Pzp" secondAttribute="centerY" id="xPy-n2-gg3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -369,10 +369,10 @@
                             <tableViewSection headerTitle="Color Selection" id="iUQ-2E-Sqt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Color Selection" id="rzV-PH-cCp">
-                                        <rect key="frame" x="0.0" y="368" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="367" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="rzV-PH-cCp" id="IEz-ey-kdV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -381,7 +381,7 @@
                             <tableViewSection id="S3O-da-pCo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Yjq-At-T1r">
-                                        <rect key="frame" x="0.0" y="448" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="447" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yjq-At-T1r" id="dF1-SG-FBo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -414,7 +414,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="zdV-6C-epS"/>
                     <connections>
                         <outlet property="darkThemeLabel" destination="66p-aJ-n71" id="WZh-xp-X8B"/>
-                        <outlet property="darkThemeSwitch" destination="d9D-ee-Pzp" id="bLj-dM-tTS"/>
+                        <outlet property="darkThemeSwitch" destination="wWc-Ek-xWT" id="lka-dU-bbV"/>
                         <outlet property="enableReminderLabel" destination="TWS-fA-iqm" id="TJd-zC-Wz9"/>
                         <outlet property="reminderOnSwitch" destination="o5S-oL-c9g" id="mcx-1k-TIf"/>
                         <outlet property="startOnResetLabel" destination="Ame-w5-sFU" id="6rC-U1-DtG"/>

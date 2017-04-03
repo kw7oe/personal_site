@@ -32,11 +32,12 @@ class SettingsTableViewController: UITableViewController {
             reminderOnSwitch.isOn = Settings.isReminderOn
         }
     }
+
     @IBOutlet weak var darkThemeSwitch: UISwitch! {
-        didSet {
-            darkThemeSwitch.customizeColor()
+        didSet {            darkThemeSwitch.customizeColor()
             darkThemeSwitch.isOn = Settings.theme == .dark
         }
+
     }
     @IBOutlet weak var startOnResetSwitch: UISwitch! {
         didSet {
@@ -69,7 +70,7 @@ class SettingsTableViewController: UITableViewController {
         Settings.startOnReset = sender.isOn
     }
     
-    @IBAction func toggleDarkTheme(_ sender: UISwitch) {
+    @IBAction func toggleDarkTheme(_ sender: UISwitch) {        
         if sender.isOn {
             Settings.theme = .dark
         } else {
@@ -103,6 +104,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    // ColorButtons Target Action
     func updateTheme(sender: ColorButton) {
         colorButtons.forEach { (button) in
             button.unselect()
@@ -134,8 +136,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     fileprivate func updateUI() {
-        view.setNeedsDisplay()
-        view.setNeedsLayout()
         updateTintColor()
         tableView.reloadData()
         navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
@@ -153,24 +153,34 @@ class SettingsTableViewController: UITableViewController {
         return button
     }
     
-    fileprivate func initializeStackView(parentView: UIView) {
+    fileprivate func initializeStackView() {
         let width = CGFloat(CustomTheme.colors.count) * 40
-        let x = (parentView.bounds.width - width) / 2
+        let x = (view.bounds.width - width) / 2
         colorButtonsStackView = UIStackView(frame: CGRect(x: x, y: 10, width: width, height: 30))
         colorButtonsStackView.distribution = .equalSpacing
-
     }
     
     fileprivate func setupColorButtons(cell: inout UITableViewCell) {
-        initializeStackView(parentView: cell)
-        colorButtons.removeAll()
+        
+        if colorButtonsStackView == nil {            
+            initializeStackView()
+            cell.addSubview(colorButtonsStackView)
+        }        
+        clearColorButtons()
+        
         CustomTheme.colors.forEach({ (colorArray) in
             let button = createButton(colors: colorArray)
             colorButtons.append(button)
             colorButtonsStackView.addArrangedSubview(button)
         })
-        cell.addSubview(colorButtonsStackView)
         colorButtons[Settings.colorIndex].selected()
+    }
+    
+    fileprivate func clearColorButtons() {
+        colorButtons.forEach { (button) in
+            button.removeFromSuperview()
+        }
+        colorButtons.removeAll()
     }
 
 }
