@@ -79,6 +79,14 @@ struct CustomTheme {
         return UIBarStyle.black
     }
     
+    // MARK: ColorButton Visual Customization
+    static func borderColor() -> UIColor {
+        if Settings.theme == .light {
+            return Colors.charchoal
+        }
+        return Colors.lightGray
+    }
+    
     // MARK: General Visual Customization
     static func backgroundColor() -> UIColor {
         if Settings.theme == .light {

@@ -30,7 +30,7 @@ class ColorButton: UIButton {
         self.init(frame: frame)
         backgroundColor = color
         layer.cornerRadius = bounds.width * 0.5
-        layer.borderColor = CustomTheme.textColor().cgColor
+        layer.borderColor = CustomTheme.borderColor().cgColor
     }
 
 }
