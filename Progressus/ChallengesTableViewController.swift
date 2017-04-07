@@ -38,7 +38,7 @@ class ChallengesTableViewController: UITableViewController {
         blankView = BlankView(
             frame: tableView.frame,
             title: "No Challenge Available",
-            detail: "You can add up to 3 challenges."
+            detail: "You can add up to 4 challenges."
         )
         tableView.separatorStyle = .none
         tableView.reloadData()

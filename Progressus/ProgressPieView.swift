@@ -22,7 +22,7 @@ class ProgressPieView: UIView {
         super.layoutSubviews()
         self.backgroundColor = CustomTheme.backgroundColor()
         let center = CGPoint(x: bounds.midX, y: bounds.midY - bounds.width / 12)
-        let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2), clockwise: true)
+        let path = UIBezierPath(arcCenter: center , radius: bounds.width / 4, startAngle: CGFloat(-Double.pi/2), endAngle: CGFloat(3*Double.pi/2), clockwise: true)
         setProgressLayer(with: path)
         setupLabel(at: center)
     }

@@ -145,7 +145,7 @@
             </objects>
             <point key="canvasLocation" x="190" y="909"/>
         </scene>
-        <!--Challenges Table View Controller-->
+        <!--Challenges-->
         <scene sceneID="Laj-d7-HMc">
             <objects>
                 <tableViewController id="y1k-zv-1cn" customClass="ChallengesTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,7 +206,7 @@
                             <outlet property="delegate" destination="y1k-zv-1cn" id="z5Y-gs-Tiq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="97l-g1-OOG">
+                    <navigationItem key="navigationItem" title="Challenges" id="97l-g1-OOG">
                         <rightBarButtonItems>
                             <barButtonItem image="Settings" id="KSZ-xy-Caz">
                                 <connections>
