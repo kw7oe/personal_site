@@ -68,12 +68,11 @@ class AddChallengeTableViewController: UITableViewController {
             date: Date.init(),
             goal: goalPicker.selectedRow(inComponent: 0) + 1,
             started: true)
+        challenge.set_date(startDatePicker.date)
         
         switch mode {
           case .add: Settings.prependChallenge(with: challenge)
-          case .edit:
-            challenge.set_date(startDatePicker.date)
-            Settings.updateChallenge(at: challengeIndex!, with: challenge)
+          case .edit: Settings.updateChallenge(at: challengeIndex!, with: challenge)
         }
         
         dismiss()
