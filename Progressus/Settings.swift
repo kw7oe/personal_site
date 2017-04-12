@@ -180,7 +180,7 @@ class Settings {
     static var theme: Theme {
         get {
             if let result = settings.object(forKey: Key.Theme) as? String {
-                return Theme(rawValue: result)!
+                return Theme(rawValue: result) ?? .light
             }
             return .light
         }
