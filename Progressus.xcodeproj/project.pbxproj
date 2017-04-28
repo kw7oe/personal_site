@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A22EEFE1E767DD700F0F062 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A22EEFD1E767DD700F0F062 /* BlankView.swift */; };
-		2A33AA601E6D3D08003F8C13 /* AddChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA471E6D3D08003F8C13 /* AddChallengeTableViewController.swift */; };
 		2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */; };
 		2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA491E6D3D08003F8C13 /* Assets.xcassets */; };
-		2A33AA641E6D3D08003F8C13 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA4B1E6D3D08003F8C13 /* Challenge.swift */; };
-		2A33AA671E6D3D08003F8C13 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA4E1E6D3D08003F8C13 /* CounterViewController.swift */; };
-		2A33AA681E6D3D08003F8C13 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA4F1E6D3D08003F8C13 /* CustomPresentAnimationController.swift */; };
-		2A33AA691E6D3D08003F8C13 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA501E6D3D08003F8C13 /* CustomTheme.swift */; };
-		2A33AA6B1E6D3D08003F8C13 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA521E6D3D08003F8C13 /* Extension.swift */; };
-		2A33AA6D1E6D3D08003F8C13 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA541E6D3D08003F8C13 /* NoticationServicesDelegate.swift */; };
-		2A33AA6E1E6D3D08003F8C13 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA551E6D3D08003F8C13 /* NotificationServices.swift */; };
-		2A33AA6F1E6D3D08003F8C13 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA561E6D3D08003F8C13 /* Parser.swift */; };
-		2A33AA701E6D3D08003F8C13 /* ProgressPieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA571E6D3D08003F8C13 /* ProgressPieView.swift */; };
-		2A33AA711E6D3D08003F8C13 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA581E6D3D08003F8C13 /* Quotes.swift */; };
-		2A33AA721E6D3D08003F8C13 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA591E6D3D08003F8C13 /* RadiusButton.swift */; };
-		2A33AA731E6D3D08003F8C13 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5A1E6D3D08003F8C13 /* Reminder.swift */; };
-		2A33AA741E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5B1E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift */; };
-		2A33AA751E6D3D08003F8C13 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5C1E6D3D08003F8C13 /* RemindersTableViewController.swift */; };
-		2A33AA771E6D3D08003F8C13 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5E1E6D3D08003F8C13 /* Settings.swift */; };
-		2A33AA781E6D3D08003F8C13 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA5F1E6D3D08003F8C13 /* SettingsTableViewController.swift */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
-		2A92816D1E8F7CE300FC203A /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92816C1E8F7CE300FC203A /* ColorButton.swift */; };
-		2AAABBB51E75053600A46C1D /* ChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAABBB31E75053600A46C1D /* ChallengesTableViewController.swift */; };
-		2AAABBB61E75053600A46C1D /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAABBB41E75053600A46C1D /* ChallengeTableViewCell.swift */; };
 		2AB43DBF1E48355700CBA840 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
+		2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */; };
+		2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */; };
+		2AD2EDF21EB38C740002A1D3 /* ChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */; };
+		2AD2EDF31EB38C740002A1D3 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEE1EB38C740002A1D3 /* ChallengeTableViewCell.swift */; };
+		2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEF1EB38C740002A1D3 /* CounterViewController.swift */; };
+		2AD2EDF91EB38C840002A1D3 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDF61EB38C840002A1D3 /* Reminder.swift */; };
+		2AD2EDFA1EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDF71EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift */; };
+		2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDF81EB38C840002A1D3 /* RemindersTableViewController.swift */; };
+		2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDFD1EB38C960002A1D3 /* Settings.swift */; };
+		2AD2EE001EB38C960002A1D3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDFE1EB38C960002A1D3 /* SettingsTableViewController.swift */; };
+		2AD2EE061EB38D0A0002A1D3 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE021EB38D0A0002A1D3 /* BlankView.swift */; };
+		2AD2EE071EB38D0A0002A1D3 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE031EB38D0A0002A1D3 /* ColorButton.swift */; };
+		2AD2EE081EB38D0A0002A1D3 /* ProgressPieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE041EB38D0A0002A1D3 /* ProgressPieView.swift */; };
+		2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE051EB38D0A0002A1D3 /* RadiusButton.swift */; };
+		2AD2EE0D1EB38D140002A1D3 /* NoticationServicesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE0B1EB38D140002A1D3 /* NoticationServicesDelegate.swift */; };
+		2AD2EE0E1EB38D140002A1D3 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE0C1EB38D140002A1D3 /* NotificationServices.swift */; };
+		2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE101EB38D220002A1D3 /* CustomPresentAnimationController.swift */; };
+		2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE111EB38D220002A1D3 /* CustomTheme.swift */; };
+		2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE121EB38D220002A1D3 /* Extension.swift */; };
+		2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE131EB38D220002A1D3 /* Parser.swift */; };
+		2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE141EB38D220002A1D3 /* Quotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,35 +53,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A22EEFD1E767DD700F0F062 /* BlankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlankView.swift; path = Progressus/BlankView.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA471E6D3D08003F8C13 /* AddChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddChallengeTableViewController.swift; path = Progressus/AddChallengeTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA491E6D3D08003F8C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Progressus/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		2A33AA4B1E6D3D08003F8C13 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Progressus/Challenge.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA4E1E6D3D08003F8C13 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CounterViewController.swift; path = Progressus/CounterViewController.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA4F1E6D3D08003F8C13 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentAnimationController.swift; path = Progressus/CustomPresentAnimationController.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA501E6D3D08003F8C13 /* CustomTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTheme.swift; path = Progressus/CustomTheme.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA521E6D3D08003F8C13 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Progressus/Extension.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA541E6D3D08003F8C13 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticationServicesDelegate.swift; path = Progressus/NoticationServicesDelegate.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA551E6D3D08003F8C13 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationServices.swift; path = Progressus/NotificationServices.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA561E6D3D08003F8C13 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Progressus/Parser.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA571E6D3D08003F8C13 /* ProgressPieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressPieView.swift; path = Progressus/ProgressPieView.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA581E6D3D08003F8C13 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quotes.swift; path = Progressus/Quotes.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA591E6D3D08003F8C13 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadiusButton.swift; path = Progressus/RadiusButton.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA5A1E6D3D08003F8C13 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = Progressus/Reminder.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA5B1E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderConfigurationTableViewController.swift; path = Progressus/ReminderConfigurationTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA5C1E6D3D08003F8C13 /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemindersTableViewController.swift; path = Progressus/RemindersTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA5E1E6D3D08003F8C13 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Progressus/Settings.swift; sourceTree = SOURCE_ROOT; };
-		2A33AA5F1E6D3D08003F8C13 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Progressus/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509631E24894900B9B31D /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A92816C1E8F7CE300FC203A /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorButton.swift; path = Progressus/ColorButton.swift; sourceTree = SOURCE_ROOT; };
-		2AAABBB31E75053600A46C1D /* ChallengesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengesTableViewController.swift; path = Progressus/ChallengesTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		2AAABBB41E75053600A46C1D /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeTableViewCell.swift; path = Progressus/ChallengeTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChallengeTableViewController.swift; sourceTree = "<group>"; };
+		2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewController.swift; sourceTree = "<group>"; };
+		2AD2EDEE1EB38C740002A1D3 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		2AD2EDEF1EB38C740002A1D3 /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		2AD2EDF61EB38C840002A1D3 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		2AD2EDF71EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderConfigurationTableViewController.swift; sourceTree = "<group>"; };
+		2AD2EDF81EB38C840002A1D3 /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
+		2AD2EDFD1EB38C960002A1D3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2AD2EDFE1EB38C960002A1D3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2AD2EE021EB38D0A0002A1D3 /* BlankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		2AD2EE031EB38D0A0002A1D3 /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		2AD2EE041EB38D0A0002A1D3 /* ProgressPieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPieView.swift; sourceTree = "<group>"; };
+		2AD2EE051EB38D0A0002A1D3 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
+		2AD2EE0B1EB38D140002A1D3 /* NoticationServicesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticationServicesDelegate.swift; sourceTree = "<group>"; };
+		2AD2EE0C1EB38D140002A1D3 /* NotificationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
+		2AD2EE101EB38D220002A1D3 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		2AD2EE111EB38D220002A1D3 /* CustomTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
+		2AD2EE121EB38D220002A1D3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2AD2EE131EB38D220002A1D3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		2AD2EE141EB38D220002A1D3 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,19 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A33AA7B1E6D3D97003F8C13 /* Challenges */ = {
-			isa = PBXGroup;
-			children = (
-				2AAABBB31E75053600A46C1D /* ChallengesTableViewController.swift */,
-				2AAABBB41E75053600A46C1D /* ChallengeTableViewCell.swift */,
-				2A33AA4B1E6D3D08003F8C13 /* Challenge.swift */,
-				2A33AA471E6D3D08003F8C13 /* AddChallengeTableViewController.swift */,
-				2A33AA4E1E6D3D08003F8C13 /* CounterViewController.swift */,
-			);
-			name = Challenges;
-			path = Countdown;
-			sourceTree = "<group>";
-		};
 		2A33AA7C1E6D3DA2003F8C13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,71 +120,17 @@
 			path = Countdown;
 			sourceTree = "<group>";
 		};
-		2A33AA7E1E6D3DC5003F8C13 /* Reminders */ = {
-			isa = PBXGroup;
-			children = (
-				2A33AA5A1E6D3D08003F8C13 /* Reminder.swift */,
-				2A33AA5B1E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift */,
-				2A33AA5C1E6D3D08003F8C13 /* RemindersTableViewController.swift */,
-			);
-			name = Reminders;
-			path = Countdown;
-			sourceTree = "<group>";
-		};
-		2A33AA7F1E6D3DDA003F8C13 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				2A33AA5E1E6D3D08003F8C13 /* Settings.swift */,
-				2A33AA5F1E6D3D08003F8C13 /* SettingsTableViewController.swift */,
-			);
-			name = Settings;
-			path = Countdown;
-			sourceTree = "<group>";
-		};
-		2A33AA801E6D3DE7003F8C13 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				2A33AA581E6D3D08003F8C13 /* Quotes.swift */,
-				2A33AA501E6D3D08003F8C13 /* CustomTheme.swift */,
-				2A33AA521E6D3D08003F8C13 /* Extension.swift */,
-				2A33AA4F1E6D3D08003F8C13 /* CustomPresentAnimationController.swift */,
-				2A33AABA1E6D4111003F8C13 /* Custom UI */,
-				2A33AABB1E6D411E003F8C13 /* Helper */,
-			);
-			name = Custom;
-			path = Countdown;
-			sourceTree = "<group>";
-		};
-		2A33AABA1E6D4111003F8C13 /* Custom UI */ = {
-			isa = PBXGroup;
-			children = (
-				2A92816C1E8F7CE300FC203A /* ColorButton.swift */,
-				2A22EEFD1E767DD700F0F062 /* BlankView.swift */,
-				2A33AA571E6D3D08003F8C13 /* ProgressPieView.swift */,
-				2A33AA591E6D3D08003F8C13 /* RadiusButton.swift */,
-			);
-			name = "Custom UI";
-			sourceTree = "<group>";
-		};
-		2A33AABB1E6D411E003F8C13 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				2A33AA541E6D3D08003F8C13 /* NoticationServicesDelegate.swift */,
-				2A33AA551E6D3D08003F8C13 /* NotificationServices.swift */,
-				2A33AA561E6D3D08003F8C13 /* Parser.swift */,
-			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
 		2A740DBF1E6E683200A59D38 /* Progressus */ = {
 			isa = PBXGroup;
 			children = (
 				2A740DBC1E6E680400A59D38 /* Main.storyboard */,
 				2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */,
-				2A33AA7B1E6D3D97003F8C13 /* Challenges */,
-				2A33AA7F1E6D3DDA003F8C13 /* Settings */,
-				2A33AA7E1E6D3DC5003F8C13 /* Reminders */,
-				2A33AA801E6D3DE7003F8C13 /* Custom */,
+				2AD2EDFC1EB38C960002A1D3 /* Settings */,
+				2AD2EDF51EB38C840002A1D3 /* Reminders */,
+				2AD2EDEA1EB38C740002A1D3 /* Challenge */,
+				2AD2EE0A1EB38D140002A1D3 /* Notifications */,
+				2AD2EE011EB38D0A0002A1D3 /* Custom Views */,
+				2AD2EE0F1EB38D220002A1D3 /* Others */,
 				2A33AA7C1E6D3DA2003F8C13 /* Supporting Files */,
 			);
 			name = Progressus;
@@ -228,6 +161,75 @@
 				2AB43DBE1E48355700CBA840 /* StoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AD2EDEA1EB38C740002A1D3 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */,
+				2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */,
+				2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */,
+				2AD2EDEE1EB38C740002A1D3 /* ChallengeTableViewCell.swift */,
+				2AD2EDEF1EB38C740002A1D3 /* CounterViewController.swift */,
+			);
+			name = Challenge;
+			path = Progressus/Challenge;
+			sourceTree = "<group>";
+		};
+		2AD2EDF51EB38C840002A1D3 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EDF61EB38C840002A1D3 /* Reminder.swift */,
+				2AD2EDF71EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift */,
+				2AD2EDF81EB38C840002A1D3 /* RemindersTableViewController.swift */,
+			);
+			name = Reminders;
+			path = Progressus/Reminders;
+			sourceTree = SOURCE_ROOT;
+		};
+		2AD2EDFC1EB38C960002A1D3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EDFD1EB38C960002A1D3 /* Settings.swift */,
+				2AD2EDFE1EB38C960002A1D3 /* SettingsTableViewController.swift */,
+			);
+			name = Settings;
+			path = Progressus/Settings;
+			sourceTree = "<group>";
+		};
+		2AD2EE011EB38D0A0002A1D3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EE021EB38D0A0002A1D3 /* BlankView.swift */,
+				2AD2EE031EB38D0A0002A1D3 /* ColorButton.swift */,
+				2AD2EE041EB38D0A0002A1D3 /* ProgressPieView.swift */,
+				2AD2EE051EB38D0A0002A1D3 /* RadiusButton.swift */,
+			);
+			name = "Custom Views";
+			path = "Progressus/Custom Views";
+			sourceTree = "<group>";
+		};
+		2AD2EE0A1EB38D140002A1D3 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EE0B1EB38D140002A1D3 /* NoticationServicesDelegate.swift */,
+				2AD2EE0C1EB38D140002A1D3 /* NotificationServices.swift */,
+			);
+			name = Notifications;
+			path = Progressus/Notifications;
+			sourceTree = SOURCE_ROOT;
+		};
+		2AD2EE0F1EB38D220002A1D3 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2EE101EB38D220002A1D3 /* CustomPresentAnimationController.swift */,
+				2AD2EE111EB38D220002A1D3 /* CustomTheme.swift */,
+				2AD2EE121EB38D220002A1D3 /* Extension.swift */,
+				2AD2EE131EB38D220002A1D3 /* Parser.swift */,
+				2AD2EE141EB38D220002A1D3 /* Quotes.swift */,
+			);
+			name = Others;
+			path = Progressus/Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,28 +374,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A33AA711E6D3D08003F8C13 /* Quotes.swift in Sources */,
-				2A33AA691E6D3D08003F8C13 /* CustomTheme.swift in Sources */,
-				2A33AA741E6D3D08003F8C13 /* ReminderConfigurationTableViewController.swift in Sources */,
-				2A92816D1E8F7CE300FC203A /* ColorButton.swift in Sources */,
-				2A33AA641E6D3D08003F8C13 /* Challenge.swift in Sources */,
+				2AD2EDF21EB38C740002A1D3 /* ChallengesTableViewController.swift in Sources */,
+				2AD2EE061EB38D0A0002A1D3 /* BlankView.swift in Sources */,
+				2AD2EE081EB38D0A0002A1D3 /* ProgressPieView.swift in Sources */,
+				2AD2EDFA1EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift in Sources */,
+				2AD2EE0D1EB38D140002A1D3 /* NoticationServicesDelegate.swift in Sources */,
 				2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */,
-				2AAABBB51E75053600A46C1D /* ChallengesTableViewController.swift in Sources */,
-				2A33AA771E6D3D08003F8C13 /* Settings.swift in Sources */,
-				2A33AA601E6D3D08003F8C13 /* AddChallengeTableViewController.swift in Sources */,
-				2A33AA6F1E6D3D08003F8C13 /* Parser.swift in Sources */,
-				2A33AA751E6D3D08003F8C13 /* RemindersTableViewController.swift in Sources */,
-				2A33AA6D1E6D3D08003F8C13 /* NoticationServicesDelegate.swift in Sources */,
-				2A33AA721E6D3D08003F8C13 /* RadiusButton.swift in Sources */,
-				2A33AA671E6D3D08003F8C13 /* CounterViewController.swift in Sources */,
-				2A22EEFE1E767DD700F0F062 /* BlankView.swift in Sources */,
-				2A33AA6E1E6D3D08003F8C13 /* NotificationServices.swift in Sources */,
-				2A33AA6B1E6D3D08003F8C13 /* Extension.swift in Sources */,
-				2A33AA731E6D3D08003F8C13 /* Reminder.swift in Sources */,
-				2A33AA681E6D3D08003F8C13 /* CustomPresentAnimationController.swift in Sources */,
-				2AAABBB61E75053600A46C1D /* ChallengeTableViewCell.swift in Sources */,
-				2A33AA781E6D3D08003F8C13 /* SettingsTableViewController.swift in Sources */,
-				2A33AA701E6D3D08003F8C13 /* ProgressPieView.swift in Sources */,
+				2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */,
+				2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */,
+				2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */,
+				2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */,
+				2AD2EE001EB38C960002A1D3 /* SettingsTableViewController.swift in Sources */,
+				2AD2EE0E1EB38D140002A1D3 /* NotificationServices.swift in Sources */,
+				2AD2EE071EB38D0A0002A1D3 /* ColorButton.swift in Sources */,
+				2AD2EDF31EB38C740002A1D3 /* ChallengeTableViewCell.swift in Sources */,
+				2AD2EDF91EB38C840002A1D3 /* Reminder.swift in Sources */,
+				2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */,
+				2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */,
+				2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */,
+				2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */,
+				2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */,
+				2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */,
+				2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
