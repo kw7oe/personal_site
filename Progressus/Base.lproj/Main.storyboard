@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="src-H9-0QA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="src-H9-0QA">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -129,6 +129,11 @@
                                     <segue destination="954-sN-hww" kind="presentation" identifier="Edit Challenge Segue" id="ofM-KY-CwO"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Stats" id="SGc-Gv-h0c">
+                                <connections>
+                                    <segue destination="4RW-AZ-Hbu" kind="show" identifier="Show Stats" id="j2C-9D-dhB"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -144,6 +149,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bu-A4-2YN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="909"/>
+        </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="qR4-Sx-BAY">
+            <objects>
+                <viewController id="4RW-AZ-Hbu" customClass="StatsViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OZz-n8-9VJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uQX-Ta-s0G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xyk-FV-37Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYr-qi-bYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947" y="908"/>
         </scene>
         <!--Challenges Table View Controller-->
         <scene sceneID="Laj-d7-HMc">
@@ -763,7 +786,7 @@
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ofM-KY-CwO"/>
         <segue reference="FrI-Eg-KNn"/>
-        <segue reference="qzE-A6-qdN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */; };
 		2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */; };
 		2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA491E6D3D08003F8C13 /* Assets.xcassets */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
+		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
+		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
 		2AB43DBF1E48355700CBA840 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
 		2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */; };
 		2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */; };
@@ -33,6 +36,7 @@
 		2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE121EB38D220002A1D3 /* Extension.swift */; };
 		2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE131EB38D220002A1D3 /* Parser.swift */; };
 		2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE141EB38D220002A1D3 /* Quotes.swift */; };
+		2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA491E6D3D08003F8C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Progressus/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +65,8 @@
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509631E24894900B9B31D /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AAE02191EC47FA2005B9E36 /* CDRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRecord.swift; path = Progressus/CoreData/CDRecord.swift; sourceTree = "<group>"; };
+		2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChallenge.swift; path = Progressus/CoreData/CDChallenge.swift; sourceTree = "<group>"; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChallengeTableViewController.swift; sourceTree = "<group>"; };
 		2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -82,6 +89,7 @@
 		2AD2EE121EB38D220002A1D3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2AD2EE131EB38D220002A1D3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		2AD2EE141EB38D220002A1D3 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				2A740DBC1E6E680400A59D38 /* Main.storyboard */,
+				2AAE021B1EC47FAD005B9E36 /* CoreData */,
 				2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */,
 				2AD2EDFC1EB38C960002A1D3 /* Settings */,
 				2AD2EDF51EB38C840002A1D3 /* Reminders */,
@@ -163,14 +172,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2AAE021B1EC47FAD005B9E36 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */,
+				2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */,
+				2AAE02191EC47FA2005B9E36 /* CDRecord.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		2AD2EDEA1EB38C740002A1D3 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */,
+				2AD2EDEF1EB38C740002A1D3 /* CounterViewController.swift */,
 				2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */,
 				2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */,
 				2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */,
 				2AD2EDEE1EB38C740002A1D3 /* ChallengeTableViewCell.swift */,
-				2AD2EDEF1EB38C740002A1D3 /* CounterViewController.swift */,
 			);
 			name = Challenge;
 			path = Progressus/Challenge;
@@ -383,14 +403,18 @@
 				2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */,
 				2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */,
 				2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */,
+				2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */,
 				2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */,
+				2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */,
 				2AD2EE001EB38C960002A1D3 /* SettingsTableViewController.swift in Sources */,
 				2AD2EE0E1EB38D140002A1D3 /* NotificationServices.swift in Sources */,
 				2AD2EE071EB38D0A0002A1D3 /* ColorButton.swift in Sources */,
 				2AD2EDF31EB38C740002A1D3 /* ChallengeTableViewCell.swift in Sources */,
+				2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */,
 				2AD2EDF91EB38C840002A1D3 /* Reminder.swift in Sources */,
 				2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */,
 				2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */,
+				2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */,
 				2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */,
 				2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */,
 				2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */,
@@ -672,6 +696,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */,
+			);
+			currentVersion = 2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Progressus/CoreData/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2A75093C1E24894900B9B31D /* Project object */;
 }

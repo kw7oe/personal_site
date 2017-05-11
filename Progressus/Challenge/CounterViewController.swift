@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CounterViewController: UIViewController {
     
@@ -52,8 +53,9 @@ class CounterViewController: UIViewController {
             startTimer()
         }
     }
-    
+       
     private func resetTimer() {
+
         let alertController = createDestrutiveAlert(title: "Reset Challenge") { (action) in
             var title = "START"
             if Settings.startOnReset {
