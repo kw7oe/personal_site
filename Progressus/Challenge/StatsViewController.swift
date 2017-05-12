@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Charts
 
 class StatsViewController: UIViewController {
     
@@ -17,17 +18,21 @@ class StatsViewController: UIViewController {
         return CDChallenge.getRecordsDuration(inContext: container!.viewContext)
     }
     
+    @IBOutlet weak var chartView: BarChartView!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CDChallenge.printData(inContext: container!.viewContext)
-        var x = 0
-        for num in data {
-            let label = UILabel()
-            label.frame = CGRect(x: x, y: 100, width: 30, height: 30)
-            label.text = String(num)
-            view.addSubview(label)
-            x += 30
+        
+        var chartDataEntry = [BarChartDataEntry]()
+        for i in 0..<data.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(data[i]))
+            chartDataEntry.append(dataEntry)
         }
+        let chartDataSet = BarChartDataSet(values: chartDataEntry, label: "Days")
+        chartView.data = BarChartData(dataSet: chartDataSet)
+        view.addSubview(chartView)
     }
     
     

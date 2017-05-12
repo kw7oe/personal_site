@@ -11,6 +11,7 @@
 		2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */; };
 		2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA491E6D3D08003F8C13 /* Assets.xcassets */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
+		2A5CDD891EC5B7010057D33B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5CDD881EC5B7010057D33B /* Charts.framework */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
@@ -61,6 +62,7 @@
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA491E6D3D08003F8C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Progressus/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A5CDD881EC5B7010057D33B /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5CDD891EC5B7010057D33B /* Charts.framework in Frameworks */,
 				2AB43DBF1E48355700CBA840 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +170,7 @@
 		2A80BE161E41893F0008485C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A5CDD881EC5B7010057D33B /* Charts.framework */,
 				2AB43DBE1E48355700CBA840 /* StoreKit.framework */,
 			);
 			name = Frameworks;
@@ -262,6 +266,7 @@
 				2A7509401E24894900B9B31D /* Sources */,
 				2A7509411E24894900B9B31D /* Frameworks */,
 				2A7509421E24894900B9B31D /* Resources */,
+				2A5CDD871EC5B5A30057D33B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -388,6 +393,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A5CDD871EC5B5A30057D33B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A7509401E24894900B9B31D /* Sources */ = {
@@ -570,6 +592,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XRLWGD9BPC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Progressus/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Progressus/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Progressus/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,6 +615,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XRLWGD9BPC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Progressus/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Progressus/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Progressus/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
