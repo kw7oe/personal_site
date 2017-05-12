@@ -26,6 +26,7 @@ class CounterViewController: UIViewController {
         return -Int(challenge.date.timeIntervalSinceNow)
     }    
     var timer = Timer()
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     // MARK : View Outlet
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -61,6 +62,7 @@ class CounterViewController: UIViewController {
             if Settings.startOnReset {
                 title = "RESET"
             }
+            self.updateCoreData()
             self.challenge.update(
                 at: self.challengeIndex,
                 with: [
@@ -148,6 +150,20 @@ class CounterViewController: UIViewController {
         quoteLabel.updateFontColor()
     }
     
+    private func updateCoreData() {
+        if let context = container?.viewContext {
+            _ = CDRecord.createRecord(challenge, inContext: context)
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error: ")
+                print(error)
+            }
+        }
+        
+        
+    }
     // MARK: View Controller Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

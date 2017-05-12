@@ -10,5 +10,67 @@ import UIKit
 import CoreData
 
 class CDChallenge: NSManagedObject {
-
+    
+    // MARK: Class Function
+    class func findOrCreateChallenge(_ challenge: Challenge, inContext context: NSManagedObjectContext) throws -> CDChallenge {
+        
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        request.predicate = NSPredicate(format: "unique = %@", challenge.name)
+        
+        do {
+            let match = try context.fetch(request)
+            if match.count > 0 {
+                assert(match.count == 1, "findOrCreateChallenge -- database inconsistency")
+                return match[0]
+            }
+        } catch {
+            print("Something went wrong")
+            throw error
+        }
+        
+        
+        let cdChallenge = CDChallenge(context: context)
+        cdChallenge.unique = challenge.name
+        return cdChallenge
+    }
+    
+    class func getRecordsDuration(inContext context: NSManagedObjectContext) -> [Int] {
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        var array: [Int] = []
+        do {
+            let result = try context.fetch(request)
+            
+            for cdChallenge in result {
+                for cdRecord in cdChallenge.records! {
+                    if let record = cdRecord as? CDRecord {
+                        array.append(record.duration)
+                    }
+                }
+            }
+            
+        } catch {
+            print(error)
+        }
+        
+        return array
+        
+    }
+    class func printData(inContext context: NSManagedObjectContext) {
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        
+        do {
+            let result = try context.fetch(request)
+            
+            for cdChallenge in result {
+                for cdRecord in cdChallenge.records! {
+                    if let record = cdRecord as? CDRecord {
+                        print("Duration: \(record.duration)")
+                    }
+                }
+            }
+            
+        } catch {
+            print(error)
+        }
+    }
 }

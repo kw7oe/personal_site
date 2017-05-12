@@ -59,6 +59,7 @@ class Parser {
         return dateFormatter.string(from: time!)
     }
     
+    // This method is shitty... Refactor it 
     class func parseToArray(time: Int, basedOn format: String) -> [(time: String, unit: String)] {
         var unit: [Int] = [0];
         var result: [(String, String)] = []
@@ -87,7 +88,7 @@ class Parser {
     }
     
     /**
-     Parse Time into String format based on Your Format.
+     Parse Time into String format based on given Format.
      - Parameter time: the time you want to parse.
      - Parameter basedOn: the format
      - Returns: A Tuple of String. E.g. ("7", "  days  ")
