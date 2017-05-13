@@ -161,23 +161,8 @@
                     <view key="view" contentMode="scaleToFill" id="Xyk-FV-37Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKJ-dF-bcM" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="64" width="320" height="339"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zKJ-dF-bcM" firstAttribute="top" secondItem="OZz-n8-9VJ" secondAttribute="bottom" id="Bhh-OZ-Lf9"/>
-                            <constraint firstAttribute="trailing" secondItem="zKJ-dF-bcM" secondAttribute="trailing" id="ETh-bo-fdw"/>
-                            <constraint firstItem="zKJ-dF-bcM" firstAttribute="leading" secondItem="Xyk-FV-37Y" secondAttribute="leading" id="d3w-1c-BiI"/>
-                            <constraint firstItem="uQX-Ta-s0G" firstAttribute="top" secondItem="zKJ-dF-bcM" secondAttribute="bottom" constant="165" id="f2a-oY-2pS"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="chartView" destination="zKJ-dF-bcM" id="bpW-VX-3Mh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYr-qi-bYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
