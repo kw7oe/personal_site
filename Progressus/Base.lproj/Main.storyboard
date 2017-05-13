@@ -131,7 +131,7 @@
                             </barButtonItem>
                             <barButtonItem title="Stats" id="SGc-Gv-h0c">
                                 <connections>
-                                    <segue destination="4RW-AZ-Hbu" kind="show" identifier="Show Stats" id="j2C-9D-dhB"/>
+                                    <segue destination="4RW-AZ-Hbu" kind="show" identifier="Show Chart Segue" id="j2C-9D-dhB"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

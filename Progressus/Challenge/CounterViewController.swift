@@ -196,6 +196,7 @@ class CounterViewController: UIViewController {
     // MARK: Navigation
     private struct Storyboard {
         static let EditChallenge = "Edit Challenge Segue"
+        static let ShowChart = "Show Chart Segue"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -203,6 +204,10 @@ class CounterViewController: UIViewController {
             if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
                 dvc.challenge = challenge
                 dvc.challengeIndex = challengeIndex
+            }
+        } else if segue.identifier == Storyboard.ShowChart {
+            if let dvc = segue.destination.contentViewController as? StatsViewController {
+                dvc.challenge = challenge
             }
         }
     }

@@ -34,27 +34,21 @@ class CDChallenge: NSManagedObject {
         return cdChallenge
     }
     
-    class func getRecordsDuration(inContext context: NSManagedObjectContext) -> [Int] {
-        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+    func getRecordsDuration() -> [Int] {
         var array: [Int] = []
-        do {
-            let result = try context.fetch(request)
-            
-            for cdChallenge in result {
-                for cdRecord in cdChallenge.records! {
-                    if let record = cdRecord as? CDRecord {
-                        array.append(record.duration)
-                    }
-                }
+        let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: true)
+        
+        let recordsArray = records!.sortedArray(using: [sortDescriptor])
+        
+        for cdRecord in recordsArray {
+            if let record = cdRecord as? CDRecord {
+                array.append(record.duration)
             }
-            
-        } catch {
-            print(error)
         }
         
         return array
-        
     }
+    
     class func printData(inContext context: NSManagedObjectContext) {
         let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
         
