@@ -20,32 +20,44 @@ class BarChartView: UIView {
     
     var data: [Int]!
     var marginPercentage: CGFloat = 0.03
+    var maxValue: Int{
+        return data.max() ?? 0
+    }
     
     var chartHeight: CGFloat {
         return bounds.height * 0.7
     }
     var chartWidth: CGFloat {
-        return bounds.width - margin * CGFloat(data.count)
+        return bounds.width - innerMargin * CGFloat(data.count)
     }
-    var margin: CGFloat {
+    // The margin between each bar
+    var innerMargin: CGFloat {
         return marginPercentage * bounds.width
+    }
+    // The margin between the yAxis and the first bar
+    var outerMargin: CGFloat {
+        return innerMargin / 2
     }
     var barWidth: CGFloat {
         return chartWidth / CGFloat(data.count)
     }
     var barHeight: CGFloat {
-        return chartHeight / CGFloat(data.max()!)
+        return chartHeight / CGFloat(maxValue)
     }
+    var minBarHeight: CGFloat = 3.0
 
     
     convenience init(frame: CGRect, data: [Int]) {
         self.init(frame: frame)
         self.data = data
+        drawYAxisTicks()
         createBarChart()
         drawAxis(startX: bounds.minX, endX: bounds.minX,
-                 startY: bounds.height - chartHeight, endY: bounds.height)
+                 startY: bounds.height - chartHeight, endY: bounds.height,
+                 color: CustomTheme.graphAxisColor())
         drawAxis(startX: bounds.minX, endX: bounds.maxX,
-                 startY: bounds.maxY, endY: bounds.maxY)
+                 startY: bounds.maxY, endY: bounds.maxY,
+                 color: CustomTheme.graphAxisColor())
     }
     
     func createBarChart() {
@@ -57,9 +69,10 @@ class BarChartView: UIView {
     }
     
     func createBar(value: CGFloat, index: CGFloat) -> CAShapeLayer {
-        let height = barHeight * value + 5
+        var height = barHeight * value
+        if height == 0 { height = minBarHeight }
         let y = bounds.maxY - height
-        let x = index * (barWidth + margin)
+        let x = index * (barWidth + innerMargin) + outerMargin
         
         let frame = CGRect(x: x, y: y,
                            width: barWidth, height: height)
@@ -67,14 +80,12 @@ class BarChartView: UIView {
         let rectLayer = CAShapeLayer()
         
         rectLayer.path = path.cgPath
-        rectLayer.fillColor = CustomTheme.lighterPrimaryColor().cgColor
-        rectLayer.strokeColor = CustomTheme.primaryColor().cgColor
-        rectLayer.lineWidth = 2.0
+        rectLayer.fillColor = CustomTheme.primaryColor().cgColor
         
         return rectLayer
     }
     
-    func drawAxis(startX: CGFloat, endX: CGFloat, startY: CGFloat, endY: CGFloat) {
+    func drawAxis(startX: CGFloat, endX: CGFloat, startY: CGFloat, endY: CGFloat, color: UIColor) {
         let path = UIBezierPath()
         let startPoint = CGPoint(x: startX, y: startY)
         let endPoint = CGPoint(x: endX, y: endY)
@@ -83,13 +94,18 @@ class BarChartView: UIView {
         
         let axisLayer = CAShapeLayer()
         axisLayer.path = path.cgPath
-        axisLayer.strokeColor = CustomTheme.placeholderColor().cgColor
+        axisLayer.strokeColor = color.cgColor
         
         layer.addSublayer(axisLayer)
     }
     
-    func drawXAxisTicks() {
-        
+    func drawYAxisTicks() {
+        var y = bounds.maxY
+        print(maxValue)
+        for _ in 1...maxValue {
+            y -= barHeight
+            drawAxis(startX: bounds.minX, endX: bounds.maxX, startY: y, endY: y, color: CustomTheme.graphTickAxisColor())
+        }
     }
     
     func createLabel() {

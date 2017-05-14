@@ -120,4 +120,19 @@ struct CustomTheme {
     static func defaultTintColor() -> UIColor {
         return UIColor(hexString: "#007AFF")
     }
+    
+    // MARK: Graph 
+    static func graphAxisColor() -> UIColor {
+        if Settings.theme == .light {
+            return Colors.charchoal
+        }
+        return Colors.lightGray
+    }
+    
+    static func graphTickAxisColor() -> UIColor {
+        if Settings.theme == .light {
+            return Colors.lightGray
+        }
+        return Colors.lighterCharchoal
+    }
 }
