@@ -21,14 +21,20 @@ class BarChartView: UIView {
     var data: [Int]!
     var marginPercentage: CGFloat = 0.03
     
+    var chartHeight: CGFloat {
+        return bounds.height * 0.7
+    }
+    var chartWidth: CGFloat {
+        return bounds.width - margin * CGFloat(data.count)
+    }
     var margin: CGFloat {
         return marginPercentage * bounds.width
     }
     var barWidth: CGFloat {
-        return bounds.width / CGFloat(data.count) - margin
+        return chartWidth / CGFloat(data.count)
     }
     var barHeight: CGFloat {
-        return bounds.height * 0.7 / CGFloat(data.max()!)
+        return chartHeight / CGFloat(data.max()!)
     }
 
     
@@ -36,6 +42,10 @@ class BarChartView: UIView {
         self.init(frame: frame)
         self.data = data
         createBarChart()
+        drawAxis(startX: bounds.minX, endX: bounds.minX,
+                 startY: bounds.height - chartHeight, endY: bounds.height)
+        drawAxis(startX: bounds.minX, endX: bounds.maxX,
+                 startY: bounds.maxY, endY: bounds.maxY)
     }
     
     func createBarChart() {
@@ -58,18 +68,32 @@ class BarChartView: UIView {
         
         rectLayer.path = path.cgPath
         rectLayer.fillColor = CustomTheme.lighterPrimaryColor().cgColor
-        rectLayer.borderColor = CustomTheme.primaryColor().cgColor
-        rectLayer.borderWidth = 1.0
+        rectLayer.strokeColor = CustomTheme.primaryColor().cgColor
+        rectLayer.lineWidth = 2.0
         
         return rectLayer
     }
     
-    func createXAxis(_ label: String) {
+    func drawAxis(startX: CGFloat, endX: CGFloat, startY: CGFloat, endY: CGFloat) {
+        let path = UIBezierPath()
+        let startPoint = CGPoint(x: startX, y: startY)
+        let endPoint = CGPoint(x: endX, y: endY)
+        path.move(to: startPoint)
+        path.addLine(to: endPoint)
+        
+        let axisLayer = CAShapeLayer()
+        axisLayer.path = path.cgPath
+        axisLayer.strokeColor = CustomTheme.placeholderColor().cgColor
+        
+        layer.addSublayer(axisLayer)
+    }
+    
+    func drawXAxisTicks() {
         
     }
     
-    func createYAxis(_ label: String) {
-
+    func createLabel() {
+        
     }
     
 
