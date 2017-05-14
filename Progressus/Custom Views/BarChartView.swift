@@ -50,7 +50,7 @@ class BarChartView: UIView {
     convenience init(frame: CGRect, data: [Int]) {
         self.init(frame: frame)
         self.data = data
-        drawYAxisTicks()
+        drawHorizontalAxisTicks()
         createBarChart()
         drawAxis(startX: bounds.minX, endX: bounds.minX,
                  startY: bounds.height - chartHeight, endY: bounds.height,
@@ -99,7 +99,7 @@ class BarChartView: UIView {
         layer.addSublayer(axisLayer)
     }
     
-    func drawYAxisTicks() {
+    func drawHorizontalAxisTicks() {
         var y = bounds.maxY
         print(maxValue)
         for _ in 1...maxValue {
