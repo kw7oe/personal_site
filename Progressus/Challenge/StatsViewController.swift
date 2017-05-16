@@ -27,7 +27,7 @@ class StatsViewController: UIViewController {
     }
     
     func createBarChart() {
-        let margin: CGFloat = 20.0
+        let margin: CGFloat = 30.0
         let frame = CGRect(x: view.bounds.minX + margin, y: view.bounds.minY,
                            width: view.bounds.width - margin * 2, height: view.bounds.height / 2)
         let barChartView = BarChartView.init(frame: frame, data: data)       
