@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="src-H9-0QA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="src-H9-0QA">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -161,8 +161,23 @@
                     <view key="view" contentMode="scaleToFill" id="Xyk-FV-37Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gh-SC-QVg" customClass="BarChartView" customModule="Progressus" customModuleProvider="target">
+                                <rect key="frame" x="16" y="64" width="288" height="254"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0gh-SC-QVg" firstAttribute="top" secondItem="OZz-n8-9VJ" secondAttribute="bottom" id="50T-sf-BPO"/>
+                            <constraint firstItem="uQX-Ta-s0G" firstAttribute="top" secondItem="0gh-SC-QVg" secondAttribute="bottom" constant="250" id="Q4M-Oi-WHG"/>
+                            <constraint firstItem="0gh-SC-QVg" firstAttribute="leading" secondItem="Xyk-FV-37Y" secondAttribute="leadingMargin" id="rM2-Tb-tSn"/>
+                            <constraint firstItem="0gh-SC-QVg" firstAttribute="trailing" secondItem="Xyk-FV-37Y" secondAttribute="trailingMargin" id="rjm-r2-WJb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="0gh-SC-QVg" id="5y9-Cd-2Lw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYr-qi-bYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

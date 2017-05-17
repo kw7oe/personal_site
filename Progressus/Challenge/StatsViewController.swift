@@ -19,19 +19,17 @@ class StatsViewController: UIViewController {
         return challenge!.getRecordsDuration()
     }
     
+    @IBOutlet weak var barChartView: BarChartView!
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        barChartView.updateUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomTheme.backgroundColor()
-        createBarChart()        
-    }
-    
-    func createBarChart() {
-        let margin: CGFloat = 30.0
-        let frame = CGRect(x: view.bounds.minX + margin, y: view.bounds.minY,
-                           width: view.bounds.width - margin * 2, height: view.bounds.height / 2)
-        let barChartView = BarChartView.init(frame: frame, data: data)       
-        view.addSubview(barChartView)
+        barChartView.data = data
     }
     
     

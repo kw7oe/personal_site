@@ -25,7 +25,7 @@ class BarChartView: UIView {
     }
     
     var chartHeight: CGFloat {
-        return bounds.height * 0.7
+        return bounds.height * 0.9
     }
     var chartWidth: CGFloat {
         return bounds.width
@@ -65,10 +65,8 @@ class BarChartView: UIView {
     }
     var minBarHeight: CGFloat = 3.0
 
-    
-    convenience init(frame: CGRect, data: [Int]) {
-        self.init(frame: frame)
-        self.data = data
+    func updateUI() {
+        backgroundColor = CustomTheme.backgroundColor()
         drawHorizontalAxisTicks()
         drawVerticalAxisTicks()
         createBarChart()
