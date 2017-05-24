@@ -20,8 +20,18 @@ class BarChartView: UIView {
     
     var data: [Int]!
     var marginPercentage: CGFloat = 0.03
+    /**
+     The maxmimum value in the y-axis/chart.
+    */
     var maxValue: Int{
         return data.max() ?? 0
+    }
+    /**
+     The UILabel width of the `maxValue`.
+    */
+    var maxValueWidth: CGFloat {
+        let label = createLabel(text: String(maxValue))
+        return label.intrinsicContentSize.width
     }
     
     var chartHeight: CGFloat {
@@ -30,6 +40,9 @@ class BarChartView: UIView {
     var chartWidth: CGFloat {
         return bounds.width
     }
+    /**
+     Internal margin of the chart view.
+    */
     var chartOffset: CGFloat {
         return chartWidth * 0.025
     }
@@ -37,10 +50,10 @@ class BarChartView: UIView {
         return chartHeight - chartOffset * 2
     }
     var chartAreaWidth: CGFloat {
-        return chartWidth - chartOffset * 2
+        return chartWidth - chartOffset * 2 - maxValueWidth
     }
     var chartAreaMinX: CGFloat {
-        return bounds.minX + chartOffset
+        return bounds.minX + chartOffset + maxValueWidth
     }
     var chartAreaMaxX: CGFloat {
         return bounds.maxX - chartOffset
@@ -51,22 +64,44 @@ class BarChartView: UIView {
     var chartAreaMinY: CGFloat {
         return bounds.maxY - chartHeight
     }
+    /**
+     Bar width not including the internal margin within each bar.
+    */
     var barWidth: CGFloat {
         return chartAreaWidth / CGFloat(data.count)
     }
+    /**
+     Bar width after internal margin is included.
+    */
     var actualBarWidth: CGFloat {
         return barWidth - barMargin * 2
     }
+    /**
+     Bar margin between each bar.
+    */
     var barMargin: CGFloat {
         return barWidth * 0.15
     }
+    /**
+     The bar height represented by a single unit/value.
+     To get the total height for a bar chart:
+     ```
+     let height = barHeight * value
+     ```
+    */
     var barHeight: CGFloat {
         return chartAreaHeight / CGFloat(maxValue)
     }
+    /**
+     The minimum bar height when the value is 0.
+    */
     var minBarHeight: CGFloat = 3.0
 
     func updateUI() {
+        
         backgroundColor = CustomTheme.backgroundColor()
+        
+        guard !data.isEmpty else { return }
         drawHorizontalAxisTicks()
         drawVerticalAxisTicks()
         createBarChart()
@@ -94,7 +129,7 @@ class BarChartView: UIView {
         var height = barHeight * value
         if height == 0 { height = minBarHeight }
         
-        let x = (index * barWidth) + barMargin + chartOffset
+        let x = (index * barWidth) + barMargin + chartOffset + maxValueWidth
         
         createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
         
@@ -151,16 +186,15 @@ class BarChartView: UIView {
     
     // Refactoring Needed
     func createXLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
-        let label = UILabel()
-        label.text = value
-        label.textAlignment = .center
-        label.textColor = CustomTheme.textColor()
+        let label = createLabel(text: value)
         
         let size = label.intrinsicContentSize
         
+        // Max Width refer to the widest label in the axis, E.g. "32"
+        // To calculate the offset needed so the label is aligned in center
         let offset = (maxWidth - size.width) / 2
-        
         let startX = x + offset
+        
         let frame = CGRect(x: startX, y: y + chartOffset,
                            width: size.width, height: size.height)
         label.frame = frame
@@ -169,10 +203,7 @@ class BarChartView: UIView {
     }
     
     func createYLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
-        let label = UILabel()
-        label.text = value
-        label.textAlignment = .center
-        label.textColor = CustomTheme.textColor()
+        let label = createLabel(text: value)
         
         let size = label.intrinsicContentSize
         
@@ -185,6 +216,16 @@ class BarChartView: UIView {
         label.frame = frame
         
         addSubview(label)
+    }
+    
+    private func createLabel(text: String) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.textColor = CustomTheme.textColor()
+        label.textAlignment = .center
+        label.font = label.font.withSize(12.0)
+        
+        return label
     }
     
 
