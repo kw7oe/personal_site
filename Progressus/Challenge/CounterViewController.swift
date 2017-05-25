@@ -54,7 +54,8 @@ class CounterViewController: UIViewController {
             startTimer()
         }
     }
-       
+    
+    // MARK: Private Methods
     private func resetTimer() {
 
         let alertController = createDestrutiveAlert(title: "Reset Challenge") { (action) in
@@ -95,7 +96,6 @@ class CounterViewController: UIViewController {
         })
     }
     
-    // MARK: Private Methods
     private func createDestrutiveAlert(title: String, completionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
@@ -164,6 +164,7 @@ class CounterViewController: UIViewController {
         
         
     }
+    
     // MARK: View Controller Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

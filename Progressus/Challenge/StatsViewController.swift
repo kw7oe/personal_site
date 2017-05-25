@@ -13,23 +13,32 @@ class StatsViewController: UIViewController {
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var challenge: Challenge!
+    var barChartView: BarChartView?
     
     var data: [Int] {
         let challenge = try? CDChallenge.findOrCreateChallenge(self.challenge, inContext: container!.viewContext)
         return challenge!.getRecordsDuration()
     }
     
-    @IBOutlet weak var barChartView: BarChartView!
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        barChartView.updateUI()
+        drawBarChart()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomTheme.backgroundColor()
-        barChartView.data = data
+    }
+    
+    private func drawBarChart() {
+        if barChartView != nil {
+            barChartView?.removeFromSuperview()
+        }
+        let topMargin = navigationController?.navigationBar.frame.maxY
+        let frame = CGRect(x: view.bounds.minX + 20, y: view.bounds.minY + topMargin!,
+                           width: view.bounds.width - 40, height: view.bounds.height / 2.5)
+        barChartView = BarChartView.init(frame: frame, data: data)
+        view.addSubview(barChartView!)
     }
     
     

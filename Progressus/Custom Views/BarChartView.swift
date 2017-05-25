@@ -89,12 +89,22 @@ class BarChartView: UIView {
      The minimum bar height when the value is 0.
     */
     var minBarHeight: CGFloat = 3.0
-
-    func updateUI() {
-        
+    
+    convenience init(frame: CGRect, data: [Int]) {
+        self.init(frame: frame)
+        self.data = data
+        updateUI()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+         print("Layouting Sub Views...")
         backgroundColor = CustomTheme.backgroundColor()
-        
-        guard !data.isEmpty else { return }
+    }
+    
+    private func updateUI() {
+        print("Updating UI...")
+
         drawHorizontalAxisTicks()
         drawVerticalAxisTicks()
         createBarChart()
@@ -108,9 +118,11 @@ class BarChartView: UIView {
         drawAxis(startX: bounds.minX, endX: bounds.maxX,
                  startY: chartAreaMaxY, endY: chartAreaMaxY,
                  color: CustomTheme.graphAxisColor())
+  
     }
     
-    func createBarChart() {
+    private func createBarChart() {
+        print("Creating Bar Chart...")
         for i in 0..<data.count {
             let num = data[i]
             let bar = createBar(value: CGFloat(num), index: CGFloat(i));
@@ -118,7 +130,8 @@ class BarChartView: UIView {
         }
     }
     
-    func createBar(value: CGFloat, index: CGFloat) -> CAShapeLayer {
+    private func createBar(value: CGFloat, index: CGFloat) -> CAShapeLayer {
+        print("Creating Bar...")
         var height = barHeight * value
         if height == 0 { height = minBarHeight }
         
@@ -138,7 +151,7 @@ class BarChartView: UIView {
         return rectLayer
     }
     
-    func drawAxis(startX: CGFloat, endX: CGFloat, startY: CGFloat, endY: CGFloat, color: UIColor) {
+    private func drawAxis(startX: CGFloat, endX: CGFloat, startY: CGFloat, endY: CGFloat, color: UIColor) {
         let path = UIBezierPath()
         let startPoint = CGPoint(x: startX, y: startY)
         let endPoint = CGPoint(x: endX, y: endY)
@@ -152,7 +165,8 @@ class BarChartView: UIView {
         layer.addSublayer(axisLayer)
     }
        
-    func drawHorizontalAxisTicks() {
+    private func drawHorizontalAxisTicks() {
+        print("Drawing Horizontal Axis...")
         var y = chartAreaMaxY
         
         let label = UILabel()
@@ -172,7 +186,8 @@ class BarChartView: UIView {
         }
     }
     
-    func drawVerticalAxisTicks() {
+    private func drawVerticalAxisTicks() {
+        print("Drawing Vertical Axis...")
         var x = chartAreaMinX
         
         for _ in 1...data.count {
@@ -182,7 +197,8 @@ class BarChartView: UIView {
     }
     
     // Refactoring Needed
-    func createXLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
+    private func createXLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
+        print("Creating X Label...")
         let label = createLabel(text: value)
         
         let size = label.intrinsicContentSize
@@ -199,7 +215,8 @@ class BarChartView: UIView {
         addSubview(label)
     }
     
-    func createYLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
+    private func createYLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
+        print("Creating Y Label...")
         let label = createLabel(text: value)
         
         let size = label.intrinsicContentSize
