@@ -9,14 +9,6 @@
 import UIKit
 
 class BarChartView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     var data: [Int]!
     var marginPercentage: CGFloat = 0.03
@@ -90,7 +82,8 @@ class BarChartView: UIView {
      ```
     */
     var barHeight: CGFloat {
-        return chartAreaHeight / CGFloat(maxValue)
+        let height = chartAreaHeight / CGFloat(maxValue)
+        return height.isFinite ? height : chartAreaHeight / 6
     }
     /**
      The minimum bar height when the value is 0.
@@ -166,12 +159,16 @@ class BarChartView: UIView {
         label.text = String(maxValue)
         let maxWidth = label.intrinsicContentSize.width
         
-        let interval = maxValue / 6
+        var interval: CGFloat = CGFloat(maxValue) / 6
+        
+        if interval == 0 {
+            interval = 6.0 / 6
+        }
         
         for i in 1...6 {
             y -= barHeight * CGFloat(interval)
             drawAxis(startX: chartAreaMinX, endX: bounds.maxX, startY: y, endY: y, color: CustomTheme.graphTickAxisColor())
-            createYLabel(x: chartAreaMinX, y: y, value: String(i * interval), maxWidth: maxWidth)
+            createYLabel(x: chartAreaMinX, y: y, value: String.init(format: "%.1f", CGFloat(i) * interval), maxWidth: maxWidth)
         }
     }
     
@@ -209,7 +206,7 @@ class BarChartView: UIView {
         
         var offset = chartOffset
         offset += size.width + (maxWidth - size.width) / 2
-    
+        
         let startX = x - offset
         let frame = CGRect(x: startX, y: y - size.height / 2,
                            width: size.width, height: size.height)

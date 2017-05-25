@@ -49,8 +49,6 @@ class Settings {
     
     // Previous Reminders
     static var shouldRemovedPendingNotifications: Bool {
-        print(!pendingNotificationsRemoved)
-        print(reminders?.isEmpty ?? true)
         return !pendingNotificationsRemoved && (reminders?.isEmpty ?? true)
     }
     
