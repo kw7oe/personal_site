@@ -26,9 +26,13 @@ class BlankView: UIView {
     
     // MARK: View Life Cycle 
     override func layoutSubviews() {
-        super.layoutSubviews()        
+        super.layoutSubviews()
+        updateUI()
+        
         let center = CGPoint(x: frame.midX, y: frame.midY)
-        let tempFrame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height / 16)
+        let size = label.intrinsicContentSize
+        let tempFrame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
         label.frame = tempFrame
         label.center = center
         label.textAlignment = .center
@@ -37,7 +41,7 @@ class BlankView: UIView {
         detailLabel.center = CGPoint(x: center.x, y: center.y + tempFrame.height)
         detailLabel.textAlignment = .center
         
-        updateUI()        
+        
     }
     
     override init(frame: CGRect) {

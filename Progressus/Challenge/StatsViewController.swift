@@ -28,6 +28,7 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomTheme.backgroundColor()
+        title = challenge.name
     }
     
     private func drawBarChart() {
@@ -35,8 +36,9 @@ class StatsViewController: UIViewController {
             barChartView?.removeFromSuperview()
         }
         let topMargin = navigationController?.navigationBar.frame.maxY
-        let frame = CGRect(x: view.bounds.minX + 20, y: view.bounds.minY + topMargin!,
-                           width: view.bounds.width - 40, height: view.bounds.height / 2.5)
+        let frame = CGRect(x: view.bounds.minX, y: view.bounds.minY + topMargin!,
+                           width: view.bounds.width, height: view.bounds.height / 2.5)
+        
         barChartView = BarChartView.init(frame: frame, data: data)
         view.addSubview(barChartView!)
     }
