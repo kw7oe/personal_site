@@ -18,7 +18,8 @@
 
 - [X] Multiple Challenges. 
 - [X] User can select custom color.  
-- [ ] Track Previous Record.
+- [X] Track Previous Record.
+- [ ] Calender.
 - [ ] Social Sharing.
 - [ ] Widget.
 - [ ] Walkthrough.
