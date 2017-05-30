@@ -29,6 +29,20 @@ class StatsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         drawBarChart()
         setupDetailsView()
+        
+        
+        let viewHeight = view.frame.height - topMargin!
+        let remainingHeight = (viewHeight - barChartView!.frame.height - detailsView!.frame.height)
+        let topY = remainingHeight / 2
+        barChartView!.frame = CGRect(
+            origin: CGPoint(x: barChartView!.frame.minX, y: barChartView!.frame.minY + topY),
+            size: barChartView!.frame.size
+        )
+        detailsView!.frame = CGRect(
+            origin: CGPoint(x: detailsView!.frame.minX, y: barChartView!.frame.maxY),
+            size: detailsView!.frame.size
+        )
+        
     }
     
     override func viewDidLoad() {
@@ -57,8 +71,16 @@ class StatsViewController: UIViewController {
         let sum = data.reduce(0) { (a, b) -> Int in
             a + b
         }
-        let average = Double(sum) / Double(data.count)
-        let averageLabel = createLabelWith(text: "Average: \(average)")
+        
+        var average: Double = 0
+        if (data.count != 0) {
+            average = Double(sum) / Double(data.count)
+        }
+        var precision = "1"
+        if average == 0 { precision = "0" }
+        let averageLabel = createLabelWith(
+            text: String.init(format: "Average: %.\(precision)f", average)
+        )
         
         let stackView = UIStackView.init(
             arrangedSubviews: [bestLabel, worstLabel, averageLabel]
