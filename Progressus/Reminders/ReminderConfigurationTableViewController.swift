@@ -90,8 +90,8 @@ class ReminderConfigurationTableViewController: UITableViewController {
     // MARK: View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.backgroundColor = CustomTheme.backgroundColor()
-        self.navigationController?.navigationBar.none()
+//        self.view.backgroundColor = CustomTheme.backgroundColor()
+//        self.navigationController?.navigationBar.none()
         saveButton.style = .done
     }
     

@@ -22,7 +22,7 @@ class ChallengesTableViewController: UITableViewController {
     var blankView: BlankView!
     
     private func updateColorScheme() {
-        navigationController?.navigationBar.none()
+//        navigationController?.navigationBar.none()
         view.window?.tintColor = CustomTheme.primaryColor()
         tableView.backgroundColor = CustomTheme.backgroundColor()
     }

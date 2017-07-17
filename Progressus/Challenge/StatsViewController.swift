@@ -22,7 +22,7 @@ class StatsViewController: UIViewController {
     
     var data: [Int] {
         let challenge = try? CDChallenge.findOrCreateChallenge(self.challenge, inContext: container!.viewContext)
-        return challenge!.getRecordsDuration()
+        return challenge!.getRecordsDuration().minSizeOf(7)
     }
     
     override func viewDidLayoutSubviews() {
@@ -81,10 +81,13 @@ class StatsViewController: UIViewController {
         let averageLabel = createLabelWith(
             text: String.init(format: "Average: %.\(precision)f", average)
         )
-        
         let stackView = UIStackView.init(
             arrangedSubviews: [bestLabel, worstLabel, averageLabel]
         )
+        setupStackView(view: stackView)
+    }
+    
+    private func setupStackView(view stackView: UIStackView) {        
         stackView.alignment = .center
         stackView.spacing = 10.0
         stackView.axis = .vertical
@@ -94,8 +97,8 @@ class StatsViewController: UIViewController {
         
         stackView.centerXAnchor.constraint(equalTo: detailsView!.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: detailsView!.centerYAnchor).isActive = true
-        
     }
+    
     private func initializeDetailsView() {
         if (detailsView != nil) {
             detailsView?.removeFromSuperview()
@@ -121,5 +124,16 @@ class StatsViewController: UIViewController {
         return label
     }
     
+}
+
+extension Array where Element == Int {
     
+    func minSizeOf(_ number: Int) -> [Int] {
+        let iteration = number - self.count
+        var array = Array(self)
+        for _ in 1...iteration {
+            array.prepend(element: 0)
+        }
+        return array
+    }
 }

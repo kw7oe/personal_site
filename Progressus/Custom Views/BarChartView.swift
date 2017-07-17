@@ -153,7 +153,7 @@ class BarChartView: UIView {
         
         let x = (index * barWidth) + barMargin + chartOffset + maxValueWidth
         
-        createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
+//        createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
         
         // CAShapeLAyer
         let frame = CGRect(x: x, y: chartAreaMaxY - height,
