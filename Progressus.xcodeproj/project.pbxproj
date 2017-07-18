@@ -14,6 +14,7 @@
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
+		2ACC6BA81F1C500F00C7119E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
 		2AD041E41EC6BDC700BE2989 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD041E31EC6BDC700BE2989 /* BarChartView.swift */; };
 		2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */; };
 		2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */; };
@@ -39,23 +40,6 @@
 		2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2A7509591E24894900B9B31D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A75093C1E24894900B9B31D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A7509431E24894900B9B31D;
-			remoteInfo = Countdown;
-		};
-		2A7509641E24894900B9B31D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A75093C1E24894900B9B31D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A7509431E24894900B9B31D;
-			remoteInfo = Countdown;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -63,8 +47,6 @@
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A7509581E24894900B9B31D /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A7509631E24894900B9B31D /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAE02191EC47FA2005B9E36 /* CDRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRecord.swift; path = Progressus/CoreData/CDRecord.swift; sourceTree = "<group>"; };
 		2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChallenge.swift; path = Progressus/CoreData/CDChallenge.swift; sourceTree = "<group>"; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -98,20 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A7509551E24894900B9B31D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A7509601E24894900B9B31D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2ACC6BA81F1C500F00C7119E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				2A7509441E24894900B9B31D /* Progressus.app */,
-				2A7509581E24894900B9B31D /* ProgressusTests.xctest */,
-				2A7509631E24894900B9B31D /* ProgressusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,42 +240,6 @@
 			productReference = 2A7509441E24894900B9B31D /* Progressus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2A7509571E24894900B9B31D /* ProgressusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2A75096F1E24894900B9B31D /* Build configuration list for PBXNativeTarget "ProgressusTests" */;
-			buildPhases = (
-				2A7509541E24894900B9B31D /* Sources */,
-				2A7509551E24894900B9B31D /* Frameworks */,
-				2A7509561E24894900B9B31D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2A75095A1E24894900B9B31D /* PBXTargetDependency */,
-			);
-			name = ProgressusTests;
-			productName = CountdownTests;
-			productReference = 2A7509581E24894900B9B31D /* ProgressusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2A7509621E24894900B9B31D /* ProgressusUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2A7509721E24894900B9B31D /* Build configuration list for PBXNativeTarget "ProgressusUITests" */;
-			buildPhases = (
-				2A75095F1E24894900B9B31D /* Sources */,
-				2A7509601E24894900B9B31D /* Frameworks */,
-				2A7509611E24894900B9B31D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2A7509651E24894900B9B31D /* PBXTargetDependency */,
-			);
-			name = ProgressusUITests;
-			productName = CountdownUITests;
-			productReference = 2A7509631E24894900B9B31D /* ProgressusUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -329,18 +260,6 @@
 							};
 						};
 					};
-					2A7509571E24894900B9B31D = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = S3HCDAT8QN;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2A7509431E24894900B9B31D;
-					};
-					2A7509621E24894900B9B31D = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = S3HCDAT8QN;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2A7509431E24894900B9B31D;
-					};
 				};
 			};
 			buildConfigurationList = 2A75093F1E24894900B9B31D /* Build configuration list for PBXProject "Progressus" */;
@@ -357,8 +276,6 @@
 			projectRoot = "";
 			targets = (
 				2A7509431E24894900B9B31D /* Progressus */,
-				2A7509571E24894900B9B31D /* ProgressusTests */,
-				2A7509621E24894900B9B31D /* ProgressusUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -371,20 +288,6 @@
 				2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */,
 				2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */,
 				2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A7509561E24894900B9B31D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A7509611E24894900B9B31D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,34 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A7509541E24894900B9B31D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A75095F1E24894900B9B31D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2A75095A1E24894900B9B31D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A7509431E24894900B9B31D /* Progressus */;
-			targetProxy = 2A7509591E24894900B9B31D /* PBXContainerItemProxy */;
-		};
-		2A7509651E24894900B9B31D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A7509431E24894900B9B31D /* Progressus */;
-			targetProxy = 2A7509641E24894900B9B31D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */ = {
@@ -602,64 +478,6 @@
 			};
 			name = Release;
 		};
-		2A7509701E24894900B9B31D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = S3HCDAT8QN;
-				INFOPLIST_FILE = CountdownTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountdownTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progressus.app/Progressus";
-			};
-			name = Debug;
-		};
-		2A7509711E24894900B9B31D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = S3HCDAT8QN;
-				INFOPLIST_FILE = CountdownTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountdownTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progressus.app/Progressus";
-			};
-			name = Release;
-		};
-		2A7509731E24894900B9B31D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = S3HCDAT8QN;
-				INFOPLIST_FILE = CountdownUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountdownUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Countdown;
-			};
-			name = Debug;
-		};
-		2A7509741E24894900B9B31D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = S3HCDAT8QN;
-				INFOPLIST_FILE = CountdownUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.CountdownUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Countdown;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,24 +495,6 @@
 			buildConfigurations = (
 				2A75096D1E24894900B9B31D /* Debug */,
 				2A75096E1E24894900B9B31D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2A75096F1E24894900B9B31D /* Build configuration list for PBXNativeTarget "ProgressusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A7509701E24894900B9B31D /* Debug */,
-				2A7509711E24894900B9B31D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2A7509721E24894900B9B31D /* Build configuration list for PBXNativeTarget "ProgressusUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A7509731E24894900B9B31D /* Debug */,
-				2A7509741E24894900B9B31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

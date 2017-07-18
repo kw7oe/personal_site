@@ -139,7 +139,7 @@ class CounterViewController: UIViewController {
     
     private func updateColorScheme() {
         self.progressView.updateUI()
-//        self.view.window?.tintColor = CustomTheme.primaryColor()
+        self.view.window?.tintColor = CustomTheme.primaryColor()
         self.view.backgroundColor = CustomTheme.backgroundColor()
         
         // Dark Theme

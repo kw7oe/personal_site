@@ -128,15 +128,15 @@ class BarChartView: UIView {
         createBarChart()
         
         // Y-Axis
-        drawAxis(startX: chartAreaMinX, endX: chartAreaMinX,
-                 startY: chartAreaMinY, endY: bounds.maxY,
-                 color: CustomTheme.graphAxisColor())
-        
+//        drawAxis(startX: chartAreaMinX, endX: chartAreaMinX,
+//                 startY: chartAreaMinY, endY: bounds.maxY,
+//                 color: CustomTheme.graphAxisColor())
+//        
         // X-Axis
-        drawAxis(startX: bounds.minX, endX: bounds.maxX,
-                 startY: chartAreaMaxY, endY: chartAreaMaxY,
-                 color: CustomTheme.graphAxisColor())
-  
+//        drawAxis(startX: bounds.minX, endX: bounds.maxX,
+//                 startY: chartAreaMaxY, endY: chartAreaMaxY,
+//                 color: CustomTheme.graphAxisColor())
+//  
     }
     
     private func createBarChart() {
@@ -153,7 +153,7 @@ class BarChartView: UIView {
         
         let x = (index * barWidth) + barMargin + chartOffset + maxValueWidth
         
-//        createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
+        createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
         
         // CAShapeLAyer
         let frame = CGRect(x: x, y: chartAreaMaxY - height,

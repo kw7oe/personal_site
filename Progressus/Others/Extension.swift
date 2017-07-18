@@ -90,7 +90,7 @@ extension UITableViewCell {
     
     // Dark Theme
     func customize() {
-        self.backgroundColor = CustomTheme.backgroundColor()
+        self.backgroundColor = CustomTheme.cellBackgroundColor()
         self.textLabel?.textColor = CustomTheme.textColor()
         self.detailTextLabel?.textColor = CustomTheme.textColor()
         self.selectedBackgroundView = CustomTheme.cellSelectedView()
@@ -102,10 +102,9 @@ extension UINavigationBar {
      Remove Background and Bottom Border of Nagivation Bar
      */
     func none() {
-        self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.barTintColor = UIColor.white
-        self.shadowImage = UIImage()
         self.barStyle = CustomTheme.barStyle()
+        self.isTranslucent = false
+        self.barTintColor = CustomTheme.cellBackgroundColor()
     }
 }
 

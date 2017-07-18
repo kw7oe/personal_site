@@ -105,7 +105,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     // ColorButtons Target Action
-    func updateTheme(sender: ColorButton) {
+    func updateColor(sender: ColorButton) {
         colorButtons.forEach { (button) in
             button.unselect()
         }
@@ -138,7 +138,7 @@ class SettingsTableViewController: UITableViewController {
     fileprivate func updateUI() {
         updateTintColor()
         tableView.reloadData()
-        navigationController?.navigationBar.barStyle = CustomTheme.barStyle()
+        navigationController?.navigationBar.none()
     }
     
     fileprivate func createButton(colors: [UIColor]) -> ColorButton {
@@ -149,7 +149,7 @@ class SettingsTableViewController: UITableViewController {
             color = colors[1]
         }
         let button = ColorButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30), color: color)
-        button.addTarget(self, action: #selector(SettingsTableViewController.updateTheme), for: .touchUpInside)
+        button.addTarget(self, action: #selector(SettingsTableViewController.updateColor), for: .touchUpInside)
         return button
     }
     

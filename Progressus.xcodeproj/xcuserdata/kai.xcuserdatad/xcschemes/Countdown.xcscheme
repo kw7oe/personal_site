@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7509571E24894900B9B31D"
-               BuildableName = "ProgressusTests.xctest"
-               BlueprintName = "ProgressusTests"
+               BlueprintIdentifier = "2A7509621E24894900B9B31D"
+               BuildableName = "ProgressusUITests.xctest"
+               BlueprintName = "ProgressusUITests"
                ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7509621E24894900B9B31D"
-               BuildableName = "ProgressusUITests.xctest"
-               BlueprintName = "ProgressusUITests"
+               BlueprintIdentifier = "2A7509571E24894900B9B31D"
+               BuildableName = "ProgressusTests.xctest"
+               BlueprintName = "ProgressusTests"
                ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
          </TestableReference>

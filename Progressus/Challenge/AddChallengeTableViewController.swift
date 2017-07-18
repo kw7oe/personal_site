@@ -109,8 +109,8 @@ class AddChallengeTableViewController: UITableViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        self.view.backgroundColor = CustomTheme.backgroundColor()
-//        self.navigationController?.navigationBar.none()
+        self.view.backgroundColor = CustomTheme.backgroundColor()
+        self.navigationController?.navigationBar.none()
     }
 }
 

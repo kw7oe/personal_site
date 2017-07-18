@@ -22,7 +22,7 @@ class ChallengesTableViewController: UITableViewController {
     var blankView: BlankView!
     
     private func updateColorScheme() {
-//        navigationController?.navigationBar.none()
+        navigationController?.navigationBar.none()
         view.window?.tintColor = CustomTheme.primaryColor()
         tableView.backgroundColor = CustomTheme.backgroundColor()
     }
@@ -31,6 +31,8 @@ class ChallengesTableViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()        
         updateColorScheme()
+        
+        tableView.separatorColor = CustomTheme.seperatorColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +42,6 @@ class ChallengesTableViewController: UITableViewController {
             title: "No Challenge Available",
             detail: "You can add up to 4 challenges."
         )
-        tableView.separatorStyle = .none
         tableView.reloadData()
     }
     
@@ -49,7 +50,7 @@ class ChallengesTableViewController: UITableViewController {
         if segue.identifier == Storyboard.ChallengeCellSegue {            if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
-                    vc.challengeIndex = index!.section
+                    vc.challengeIndex = index!.row
                 }
             }
         }
@@ -74,6 +75,10 @@ class ChallengesTableViewController: UITableViewController {
 extension ChallengesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if challenges == nil || challenges?.count == 0 {
             tableView.backgroundView = blankView
         } else {
@@ -83,16 +88,12 @@ extension ChallengesTableViewController {
         return 0
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
         
         if let challengeCell = cell as? ChallengeTableViewCell {
-            challengeCell.challenge = challenges?[indexPath.section]
+            challengeCell.challenge = challenges?[indexPath.row]
         }
         
         return cell
@@ -106,9 +107,9 @@ extension ChallengesTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle  {
         case .delete:
-            let index = indexPath.section
+            let index = indexPath.row
             Settings.removeChallenge(at: index)
-            tableView.deleteSections(IndexSet([index]), with: .fade)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         default: break
         }
     }
