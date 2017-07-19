@@ -88,6 +88,10 @@ struct CustomTheme {
     }
     
     // MARK: General Visual Customization
+    static func navBarTintColor() -> UIColor {
+        return cellBackgroundColor()
+    }
+    
     static func backgroundColor() -> UIColor {
         if Settings.theme == .light {
             return Colors.ultraLightGray

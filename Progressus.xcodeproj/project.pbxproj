@@ -11,6 +11,8 @@
 		2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */; };
 		2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA491E6D3D08003F8C13 /* Assets.xcassets */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
+		2A62D29A1F1F053D00ED7D42 /* ProgressusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2991F1F053D00ED7D42 /* ProgressusTests.swift */; };
+		2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2A11F1F055800ED7D42 /* ParserTests.swift */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
@@ -40,11 +42,27 @@
 		2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A62D29C1F1F053D00ED7D42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A75093C1E24894900B9B31D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A7509431E24894900B9B31D;
+			remoteInfo = Progressus;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA491E6D3D08003F8C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Progressus/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A62D28B1F1F034C00ED7D42 /* ProgressusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressusTests.swift; sourceTree = "<group>"; };
+		2A62D28D1F1F034C00ED7D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A62D2991F1F053D00ED7D42 /* ProgressusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressusTests.swift; sourceTree = "<group>"; };
+		2A62D29B1F1F053D00ED7D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A62D2A11F1F055800ED7D42 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAE02191EC47FA2005B9E36 /* CDRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRecord.swift; path = Progressus/CoreData/CDRecord.swift; sourceTree = "<group>"; };
@@ -76,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A62D2941F1F053D00ED7D42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A7509411E24894900B9B31D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,6 +120,25 @@
 			);
 			name = "Supporting Files";
 			path = Countdown;
+			sourceTree = "<group>";
+		};
+		2A62D28A1F1F034C00ED7D42 /* ProgressusTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A62D28B1F1F034C00ED7D42 /* ProgressusTests.swift */,
+				2A62D28D1F1F034C00ED7D42 /* Info.plist */,
+			);
+			path = ProgressusTests;
+			sourceTree = "<group>";
+		};
+		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A62D2A11F1F055800ED7D42 /* ParserTests.swift */,
+				2A62D2991F1F053D00ED7D42 /* ProgressusTests.swift */,
+				2A62D29B1F1F053D00ED7D42 /* Info.plist */,
+			);
+			path = ProgressusTests;
 			sourceTree = "<group>";
 		};
 		2A740DBF1E6E683200A59D38 /* Progressus */ = {
@@ -120,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				2A740DBF1E6E683200A59D38 /* Progressus */,
+				2A62D28A1F1F034C00ED7D42 /* ProgressusTests */,
+				2A62D2981F1F053D00ED7D42 /* ProgressusTests */,
 				2A7509451E24894900B9B31D /* Products */,
 				2A80BE161E41893F0008485C /* Frameworks */,
 			);
@@ -129,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2A7509441E24894900B9B31D /* Progressus.app */,
+				2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +270,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A62D2961F1F053D00ED7D42 /* ProgressusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A62D29E1F1F053D00ED7D42 /* Build configuration list for PBXNativeTarget "ProgressusTests" */;
+			buildPhases = (
+				2A62D2931F1F053D00ED7D42 /* Sources */,
+				2A62D2941F1F053D00ED7D42 /* Frameworks */,
+				2A62D2951F1F053D00ED7D42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A62D29D1F1F053D00ED7D42 /* PBXTargetDependency */,
+			);
+			name = ProgressusTests;
+			productName = ProgressusTests;
+			productReference = 2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2A7509431E24894900B9B31D /* Progressus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A75096C1E24894900B9B31D /* Build configuration list for PBXNativeTarget "Progressus" */;
@@ -246,10 +311,16 @@
 		2A75093C1E24894900B9B31D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Choong Kai Wern";
 				TargetAttributes = {
+					2A62D2961F1F053D00ED7D42 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = S3HCDAT8QN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A7509431E24894900B9B31D;
+					};
 					2A7509431E24894900B9B31D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = XRLWGD9BPC;
@@ -276,11 +347,19 @@
 			projectRoot = "";
 			targets = (
 				2A7509431E24894900B9B31D /* Progressus */,
+				2A62D2961F1F053D00ED7D42 /* ProgressusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A62D2951F1F053D00ED7D42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A7509421E24894900B9B31D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +373,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A62D2931F1F053D00ED7D42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
+				2A62D29A1F1F053D00ED7D42 /* ProgressusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A7509401E24894900B9B31D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +418,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2A62D29D1F1F053D00ED7D42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A7509431E24894900B9B31D /* Progressus */;
+			targetProxy = 2A62D29C1F1F053D00ED7D42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -351,6 +447,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2A62D29F1F1F053D00ED7D42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = S3HCDAT8QN;
+				INFOPLIST_FILE = ProgressusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.ProgressusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progressus.app/Progressus";
+			};
+			name = Debug;
+		};
+		2A62D2A01F1F053D00ED7D42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = S3HCDAT8QN;
+				INFOPLIST_FILE = ProgressusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.ProgressusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progressus.app/Progressus";
+			};
+			name = Release;
+		};
 		2A75096A1E24894900B9B31D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,6 +609,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A62D29E1F1F053D00ED7D42 /* Build configuration list for PBXNativeTarget "ProgressusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A62D29F1F1F053D00ED7D42 /* Debug */,
+				2A62D2A01F1F053D00ED7D42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2A75093F1E24894900B9B31D /* Build configuration list for PBXProject "Progressus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

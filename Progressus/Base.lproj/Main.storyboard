@@ -31,7 +31,7 @@
                                         <rect key="frame" x="36" y="0.0" width="216" height="216"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-zo-ebF">
-                                                <rect key="frame" x="52.5" y="167" width="111" height="41.5"/>
+                                                <rect key="frame" x="52.5" y="167.5" width="111" height="41.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Kr-7J8">
                                                         <rect key="frame" x="0.0" y="0.0" width="111" height="20.5"/>
@@ -190,7 +190,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-kV-a2x">
-                                            <rect key="frame" x="8" y="15.5" width="161" height="59.5"/>
+                                            <rect key="frame" x="8" y="15" width="161" height="60"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stop Smoking" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-uT-9eH">
                                                     <rect key="frame" x="0.0" y="0.0" width="161" height="29"/>
@@ -199,7 +199,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days 8 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-lh-B1t">
-                                                    <rect key="frame" x="0.0" y="39" width="161" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="39" width="161" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -207,7 +207,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Co-KJ-lCq">
-                                            <rect key="frame" x="215.5" y="26" width="96.5" height="43"/>
+                                            <rect key="frame" x="215" y="26" width="97" height="43"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -638,10 +638,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-Wd-GWF">
-                                                    <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="293.5" height="27.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="293" height="28"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
@@ -650,7 +650,7 @@
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-n7-lp8">
-                                                            <rect key="frame" x="293.5" y="0.0" width="10.5" height="27.5"/>
+                                                            <rect key="frame" x="293" y="0.0" width="11" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

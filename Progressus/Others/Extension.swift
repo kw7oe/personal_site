@@ -104,7 +104,7 @@ extension UINavigationBar {
     func none() {
         self.barStyle = CustomTheme.barStyle()
         self.isTranslucent = false
-        self.barTintColor = CustomTheme.cellBackgroundColor()
+        self.barTintColor = CustomTheme.navBarTintColor()
     }
 }
 
