@@ -35,6 +35,11 @@ class ParserTests: XCTestCase {
         let time = Date.init(time: "14:30")
         XCTAssertEqual("2:30 PM", Parser.parse(time: time))
     }
+    
+    func testParse() {
+        let testInput = Parser.parse(time: 7, basedOn: .day)
+        XCTAssert(testInput == (time: "7", unit: "  days  "))
+    }
 }
 
 extension Date {
