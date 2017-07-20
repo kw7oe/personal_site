@@ -16,7 +16,6 @@ class ProgressusUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchArguments.append("--uitesting")
         app.launch()
     }
     
@@ -34,7 +33,12 @@ class ProgressusUITests: XCTestCase {
         challengeNameSearchField.tap()
         challengeNameSearchField.typeText("Foobar")
         
+        app.navigationBars["Progressus.AddChallengeTableView"].buttons["Save"].tap()
+        
         XCTAssertEqual(app.tables.cells.count, count)
+        
+        let cellLabel = app.tables.cells.element(boundBy: 0).staticTexts.element(boundBy: 1)
+        XCTAssertEqual(cellLabel.label, "Foobar")
     }
     
     func testRemoveChallenge() {
@@ -47,6 +51,21 @@ class ProgressusUITests: XCTestCase {
         cell.buttons["Delete"].tap()
         
         XCTAssertEqual(app.tables.cells.count, count)
+    }
+    
+    func testGoToSetting() {        
+        let app = XCUIApplication()
+        app.navigationBars["Progressus"].buttons["Settings"].tap()
+        
+        let tablesQuery = app.tables
+        let cell = tablesQuery.children(matching: .cell).element(boundBy: 4)
+        cell.children(matching: .button).element(boundBy: 1).tap()
+        cell.children(matching: .button).element(boundBy: 6).tap()
+        cell.children(matching: .button).element(boundBy: 5).tap()
+        cell.children(matching: .button).element(boundBy: 4).tap()
+        
+        
+        tablesQuery.switches["Dark Theme"].tap()
     }
     
 }

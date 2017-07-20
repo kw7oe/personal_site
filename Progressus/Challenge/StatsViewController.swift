@@ -124,16 +124,3 @@ class StatsViewController: UIViewController {
     }
     
 }
-
-extension Array where Element == Int {
-    
-    func minSizeOf(_ number: Int) -> [Int] {
-        guard count < number else { return self }
-        let iteration = number - self.count
-        var array = Array(self)
-        for _ in 1...iteration {
-            array.prepend(element: 0)
-        }
-        return array
-    }
-}

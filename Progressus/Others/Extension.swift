@@ -18,6 +18,21 @@ extension Array {
     }
     
 }
+
+extension Array where Element == Int {
+    
+    func minSizeOf(_ number: Int) -> [Int] {
+        guard count < number else { return self }
+        let iteration = number - self.count
+        var array = Array(self)
+        for _ in 1...iteration {
+            array.prepend(element: 0)
+        }
+        return array
+    }
+
+}
+
 extension Int {
     
     static func random(upperBound: Int) -> Int {
@@ -25,6 +40,7 @@ extension Int {
     }
     
 }
+
 extension String {
     
     static func pluralize(_ number: Int, input: String) -> String {
