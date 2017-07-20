@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Countdown.xcscheme</key>
+		<key>Progressus.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -33,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>2A7509621E24894900B9B31D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AA6D0421F20B7C6009AD153</key>
 		<dict>
 			<key>primary</key>
 			<true/>

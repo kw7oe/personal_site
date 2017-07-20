@@ -14,6 +14,7 @@
 		2A62D29A1F1F053D00ED7D42 /* ProgressusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2991F1F053D00ED7D42 /* ProgressusTests.swift */; };
 		2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2A11F1F055800ED7D42 /* ParserTests.swift */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
+		2AA6D0461F20B7C7009AD153 /* ProgressusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
 		2ACC6BA81F1C500F00C7119E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
@@ -50,6 +51,13 @@
 			remoteGlobalIDString = 2A7509431E24894900B9B31D;
 			remoteInfo = Progressus;
 		};
+		2AA6D0481F20B7C7009AD153 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A75093C1E24894900B9B31D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A7509431E24894900B9B31D;
+			remoteInfo = Progressus;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +73,9 @@
 		2A62D2A11F1F055800ED7D42 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA6D0431F20B7C6009AD153 /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressusUITests.swift; sourceTree = "<group>"; };
+		2AA6D0471F20B7C7009AD153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AAE02191EC47FA2005B9E36 /* CDRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRecord.swift; path = Progressus/CoreData/CDRecord.swift; sourceTree = "<group>"; };
 		2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChallenge.swift; path = Progressus/CoreData/CDChallenge.swift; sourceTree = "<group>"; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +117,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACC6BA81F1C500F00C7119E /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA6D0401F20B7C6009AD153 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +184,7 @@
 				2A740DBF1E6E683200A59D38 /* Progressus */,
 				2A62D28A1F1F034C00ED7D42 /* ProgressusTests */,
 				2A62D2981F1F053D00ED7D42 /* ProgressusTests */,
+				2AA6D0441F20B7C6009AD153 /* ProgressusUITests */,
 				2A7509451E24894900B9B31D /* Products */,
 				2A80BE161E41893F0008485C /* Frameworks */,
 			);
@@ -176,6 +195,7 @@
 			children = (
 				2A7509441E24894900B9B31D /* Progressus.app */,
 				2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */,
+				2AA6D0431F20B7C6009AD153 /* ProgressusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +206,15 @@
 				2AB43DBE1E48355700CBA840 /* StoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AA6D0441F20B7C6009AD153 /* ProgressusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */,
+				2AA6D0471F20B7C7009AD153 /* Info.plist */,
+			);
+			path = ProgressusUITests;
 			sourceTree = "<group>";
 		};
 		2AAE021B1EC47FAD005B9E36 /* CoreData */ = {
@@ -305,6 +334,24 @@
 			productReference = 2A7509441E24894900B9B31D /* Progressus.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2AA6D0421F20B7C6009AD153 /* ProgressusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA6D04C1F20B7C7009AD153 /* Build configuration list for PBXNativeTarget "ProgressusUITests" */;
+			buildPhases = (
+				2AA6D03F1F20B7C6009AD153 /* Sources */,
+				2AA6D0401F20B7C6009AD153 /* Frameworks */,
+				2AA6D0411F20B7C6009AD153 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AA6D0491F20B7C7009AD153 /* PBXTargetDependency */,
+			);
+			name = ProgressusUITests;
+			productName = ProgressusUITests;
+			productReference = 2AA6D0431F20B7C6009AD153 /* ProgressusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -331,6 +378,12 @@
 							};
 						};
 					};
+					2AA6D0421F20B7C6009AD153 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = S3HCDAT8QN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A7509431E24894900B9B31D;
+					};
 				};
 			};
 			buildConfigurationList = 2A75093F1E24894900B9B31D /* Build configuration list for PBXProject "Progressus" */;
@@ -348,6 +401,7 @@
 			targets = (
 				2A7509431E24894900B9B31D /* Progressus */,
 				2A62D2961F1F053D00ED7D42 /* ProgressusTests */,
+				2AA6D0421F20B7C6009AD153 /* ProgressusUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +421,13 @@
 				2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */,
 				2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */,
 				2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AA6D0411F20B7C6009AD153 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +477,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AA6D03F1F20B7C6009AD153 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA6D0461F20B7C7009AD153 /* ProgressusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -423,6 +492,11 @@
 			isa = PBXTargetDependency;
 			target = 2A7509431E24894900B9B31D /* Progressus */;
 			targetProxy = 2A62D29C1F1F053D00ED7D42 /* PBXContainerItemProxy */;
+		};
+		2AA6D0491F20B7C7009AD153 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A7509431E24894900B9B31D /* Progressus */;
+			targetProxy = 2AA6D0481F20B7C7009AD153 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -606,6 +680,36 @@
 			};
 			name = Release;
 		};
+		2AA6D04A1F20B7C7009AD153 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = S3HCDAT8QN;
+				INFOPLIST_FILE = ProgressusUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.ProgressusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Progressus;
+			};
+			name = Debug;
+		};
+		2AA6D04B1F20B7C7009AD153 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = S3HCDAT8QN;
+				INFOPLIST_FILE = ProgressusUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.15053648.ProgressusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Progressus;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -616,6 +720,7 @@
 				2A62D2A01F1F053D00ED7D42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A75093F1E24894900B9B31D /* Build configuration list for PBXProject "Progressus" */ = {
 			isa = XCConfigurationList;
@@ -634,6 +739,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2AA6D04C1F20B7C7009AD153 /* Build configuration list for PBXNativeTarget "ProgressusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA6D04A1F20B7C7009AD153 /* Debug */,
+				2AA6D04B1F20B7C7009AD153 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

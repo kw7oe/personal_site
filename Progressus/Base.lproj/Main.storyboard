@@ -221,6 +221,9 @@
                                         <constraint firstItem="h6H-kV-a2x" firstAttribute="leading" secondItem="byp-nN-MCd" secondAttribute="leadingMargin" id="yiO-VZ-hKP"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="challengeNameLabel" destination="OHh-uT-9eH" id="SEm-Go-RGj"/>
                                     <outlet property="dayTimeLabel" destination="Rjd-lh-B1t" id="A9K-8c-LAW"/>
@@ -642,6 +645,9 @@
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
                                                             <rect key="frame" x="0.0" y="0.0" width="293.5" height="28"/>
+                                                            <accessibility key="accessibilityConfiguration" label="Challenge Name">
+                                                                <accessibilityTraits key="traits" searchField="YES"/>
+                                                            </accessibility>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
@@ -665,6 +671,10 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="fP9-Wd-GWF" secondAttribute="bottom" id="KUz-A2-WC0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" searchField="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -693,13 +703,19 @@
                                                 <constraint firstItem="EPw-Za-UmT" firstAttribute="centerX" secondItem="bjF-WZ-gia" secondAttribute="centerX" id="cQX-I9-MhJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="Start Date">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
+                            </tableViewSection>
+                            <tableViewSection id="XU1-T1-7FR">
+                                <cells/>
                             </tableViewSection>
                             <tableViewSection headerTitle="Goal" id="jZb-fE-Fn5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="8NX-JT-lXS">
-                                        <rect key="frame" x="0.0" y="411.5" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="447.5" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8NX-JT-lXS" id="HID-6n-9D4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
@@ -707,6 +723,9 @@
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uub-Dk-oXd">
                                                     <rect key="frame" x="16" y="-9" width="288" height="216"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Goal">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -717,9 +736,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
-                            </tableViewSection>
-                            <tableViewSection id="XU1-T1-7FR">
-                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>

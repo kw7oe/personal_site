@@ -168,7 +168,7 @@ class BarChartView: UIView {
         
         var interval: CGFloat = CGFloat(maxValue) / CGFloat(xScale)
         
-        if interval == 0 { interval = 1.0 }
+        if interval == 0 { interval = chartHeight / CGFloat(xScale) }
         
         for i in 1...xScale {
             y -= barHeight * CGFloat(interval)

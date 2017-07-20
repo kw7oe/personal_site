@@ -26,13 +26,14 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7509621E24894900B9B31D"
+               BlueprintIdentifier = "2AA6D0421F20B7C6009AD153"
                BuildableName = "ProgressusUITests.xctest"
                BlueprintName = "ProgressusUITests"
                ReferencedContainer = "container:Progressus.xcodeproj">
@@ -42,7 +43,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7509571E24894900B9B31D"
+               BlueprintIdentifier = "2A62D2961F1F053D00ED7D42"
                BuildableName = "ProgressusTests.xctest"
                BlueprintName = "ProgressusTests"
                ReferencedContainer = "container:Progressus.xcodeproj">
