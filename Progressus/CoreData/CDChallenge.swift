@@ -46,7 +46,7 @@ class CDChallenge: NSManagedObject {
             }
         }
         
-        return array
+        return Array(array.suffix(12)) // Return the latest N = 12 records
     }
     
     class func printData(inContext context: NSManagedObjectContext) {

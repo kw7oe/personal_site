@@ -40,6 +40,14 @@ class ParserTests: XCTestCase {
         let testInput = Parser.parse(time: 7, basedOn: .day)
         XCTAssert(testInput == (time: "7", unit: "  days  "))
     }
+    
+    func testParseToArray() {
+        let day = 1 * 24 * 60 * 60
+        let eightHour = 8 * 60 * 60
+        let testInput = Parser.parseToArray(time: day + eightHour, basedOn: .dayHour)
+        XCTAssert(testInput[0] == (time: "1", unit: "  day  "))
+        XCTAssert(testInput[1] == (time: "8", unit: "  hours  "))
+    }
 }
 
 extension Date {

@@ -47,10 +47,12 @@ class ChallengesTableViewController: UITableViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.ChallengeCellSegue {            if let vc = segue.destination as? CounterViewController {
+        if segue.identifier == Storyboard.ChallengeCellSegue {
+            if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
-                    vc.challengeIndex = index!.row
+                    vc.challengeIndex = index!.section
+                    vc.title = vc.challenge.name
                 }
             }
         }
@@ -75,10 +77,6 @@ class ChallengesTableViewController: UITableViewController {
 extension ChallengesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if challenges == nil || challenges?.count == 0 {
             tableView.backgroundView = blankView
         } else {
@@ -88,12 +86,16 @@ extension ChallengesTableViewController {
         return 0
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
         
         if let challengeCell = cell as? ChallengeTableViewCell {
-            challengeCell.challenge = challenges?[indexPath.row]
+            challengeCell.challenge = challenges?[indexPath.section]
         }
         
         return cell
@@ -107,9 +109,10 @@ extension ChallengesTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle  {
         case .delete:
-            let index = indexPath.row
+            let index = indexPath.section
             Settings.removeChallenge(at: index)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.deleteSections(IndexSet([index]), with: .fade)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         default: break
         }
     }

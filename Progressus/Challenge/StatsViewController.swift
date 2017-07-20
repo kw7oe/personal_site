@@ -22,7 +22,7 @@ class StatsViewController: UIViewController {
     
     var data: [Int] {
         let challenge = try? CDChallenge.findOrCreateChallenge(self.challenge, inContext: container!.viewContext)
-        return challenge!.getRecordsDuration().minSizeOf(7)
+        return challenge!.getRecordsDuration()
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,7 +48,7 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomTheme.backgroundColor()
-        title = challenge.name
+        title = "Stats"
     }
     
     private func drawBarChart() {
@@ -59,14 +59,13 @@ class StatsViewController: UIViewController {
         let frame = CGRect(x: view.bounds.minX, y: view.bounds.minY + topMargin!,
                            width: view.bounds.width, height: view.bounds.height / 2.5)
         
-        barChartView = BarChartView.init(frame: frame, data: data)
+        barChartView = BarChartView.init(frame: frame, data: data.minSizeOf(7))
         view.addSubview(barChartView!)
     }
     
     private func setupDetailsView() {
         initializeDetailsView()
         let bestLabel = createLabelWith(text: "Best: \(data.max() ?? 0)")
-        let worstLabel = createLabelWith(text: "Worst: \(data.min() ?? 0)")
         
         let sum = data.reduce(0) { (a, b) -> Int in
             a + b
@@ -82,7 +81,7 @@ class StatsViewController: UIViewController {
             text: String.init(format: "Average: %.\(precision)f", average)
         )
         let stackView = UIStackView.init(
-            arrangedSubviews: [bestLabel, worstLabel, averageLabel]
+            arrangedSubviews: [bestLabel, averageLabel]
         )
         setupStackView(view: stackView)
     }
@@ -129,6 +128,7 @@ class StatsViewController: UIViewController {
 extension Array where Element == Int {
     
     func minSizeOf(_ number: Int) -> [Int] {
+        guard count < number else { return self }
         let iteration = number - self.count
         var array = Array(self)
         for _ in 1...iteration {

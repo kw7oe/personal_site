@@ -11,7 +11,7 @@ import UIKit
 class BarChartView: UIView {
     
     var data: [Int]!    
-    
+    var xScale: Int = 3
     /**
      The maxmimum value in the y-axis/chart.
     */
@@ -44,16 +44,16 @@ class BarChartView: UIView {
     var chartAreaWidth: CGFloat {
         return chartWidth - chartOffset * 2 - maxValueWidth
     }
-    var chartAreaMinX: CGFloat {
+    var chartAreaLeft: CGFloat {
         return bounds.minX + chartOffset + maxValueWidth
     }
-    var chartAreaMaxX: CGFloat {
+    var chartAreaRight: CGFloat {
         return bounds.maxX - chartOffset
     }
-    var chartAreaMaxY: CGFloat {
+    var chartAreaBottom: CGFloat {
         return bounds.maxY - chartOffset
     }
-    var chartAreaMinY: CGFloat {
+    var chartAreaTop: CGFloat {
         return bounds.maxY - chartHeight
     }
     /**
@@ -127,16 +127,10 @@ class BarChartView: UIView {
         drawVerticalAxisTicks()
         createBarChart()
         
-        // Y-Axis
-//        drawAxis(startX: chartAreaMinX, endX: chartAreaMinX,
-//                 startY: chartAreaMinY, endY: bounds.maxY,
-//                 color: CustomTheme.graphAxisColor())
-//        
         // X-Axis
-//        drawAxis(startX: bounds.minX, endX: bounds.maxX,
-//                 startY: chartAreaMaxY, endY: chartAreaMaxY,
-//                 color: CustomTheme.graphAxisColor())
-//  
+        drawAxis(startX: bounds.minX + chartOffset, endX: bounds.maxX,
+                 startY: chartAreaBottom, endY: chartAreaBottom,
+                 color: CustomTheme.graphTickAxisColor())
     }
     
     private func createBarChart() {
@@ -153,46 +147,42 @@ class BarChartView: UIView {
         
         let x = (index * barWidth) + barMargin + chartOffset + maxValueWidth
         
-        createXLabel(x: x, y: chartAreaMaxY, value: String(Int(index+1)), maxWidth: actualBarWidth)
-        
         // CAShapeLAyer
-        let frame = CGRect(x: x, y: chartAreaMaxY - height,
+        let frame = CGRect(x: x, y: chartAreaBottom - height,
                            width: actualBarWidth, height: height)
         let path = UIBezierPath(rect: frame)
         let rectLayer = CAShapeLayer()
         
         rectLayer.path = path.cgPath
-        rectLayer.fillColor = CustomTheme.primaryColor().withAlphaComponent(0.5).cgColor
+        rectLayer.fillColor = CustomTheme.primaryColor().cgColor
         
         return rectLayer
     }
        
     private func drawHorizontalAxisTicks() {
-        var y = chartAreaMaxY
+        var y = chartAreaBottom
         
         let label = UILabel()
         label.text = String(maxValue)
         let maxWidth = label.intrinsicContentSize.width
         
-        var interval: CGFloat = CGFloat(maxValue) / 6
+        var interval: CGFloat = CGFloat(maxValue) / CGFloat(xScale)
         
-        if interval == 0 {
-            interval = 6.0 / 6
-        }
+        if interval == 0 { interval = 1.0 }
         
-        for i in 1...6 {
+        for i in 1...xScale {
             y -= barHeight * CGFloat(interval)
-            drawAxis(startX: chartAreaMinX, endX: bounds.maxX, startY: y, endY: y, color: CustomTheme.graphTickAxisColor())
-            createYLabel(x: chartAreaMinX, y: y, value: String.init(format: "%.1f", CGFloat(i) * interval), maxWidth: maxWidth)
+            drawAxis(startX: chartAreaLeft, endX: chartAreaRight, startY: y, endY: y, color: CustomTheme.graphTickAxisColor())
+            createYLabel(x: chartAreaLeft, y: y, value: String.init(format: "%.1f", CGFloat(i) * interval), maxWidth: maxWidth)
         }
     }
     
     private func drawVerticalAxisTicks() {
-        var x = chartAreaMinX
+        var x = chartAreaLeft
         
-        for _ in 1...data.count {
+        for _ in 0...data.count {
+            drawAxis(startX: x, endX: x, startY: chartAreaTop, endY: chartAreaBottom, color: CustomTheme.graphTickAxisColor())
             x += barWidth
-            drawAxis(startX: x, endX: x, startY: chartAreaMinY, endY: chartAreaMaxY, color: CustomTheme.graphTickAxisColor())
         }
     }
     
