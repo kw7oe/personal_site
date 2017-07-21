@@ -16,8 +16,10 @@ class BarChartView: UIView {
      The maxmimum value in the y-axis/chart.
     */
     var maxValue: Int{
-        return data.max() ?? 0
+        let value = data.max() ?? 0
+        return value != 0 ? value : 6
     }
+    
     /**
      The UILabel width of the `maxValue`.
     */
@@ -82,9 +84,9 @@ class BarChartView: UIView {
      ```
     */
     var barHeight: CGFloat {
-        let height = chartAreaHeight / CGFloat(maxValue)
-        return height.isFinite ? height : chartAreaHeight / 6
+        return chartAreaHeight / CGFloat(maxValue)
     }
+    
     /**
      The minimum bar height when the value is 0.
     */
@@ -161,19 +163,12 @@ class BarChartView: UIView {
        
     private func drawHorizontalAxisTicks() {
         var y = chartAreaBottom
-        
-        let label = UILabel()
-        label.text = String(maxValue)
-        let maxWidth = label.intrinsicContentSize.width
-        
-        var interval: CGFloat = CGFloat(maxValue) / CGFloat(xScale)
-        
-        if interval == 0 { interval = chartHeight / CGFloat(xScale) }
+        let interval: CGFloat = CGFloat(maxValue) / CGFloat(xScale)
         
         for i in 1...xScale {
             y -= barHeight * CGFloat(interval)
             drawAxis(startX: chartAreaLeft, endX: chartAreaRight, startY: y, endY: y, color: CustomTheme.graphTickAxisColor())
-            createYLabel(x: chartAreaLeft, y: y, value: String.init(format: "%.1f", CGFloat(i) * interval), maxWidth: maxWidth)
+            createYLabel(x: chartAreaLeft, y: y, value: String.init(format: "%.1f", CGFloat(i) * interval))
         }
     }
     
@@ -189,7 +184,6 @@ class BarChartView: UIView {
     // Refactoring Needed
     private func createXLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
         let label = createLabel(text: value)
-        
         let size = label.intrinsicContentSize
         
         // Max Width refer to the widest label in the axis, E.g. "32"
@@ -204,14 +198,12 @@ class BarChartView: UIView {
         addSubview(label)
     }
     
-    private func createYLabel(x: CGFloat, y: CGFloat, value: String, maxWidth: CGFloat) {
+    private func createYLabel(x: CGFloat, y: CGFloat, value: String) {
         let label = createLabel(text: value)
-        
         let size = label.intrinsicContentSize
         
         var offset = chartOffset
-        offset += size.width + (maxWidth - size.width) / 2
-        
+        offset += size.width + (maxValueWidth - size.width) / 2
         let startX = x - offset
         let frame = CGRect(x: startX, y: y - size.height / 2,
                            width: size.width, height: size.height)

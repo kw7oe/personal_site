@@ -11,6 +11,12 @@ import CoreData
 
 class StatsViewController: UIViewController {
     
+    enum FontStyle {
+        case normal
+        case bold
+        case italic
+    }
+    
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var challenge: Challenge!
     var barChartView: BarChartView?
@@ -23,6 +29,19 @@ class StatsViewController: UIViewController {
     var data: [Int] {
         let challenge = try? CDChallenge.findOrCreateChallenge(self.challenge, inContext: container!.viewContext)
         return challenge!.getRecordsDuration()
+    }
+    
+    var average: Double {
+        let sum = data.reduce(0) { (a, b) -> Int in
+            a + b
+        }
+        var average: Double = 0
+        if (data.count != 0) {
+            average = Double(sum) / Double(data.count)
+        }
+        var precision = 2
+        if average == 0 { precision = 1 }
+        return Double.init(String.init(format: "%.\(precision)f", average)) ?? 0.0
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,37 +84,42 @@ class StatsViewController: UIViewController {
     
     private func setupDetailsView() {
         initializeDetailsView()
-        let bestLabel = createLabelWith(text: "Best: \(data.max() ?? 0)")
         
-        let sum = data.reduce(0) { (a, b) -> Int in
-            a + b
-        }
+        let bestStackView = createStatStackView(label: "Best", value: (data.max() ?? 0))
+        let averageStackView = createStatStackView(label: "Average", value: average)
         
-        var average: Double = 0
-        if (data.count != 0) {
-            average = Double(sum) / Double(data.count)
-        }
-        var precision = "1"
-        if average == 0 { precision = "0" }
-        let averageLabel = createLabelWith(
-            text: String.init(format: "Average: %.\(precision)f", average)
-        )
         let stackView = UIStackView.init(
-            arrangedSubviews: [bestLabel, averageLabel]
+            arrangedSubviews: [bestStackView, averageStackView]
         )
-        setupStackView(view: stackView)
+        
+        createHorizontalStackViewFrom(view: stackView)
     }
     
-    private func setupStackView(view stackView: UIStackView) {        
+    private func createStatStackView(label: String, value: Numeric) -> UIStackView {
+        let label = createLabelWith(text: label, inStyle: .bold, ofSize: 32)
+        let valueLabel = createLabelWith(text: "\(value)", inStyle: .normal, ofSize: 24)
+        
+        let stackView = UIStackView.init(
+            arrangedSubviews: [label, valueLabel]
+        )
+        
         stackView.alignment = .center
-        stackView.spacing = 10.0
         stackView.axis = .vertical
+        stackView.spacing = 15.0
+        
+        return stackView
+    }
+    
+    private func createHorizontalStackViewFrom(view stackView: UIStackView) {
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false;
         
         detailsView?.addSubview(stackView)
         
-        stackView.centerXAnchor.constraint(equalTo: detailsView!.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: detailsView!.centerYAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: detailsView!.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: detailsView!.trailingAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: detailsView!.topAnchor, constant: 40.0).isActive = true
     }
     
     private func initializeDetailsView() {
@@ -111,12 +135,18 @@ class StatsViewController: UIViewController {
         view.addSubview(detailsView!)
     }
     
-    private func createLabelWith(text: String) -> UILabel {
+    private func createLabelWith(text: String, inStyle: FontStyle, ofSize: CGFloat) -> UILabel {
         let label = UILabel()
-        label.text = text
+        
+        switch inStyle {
+        case .bold: label.attributedText = text.boldSystemFont(ofSize: ofSize)
+        case .italic: label.attributedText = text.italicSystemFont(ofSize: ofSize)
+        default:
+            label.text = text
+            label.font = label.font.withSize(ofSize)
+        }
+        
         label.textColor = CustomTheme.textColor()
-        
-        
         label.frame = CGRect(origin: CGPoint.zero,
                              size: label.intrinsicContentSize)
         
@@ -124,3 +154,5 @@ class StatsViewController: UIViewController {
     }
     
 }
+
+

@@ -47,5 +47,27 @@ class ExtensionTests: XCTestCase {
         XCTAssertEqual("  dog  ", String.pluralize(1, input: "dog"))
     }
     
+    func testStringToSystemFont() {
+        convertAndAssertStringTo("italic")
+        convertAndAssertStringTo("bold")
+    }
+    
+    func convertAndAssertStringTo(_ attribute: String) {
+        var font: NSAttributedString
+        if attribute == "bold" {
+            font = "string".boldSystemFont(ofSize: 16)
+        } else {
+            font = "string".italicSystemFont(ofSize: 16)
+        }
+        
+        if attribute == "italic" {
+            XCTAssert(font.debugDescription.contains("font-style: italic"))
+        } else {
+            XCTAssert(font.debugDescription.contains("font-weight: bold"))
+        }
+        
+        XCTAssert(font.debugDescription.contains("font-size: 16.0"))
+    }
+    
     
 }
