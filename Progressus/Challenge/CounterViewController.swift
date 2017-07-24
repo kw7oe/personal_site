@@ -217,7 +217,6 @@ class CounterViewController: UIViewController {
             }
         } else if segue.identifier == Storyboard.More {
             if let dvc = segue.destination.contentViewController as? SideBarTableViewController {
-                print("Hello From the Other Side")
                 dvc.transitioningDelegate = slideInTransitioningDelegate
                 dvc.modalPresentationStyle = .custom
             }

@@ -118,28 +118,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
-                        <rightBarButtonItems>
-                            <barButtonItem title="More" id="V4h-4l-MPG">
-                                <connections>
-                                    <segue destination="PbX-x2-nrD" kind="presentation" identifier="More" id="hff-qz-c0q"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="F5C-wM-q2F">
-                                <connections>
-                                    <action selector="deleteChallenge:" destination="9VN-cr-0Qb" id="VVM-jW-KPO"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="compose" id="O4Q-mY-PeU">
-                                <connections>
-                                    <segue destination="954-sN-hww" kind="presentation" identifier="Edit Challenge Segue" id="ofM-KY-CwO"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Stats" id="SGc-Gv-h0c">
-                                <connections>
-                                    <segue destination="4RW-AZ-Hbu" kind="show" identifier="Show Chart Segue" id="j2C-9D-dhB"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="More" id="V4h-4l-MPG">
+                            <connections>
+                                <segue destination="PbX-x2-nrD" kind="presentation" identifier="More" id="hff-qz-c0q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="gzz-2M-Ec8" id="SnW-Gj-PkM"/>
@@ -775,15 +758,15 @@
         <scene sceneID="hCL-q7-gRI">
             <objects>
                 <tableViewController id="PbX-x2-nrD" customClass="SideBarTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HyH-BZ-UWP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HyH-BZ-UWP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="UTU-rv-Pah">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r7c-Pa-hIA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r7c-Pa-hIA" id="V31-cT-tYK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -800,7 +783,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lXR-3W-UoE">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lXR-3W-UoE" id="zt7-Nx-3de">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -817,7 +800,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HyQ-SI-YFk">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HyQ-SI-YFk" id="VYP-5A-uQf">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -887,7 +870,6 @@
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ofM-KY-CwO"/>
         <segue reference="FrI-Eg-KNn"/>
     </inferredMetricsTieBreakers>
 </document>

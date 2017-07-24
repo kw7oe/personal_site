@@ -14,4 +14,12 @@ class SlideInPresentationManager: NSObject, UIViewControllerTransitioningDelegat
         return SlideInPresentationController(presentedViewController: presented, presenting: presenting)
     }
     
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideInPresentationAnimator(isPresentation: true)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideInPresentationAnimator(isPresentation: false)
+    }
+    
 }
