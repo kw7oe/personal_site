@@ -38,6 +38,8 @@ class CounterViewController: UIViewController {
     @IBOutlet weak var progressView: ProgressPieView! 
     
     // MARK: Target Action
+    @IBAction func moreOptions(_ sender: UIBarButtonItem) {
+    }
     @IBAction func deleteChallenge(_ sender: UIBarButtonItem) {
         let alertController = createDestrutiveAlert(title: "Delete Challenge") { (action) in
             Settings.removeChallenge(at: self.challengeIndex)
@@ -195,9 +197,12 @@ class CounterViewController: UIViewController {
     }
     
     // MARK: Navigation
+    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
+    
     private struct Storyboard {
         static let EditChallenge = "Edit Challenge Segue"
         static let ShowChart = "Show Chart Segue"
+        static let More = "More"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -210,6 +215,13 @@ class CounterViewController: UIViewController {
             if let dvc = segue.destination.contentViewController as? StatsViewController {
                 dvc.challenge = challenge
             }
+        } else if segue.identifier == Storyboard.More {
+            if let dvc = segue.destination.contentViewController as? SideBarTableViewController {
+                print("Hello From the Other Side")
+                dvc.transitioningDelegate = slideInTransitioningDelegate
+                dvc.modalPresentationStyle = .custom
+            }
+            
         }
     }
 }
