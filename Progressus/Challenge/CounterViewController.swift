@@ -200,25 +200,14 @@ class CounterViewController: UIViewController {
     lazy var slideInTransitioningDelegate = SlideInPresentationManager()
     
     private struct Storyboard {
-        static let EditChallenge = "Edit Challenge Segue"
-        static let ShowChart = "Show Chart Segue"
         static let More = "More"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.EditChallenge {
-            if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
-                dvc.challenge = challenge
-                dvc.challengeIndex = challengeIndex
-            }
-        } else if segue.identifier == Storyboard.ShowChart {
-            if let dvc = segue.destination.contentViewController as? StatsViewController {
-                dvc.challenge = challenge
-            }
-        } else if segue.identifier == Storyboard.More {
+        if segue.identifier == Storyboard.More {
             if let dvc = segue.destination.contentViewController as? SideBarTableViewController {
-                dvc.transitioningDelegate = slideInTransitioningDelegate
-                dvc.modalPresentationStyle = .custom
+                let controller = dvc.popoverPresentationController
+                controller?.delegate = self
             }
             
         }
@@ -230,8 +219,19 @@ extension CounterViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimationController()
     }
+
 }
 
+extension CounterViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.present(viewControllerToPresent, animated: false, completion: completion)
+    }
+    
+}
 
 
 

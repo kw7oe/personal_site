@@ -9,27 +9,42 @@
 import UIKit
 
 class SideBarTableViewController: UITableViewController {
+    
+    var challengeIndex = 0
+    var challenge: Challenge {
+        if let challenges = Settings.challenges {
+            if !challenges.isEmpty {
+                return challenges[challengeIndex]
+            }
+        }
+        return Challenge(name: "", date: Date.init(), goal: 7, started: false)
+    }
+    
+    override func viewDidLoad() {
+        self.preferredContentSize = CGSize(width: 250, height: 250)
+    }
+
 
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-
-
-    /*
     // MARK: - Navigation
-
+    private struct Storyboard {
+        static let EditChallenge = "Edit Challenge Segue"
+        static let ShowChart = "Show Stats Segue"
+    }
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Storyboard.EditChallenge {
+            if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
+                dvc.challenge = challenge
+                dvc.challengeIndex = challengeIndex
+            }
+        } else if segue.identifier == Storyboard.ShowChart {
+            if let dvc = segue.destination.contentViewController as? StatsViewController {
+                dvc.challenge = challenge
+            }
+        }
     }
-    */
+ 
 
 }
