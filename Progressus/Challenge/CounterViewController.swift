@@ -28,19 +28,51 @@ class CounterViewController: UIViewController {
     var timer = Timer()
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
-    // MARK : View Outlet
+    // MARK: View Outlet
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var button: RadiusButton!
     @IBOutlet weak var timeUnitLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var progressView: ProgressPieView! 
+    @IBOutlet weak var progressView: ProgressPieView!
+    
+    // MARK: Storyboard Segue
+    private struct Storyboard {
+        static let EditSegue = "Edit Segue"
+        static let StatSegue = "Stat Segue"
+    }
     
     // MARK: Target Action
+
     @IBAction func moreOptions(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        alertController.addAction(
+            UIAlertAction(title: "Edit", style: .default, handler: { (action) in
+                self.performSegue(withIdentifier: Storyboard.EditSegue, sender: self)
+            })
+        )
+        alertController.addAction(
+            UIAlertAction(title: "Stat", style: .default, handler: { (action) in
+                self.performSegue(withIdentifier: Storyboard.StatSegue, sender: self)
+            })
+        )
+        alertController.addAction(
+            UIAlertAction(title: "Delete Challege", style: .destructive, handler: { (action) in
+                self.deleteChallenge()
+            })
+        )
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    
+
     }
-    @IBAction func deleteChallenge(_ sender: UIBarButtonItem) {
+    
+    func deleteChallenge() {
         let alertController = createDestrutiveAlert(title: "Delete Challenge") { (action) in
             Settings.removeChallenge(at: self.challengeIndex)
             _ = self.navigationController?.popViewController(animated: true)
@@ -197,21 +229,19 @@ class CounterViewController: UIViewController {
     }
     
     // MARK: Navigation
-    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
-    
-    private struct Storyboard {
-        static let More = "More"
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.More {
-            if let dvc = segue.destination.contentViewController as? SideBarTableViewController {
-                let controller = dvc.popoverPresentationController
-                controller?.delegate = self
+        if segue.identifier == Storyboard.EditSegue {
+            if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
+                dvc.challenge = challenge
+                dvc.challengeIndex = challengeIndex
             }
-            
+        } else if segue.identifier == Storyboard.StatSegue {
+            if let dvc = segue.destination.contentViewController as? StatsViewController {
+                dvc.challenge = challenge
+            }
         }
     }
+    
 }
 
 // MARK: UIViewController Transitioning Delegate Extension
@@ -222,16 +252,6 @@ extension CounterViewController: UIViewControllerTransitioningDelegate {
 
 }
 
-extension CounterViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-    
-    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        super.present(viewControllerToPresent, animated: false, completion: completion)
-    }
-    
-}
 
 
 

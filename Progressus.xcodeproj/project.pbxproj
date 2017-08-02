@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A008A9B1F256BE2002BF0A5 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A008A9A1F256BE2002BF0A5 /* SideBarTableViewController.swift */; };
 		2A008A9D1F257041002BF0A5 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A008A9C1F257041002BF0A5 /* SlideInPresentationController.swift */; };
 		2A008A9F1F2572C7002BF0A5 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A008A9E1F2572C7002BF0A5 /* SlideInPresentationManager.swift */; };
 		2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */; };
@@ -66,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A008A9A1F256BE2002BF0A5 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarTableViewController.swift; path = Progressus/Challenge/SideBarTableViewController.swift; sourceTree = "<group>"; };
 		2A008A9C1F257041002BF0A5 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
 		2A008A9E1F2572C7002BF0A5 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 		2A740DBF1E6E683200A59D38 /* Progressus */ = {
 			isa = PBXGroup;
 			children = (
-				2A008A9A1F256BE2002BF0A5 /* SideBarTableViewController.swift */,
 				2A740DBC1E6E680400A59D38 /* Main.storyboard */,
 				2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */,
 				2AD041E31EC6BDC700BE2989 /* BarChartView.swift */,
@@ -451,7 +448,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A008A9B1F256BE2002BF0A5 /* SideBarTableViewController.swift in Sources */,
 				2AD2EDF21EB38C740002A1D3 /* ChallengesTableViewController.swift in Sources */,
 				2AD2EE061EB38D0A0002A1D3 /* BlankView.swift in Sources */,
 				2AD2EE081EB38D0A0002A1D3 /* ProgressPieView.swift in Sources */,

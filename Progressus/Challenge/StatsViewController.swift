@@ -44,6 +44,9 @@ class StatsViewController: UIViewController {
         return Double.init(String.init(format: "%.\(precision)f", average)) ?? 0.0
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         drawBarChart()
@@ -66,7 +69,8 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = CustomTheme.backgroundColor()
+        view.backgroundColor = CustomTheme.backgroundColor()        
+        self.navigationController?.navigationBar.none()
         title = "Stats"
     }
     
