@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDChallenge" representedClassName=".CDChallenge" syncable="YES" codeGenerationType="category">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="goal" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="started" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="records" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDRecord" inverseName="challenge" inverseEntity="CDRecord" syncable="YES"/>
     </entity>
@@ -11,7 +14,7 @@
         <relationship name="challenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDChallenge" inverseName="records" inverseEntity="CDChallenge" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDChallenge" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="CDChallenge" positionX="-45" positionY="0" width="128" height="118"/>
         <element name="CDRecord" positionX="124" positionY="18" width="128" height="103"/>
     </elements>
 </model>

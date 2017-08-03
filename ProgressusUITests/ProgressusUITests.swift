@@ -27,13 +27,8 @@ class ProgressusUITests: XCTestCase {
     func testAddChallenge() {
         let app = XCUIApplication()
         let count = app.tables.cells.count + 1
-        app.navigationBars["Progressus"].buttons["Add"].tap()
         
-        let challengeNameSearchField = app.tables.searchFields["Challenge Name"]
-        challengeNameSearchField.tap()
-        challengeNameSearchField.typeText("Foobar")
-        
-        app.navigationBars["Progressus.AddChallengeTableView"].buttons["Save"].tap()
+        addChallenge()
         
         XCTAssertEqual(app.tables.cells.count, count)
         
@@ -42,6 +37,7 @@ class ProgressusUITests: XCTestCase {
     }
     
     func testRemoveChallenge() {
+        addChallenge()
         
         let app = XCUIApplication()
         let tablesQuery = app.tables
@@ -51,6 +47,21 @@ class ProgressusUITests: XCTestCase {
         cell.buttons["Delete"].tap()
         
         XCTAssertEqual(app.tables.cells.count, count)
+    }
+    
+    func addChallenge() {
+        let app = XCUIApplication()
+        let count = app.tables.cells.count
+        
+        if count < 4 {
+            app.navigationBars["Progressus"].buttons["Add"].tap()
+            
+            let challengeNameSearchField = app.tables.searchFields["Challenge Name"]
+            challengeNameSearchField.tap()
+            challengeNameSearchField.typeText("Foobar")
+            
+            app.navigationBars["Progressus.AddChallengeTableView"].buttons["Save"].tap()
+        }
     }
     
     func testGoToSetting() {        

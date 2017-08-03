@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A008A9D1F257041002BF0A5 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A008A9C1F257041002BF0A5 /* SlideInPresentationController.swift */; };
-		2A008A9F1F2572C7002BF0A5 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A008A9E1F2572C7002BF0A5 /* SlideInPresentationManager.swift */; };
+		2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */; };
+		2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */; };
 		2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */; };
 		2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */; };
 		2A33AA621E6D3D08003F8C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA491E6D3D08003F8C13 /* Assets.xcassets */; };
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
-		2A34C72D1F25A7D0000B9A40 /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34C72C1F25A7D0000B9A40 /* SlideInPresentationAnimator.swift */; };
 		2A3D22F71F20F4C500EF3A98 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3D22F61F20F4C500EF3A98 /* ExtensionTests.swift */; };
 		2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2A11F1F055800ED7D42 /* ParserTests.swift */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
@@ -65,13 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A008A9C1F257041002BF0A5 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
-		2A008A9E1F2572C7002BF0A5 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
+		2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Progressus/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2A33AA491E6D3D08003F8C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Progressus/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		2A33AA821E6D3E19003F8C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A34C72C1F25A7D0000B9A40 /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
 		2A3D22F61F20F4C500EF3A98 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A62D29B1F1F053D00ED7D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +147,8 @@
 		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */,
+				2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */,
 				2A3D22F61F20F4C500EF3A98 /* ExtensionTests.swift */,
 				2AB1EAB91F20F23E003BD756 /* QuoteTests.swift */,
 				2A62D2A11F1F055800ED7D42 /* ParserTests.swift */,
@@ -283,9 +283,6 @@
 		2AD2EE0F1EB38D220002A1D3 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				2A008A9C1F257041002BF0A5 /* SlideInPresentationController.swift */,
-				2A34C72C1F25A7D0000B9A40 /* SlideInPresentationAnimator.swift */,
-				2A008A9E1F2572C7002BF0A5 /* SlideInPresentationManager.swift */,
 				2AD2EE101EB38D220002A1D3 /* CustomPresentAnimationController.swift */,
 				2AD2EE111EB38D220002A1D3 /* CustomTheme.swift */,
 				2AD2EE121EB38D220002A1D3 /* Extension.swift */,
@@ -440,6 +437,8 @@
 			files = (
 				2A3D22F71F20F4C500EF3A98 /* ExtensionTests.swift in Sources */,
 				2AB1EABA1F20F23E003BD756 /* QuoteTests.swift in Sources */,
+				2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */,
+				2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */,
 				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,8 +455,6 @@
 				2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */,
 				2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */,
 				2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */,
-				2A008A9D1F257041002BF0A5 /* SlideInPresentationController.swift in Sources */,
-				2A008A9F1F2572C7002BF0A5 /* SlideInPresentationManager.swift in Sources */,
 				2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */,
 				2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */,
 				2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */,
@@ -470,7 +467,6 @@
 				2AD2EDF91EB38C840002A1D3 /* Reminder.swift in Sources */,
 				2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */,
 				2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */,
-				2A34C72D1F25A7D0000B9A40 /* SlideInPresentationAnimator.swift in Sources */,
 				2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */,
 				2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */,
 				2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */,

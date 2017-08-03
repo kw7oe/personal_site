@@ -11,14 +11,6 @@ import XCTest
 
 class QuoteTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testQuotesMoreThanOne() {
         XCTAssert(Quotes.quotes.count > 0)
     }
