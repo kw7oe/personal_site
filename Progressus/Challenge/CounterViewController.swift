@@ -40,7 +40,6 @@ class CounterViewController: UIViewController {
     // MARK: Storyboard Segue
     private struct Storyboard {
         static let EditSegue = "Edit Segue"
-        static let StatSegue = "Stat Segue"
     }
     
     // MARK: Target Action
@@ -54,11 +53,6 @@ class CounterViewController: UIViewController {
         alertController.addAction(
             UIAlertAction(title: "Edit", style: .default, handler: { (action) in
                 self.performSegue(withIdentifier: Storyboard.EditSegue, sender: self)
-            })
-        )
-        alertController.addAction(
-            UIAlertAction(title: "Stat", style: .default, handler: { (action) in
-                self.performSegue(withIdentifier: Storyboard.StatSegue, sender: self)
             })
         )
         alertController.addAction(
@@ -234,10 +228,6 @@ class CounterViewController: UIViewController {
             if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
                 dvc.challenge = challenge
                 dvc.challengeIndex = challengeIndex
-            }
-        } else if segue.identifier == Storyboard.StatSegue {
-            if let dvc = segue.destination.contentViewController as? StatsViewController {
-                dvc.challenge = challenge
             }
         }
     }

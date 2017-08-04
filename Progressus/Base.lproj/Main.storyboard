@@ -133,37 +133,11 @@
                         <outlet property="timeLabel" destination="sIS-1d-Zje" id="rIY-ye-313"/>
                         <outlet property="timeUnitLabel" destination="i0s-29-M8D" id="brU-v2-L4O"/>
                         <segue destination="954-sN-hww" kind="show" identifier="Edit Segue" id="ilK-X0-4do"/>
-                        <segue destination="Nde-AF-Z4D" kind="show" identifier="Stat Segue" id="FHw-Tf-L2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bu-A4-2YN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="189" y="897"/>
-        </scene>
-        <!--Stats View Controller-->
-        <scene sceneID="MOx-bE-VcU">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="awq-YL-41e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="G2o-JG-Zaw" customClass="StatsViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="w6k-ov-FDc"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Rc-zc-KBb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VmW-5A-gqW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="c9W-bu-0yL">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="s07-gD-Tle">
-                            <connections>
-                                <action selector="cancel:" destination="G2o-JG-Zaw" id="vyF-3t-ptK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1686" y="897"/>
         </scene>
         <!--Progressus-->
         <scene sceneID="Laj-d7-HMc">
@@ -798,24 +772,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJC-J3-qhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-585" y="139"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="w1y-4i-AZe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nde-AF-Z4D" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NSI-jz-g6d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="G2o-JG-Zaw" kind="relationship" relationship="rootViewController" id="jNE-5x-lxS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iPh-HD-duE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="969.375" y="896.83098591549299"/>
         </scene>
     </scenes>
     <resources>

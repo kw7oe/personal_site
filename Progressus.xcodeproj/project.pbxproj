@@ -21,7 +21,6 @@
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
 		2AB1EABA1F20F23E003BD756 /* QuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1EAB91F20F23E003BD756 /* QuoteTests.swift */; };
 		2ACC6BA81F1C500F00C7119E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB43DBE1E48355700CBA840 /* StoreKit.framework */; };
-		2AD041E41EC6BDC700BE2989 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD041E31EC6BDC700BE2989 /* BarChartView.swift */; };
 		2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */; };
 		2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */; };
 		2AD2EDF21EB38C740002A1D3 /* ChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */; };
@@ -43,7 +42,6 @@
 		2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE121EB38D220002A1D3 /* Extension.swift */; };
 		2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE131EB38D220002A1D3 /* Parser.swift */; };
 		2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE141EB38D220002A1D3 /* Quotes.swift */; };
-		2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +81,6 @@
 		2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChallenge.swift; path = Progressus/CoreData/CDChallenge.swift; sourceTree = "<group>"; };
 		2AB1EAB91F20F23E003BD756 /* QuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteTests.swift; sourceTree = "<group>"; };
 		2AB43DBE1E48355700CBA840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		2AD041E31EC6BDC700BE2989 /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarChartView.swift; path = "Progressus/Custom Views/BarChartView.swift"; sourceTree = "<group>"; };
 		2AD2EDEB1EB38C740002A1D3 /* AddChallengeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChallengeTableViewController.swift; sourceTree = "<group>"; };
 		2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +102,6 @@
 		2AD2EE121EB38D220002A1D3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2AD2EE131EB38D220002A1D3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		2AD2EE141EB38D220002A1D3 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
-		2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = Progressus/Challenge/StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				2A740DBC1E6E680400A59D38 /* Main.storyboard */,
-				2AD2EE3E1EB392C40002A1D3 /* StatsViewController.swift */,
-				2AD041E31EC6BDC700BE2989 /* BarChartView.swift */,
 				2AAE021B1EC47FAD005B9E36 /* CoreData */,
 				2A33AA481E6D3D08003F8C13 /* AppDelegate.swift */,
 				2AD2EDFC1EB38C960002A1D3 /* Settings */,
@@ -456,7 +450,6 @@
 				2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */,
 				2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */,
 				2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */,
-				2AD2EE3F1EB392C40002A1D3 /* StatsViewController.swift in Sources */,
 				2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */,
 				2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */,
 				2AD2EE001EB38C960002A1D3 /* SettingsTableViewController.swift in Sources */,
@@ -470,7 +463,6 @@
 				2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */,
 				2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */,
 				2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */,
-				2AD041E41EC6BDC700BE2989 /* BarChartView.swift in Sources */,
 				2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */,
 				2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */,
 				2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */,
