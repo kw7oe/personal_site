@@ -46,16 +46,64 @@ class SettingsTests: XCTestCase {
         XCTAssertEqual(Settings.challenges!.first!.name, challenge2.name)
     }
     
-    func testRemoveChallenge() {
-        Settings.prependChallenge(with: challenge)
-        Settings.prependChallenge(with: challenge2)
-        XCTAssertEqual(Settings.challenges!.count, 2)
+    func testUpdateChallenge() {
+        addChallenge()
         
+        let newChallenge = Challenge(name: "Read", date: Date.init(), goal: 10, started: true)
+        Settings.updateChallenge(at: 0, with: newChallenge)
+        
+        XCTAssertNotNil(Settings.challenges)
+        
+        if let challenges = Settings.challenges {
+            XCTAssertEqual(challenges[0].name, newChallenge.name)
+            XCTAssertEqual(challenges[0].goal, newChallenge.goal)
+        }
+    }
+    
+    func testRemoveChallenge() {
+        addChallenge()
         
         Settings.removeChallenge(at: 1)
         XCTAssertEqual(Settings.challenges!.count, 1)
         XCTAssertEqual(Settings.challenges!.first!.name, challenge2.name)
     }
-
     
+    func testStartOnResetShouldBeFalseInitially() {
+        XCTAssertFalse(Settings.startOnReset)
+    }
+    
+    func testStartOnResetToTrue() {
+        Settings.startOnReset = true
+        XCTAssert(Settings.startOnReset)
+    }
+    
+    func testThemeShouldBeLightInitially() {
+        XCTAssertEqual(Settings.theme, .light)
+    }
+    
+    func testThemeShouldBeLightIfInvalidTheme() {
+        Settings.settings.set("123", forKey: Settings.Key.Theme)
+        XCTAssertEqual(Settings.theme, .light)
+    }
+    
+    func testThemeToDark() {
+        Settings.theme = .dark
+        XCTAssertEqual(Settings.theme, .dark)
+    }
+    
+    func testColorIndexShouldBeZeroInitially() {
+        XCTAssertEqual(Settings.colorIndex, 0)
+    }
+    
+    func testColorIndexSetToSix() {
+        Settings.colorIndex = 6
+        XCTAssertEqual(Settings.colorIndex, 6)
+    }
+    
+    func addChallenge() {
+        Settings.prependChallenge(with: challenge)
+        Settings.prependChallenge(with: challenge2)
+        XCTAssertEqual(Settings.challenges!.count, 2)
+    }
+
 }
