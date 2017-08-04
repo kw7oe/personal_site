@@ -13,7 +13,7 @@ class CounterViewController: UIViewController {
     
     var challengeIndex = 0 
     var challenge: Challenge {
-        if let challenges = Settings.challenges {
+        if let challenges = ChallengeFactory.challenges {
             if !challenges.isEmpty {
                 return challenges[challengeIndex]
             }
@@ -68,7 +68,7 @@ class CounterViewController: UIViewController {
     
     func deleteChallenge() {
         let alertController = createDestrutiveAlert(title: "Delete Challenge") { (action) in
-            Settings.removeChallenge(at: self.challengeIndex)
+            ChallengeFactory.removeChallenge(at: self.challengeIndex)
             _ = self.navigationController?.popViewController(animated: true)
         }
         alertController.transitioningDelegate = self
@@ -188,9 +188,7 @@ class CounterViewController: UIViewController {
                 print("Error: ")
                 print(error)
             }
-        }
-        
-        
+        }       
     }
     
     // MARK: View Controller Life Cycle

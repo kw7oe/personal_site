@@ -71,8 +71,8 @@ class AddChallengeTableViewController: UITableViewController {
         challenge.set_date(startDatePicker.date)
         
         switch mode {
-          case .add: Settings.prependChallenge(with: challenge)
-          case .edit: Settings.updateChallenge(at: challengeIndex!, with: challenge)
+          case .add: ChallengeFactory.prependChallenge(with: challenge)
+          case .edit: ChallengeFactory.updateChallenge(at: challengeIndex!, with: challenge)
         }
         
         dismiss()

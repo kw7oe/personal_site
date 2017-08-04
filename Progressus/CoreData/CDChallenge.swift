@@ -31,7 +31,25 @@ class CDChallenge: NSManagedObject {
         
         let cdChallenge = CDChallenge(context: context)
         cdChallenge.unique = challenge.name
+        cdChallenge.goal = Int16.init(challenge.goal)
+        cdChallenge.date = NSDate(timeInterval: 0, since: challenge.date)
+        cdChallenge.started = challenge.started
         return cdChallenge
+    }
+    
+    class func all(inContext context: NSManagedObjectContext) -> [CDChallenge]? {
+        
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        
+        do {
+            let result = try context.fetch(request)
+            
+            return result
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
     
     func getRecordsDuration() -> [Int] {
@@ -56,12 +74,11 @@ class CDChallenge: NSManagedObject {
             let result = try context.fetch(request)
             
             for cdChallenge in result {
-                for cdRecord in cdChallenge.records! {
-                    if let record = cdRecord as? CDRecord {
-                        print("Duration: \(record.duration)")
-                    }
-                }
+                print("Name: \(cdChallenge.unique)")
+                print("Goal: \(cdChallenge.goal)")
+                print("Started: \(cdChallenge.started)")
             }
+            
             
         } catch {
             print(error)

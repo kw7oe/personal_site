@@ -25,10 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Settings.migrateData()
         }
         
-        if Settings.shouldRemovedPendingNotifications {
+        if !Settings.migratedToCoreData {
+            CDChallenge.printData(inContext: persistentContainer.viewContext)
+            Settings.migrateToCoreData()
+        }
+        
+        if ReminderFactory.shouldRemovedPendingNotifications {
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             print("Removing...")
-            Settings.pendingNotificationsRemoved = true
+            ReminderFactory.pendingNotificationsRemoved = true
         }
         
         return true

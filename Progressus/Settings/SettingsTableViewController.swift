@@ -53,7 +53,7 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func toggleReminderSwitch(_ sender: UISwitch) {
         let notificationService = NotificationServices()
         
-        if let reminders = Settings.reminders {
+        if let reminders = ReminderFactory.reminders {
             if sender.isOn {
                 for reminder in reminders {
                     notificationService.scheduleNotification(with: reminder, basedOn: .short)
@@ -216,7 +216,7 @@ extension SettingsTableViewController {
         }
         else if cell.reuseIdentifier == Storyboard.ViewAllReminders {
             cell.enable(on: Settings.isReminderOn)
-            let count = Settings.reminders?.count ?? 0
+            let count = ReminderFactory.reminders?.count ?? 0
             cell.addGrayDetail(text: String(count) + String.pluralize(count, input: "Reminder"))
         }
         else if cell.reuseIdentifier == Storyboard.StartOnReset {

@@ -11,7 +11,7 @@ import UIKit
 class RemindersTableViewController: UITableViewController {
     
     var data: [Reminder]? {
-        return Settings.reminders
+        return ReminderFactory.reminders
     }
     var blankView: BlankView!
     
@@ -63,7 +63,7 @@ class RemindersTableViewController: UITableViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == Storyboard.AddReminderSegue {
-            if let count = Settings.reminders?.count, count >= 3 {
+            if let count = ReminderFactory.reminders?.count, count >= 3 {
                 let alertController = UIAlertController(title: "Note", message: "You can only add a maximum amount of 3 reminders. Less is more.", preferredStyle: .alert)
                 alertController.transitioningDelegate = self
                 alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
@@ -122,7 +122,7 @@ extension RemindersTableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let identifier = data![indexPath.row].identifier
-            Settings.removeReminder(at: indexPath.row, withIdentifier: identifier)
+            ReminderFactory.removeReminder(at: indexPath.row, withIdentifier: identifier)
             NotificationServices().removeNotification(withIdentifiers: [identifier])
             tableView.deleteRows(at: [indexPath], with: .fade)
             let rowLeft = tableView.numberOfRows(inSection: 0)

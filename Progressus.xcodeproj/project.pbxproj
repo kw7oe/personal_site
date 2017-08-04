@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1D513B1F34519A005857CF /* ChallengeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513A1F34519A005857CF /* ChallengeFactory.swift */; };
+		2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */; };
 		2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */; };
 		2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */; };
 		2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */; };
@@ -15,6 +17,7 @@
 		2A33AA851E6D3E19003F8C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A33AA811E6D3E19003F8C13 /* LaunchScreen.storyboard */; };
 		2A3D22F71F20F4C500EF3A98 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3D22F61F20F4C500EF3A98 /* ExtensionTests.swift */; };
 		2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A62D2A11F1F055800ED7D42 /* ParserTests.swift */; };
+		2A66800D1F345562001AAE14 /* ReminderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66800C1F345562001AAE14 /* ReminderFactory.swift */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
 		2AA6D0461F20B7C7009AD153 /* ProgressusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
@@ -62,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1D513A1F34519A005857CF /* ChallengeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactory.swift; sourceTree = "<group>"; };
+		2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactoryTests.swift; sourceTree = "<group>"; };
 		2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 		2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		2A62D2971F1F053D00ED7D42 /* ProgressusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A62D29B1F1F053D00ED7D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A62D2A11F1F055800ED7D42 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		2A66800C1F345562001AAE14 /* ReminderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderFactory.swift; sourceTree = "<group>"; };
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA6D0431F20B7C6009AD153 /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,7 @@
 		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */,
 				2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */,
 				2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */,
 				2A3D22F61F20F4C500EF3A98 /* ExtensionTests.swift */,
@@ -226,6 +233,7 @@
 				2AD2EDEC1EB38C740002A1D3 /* Challenge.swift */,
 				2AD2EDED1EB38C740002A1D3 /* ChallengesTableViewController.swift */,
 				2AD2EDEE1EB38C740002A1D3 /* ChallengeTableViewCell.swift */,
+				2A1D513A1F34519A005857CF /* ChallengeFactory.swift */,
 			);
 			name = Challenge;
 			path = Progressus/Challenge;
@@ -237,6 +245,7 @@
 				2AD2EDF61EB38C840002A1D3 /* Reminder.swift */,
 				2AD2EDF71EB38C840002A1D3 /* ReminderConfigurationTableViewController.swift */,
 				2AD2EDF81EB38C840002A1D3 /* RemindersTableViewController.swift */,
+				2A66800C1F345562001AAE14 /* ReminderFactory.swift */,
 			);
 			name = Reminders;
 			path = Progressus/Reminders;
@@ -431,6 +440,7 @@
 			files = (
 				2A3D22F71F20F4C500EF3A98 /* ExtensionTests.swift in Sources */,
 				2AB1EABA1F20F23E003BD756 /* QuoteTests.swift in Sources */,
+				2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */,
 				2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */,
 				2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */,
 				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
@@ -449,6 +459,7 @@
 				2A33AA611E6D3D08003F8C13 /* AppDelegate.swift in Sources */,
 				2AD2EDF41EB38C740002A1D3 /* CounterViewController.swift in Sources */,
 				2AD2EDF11EB38C740002A1D3 /* Challenge.swift in Sources */,
+				2A66800D1F345562001AAE14 /* ReminderFactory.swift in Sources */,
 				2AD2EDFB1EB38C840002A1D3 /* RemindersTableViewController.swift in Sources */,
 				2AD2EE091EB38D0A0002A1D3 /* RadiusButton.swift in Sources */,
 				2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */,
@@ -463,6 +474,7 @@
 				2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */,
 				2AD2EE151EB38D220002A1D3 /* CustomPresentAnimationController.swift in Sources */,
 				2AD2EE161EB38D220002A1D3 /* CustomTheme.swift in Sources */,
+				2A1D513B1F34519A005857CF /* ChallengeFactory.swift in Sources */,
 				2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */,
 				2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */,
 				2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */,

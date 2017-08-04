@@ -61,7 +61,7 @@ class Challenge: NSObject, NSCoding {
             default: break
             }
         }
-        Settings.updateChallenge(at: position, with: self)
+        ChallengeFactory.updateChallenge(at: position, with: self)
     }
     
     // MARK: NSCoding

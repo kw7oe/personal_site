@@ -42,17 +42,17 @@ class ReminderConfigurationTableViewController: UITableViewController {
         {
             reminder.content = content!
             reminder.time = datePicker.date
-            Settings.updateReminderAt(index: reminderIndex!, with: reminder)
+            ReminderFactory.updateReminderAt(index: reminderIndex!, with: reminder)
         }
         else // Reminder in Add Mode
         {
-            let reminder = Reminder(identifier: Settings.reminderIdentifier.removeFirst(), content: content!, time: datePicker.date, willRepeat: true)
+            let reminder = Reminder(identifier: ReminderFactory.reminderIdentifier.removeFirst(), content: content!, time: datePicker.date, willRepeat: true)
             
             // Check if Settings.reminders exists
-            if Settings.reminders != nil { // If yes, change reminder's identifier
-                Settings.appendReminder(reminder: reminder)
+            if ReminderFactory.reminders != nil { // If yes, change reminder's identifier
+                ReminderFactory.appendReminder(reminder: reminder)
             } else { // if no, directly append
-                Settings.appendReminder(reminder: reminder)
+                ReminderFactory.appendReminder(reminder: reminder)
             }
            
         }

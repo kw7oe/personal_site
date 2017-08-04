@@ -17,7 +17,7 @@ class ChallengesTableViewController: UITableViewController {
     }
     
     var challenges: [Challenge]? {
-        return Settings.challenges
+        return ChallengeFactory.challenges
     }
     var blankView: BlankView!
     
@@ -60,7 +60,7 @@ class ChallengesTableViewController: UITableViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == Storyboard.AddChallengeSegue {
-            if let count = Settings.challenges?.count, count >= 4 {
+            if let count = ChallengeFactory.challenges?.count, count >= 4 {
                 let alertController = UIAlertController(title: "Note", message: "You can only add a maximum amount of 4 challenges. Less is more.", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                     self.dismiss(animated: true, completion: nil)
@@ -110,7 +110,7 @@ extension ChallengesTableViewController {
         switch editingStyle  {
         case .delete:
             let index = indexPath.section
-            Settings.removeChallenge(at: index)
+            ChallengeFactory.removeChallenge(at: index)
             tableView.deleteSections(IndexSet([index]), with: .fade)
 //            tableView.deleteRows(at: [indexPath], with: .fade)
         default: break
