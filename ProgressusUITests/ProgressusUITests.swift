@@ -9,13 +9,15 @@
 import XCTest
 
 class ProgressusUITests: XCTestCase {
-        
+    
+    let app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
+        app.launchArguments += ["UI-Testing"]
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        let app = XCUIApplication()
         app.launch()
     }
     
@@ -25,7 +27,6 @@ class ProgressusUITests: XCTestCase {
     
     
     func testAddChallenge() {
-        let app = XCUIApplication()
         let count = app.tables.cells.count + 1
         
         addChallenge()
@@ -39,7 +40,6 @@ class ProgressusUITests: XCTestCase {
     func testRemoveChallenge() {
         addChallenge()
         
-        let app = XCUIApplication()
         let tablesQuery = app.tables
         let cell = tablesQuery.cells.element(boundBy: 0)
         let count = app.tables.cells.count - 1
@@ -50,7 +50,6 @@ class ProgressusUITests: XCTestCase {
     }
     
     func addChallenge() {
-        let app = XCUIApplication()
         let count = app.tables.cells.count
         
         if count < 4 {
@@ -65,7 +64,6 @@ class ProgressusUITests: XCTestCase {
     }
     
     func testGoToSetting() {        
-        let app = XCUIApplication()
         app.navigationBars["Progressus"].buttons["Settings"].tap()
         
         let tablesQuery = app.tables

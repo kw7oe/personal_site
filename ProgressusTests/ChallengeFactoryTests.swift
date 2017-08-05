@@ -28,7 +28,7 @@ class ChallengeFactoryTests: XCTestCase {
     }
     
     func testPrependChallenge() {
-        ChallengeFactory.prependChallenge(with: challenge)
+        _ = ChallengeFactory.prependChallenge(with: challenge)
         
         XCTAssertNotNil(ChallengeFactory.challenges)
         
@@ -37,7 +37,7 @@ class ChallengeFactoryTests: XCTestCase {
             XCTAssertEqual(challenges.first!.name, challenge.name)
         }
         
-        ChallengeFactory.prependChallenge(with: challenge2)
+        _ = ChallengeFactory.prependChallenge(with: challenge2)
         XCTAssertEqual(ChallengeFactory.challenges!.count, 2)
         XCTAssertEqual(ChallengeFactory.challenges!.first!.name, challenge2.name)
     }
@@ -65,8 +65,8 @@ class ChallengeFactoryTests: XCTestCase {
     }
     
     func addChallenge() {
-        ChallengeFactory.prependChallenge(with: challenge)
-        ChallengeFactory.prependChallenge(with: challenge2)
+        _ = ChallengeFactory.prependChallenge(with: challenge)
+        _ = ChallengeFactory.prependChallenge(with: challenge2)
         XCTAssertEqual(ChallengeFactory.challenges!.count, 2)
     }
 

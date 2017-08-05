@@ -33,6 +33,7 @@ class AddChallengeTableViewController: UITableViewController {
             // Refactor needed
             nameTextField.attributedPlaceholder =
                 NSAttributedString(string: "Challenge Name", attributes: [NSForegroundColorAttributeName : CustomTheme.placeholderColor()])
+            nameTextField.becomeFirstResponder()
         }
     }
     @IBOutlet weak var startDatePicker: UIDatePicker! {
@@ -70,12 +71,17 @@ class AddChallengeTableViewController: UITableViewController {
             started: true)
         challenge.set_date(startDatePicker.date)
         
+        var shouldDismiss = true
         switch mode {
-          case .add: ChallengeFactory.prependChallenge(with: challenge)
-          case .edit: ChallengeFactory.updateChallenge(at: challengeIndex!, with: challenge)
+          case .add:
+            shouldDismiss = ChallengeFactory.prependChallenge(with: challenge)
+          case .edit:
+            ChallengeFactory.updateChallenge(at: challengeIndex!, with: challenge)
         }
         
-        dismiss()
+        if shouldDismiss {
+            dismiss()
+        }
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
@@ -90,7 +96,7 @@ class AddChallengeTableViewController: UITableViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    fileprivate func updateCountFor() {
+    private func updateCountFor() {
         let count = nameTextField.text?.characters.count ?? 0
         textCountLabel.text = "\(count)/20"
     }

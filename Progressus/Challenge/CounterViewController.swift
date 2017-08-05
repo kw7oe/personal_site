@@ -67,7 +67,7 @@ class CounterViewController: UIViewController {
     }
     
     func deleteChallenge() {
-        let alertController = createDestrutiveAlert(title: "Delete Challenge") { (action) in
+        let alertController = UIAlertController.destrutiveAlert(title: "Delete Challenge") { (action) in
             ChallengeFactory.removeChallenge(at: self.challengeIndex)
             _ = self.navigationController?.popViewController(animated: true)
         }
@@ -86,7 +86,7 @@ class CounterViewController: UIViewController {
     // MARK: Private Methods
     private func resetTimer() {
 
-        let alertController = createDestrutiveAlert(title: "Reset Challenge") { (action) in
+        let alertController = UIAlertController.destrutiveAlert(title: "Reset Challenge") { (action) in
             var title = "START"
             if Settings.startOnReset {
                 title = "RESET"
@@ -122,24 +122,6 @@ class CounterViewController: UIViewController {
             block: { (timer) in
                 self.updateUI()
         })
-    }
-    
-    private func createDestrutiveAlert(title: String, completionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
-        let alertController = UIAlertController(
-            title: title,
-            message: "Are you sure? This action cannot be undone.",
-            preferredStyle: .alert
-        )
-        alertController.addAction(
-            UIAlertAction(
-                title: "YES",
-                style: .destructive,
-                handler: completionHandler
-            )
-        )
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertController.view.tintColor = CustomTheme.defaultTintColor()
-        return alertController
     }
     
     private func updateUI() {

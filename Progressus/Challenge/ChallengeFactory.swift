@@ -48,12 +48,21 @@ class ChallengeFactory {
         }
     }
     
-    static func prependChallenge(with challenge: Challenge) {
+    static func prependChallenge(with challenge: Challenge) -> Bool {
         if challenges == nil {
             challenges = [challenge]
+            return true
         } else {
-            challenges!.prepend(element: challenge)
+            let names = challenges!.filter({ (c) -> Bool in
+                c.name == challenge.name
+            })
+            if names.isEmpty {
+                challenges!.prepend(element: challenge)
+                return true
+            }
         }
+        
+        return false
     }
     
     static func updateChallenge(at position: Int, with challenge: Challenge) {

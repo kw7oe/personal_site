@@ -74,7 +74,7 @@ class CDChallenge: NSManagedObject {
             let result = try context.fetch(request)
             
             for cdChallenge in result {
-                print("Name: \(cdChallenge.unique)")
+                print("Name: \(String(describing: cdChallenge.unique))")
                 print("Goal: \(cdChallenge.goal)")
                 print("Started: \(cdChallenge.started)")
             }

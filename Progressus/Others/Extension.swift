@@ -156,6 +156,27 @@ extension UISwitch {
     }
 }
 
+extension UIAlertController {
+    
+    class func destrutiveAlert(title: String, completionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+        let alertController = UIAlertController(
+            title: title,
+            message: "Are you sure? This action cannot be undone.",
+            preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(
+                title: "YES",
+                style: .destructive,
+                handler: completionHandler
+            )
+        )
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.view.tintColor = CustomTheme.defaultTintColor()
+        return alertController
+    }
+}
+
 protocol Numeric { }
 extension Int: Numeric { }
 extension Double: Numeric { }
