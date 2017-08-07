@@ -62,7 +62,7 @@ class AddChallengeTableViewController: UITableViewController {
     @IBAction func saveChallenge(_ sender: UIBarButtonItem) {
         var name: String = "Challenge"
         if (nameTextField.text != nil && nameTextField.text! != "") {
-            name = nameTextField.text!
+            name = nameTextField.text!.trimmingCharacters(in: .whitespaces)
         }
         let challenge = Challenge.init(
             name: name,
@@ -81,6 +81,12 @@ class AddChallengeTableViewController: UITableViewController {
         
         if shouldDismiss {
             dismiss()
+        } else {
+            let alertController = UIAlertController(title: "Duplicated name", message: "Challenge name should be unique", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertController, animated: true, completion: { 
+                self.nameTextField.text = ""
+            })
         }
     }
     
@@ -100,6 +106,7 @@ class AddChallengeTableViewController: UITableViewController {
         let count = nameTextField.text?.characters.count ?? 0
         textCountLabel.text = "\(count)/20"
     }
+    
 
     
     // MARK: View Life Cycle

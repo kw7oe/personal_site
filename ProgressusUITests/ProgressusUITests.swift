@@ -37,6 +37,19 @@ class ProgressusUITests: XCTestCase {
         XCTAssertEqual(cellLabel.label, "Foobar")
     }
     
+    func testAddChallengeWithDuplicateName() {
+        addChallenge()
+        addChallenge()
+        
+        XCTAssertEqual(app.alerts.count,  1)
+        app.alerts["Duplicated name"].buttons["OK"].tap()
+        XCTAssertEqual(app.alerts.count, 0)
+        
+        let count = app.tables.cells.count
+        
+        XCTAssertEqual(app.tables.cells.count, count)
+    }
+    
     func testRemoveChallenge() {
         addChallenge()
         

@@ -60,8 +60,17 @@ class AddChallengeViewControllerTests: XCTestCase {
         XCTAssertEqual(ChallengeFactory.challenges?.count, 1)
     }
     
-    func saveChallenge() {
-        controller.nameTextField.text = "Workout"
+    func testShouldStripeWhiteSpaceForChallengeName() {
+        saveChallenge("Workout ")
+        
+        XCTAssertEqual(ChallengeFactory.challenges![0].name, "Workout")
+        
+        saveChallenge("Read Books")
+        XCTAssertEqual(ChallengeFactory.challenges![0].name, "Read Books")
+    }
+    
+    func saveChallenge(_ text: String = "Workout") {
+        controller.nameTextField.text = text
         controller.goalPicker.selectRow(6, inComponent: 0, animated: false)
         controller.saveChallenge(UIBarButtonItem.init())
         
