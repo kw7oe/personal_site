@@ -46,6 +46,13 @@ class Challenge: NSObject, NSCoding {
         self.started = started
     }
     
+    init(name: String?, date: NSDate?, goal: Int16?, started: Bool) {
+        self.name = name ?? "Challenge"
+        self.date = date as Date? ?? Date.init()
+        self.goal = Int(exactly: goal ?? 7)!
+        self.started = started
+    }
+    
     func set_date(_ date: Date) {
         self.date = date
         started = true

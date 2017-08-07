@@ -32,6 +32,21 @@ class ChallengeFactory {
         }
     }
     
+    static func allChallenges() -> [Challenge]? {
+        if let context = container?.viewContext {
+            let cdchallenges =  CDChallenge.all(inContext: context)
+            
+            guard cdchallenges != nil else {
+                return nil
+            }
+            return cdchallenges?.map({ (challenge) -> Challenge in
+                Challenge.init(name: challenge.unique, date: challenge.date, goal: challenge.goal, started: challenge.started)
+            })
+        }
+        
+        return nil
+    }
+    
     
     // MARK: DEPRECATED SOON
     static var challenges: [Challenge]? {

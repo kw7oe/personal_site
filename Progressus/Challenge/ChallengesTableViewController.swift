@@ -19,6 +19,11 @@ class ChallengesTableViewController: UITableViewController {
     var challenges: [Challenge]? {
         return ChallengeFactory.challenges
     }
+
+    
+//    var challenges: [Challenge]? {
+//        return ChallengeFactory.allChallenges()
+//    }
     var blankView: BlankView!
     
     private func updateColorScheme() {

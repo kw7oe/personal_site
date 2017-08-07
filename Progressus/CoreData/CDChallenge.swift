@@ -37,6 +37,28 @@ class CDChallenge: NSManagedObject {
         return cdChallenge
     }
     
+    class func deleteChallenge(inContext context: NSManagedObjectContext, unique: String) -> Bool {
+        
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        request.predicate = NSPredicate(format: "unique = %@", unique)
+        
+        do {
+            let match = try context.fetch(request)
+            if match.count > 0 {
+                assert(match.count == 1, "findOrCreateChallenge -- database inconsistency")
+                
+                context.delete(match[0])
+                return true
+            }
+        } catch {
+            print("Something went wrong")
+            print(error)
+        }
+
+        
+        return false
+    }
+    
     class func all(inContext context: NSManagedObjectContext) -> [CDChallenge]? {
         
         let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
@@ -52,6 +74,19 @@ class CDChallenge: NSManagedObject {
         return nil
     }
     
+    class func count(inContext context: NSManagedObjectContext) -> Int {
+        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
+        
+        do {
+            let result = try context.count(for: request)
+            return result
+        } catch {
+            print(error)
+        }
+        
+        return 0
+    }
+
     func getRecordsDuration() -> [Int] {
         var array: [Int] = []
         let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: true)
