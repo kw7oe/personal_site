@@ -14,18 +14,10 @@ class CDChallenge: NSManagedObject {
     // MARK: Class Function
     class func findOrCreateChallenge(_ challenge: Challenge, inContext context: NSManagedObjectContext) throws -> CDChallenge {
         
-        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
-        request.predicate = NSPredicate(format: "unique = %@", challenge.name)
+        let found = findChallenge(inContext: context, unique: challenge.name)
         
-        do {
-            let match = try context.fetch(request)
-            if match.count > 0 {
-                assert(match.count == 1, "findOrCreateChallenge -- database inconsistency")
-                return match[0]
-            }
-        } catch {
-            print("Something went wrong")
-            throw error
+        if found != nil {
+            return found!
         }
         
         
@@ -37,22 +29,58 @@ class CDChallenge: NSManagedObject {
         return cdChallenge
     }
     
-    class func deleteChallenge(inContext context: NSManagedObjectContext, unique: String) -> Bool {
-        
+    class func findChallenge(inContext context: NSManagedObjectContext, unique: String) -> CDChallenge? {
         let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
-        request.predicate = NSPredicate(format: "unique = %@", unique)
+        request.predicate = NSPredicate(format: "unique = %@",unique)
         
         do {
             let match = try context.fetch(request)
             if match.count > 0 {
                 assert(match.count == 1, "findOrCreateChallenge -- database inconsistency")
-                
-                context.delete(match[0])
-                return true
+                return match[0]
             }
         } catch {
             print("Something went wrong")
-            print(error)
+        }
+        
+        return nil
+    }
+    
+    class func updateChallenge(inContext context: NSManagedObjectContext, unique: String, with dict: [String:Any]) -> Bool {
+        
+        let found = findChallenge(inContext: context, unique: unique)
+        
+        if found != nil {
+            for (key, value) in dict {
+                switch key {
+                case "name":
+                    // Need to check if there is the duplicate
+                    found!.unique = value as? String ?? found!.unique
+                case "goal":
+                    found!.goal = Int16.init(exactly: value as! Int) ?? found!.goal
+                case "date":
+                    found!.date = value as? NSDate ?? found!.date
+                case "started":
+                    found!.started = value as? Bool ?? found!.started
+                default:
+                    break
+                }
+            }
+            
+            return true
+        }
+
+        
+        return false
+    }
+    
+    class func deleteChallenge(inContext context: NSManagedObjectContext, unique: String) -> Bool {
+        
+        let found = findChallenge(inContext: context, unique: unique)
+        
+        if found != nil {
+            context.delete(found!)
+            return true
         }
 
         
@@ -102,21 +130,4 @@ class CDChallenge: NSManagedObject {
         return Array(array.suffix(12)) // Return the latest N = 12 records
     }
     
-    class func printData(inContext context: NSManagedObjectContext) {
-        let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
-        
-        do {
-            let result = try context.fetch(request)
-            
-            for cdChallenge in result {
-                print("Name: \(String(describing: cdChallenge.unique))")
-                print("Goal: \(cdChallenge.goal)")
-                print("Started: \(cdChallenge.started)")
-            }
-            
-            
-        } catch {
-            print(error)
-        }
-    }
 }

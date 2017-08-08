@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A1D513B1F34519A005857CF /* ChallengeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513A1F34519A005857CF /* ChallengeFactory.swift */; };
 		2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */; };
+		2A28C0881F396B3200120D2F /* DataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28C0871F396B3200120D2F /* DataMigration.swift */; };
+		2A28C08A1F396B5000120D2F /* DataMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28C0891F396B5000120D2F /* DataMigrationTests.swift */; };
 		2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */; };
 		2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */; };
 		2A2C21711EB4E57700B54F02 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C216F1EB4E57700B54F02 /* Model.xcdatamodeld */; };
@@ -20,6 +22,7 @@
 		2A66800D1F345562001AAE14 /* ReminderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66800C1F345562001AAE14 /* ReminderFactory.swift */; };
 		2A740DBE1E6E680400A59D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A740DBC1E6E680400A59D38 /* Main.storyboard */; };
 		2A7E3DA11F383746003A044C /* CDChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E3DA01F383746003A044C /* CDChallengeTests.swift */; };
+		2A89B8961F3976E3004CEFBE /* RadiusButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A89B8951F3976E3004CEFBE /* RadiusButtonTests.swift */; };
 		2AA6D0461F20B7C7009AD153 /* ProgressusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */; };
 		2AAE021A1EC47FA2005B9E36 /* CDRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE02191EC47FA2005B9E36 /* CDRecord.swift */; };
 		2AAE021D1EC47FC3005B9E36 /* CDChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE021C1EC47FC3005B9E36 /* CDChallenge.swift */; };
@@ -69,6 +72,8 @@
 /* Begin PBXFileReference section */
 		2A1D513A1F34519A005857CF /* ChallengeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactory.swift; sourceTree = "<group>"; };
 		2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactoryTests.swift; sourceTree = "<group>"; };
+		2A28C0871F396B3200120D2F /* DataMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMigration.swift; sourceTree = "<group>"; };
+		2A28C0891F396B5000120D2F /* DataMigrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMigrationTests.swift; sourceTree = "<group>"; };
 		2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 		2A2BE1F31F32DC680018D96F /* ChallengeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTests.swift; sourceTree = "<group>"; };
 		2A2C21701EB4E57700B54F02 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 		2A740DBD1E6E680400A59D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Progressus/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A7509441E24894900B9B31D /* Progressus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progressus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7E3DA01F383746003A044C /* CDChallengeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDChallengeTests.swift; sourceTree = "<group>"; };
+		2A89B8951F3976E3004CEFBE /* RadiusButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButtonTests.swift; sourceTree = "<group>"; };
 		2AA6D0431F20B7C6009AD153 /* ProgressusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA6D0451F20B7C7009AD153 /* ProgressusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressusUITests.swift; sourceTree = "<group>"; };
 		2AA6D0471F20B7C7009AD153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A89B8951F3976E3004CEFBE /* RadiusButtonTests.swift */,
+				2A28C0891F396B5000120D2F /* DataMigrationTests.swift */,
 				2A7E3DA01F383746003A044C /* CDChallengeTests.swift */,
 				2AC9B2781F35AB0A00DBCF1F /* AddChallengeViewControllerTests.swift */,
 				2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */,
@@ -292,6 +300,7 @@
 		2AD2EE0F1EB38D220002A1D3 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				2A28C0871F396B3200120D2F /* DataMigration.swift */,
 				2AD2EE101EB38D220002A1D3 /* CustomPresentAnimationController.swift */,
 				2AD2EE111EB38D220002A1D3 /* CustomTheme.swift */,
 				2AD2EE121EB38D220002A1D3 /* Extension.swift */,
@@ -444,12 +453,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A28C08A1F396B5000120D2F /* DataMigrationTests.swift in Sources */,
 				2A3D22F71F20F4C500EF3A98 /* ExtensionTests.swift in Sources */,
 				2AB1EABA1F20F23E003BD756 /* QuoteTests.swift in Sources */,
 				2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */,
 				2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */,
 				2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */,
 				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
+				2A89B8961F3976E3004CEFBE /* RadiusButtonTests.swift in Sources */,
 				2A7E3DA11F383746003A044C /* CDChallengeTests.swift in Sources */,
 				2AC9B2791F35AB0A00DBCF1F /* AddChallengeViewControllerTests.swift in Sources */,
 			);
@@ -485,6 +496,7 @@
 				2A1D513B1F34519A005857CF /* ChallengeFactory.swift in Sources */,
 				2AD2EDFF1EB38C960002A1D3 /* Settings.swift in Sources */,
 				2AD2EDF01EB38C740002A1D3 /* AddChallengeTableViewController.swift in Sources */,
+				2A28C0881F396B3200120D2F /* DataMigration.swift in Sources */,
 				2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

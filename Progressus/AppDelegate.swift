@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        if !Settings.migrated {
-            Settings.migrateData()
+        if !DataMigration.migrated {
+            DataMigration.migrateData()
         }
         
 //        if !Settings.migratedToCoreData {

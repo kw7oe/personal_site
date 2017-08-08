@@ -11,15 +11,16 @@ import XCTest
 
 class ChallengeFactoryTests: XCTestCase {
     
-    var userDefault = UserDefaults(suiteName: "TestingChallengeFactory")
     let challenge = Challenge(name: "Workout", date: Date.init(), goal: 10, started: true)
     let challenge2 = Challenge(name: "Read", date: Date.init(), goal: 7, started: true)
     
     override func setUp() {
-        ChallengeFactory.userDefaults = userDefault!
+        super.setUp()
+        ChallengeFactory.userDefaults = UserDefaults(suiteName: "TestingChallengeFactory")!
     }
     
     override func tearDown() {
+        super.tearDown()
         UserDefaults().removePersistentDomain(forName: "TestingChallengeFactory")
     }
     

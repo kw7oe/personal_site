@@ -23,6 +23,14 @@ class CDChallengeTests: XCTestCase {
         XCTAssert(challenges!.isEmpty)
     }
     
+    func testFindChallenge() {
+        let context = setUpInMemoryManagedObjectContext()
+        addChallenge(inContext: context)
+        
+        let found = CDChallenge.findChallenge(inContext: context, unique: "Workout")
+        XCTAssertNotNil(found)
+        XCTAssertEqual(found!.unique, "Workout")
+    }
     func testFindOrCreateChallenge() {
         let context = setUpInMemoryManagedObjectContext()
         do {
@@ -46,13 +54,40 @@ class CDChallengeTests: XCTestCase {
         XCTAssertEqual(CDChallenge.count(inContext: context), 0)
     }
     
+    func testUpdateChallenge() {
+        let context = setUpInMemoryManagedObjectContext()
+        addChallenge(inContext: context)
+        
+        let date = Date.init()
+        
+        let attr: [String:Any] = [
+            "name": "Reading",
+            "goal": 15,
+            "date": date,
+            "started": false
+        ]
+        
+        let result = CDChallenge.updateChallenge(inContext: context, unique: challenge.name, with: attr)
+        
+        let updatedChallenge = CDChallenge.findChallenge(inContext: context, unique: "Reading")
+        
+        XCTAssert(result)
+        
+        let challenges = CDChallenge.all(inContext: context)
+        XCTAssertNotNil(challenges)
+        XCTAssertEqual(challenges!.count, 1)
+        
+        XCTAssertNotNil(updatedChallenge)
+        XCTAssertEqual(updatedChallenge!.goal, 15)
+        XCTAssertEqual(updatedChallenge!.unique, "Reading")
+        XCTAssertEqual(updatedChallenge!.started, false)
+        XCTAssertEqual(updatedChallenge!.date, date as NSDate)
+        
+    }
+    
     func testDeleteChallenge() {
         let context = setUpInMemoryManagedObjectContext()
-        do {
-            _ = try CDChallenge.findOrCreateChallenge(challenge, inContext: context)
-        } catch {
-            print(error)
-        }
+        addChallenge(inContext: context)
         
         let result = CDChallenge.deleteChallenge(inContext: context, unique: "Workout")
         
@@ -61,7 +96,13 @@ class CDChallengeTests: XCTestCase {
         
     }
     
-
+    func addChallenge(inContext context: NSManagedObjectContext) {
+        do {
+            _ = try CDChallenge.findOrCreateChallenge(challenge, inContext: context)
+        } catch {
+            print(error)
+        }
+    }
 
     
 }

@@ -11,12 +11,11 @@ import XCTest
 
 class SettingsTests: XCTestCase {
     
-    var userDefault = UserDefaults(suiteName: "TestingSettings")
     let challenge = Challenge(name: "Workout", date: Date.init(), goal: 10, started: true)
     let challenge2 = Challenge(name: "Read", date: Date.init(), goal: 7, started: true)
     
     override func setUp() {
-        Settings.settings = userDefault!
+        Settings.settings = UserDefaults(suiteName: "TestingSettings")!
     }
 
     override func tearDown() {
