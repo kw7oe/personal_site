@@ -11,22 +11,12 @@ import CoreData
 
 class CounterViewController: UIViewController {
     
-    var challengeIndex = 0 
-    var challenge: Challenge {
-        if let challenges = ChallengeFactory.challenges {
-            if !challenges.isEmpty {
-                return challenges[challengeIndex]
-            }
-        }
-        return Challenge(name: "", date: Date.init(), goal: 7, started: false)
-    }
-    
-    var time: Int {
-        if !challenge.started { return 0 }
-        return -Int(challenge.date.timeIntervalSinceNow)
-    }    
-    var timer = Timer()
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    var challenge: CDChallenge!
+    
+    var timer = Timer()
+    
     
     // MARK: View Outlet
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -68,7 +58,7 @@ class CounterViewController: UIViewController {
     
     func deleteChallenge() {
         let alertController = UIAlertController.destrutiveAlert(title: "Delete Challenge") { (action) in
-            ChallengeFactory.removeChallenge(at: self.challengeIndex)
+            _ = CDChallenge.deleteChallenge(inContext: self.container!.viewContext, unique: self.challenge.unique!)
             _ = self.navigationController?.popViewController(animated: true)
         }
         alertController.transitioningDelegate = self
@@ -91,14 +81,9 @@ class CounterViewController: UIViewController {
             if Settings.startOnReset {
                 title = "RESET"
             }
-            self.updateCoreData()
-            self.challenge.update(
-                at: self.challengeIndex,
-                with: [
-                    "date": Date.init(),
-                    "started": Settings.startOnReset
-                ]
-            )
+            self.challenge.date = NSDate.init()
+            self.challenge.started = Settings.startOnReset
+
             self.button.setTitle(title, for: .normal)
             self.setProgress()
             self.updateUI()
@@ -109,12 +94,9 @@ class CounterViewController: UIViewController {
     }
     
     private func startTimer() {
-        challenge.update(
-            at: self.challengeIndex,
-            with: [
-                "date": Date.init()
-            ]
-        )
+        challenge.date = NSDate.init()
+        challenge.started = true
+
         button.setTitle("RESET", for: .normal)
         timer = Timer.scheduledTimer(
             withTimeInterval: 1,
@@ -130,9 +112,9 @@ class CounterViewController: UIViewController {
     }
     
     private func updateTime() {
-        timeLabel.text = String(time)
+        timeLabel.text = String(challenge.time)
         timeUnitLabel.text = "second"
-        if time > 1 {
+        if challenge.time > 1 {
             timeUnitLabel.text = "seconds"
         }
     }
@@ -158,19 +140,6 @@ class CounterViewController: UIViewController {
         timeUnitLabel.updateFontColor()
         authorLabel.updateFontColor()
         quoteLabel.updateFontColor()
-    }
-    
-    private func updateCoreData() {
-        if let context = container?.viewContext {
-            _ = CDRecord.createRecord(challenge, inContext: context)
-            
-            do {
-                try context.save()
-            } catch {
-                print("Error: ")
-                print(error)
-            }
-        }       
     }
     
     // MARK: View Controller Life Cycle
@@ -207,7 +176,6 @@ class CounterViewController: UIViewController {
         if segue.identifier == Storyboard.EditSegue {
             if let dvc = segue.destination.contentViewController as? AddChallengeTableViewController {
                 dvc.challenge = challenge
-                dvc.challengeIndex = challengeIndex
             }
         }
     }

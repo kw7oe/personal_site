@@ -14,6 +14,7 @@ class CDChallengeTests: XCTestCase {
     
     
     let challenge = Challenge.init(name: "Workout", date: Date.init(), goal: 7, started: true)
+    let attr = ("Reading", 15, Date.init(date: "2017-7-17"), false)
     
     func testAllShouldBeEmpty() {
         let context = setUpInMemoryManagedObjectContext()
@@ -54,18 +55,19 @@ class CDChallengeTests: XCTestCase {
         XCTAssertEqual(CDChallenge.count(inContext: context), 0)
     }
     
+    func testCastAttr() {
+        
+        let result = CDChallenge.castAttr(attr)
+        
+        XCTAssertEqual(result.unique, "Reading")
+        XCTAssertEqual(result.goal, 15)
+        XCTAssertEqual(result.date, Date.init(date: "2017-7-17") as NSDate)
+        XCTAssertEqual(result.started, false)
+    }
+    
     func testUpdateChallenge() {
         let context = setUpInMemoryManagedObjectContext()
         addChallenge(inContext: context)
-        
-        let date = Date.init()
-        
-        let attr: [String:Any] = [
-            "name": "Reading",
-            "goal": 15,
-            "date": date,
-            "started": false
-        ]
         
         let result = CDChallenge.updateChallenge(inContext: context, unique: challenge.name, with: attr)
         
@@ -81,7 +83,7 @@ class CDChallengeTests: XCTestCase {
         XCTAssertEqual(updatedChallenge!.goal, 15)
         XCTAssertEqual(updatedChallenge!.unique, "Reading")
         XCTAssertEqual(updatedChallenge!.started, false)
-        XCTAssertEqual(updatedChallenge!.date, date as NSDate)
+        XCTAssertEqual(updatedChallenge!.date, Date.init(date: "2017-7-17") as NSDate)
         
     }
     

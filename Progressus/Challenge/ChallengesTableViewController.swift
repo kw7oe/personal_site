@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ChallengesTableViewController: UITableViewController {
     
@@ -16,14 +17,15 @@ class ChallengesTableViewController: UITableViewController {
         static let AddChallengeSegue = "Add Challenge Segue"
     }
     
-    var challenges: [Challenge]? {
-        return ChallengeFactory.challenges
-    }
-
-    
 //    var challenges: [Challenge]? {
-//        return ChallengeFactory.allChallenges()
+//        return ChallengeFactory.challenges
 //    }
+
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
+    var challenges: [CDChallenge]? {
+        return CDChallenge.all(inContext: container!.viewContext)
+    }
     var blankView: BlankView!
     
     private func updateColorScheme() {
@@ -56,8 +58,7 @@ class ChallengesTableViewController: UITableViewController {
             if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
-                    vc.challengeIndex = index!.section
-                    vc.title = vc.challenge.name
+                    vc.challenge = challenges![index!.section]
                 }
             }
         }
@@ -115,9 +116,8 @@ extension ChallengesTableViewController {
         switch editingStyle  {
         case .delete:
             let index = indexPath.section
-            ChallengeFactory.removeChallenge(at: index)
+            CDChallenge.deleteChallenge(inContext: container!.viewContext, unique: challenges![index].unique!)
             tableView.deleteSections(IndexSet([index]), with: .fade)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
         default: break
         }
     }

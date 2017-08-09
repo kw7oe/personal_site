@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum ViewMode {
     case add, edit
@@ -14,8 +15,8 @@ enum ViewMode {
 
 class AddChallengeTableViewController: UITableViewController {
     
-    var challenge: Challenge?
-    var challengeIndex: Int?
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    var challenge: CDChallenge?
     var mode: ViewMode {
         if challenge != nil {
             return .edit
@@ -52,7 +53,7 @@ class AddChallengeTableViewController: UITableViewController {
             goalPicker.delegate = self
             var goalIndex: Int = 6
             if mode == .edit {
-                goalIndex = challenge!.goal - 1
+                goalIndex = Int(challenge!.goal) - 1
             }
             goalPicker.selectRow(goalIndex, inComponent: 0, animated: true)
         }
@@ -60,34 +61,36 @@ class AddChallengeTableViewController: UITableViewController {
     
     // MARK: Target Action
     @IBAction func saveChallenge(_ sender: UIBarButtonItem) {
-        var name: String = "Challenge"
+        var name = ""
         if (nameTextField.text != nil && nameTextField.text! != "") {
             name = nameTextField.text!.trimmingCharacters(in: .whitespaces)
-        }
-        let challenge = Challenge.init(
-            name: name,
-            date: Date.init(),
-            goal: goalPicker.selectedRow(inComponent: 0) + 1,
-            started: true)
-        challenge.set_date(startDatePicker.date)
-        
-        var shouldDismiss = true
-        switch mode {
-          case .add:
-            shouldDismiss = ChallengeFactory.prependChallenge(with: challenge)
-          case .edit:
-            ChallengeFactory.updateChallenge(at: challengeIndex!, with: challenge)
-        }
-        
-        if shouldDismiss {
-            dismiss()
+            
+            let attr = (name, goalPicker.selectedRow(inComponent: 0) + 1, startDatePicker.date, true)
+            
+            var shouldDismiss = true
+            switch mode {
+            case .add:
+                shouldDismiss = CDChallenge.createChallenge(attr, inContext: container!.viewContext)
+            case .edit:
+                _ = CDChallenge.updateChallenge(inContext: container!.viewContext, unique: challenge!.unique!, with: attr)
+            }
+            
+            if shouldDismiss {
+                dismiss()
+            } else {
+                let alertController = UIAlertController(title: "Duplicated name", message: "Challenge name should be unique", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alertController, animated: true, completion: {
+                    self.nameTextField.text = ""
+                })
+            }
+
         } else {
-            let alertController = UIAlertController(title: "Duplicated name", message: "Challenge name should be unique", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Name is blank", message: "Challenge name is required", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: { 
-                self.nameTextField.text = ""
-            })
+            present(alertController, animated: true, completion: nil)
         }
+
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
@@ -113,8 +116,8 @@ class AddChallengeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if mode == .edit {
-            startDatePicker.date = challenge!.date
-            nameTextField.text = challenge!.name
+            startDatePicker.date = (challenge!.date as Date?)!
+            nameTextField.text = challenge!.unique
         }
         startDatePicker.changeToWhiteFont()
         updateCountFor()

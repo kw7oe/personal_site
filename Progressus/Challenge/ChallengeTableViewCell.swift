@@ -10,7 +10,7 @@ import UIKit
 
 class ChallengeTableViewCell: UITableViewCell {
     
-    var challenge: Challenge! {
+    var challenge: CDChallenge! {
         didSet {
             updateUI()
         }
@@ -21,7 +21,7 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var percentageLabel: UILabel!
     
     func updateUI() {
-        challengeNameLabel.text = challenge.name
+        challengeNameLabel.text = challenge.unique
         dayTimeLabel.text = challenge.progressDescription
         percentageLabel.text = challenge.progressPercentageString + "%"
         customize()
