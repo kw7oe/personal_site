@@ -142,7 +142,7 @@
         <!--Progressus-->
         <scene sceneID="Laj-d7-HMc">
             <objects>
-                <tableViewController id="y1k-zv-1cn" customClass="ChallengesTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChallengesTableViewController" id="y1k-zv-1cn" customClass="ChallengesTableViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="95" sectionHeaderHeight="18" sectionFooterHeight="18" id="h1R-tr-PEA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,7 +778,7 @@
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qzE-A6-qdN"/>
         <segue reference="FrI-Eg-KNn"/>
-        <segue reference="ilK-X0-4do"/>
     </inferredMetricsTieBreakers>
 </document>

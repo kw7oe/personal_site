@@ -48,11 +48,6 @@
                BlueprintName = "ProgressusTests"
                ReferencedContainer = "container:Progressus.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "AddChallengeViewControllerTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

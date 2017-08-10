@@ -37,16 +37,12 @@ class DataMigrationTests: XCTestCase {
         
         XCTAssertFalse(DataMigration.migratedToCoreData)
         setupPreviousChallengeData()
-        DataMigration.migrateToCoreData(inContext: context)
+        DataMigration.migrateToCoreData(inContext: context)        
         
-        XCTAssertNotNil(CDChallenge.all(inContext: context))
-        
-        if let challenges = CDChallenge.all(inContext: context) {
+        let challenges = CDChallenge.all(inContext: context)
             
-            
-            XCTAssertEqual(challenges.count, 1)
-            XCTAssertEqual(challenges[0].unique!, "Workout")
-        }
+        XCTAssertEqual(challenges.count, 1)
+        XCTAssertEqual(challenges[0].unique!, "Workout")
         
         XCTAssert(DataMigration.migratedToCoreData)
     }

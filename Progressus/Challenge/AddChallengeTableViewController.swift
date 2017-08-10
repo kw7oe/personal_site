@@ -15,7 +15,7 @@ enum ViewMode {
 
 class AddChallengeTableViewController: UITableViewController {
     
-    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    var context: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     var challenge: CDChallenge?
     var mode: ViewMode {
         if challenge != nil {
@@ -70,9 +70,9 @@ class AddChallengeTableViewController: UITableViewController {
             var shouldDismiss = true
             switch mode {
             case .add:
-                shouldDismiss = CDChallenge.createChallenge(attr, inContext: container!.viewContext)
+                shouldDismiss = CDChallenge.createChallenge(attr, inContext: context!)
             case .edit:
-                _ = CDChallenge.updateChallenge(inContext: container!.viewContext, unique: challenge!.unique!, with: attr)
+                _ = CDChallenge.updateChallenge(inContext: context!, unique: challenge!.unique!, with: attr)
             }
             
             if shouldDismiss {

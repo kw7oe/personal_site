@@ -20,8 +20,7 @@ class CDChallengeTests: XCTestCase {
         let context = setUpInMemoryManagedObjectContext()
         let challenges = CDChallenge.all(inContext: context)
         
-        XCTAssertNotNil(challenges)
-        XCTAssert(challenges!.isEmpty)
+        XCTAssert(challenges.isEmpty)
     }
     
     func testFindChallenge() {
@@ -42,9 +41,8 @@ class CDChallengeTests: XCTestCase {
             
             let challenges = CDChallenge.all(inContext: context)
             
-            XCTAssertNotNil(challenges)
-            XCTAssertEqual(challenges!.count, 1)
-            XCTAssertEqual(challenges![0], returnChallenge)
+            XCTAssertEqual(challenges.count, 1)
+            XCTAssertEqual(challenges[0], returnChallenge)
         } catch {
             print(error)
         }
@@ -77,7 +75,7 @@ class CDChallengeTests: XCTestCase {
         
         let challenges = CDChallenge.all(inContext: context)
         XCTAssertNotNil(challenges)
-        XCTAssertEqual(challenges!.count, 1)
+        XCTAssertEqual(challenges.count, 1)
         
         XCTAssertNotNil(updatedChallenge)
         XCTAssertEqual(updatedChallenge!.goal, 15)
@@ -109,18 +107,4 @@ class CDChallengeTests: XCTestCase {
     
 }
 
-func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
-    let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])
-    let persistantStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
-    
-    do {
-        try persistantStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-    } catch {
-        print("Adding in-memory persistent store failed")
-    }
-    
-    let managedObjectContext = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
-    managedObjectContext.persistentStoreCoordinator = persistantStoreCoordinator
-    
-    return managedObjectContext
-}
+

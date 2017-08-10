@@ -7,24 +7,26 @@
 //
 
 import XCTest
+import CoreData
 @testable import Progressus
 
 class AddChallengeViewControllerTests: XCTestCase {
     
     var controller: AddChallengeTableViewController!
+    var context: NSManagedObjectContext?
     
     override func setUp() {
         super.setUp()
-        
-        ChallengeFactory.userDefaults = UserDefaults(suiteName: "Testing")!
+        context = setUpInMemoryManagedObjectContext()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         controller = storyboard.instantiateViewController(withIdentifier: "AddChallengeTableViewController") as! AddChallengeTableViewController
+        controller.context = context
         
         XCTAssertNotNil(controller.view)
     }
     
     override func tearDown() {
-        UserDefaults().removePersistentDomain(forName: "Testing")
+        context = nil
         super.tearDown()
     }
     
@@ -38,17 +40,20 @@ class AddChallengeViewControllerTests: XCTestCase {
         XCTAssertEqual(controller.textCountLabel.text, "5/20")
     }
     
+    func testModeShouldBeAdd() {
+        XCTAssertEqual(controller.mode, .add)
+    }
+    
     func testSaveChallenge() {
         saveChallenge()
         
-        if let challenges = ChallengeFactory.challenges {
-            XCTAssertEqual(challenges.count, 1)
-            let challenge = challenges[0]
-            
-            XCTAssertEqual(challenge.name, "Workout")
-            XCTAssertEqual(challenge.goal, 7)
-            XCTAssert(challenge.started)
-        }
+        let challenges = CDChallenge.all(inContext: context!)
+        XCTAssertEqual(challenges.count, 1)
+        let challenge = challenges[0]
+        
+        XCTAssertEqual(challenge.unique, "Workout")
+        XCTAssertEqual(challenge.goal, 7)
+        XCTAssert(challenge.started)
     }
     
     func testSaveChallengeWithDuplicateName() {
@@ -57,16 +62,17 @@ class AddChallengeViewControllerTests: XCTestCase {
         controller.nameTextField.text = "Workout"
         controller.saveChallenge(UIBarButtonItem.init())
         
-        XCTAssertEqual(ChallengeFactory.challenges?.count, 1)
+        let challenges = CDChallenge.all(inContext: context!)
+        XCTAssertEqual(challenges.count, 1)
     }
     
     func testShouldStripeWhiteSpaceForChallengeName() {
         saveChallenge("Workout ")
-        
-        XCTAssertEqual(ChallengeFactory.challenges![0].name, "Workout")
-        
         saveChallenge("Read Books")
-        XCTAssertEqual(ChallengeFactory.challenges![0].name, "Read Books")
+        
+        let challenges = CDChallenge.all(inContext: context!)
+        XCTAssertEqual(challenges[1].unique, "Workout")
+        XCTAssertEqual(challenges[0].unique, "Read Books")
     }
     
     func saveChallenge(_ text: String = "Workout") {
@@ -74,7 +80,7 @@ class AddChallengeViewControllerTests: XCTestCase {
         controller.goalPicker.selectRow(6, inComponent: 0, animated: false)
         controller.saveChallenge(UIBarButtonItem.init())
         
-        XCTAssertNotNil(ChallengeFactory.challenges)
+        XCTAssertNotNil(CDChallenge.all(inContext: context!))
     }
     
 }

@@ -16,17 +16,18 @@ class ChallengesTableViewController: UITableViewController {
         static let SettingsSegue = "Settings Segue"
         static let AddChallengeSegue = "Add Challenge Segue"
     }
-    
-//    var challenges: [Challenge]? {
-//        return ChallengeFactory.challenges
-//    }
 
-    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
-    
-    var challenges: [CDChallenge]? {
-        return CDChallenge.all(inContext: container!.viewContext)
+    var context: NSManagedObjectContext = AppDelegate.container.viewContext
+    var challenges: [CDChallenge] {
+        return CDChallenge.all(inContext: context)
     }
-    var blankView: BlankView!
+    var blankView: BlankView {
+        return BlankView(
+            frame: tableView.frame,
+            title: "No Challenge Available",
+            detail: "You can add up to 4 challenges."
+        )
+    }
     
     private func updateColorScheme() {
         navigationController?.navigationBar.none()
@@ -44,11 +45,6 @@ class ChallengesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        blankView = BlankView(
-            frame: tableView.frame,
-            title: "No Challenge Available",
-            detail: "You can add up to 4 challenges."
-        )
         tableView.reloadData()
     }
     
@@ -58,7 +54,7 @@ class ChallengesTableViewController: UITableViewController {
             if let vc = segue.destination as? CounterViewController {
                 if let cell = sender as? ChallengeTableViewCell {
                     let index = tableView?.indexPath(for: cell)
-                    vc.challenge = challenges![index!.section]
+                    vc.challenge = challenges[index!.section]
                 }
             }
         }
@@ -83,11 +79,11 @@ class ChallengesTableViewController: UITableViewController {
 extension ChallengesTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if challenges == nil || challenges?.count == 0 {
+        if challenges.count == 0 {
             tableView.backgroundView = blankView
         } else {
             tableView.backgroundView = nil
-            return challenges!.count
+            return challenges.count
         }
         return 0
     }
@@ -101,7 +97,7 @@ extension ChallengesTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge Cell", for: indexPath)
         
         if let challengeCell = cell as? ChallengeTableViewCell {
-            challengeCell.challenge = challenges?[indexPath.section]
+            challengeCell.challenge = challenges[indexPath.section]
         }
         
         return cell
@@ -116,7 +112,7 @@ extension ChallengesTableViewController {
         switch editingStyle  {
         case .delete:
             let index = indexPath.section
-            CDChallenge.deleteChallenge(inContext: container!.viewContext, unique: challenges![index].unique!)
+            _ = CDChallenge.deleteChallenge(inContext: context, unique: challenges[index].unique!)
             tableView.deleteSections(IndexSet([index]), with: .fade)
         default: break
         }

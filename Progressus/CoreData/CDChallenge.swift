@@ -66,6 +66,13 @@ class CDChallenge: NSManagedObject {
         cdChallenge.goal = attr.goal ?? 7
         cdChallenge.date = attr.date
         cdChallenge.started = attr.started
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+            return false
+        }
         return true
     }
     
@@ -123,19 +130,17 @@ class CDChallenge: NSManagedObject {
         return false
     }
     
-    class func all(inContext context: NSManagedObjectContext) -> [CDChallenge]? {
+    class func all(inContext context: NSManagedObjectContext) -> [CDChallenge] {
         
         let request: NSFetchRequest<CDChallenge> = CDChallenge.fetchRequest()
-        
         do {
             let result = try context.fetch(request)
-            
-            return result
+            return result.reversed()
         } catch {
             print(error)
         }
         
-        return nil
+        return []
     }
     
     class func count(inContext context: NSManagedObjectContext) -> Int {

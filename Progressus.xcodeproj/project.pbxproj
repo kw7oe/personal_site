@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A1D513B1F34519A005857CF /* ChallengeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513A1F34519A005857CF /* ChallengeFactory.swift */; };
 		2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */; };
+		2A24D4701F3C202B000FD630 /* EditChallengeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A24D46F1F3C202B000FD630 /* EditChallengeViewControllerTests.swift */; };
+		2A24D4721F3C239B000FD630 /* ChallengeTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A24D4711F3C239B000FD630 /* ChallengeTableViewControllerTests.swift */; };
+		2A24D4741F3C24A2000FD630 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A24D4731F3C24A2000FD630 /* TestHelper.swift */; };
 		2A28C0881F396B3200120D2F /* DataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28C0871F396B3200120D2F /* DataMigration.swift */; };
 		2A28C08A1F396B5000120D2F /* DataMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28C0891F396B5000120D2F /* DataMigrationTests.swift */; };
 		2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */; };
@@ -72,6 +75,9 @@
 /* Begin PBXFileReference section */
 		2A1D513A1F34519A005857CF /* ChallengeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactory.swift; sourceTree = "<group>"; };
 		2A1D513C1F3451B5005857CF /* ChallengeFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFactoryTests.swift; sourceTree = "<group>"; };
+		2A24D46F1F3C202B000FD630 /* EditChallengeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditChallengeViewControllerTests.swift; sourceTree = "<group>"; };
+		2A24D4711F3C239B000FD630 /* ChallengeTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewControllerTests.swift; sourceTree = "<group>"; };
+		2A24D4731F3C24A2000FD630 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		2A28C0871F396B3200120D2F /* DataMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMigration.swift; sourceTree = "<group>"; };
 		2A28C0891F396B5000120D2F /* DataMigrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMigrationTests.swift; sourceTree = "<group>"; };
 		2A2BE1F11F32DB1F0018D96F /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A24D4731F3C24A2000FD630 /* TestHelper.swift */,
+				2A24D4711F3C239B000FD630 /* ChallengeTableViewControllerTests.swift */,
+				2A24D46F1F3C202B000FD630 /* EditChallengeViewControllerTests.swift */,
 				2A89B8951F3976E3004CEFBE /* RadiusButtonTests.swift */,
 				2A28C0891F396B5000120D2F /* DataMigrationTests.swift */,
 				2A7E3DA01F383746003A044C /* CDChallengeTests.swift */,
@@ -459,10 +468,13 @@
 				2A1D513D1F3451B5005857CF /* ChallengeFactoryTests.swift in Sources */,
 				2A2BE1F41F32DC680018D96F /* ChallengeTests.swift in Sources */,
 				2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */,
+				2A24D4701F3C202B000FD630 /* EditChallengeViewControllerTests.swift in Sources */,
 				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
 				2A89B8961F3976E3004CEFBE /* RadiusButtonTests.swift in Sources */,
 				2A7E3DA11F383746003A044C /* CDChallengeTests.swift in Sources */,
 				2AC9B2791F35AB0A00DBCF1F /* AddChallengeViewControllerTests.swift in Sources */,
+				2A24D4721F3C239B000FD630 /* ChallengeTableViewControllerTests.swift in Sources */,
+				2A24D4741F3C24A2000FD630 /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
