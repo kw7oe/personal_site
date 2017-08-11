@@ -15,7 +15,7 @@
         <!--Counter View Controller-->
         <scene sceneID="my9-GK-ANl">
             <objects>
-                <viewController id="9VN-cr-0Qb" customClass="CounterViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CounterViewController" id="9VN-cr-0Qb" customClass="CounterViewController" customModule="Progressus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4U1-0Z-49Z"/>
                         <viewControllerLayoutGuide type="bottom" id="UGg-Lx-MCx"/>
@@ -778,7 +778,7 @@
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qzE-A6-qdN"/>
         <segue reference="FrI-Eg-KNn"/>
+        <segue reference="ilK-X0-4do"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -44,7 +44,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func resetStateIfUITesting() {
         if ProcessInfo.processInfo.arguments.contains("UI-Testing") {
+            // Reset User Defaults
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            
+            // Reset Core Data
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDChallenge")
+            let delRequest = NSBatchDeleteRequest(fetchRequest: request)
+            let context = persistentContainer.viewContext
+            let coord = persistentContainer.persistentStoreCoordinator
+            
+            do {
+                try coord.execute(delRequest, with: context)
+            } catch {
+                print(error)
+            }
+            
+            // Initialize Data
+            _ = CDChallenge.createChallenge(("Workout", 7, Date.init(), true), inContext: context)
         }
     }
     

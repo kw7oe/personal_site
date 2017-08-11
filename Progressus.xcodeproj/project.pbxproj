@@ -53,6 +53,7 @@
 		2AD2EE171EB38D220002A1D3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE121EB38D220002A1D3 /* Extension.swift */; };
 		2AD2EE181EB38D220002A1D3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE131EB38D220002A1D3 /* Parser.swift */; };
 		2AD2EE191EB38D220002A1D3 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2EE141EB38D220002A1D3 /* Quotes.swift */; };
+		2AE9DD6D1F3D649F004026C1 /* CounterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9DD6C1F3D649F004026C1 /* CounterViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		2AD2EE121EB38D220002A1D3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2AD2EE131EB38D220002A1D3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		2AD2EE141EB38D220002A1D3 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		2AE9DD6C1F3D649F004026C1 /* CounterViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		2A62D2981F1F053D00ED7D42 /* ProgressusTests */ = {
 			isa = PBXGroup;
 			children = (
+				2AE9DD6C1F3D649F004026C1 /* CounterViewControllerTests.swift */,
 				2A24D4731F3C24A2000FD630 /* TestHelper.swift */,
 				2A24D4711F3C239B000FD630 /* ChallengeTableViewControllerTests.swift */,
 				2A24D46F1F3C202B000FD630 /* EditChallengeViewControllerTests.swift */,
@@ -470,6 +473,7 @@
 				2A2BE1F21F32DB1F0018D96F /* SettingsTests.swift in Sources */,
 				2A24D4701F3C202B000FD630 /* EditChallengeViewControllerTests.swift in Sources */,
 				2A62D2A21F1F055800ED7D42 /* ParserTests.swift in Sources */,
+				2AE9DD6D1F3D649F004026C1 /* CounterViewControllerTests.swift in Sources */,
 				2A89B8961F3976E3004CEFBE /* RadiusButtonTests.swift in Sources */,
 				2A7E3DA11F383746003A044C /* CDChallengeTests.swift in Sources */,
 				2AC9B2791F35AB0A00DBCF1F /* AddChallengeViewControllerTests.swift in Sources */,

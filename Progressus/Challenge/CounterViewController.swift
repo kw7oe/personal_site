@@ -11,8 +11,7 @@ import CoreData
 
 class CounterViewController: UIViewController {
     
-    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
-    
+    var context = AppDelegate.container.viewContext
     var challenge: CDChallenge!
     
     var timer = Timer()
@@ -52,13 +51,11 @@ class CounterViewController: UIViewController {
         )
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
-    
-
     }
     
     func deleteChallenge() {
         let alertController = UIAlertController.destrutiveAlert(title: "Delete Challenge") { (action) in
-            _ = CDChallenge.deleteChallenge(inContext: self.container!.viewContext, unique: self.challenge.unique!)
+            _ = CDChallenge.deleteChallenge(inContext: self.context, unique: self.challenge.unique!)
             _ = self.navigationController?.popViewController(animated: true)
         }
         alertController.transitioningDelegate = self

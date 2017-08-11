@@ -29,17 +29,16 @@ class ProgressusUITests: XCTestCase {
     func testAddChallenge() {
         let count = app.tables.cells.count + 1
         
-        addChallenge()
+        addChallenge(name: "Foo")
         
         XCTAssertEqual(app.tables.cells.count, count)
         
         let cellLabel = app.tables.cells.element(boundBy: 0).staticTexts.element(boundBy: 1)
-        XCTAssertEqual(cellLabel.label, "Foobar")
+        XCTAssertEqual(cellLabel.label, "Foo")
     }
     
     func testAddChallengeWithDuplicateName() {
-        addChallenge()
-        addChallenge()
+        addChallenge(name: "Workout")
         
         XCTAssertEqual(app.alerts.count,  1)
         app.alerts["Duplicated name"].buttons["OK"].tap()
@@ -51,8 +50,6 @@ class ProgressusUITests: XCTestCase {
     }
     
     func testRemoveChallenge() {
-        addChallenge()
-        
         let tablesQuery = app.tables
         let cell = tablesQuery.cells.element(boundBy: 0)
         let count = app.tables.cells.count - 1
@@ -62,7 +59,29 @@ class ProgressusUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, count)
     }
     
-    func addChallenge() {
+    func testTapChallengeCell() {
+        app.tables.cells.element(boundBy: 0).tap()
+        
+        app.buttons["RESET"].tap()
+        app.alerts["Reset Challenge"].buttons["YES"].tap()
+        
+        XCTAssertNotNil(app.buttons["START"])
+        
+        let moreButton = app.navigationBars["Progressus.CounterView"].buttons["More"]
+        
+        moreButton.tap()
+        
+        let sheetsQuery = app.sheets
+        sheetsQuery.buttons["Edit"].tap()
+        app.navigationBars["Progressus.AddChallengeTableView"].buttons["Cancel"].tap()
+        
+        moreButton.tap()
+        sheetsQuery.buttons["Delete Challege"].tap()
+        app.alerts["Delete Challenge"].buttons["YES"].tap()
+        
+    }
+    
+    func addChallenge(name: String) {
         let count = app.tables.cells.count
         
         if count < 4 {
@@ -70,7 +89,7 @@ class ProgressusUITests: XCTestCase {
             
             let challengeNameSearchField = app.tables.searchFields["Challenge Name"]
             challengeNameSearchField.tap()
-            challengeNameSearchField.typeText("Foobar")
+            challengeNameSearchField.typeText(name)
             
             app.navigationBars["Progressus.AddChallengeTableView"].buttons["Save"].tap()
         }

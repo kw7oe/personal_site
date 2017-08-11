@@ -47,6 +47,16 @@ class ChallengeTableViewControllerTests: XCTestCase {
         let sec = controller.numberOfSections(in: controller.tableView)
         XCTAssertEqual(sec, controller.challenges.count)
     }
+        
+    func testCell() {
+        let challenge = addAndReturnChallenge(unique: "Workout", context: context!)
+        let cell = controller.tableView(controller.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ChallengeTableViewCell
+            
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell!.challengeNameLabel.text, challenge.unique)
+        XCTAssertEqual(cell!.dayTimeLabel.text, challenge.progressDescription)
+        XCTAssertEqual(cell!.percentageLabel.text, challenge.progressPercentageString + "%")
+    }
     
     
 }
