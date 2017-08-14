@@ -80,6 +80,8 @@ class CounterViewController: UIViewController {
             }
             self.challenge.date = NSDate.init()
             self.challenge.started = Settings.startOnReset
+            
+            self.saveContext()
 
             self.button.setTitle(title, for: .normal)
             self.setProgress()
@@ -90,9 +92,19 @@ class CounterViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    private func saveContext() {
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
+    
     private func startTimer() {
         challenge.date = NSDate.init()
         challenge.started = true
+        
+        saveContext()
 
         button.setTitle("RESET", for: .normal)
         timer = Timer.scheduledTimer(

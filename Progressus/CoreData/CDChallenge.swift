@@ -48,6 +48,8 @@ class CDChallenge: NSManagedObject {
         cdChallenge.goal = Int16.init(challenge.goal)
         cdChallenge.date = NSDate(timeInterval: 0, since: challenge.date)
         cdChallenge.started = challenge.started
+        
+        saveContext(context: context)
         return cdChallenge
     }
     
@@ -67,12 +69,8 @@ class CDChallenge: NSManagedObject {
         cdChallenge.date = attr.date
         cdChallenge.started = attr.started
         
-        do {
-            try context.save()
-        } catch {
-            print(error)
-            return false
-        }
+        saveContext(context: context)
+        
         return true
     }
     
@@ -103,10 +101,19 @@ class CDChallenge: NSManagedObject {
             found!.goal = attr.goal ?? found!.goal
             found!.date = attr.date
             found!.started = attr.started
+            saveContext(context: context)
             return true
         }
         
         return false
+    }
+    
+    class func saveContext(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
     enum Attribute {
@@ -123,6 +130,7 @@ class CDChallenge: NSManagedObject {
         
         if found != nil {
             context.delete(found!)
+            saveContext(context: context)
             return true
         }
 

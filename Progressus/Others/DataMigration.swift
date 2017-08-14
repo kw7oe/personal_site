@@ -53,9 +53,12 @@ class DataMigration {
     }
     
     static func migrateToCoreData(inContext context: NSManagedObjectContext) {
+        print("Migrating to core data")
+        
         if let challenges = ChallengeFactory.challenges {
             do {
                 try challenges.forEach() { (challenge) in
+                    print(challenge)
                     _ = try CDChallenge.findOrCreateChallenge(challenge, inContext: context)
                 }
             } catch {

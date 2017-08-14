@@ -28,10 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DataMigration.migrateData()
         }
         
-//        if !Settings.migratedToCoreData {
-//            CDChallenge.printData(inContext: persistentContainer.viewContext)
-//            Settings.migrateToCoreData()
-//        }
+        if !DataMigration.migratedToCoreData {
+            DataMigration.migrateToCoreData(inContext: persistentContainer.viewContext)
+        }
         
         if ReminderFactory.shouldRemovedPendingNotifications {
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
