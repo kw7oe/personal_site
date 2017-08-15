@@ -18,6 +18,10 @@ class ProgressPieView: UIView {
         super.init(coder: aDecoder)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = CustomTheme.backgroundColor()

@@ -118,7 +118,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XmM-kB-fO8">
-                        <barButtonItem key="rightBarButtonItem" title="More" id="V4h-4l-MPG">
+                        <barButtonItem key="rightBarButtonItem" image="More" id="V4h-4l-MPG">
                             <connections>
                                 <action selector="moreOptions:" destination="9VN-cr-0Qb" id="kyY-gl-Aps"/>
                             </connections>
@@ -612,10 +612,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-Wd-GWF">
-                                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="27"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wpX-mI-Mb1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="293.5" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="293.5" height="27"/>
                                                             <accessibility key="accessibilityConfiguration" label="Challenge Name">
                                                                 <accessibilityTraits key="traits" searchField="YES"/>
                                                             </accessibility>
@@ -627,7 +627,7 @@
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-n7-lp8">
-                                                            <rect key="frame" x="293.5" y="0.0" width="10.5" height="28"/>
+                                                            <rect key="frame" x="293.5" y="0.0" width="10.5" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -775,10 +775,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="More" width="16" height="16"/>
         <image name="Settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FrI-Eg-KNn"/>
         <segue reference="ilK-X0-4do"/>
+        <segue reference="FrI-Eg-KNn"/>
     </inferredMetricsTieBreakers>
 </document>

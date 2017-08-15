@@ -50,6 +50,7 @@ class CounterViewController: UIViewController {
             })
         )
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.view.tintColor = CustomTheme.defaultTintColor()
         present(alertController, animated: true, completion: nil)
     }
     
