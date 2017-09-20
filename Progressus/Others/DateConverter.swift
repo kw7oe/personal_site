@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Parser {
+class DateConverter {
     
     enum Format:String {
         case hour = "hour"
@@ -22,7 +22,7 @@ class Parser {
         case Multiple((Int) -> [Int]) // E.g. 3 Days 3 Hours
     }
     
-    static let converter: Dictionary<Format, Operation> = [
+    static let convertionFormula: Dictionary<Format, Operation> = [
         .hour: Operation.Single({ $0 / 60 / 60 }),
         .day: Operation.Single({ $0 / 60 / 60 / 24 }),
         .week: Operation.Single({ $0 / 60 / 60 / 24 / 7}),
@@ -35,11 +35,11 @@ class Parser {
     
        /**
      Parse Date into String format.
-     - Parameter date: the date you want to parse.
+     - Parameter date: the date you want to convert.
      - Returns: Date in String. E.g. Jan 17, 2017
      
      */
-    class func parse(date: Date) -> String {
+    class func convert(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         return dateFormatter.string(from: date)
@@ -47,7 +47,7 @@ class Parser {
     
     /**
         Parse Time into String format.
-        - Parameter time: the time you want to parse.
+        - Parameter time: the time you want to convert.
         - Returns: Time in String. E.g. 7:29 AM
      
      */
@@ -67,29 +67,29 @@ class Parser {
         - Returns: An array of tuples. E.g. [(time: "7", "  days  "), (time: "5", "  hours  ")]
      
         ```
-        Parser.parseToArray(time: 28800, unit: .hour)
+        DateConverter.parseToArray(time: 28800, unit: .hour)
         ```
     */
     class func parseToArray(time: Int, basedOn format: Format) -> [(time: String, unit: String)] {
         var unit: [Int] = [0];
         var result: [(String, String)] = []
-        if let operation = converter[format] {
+        if let operation = convertionFormula[format] {
             
             switch operation {
                 
             case .Single(let function):
                 unit[0] =  function(time)
-                result.append(Parser.parse(time: unit[0], basedOn: format))
+                result.append(DateConverter.parse(time: unit[0], basedOn: format))
                 
             case .Multiple(let function):
                 unit = function(time)
                 let string = format.rawValue.components(separatedBy: " ")
                 
                 let firstFormat = Format.init(rawValue: string[0])
-                let firstResult = Parser.parse(time: unit[0], basedOn: firstFormat!)
+                let firstResult = DateConverter.parse(time: unit[0], basedOn: firstFormat!)
                 
                 let secondFormat = Format.init(rawValue: string[1])
-                let secondResult = Parser.parse(time: unit[1], basedOn: secondFormat!)
+                let secondResult = DateConverter.parse(time: unit[1], basedOn: secondFormat!)
                 result.append(firstResult)
                 result.append(secondResult)
             }
@@ -99,7 +99,7 @@ class Parser {
     
     /**
      Parse Time into String format based on given Format.
-     - Parameter time: the time you want to parse.
+     - Parameter time: the time you want to convert.
      - Parameter basedOn: the format
      - Returns: A Tuple of String. E.g. ("7", "  days  ")
      

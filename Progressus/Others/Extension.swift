@@ -52,13 +52,13 @@ extension String {
     }
             
     func boldSystemFont(ofSize size: CGFloat) -> NSAttributedString {
-        let boldAttribute: [String:Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: size)]
+        let boldAttribute: [String:Any] = [NSAttributedStringKey.font.rawValue: UIFont.boldSystemFont(ofSize: size)]
         let string = NSAttributedString(string: self, attributes: boldAttribute)
         return string
     }
     
     func italicSystemFont(ofSize size: CGFloat) -> NSAttributedString {
-        let italicAttribute: [String:Any] = [NSFontAttributeName: UIFont.italicSystemFont(ofSize: size)]
+        let italicAttribute: [String:Any] = [NSAttributedStringKey.font.rawValue: UIFont.italicSystemFont(ofSize: size)]
         let string = NSAttributedString(string: self, attributes: italicAttribute)
         return string
     }

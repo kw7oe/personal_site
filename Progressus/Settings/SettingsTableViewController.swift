@@ -61,7 +61,8 @@ class SettingsTableViewController: UITableViewController {
             } else {
                 notificationService.removeAllNotificationRequests()
             }
-        }        
+        }
+        
         Settings.isReminderOn = sender.isOn
         tableView.reloadData()
     }
@@ -105,7 +106,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     // ColorButtons Target Action
-    func updateColor(sender: ColorButton) {
+    @objc func updateColor(sender: ColorButton) {
         colorButtons.forEach { (button) in
             button.unselect()
         }

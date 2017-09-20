@@ -69,8 +69,8 @@ class ProgressPieView: UIView {
     }
     
     private func styleString(_ text: String, unit: String) -> NSMutableAttributedString {
-        let bold: [String:Any] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 36)]
-        let italic: [String:Any] = [NSFontAttributeName: UIFont.italicSystemFont(ofSize: 16)]
+        let bold: [String:Any] = [NSAttributedStringKey.font.rawValue: UIFont.boldSystemFont(ofSize: 36)]
+        let italic: [String:Any] = [NSAttributedStringKey.font.rawValue: UIFont.italicSystemFont(ofSize: 16)]
         let result = NSMutableAttributedString()
         let string = NSMutableAttributedString(string: "\(text)\n", attributes: bold)
         let unitString = NSMutableAttributedString(string: unit, attributes: italic)

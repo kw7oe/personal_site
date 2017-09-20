@@ -108,7 +108,7 @@ extension RemindersTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.ReminderCell, for: indexPath)
         
         cell.textLabel?.text = data?[indexPath.row].identifier
-        cell.addGrayDetail(text: Parser.parse(time: data?[indexPath.row].time))
+        cell.addGrayDetail(text: DateConverter.parse(time: data?[indexPath.row].time))
         
         // Dark Theme
         cell.customize()
