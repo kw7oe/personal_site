@@ -9,32 +9,27 @@
 import XCTest
 @testable import Progressus
 
-class ParserTests: XCTestCase {
+class DateConverterTest: XCTestCase {
     
-    func testParseDate() {
-        let date = Date.init(date: "2017-1-17")
-        XCTAssertEqual("Jan 17, 2017", DateConverter.parse(date: date))
-    }
-    
-    func testParseTime() {
+    func testConvertTime() {
         let time = Date.init(time: "7:29")
-        XCTAssertEqual("7:29 AM", DateConverter.parse(time: time))
+        XCTAssertEqual("7:29 AM", DateConverter.convert(time: time))
     }
     
-    func testParseTimePM() {
+    func testConvertTimePM() {
         let time = Date.init(time: "14:30")
-        XCTAssertEqual("2:30 PM", DateConverter.parse(time: time))
+        XCTAssertEqual("2:30 PM", DateConverter.convert(time: time))
     }
     
-    func testParse() {
-        let testInput = DateConverter.parse(time: 7, basedOn: .day)
+    func testConvert() {
+        let testInput = DateConverter.convert(time: 7, basedOn: .day)
         XCTAssert(testInput == (time: "7", unit: "  days  "))
     }
     
-    func testParseToArray() {
+    func testConvertToArray() {
         let day = 1 * 24 * 60 * 60
         let eightHour = 8 * 60 * 60
-        let testInput = DateConverter.parseToArray(time: day + eightHour, basedOn: .dayHour)
+        let testInput = DateConverter.convertToArray(time: day + eightHour, basedOn: .dayHour)
         XCTAssert(testInput[0] == (time: "1", unit: "  day  "))
         XCTAssert(testInput[1] == (time: "8", unit: "  hours  "))
     }

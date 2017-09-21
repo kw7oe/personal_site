@@ -25,7 +25,7 @@ class CDRecord: NSManagedObject {
     
     var duration: Int {
         let durationInSeconds =  endDate?.timeIntervalSince(startDate! as Date)
-        let result = DateConverter.parseToArray(time: Int(durationInSeconds ?? 0), basedOn: .day)
+        let result = DateConverter.convertToArray(time: Int(durationInSeconds ?? 0), basedOn: .day)
         return Int(result.first!.time) ?? 0
     }
     

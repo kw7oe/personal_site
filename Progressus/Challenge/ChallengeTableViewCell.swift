@@ -24,10 +24,10 @@ class ChallengeTableViewCell: UITableViewCell {
         challengeNameLabel.text = challenge.unique
         dayTimeLabel.text = challenge.progressDescription
         percentageLabel.text = challenge.progressPercentageString + "%"
-        customize()
+        customizeCell()
     }
     
-    override func customize() {
+    func customizeCell() {
         backgroundColor = CustomTheme.cellBackgroundColor()
         selectedBackgroundView = CustomTheme.cellSelectedView()
         contentView.layoutMargins.left = 25

@@ -67,8 +67,7 @@ class ProgressusUITests: XCTestCase {
         
         XCTAssertNotNil(app.buttons["START"])
         
-        let moreButton = app.navigationBars["Progressus.CounterView"].buttons["More"]
-        
+        let moreButton = app.navigationBars["Progressus.CounterView"].children(matching: .button).element(boundBy: 1)
         moreButton.tap()
         
         let sheetsQuery = app.sheets
@@ -95,16 +94,15 @@ class ProgressusUITests: XCTestCase {
         }
     }
     
-    func testGoToSetting() {        
-        app.navigationBars["Progressus"].buttons["Settings"].tap()
-        
+    func testGoToSetting() {
+        XCUIApplication().navigationBars["Progressus"].children(matching: .button).element(boundBy: 1).tap()
+    
         let tablesQuery = app.tables
         let cell = tablesQuery.children(matching: .cell).element(boundBy: 4)
         cell.children(matching: .button).element(boundBy: 1).tap()
         cell.children(matching: .button).element(boundBy: 6).tap()
         cell.children(matching: .button).element(boundBy: 5).tap()
         cell.children(matching: .button).element(boundBy: 4).tap()
-        
         
         tablesQuery.switches["Dark Theme"].tap()
     }

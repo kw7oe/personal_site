@@ -32,26 +32,14 @@ class DateConverter {
             return [day, hour]
         })
     ]
-    
-       /**
-     Parse Date into String format.
-     - Parameter date: the date you want to convert.
-     - Returns: Date in String. E.g. Jan 17, 2017
-     
-     */
-    class func convert(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: date)
-    }
-    
+        
     /**
         Parse Time into String format.
         - Parameter time: the time you want to convert.
         - Returns: Time in String. E.g. 7:29 AM
      
      */
-    class func parse(time: Date?) -> String {
+    class func convert(time: Date?) -> String {
         if time == nil { return "" }
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
@@ -60,7 +48,7 @@ class DateConverter {
     }
     
     /**
-        Parse Time(in seconds) into an array of tuples(time, unit).
+        Convert Time(in seconds) into an array of tuples(time, unit).
      
         - Parameter time: time in seconds.
         - Parameter basedOn: The format according to `Parser.Format`
@@ -70,7 +58,7 @@ class DateConverter {
         DateConverter.parseToArray(time: 28800, unit: .hour)
         ```
     */
-    class func parseToArray(time: Int, basedOn format: Format) -> [(time: String, unit: String)] {
+    class func convertToArray(time: Int, basedOn format: Format) -> [(time: String, unit: String)] {
         var unit: [Int] = [0];
         var result: [(String, String)] = []
         if let operation = convertionFormula[format] {
@@ -79,17 +67,17 @@ class DateConverter {
                 
             case .Single(let function):
                 unit[0] =  function(time)
-                result.append(DateConverter.parse(time: unit[0], basedOn: format))
+                result.append(DateConverter.convert(time: unit[0], basedOn: format))
                 
             case .Multiple(let function):
                 unit = function(time)
                 let string = format.rawValue.components(separatedBy: " ")
                 
                 let firstFormat = Format.init(rawValue: string[0])
-                let firstResult = DateConverter.parse(time: unit[0], basedOn: firstFormat!)
+                let firstResult = DateConverter.convert(time: unit[0], basedOn: firstFormat!)
                 
                 let secondFormat = Format.init(rawValue: string[1])
-                let secondResult = DateConverter.parse(time: unit[1], basedOn: secondFormat!)
+                let secondResult = DateConverter.convert(time: unit[1], basedOn: secondFormat!)
                 result.append(firstResult)
                 result.append(secondResult)
             }
@@ -98,13 +86,13 @@ class DateConverter {
     }
     
     /**
-     Parse Time into String format based on given Format.
+     Convert Time into String format based on given Format.
      - Parameter time: the time you want to convert.
      - Parameter basedOn: the format
      - Returns: A Tuple of String. E.g. ("7", "  days  ")
      
      */
-    class func parse(time: Int, basedOn format: Format) -> (time: String, unit: String) {
+    class func convert(time: Int, basedOn format: Format) -> (time: String, unit: String) {
         return (String(time), String.pluralize(time, input: format.rawValue))
     }
 }

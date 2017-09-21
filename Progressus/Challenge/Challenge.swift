@@ -22,7 +22,7 @@ class Challenge: NSObject, NSCoding {
         return -Int(date.timeIntervalSinceNow)
     }
     var progressPercentage: Float {
-        let parseResult = DateConverter.parseToArray(time: time, basedOn: .hour)[0]
+        let parseResult = DateConverter.convertToArray(time: time, basedOn: .hour)[0]
         let progressHour = Int(parseResult.time)!
         let percentage = (Float(progressHour) / Float(goal * 24))
         return percentage
@@ -35,7 +35,7 @@ class Challenge: NSObject, NSCoding {
         return percentageText
     }
     var progressDescription: String {
-        let results = DateConverter.parseToArray(time: time, basedOn: .dayHour)
+        let results = DateConverter.convertToArray(time: time, basedOn: .dayHour)
         return results[0].time + results[0].unit + results[1].time + results[1].unit
     }
     

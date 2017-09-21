@@ -257,7 +257,7 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
         default:
             break;
         }
-        controller.dismiss(animated: true) { completed in
+        controller.dismiss(animated: true) {
             if alertController.message != nil  {
                 self.present(alertController, animated: true, completion: nil)
             }
