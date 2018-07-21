@@ -79,7 +79,7 @@ class CounterViewController: UIViewController {
             if Settings.startOnReset {
                 title = "RESET"
             }
-            self.challenge.date = NSDate.init()
+            self.challenge.date = NSDate.init() as Date
             self.challenge.started = Settings.startOnReset
             
             self.saveContext()
@@ -102,7 +102,7 @@ class CounterViewController: UIViewController {
     }
     
     private func startTimer() {
-        challenge.date = NSDate.init()
+        challenge.date = NSDate.init() as Date
         challenge.started = true
         
         saveContext()

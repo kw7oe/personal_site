@@ -106,7 +106,7 @@ class AddChallengeTableViewController: UITableViewController {
     }
     
     private func updateCountFor() {
-        let count = nameTextField.text?.characters.count ?? 0
+        let count = nameTextField.text?.count ?? 0
         textCountLabel.text = "\(count)/20"
     }
     
@@ -145,8 +145,8 @@ extension AddChallengeTableViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentCharacterCount = textField.text?.characters.count ?? 0
-        let newLength = currentCharacterCount + string.characters.count - range.length
+        let currentCharacterCount = textField.text?.count ?? 0
+        let newLength = currentCharacterCount + string.count - range.length
         return newLength < 21
     }
 }

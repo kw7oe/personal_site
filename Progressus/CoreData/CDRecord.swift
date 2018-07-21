@@ -16,8 +16,8 @@ class CDRecord: NSManagedObject {
         
         let record = CDRecord(context: context)
         record.challenge = try? CDChallenge.findOrCreateChallenge(challenge, inContext: context)
-        record.startDate = NSDate(timeInterval: 0, since: challenge.date)
-        record.endDate = NSDate()
+        record.startDate = NSDate(timeInterval: 0, since: challenge.date) as Date
+        record.endDate = NSDate() as Date
         record.goal = Int16(challenge.goal)
         return record
         

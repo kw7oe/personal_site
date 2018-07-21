@@ -46,7 +46,7 @@ class CDChallenge: NSManagedObject {
         let cdChallenge = CDChallenge(context: context)
         cdChallenge.unique = challenge.name
         cdChallenge.goal = Int16.init(challenge.goal)
-        cdChallenge.date = NSDate(timeInterval: 0, since: challenge.date)
+        cdChallenge.date = NSDate(timeInterval: 0, since: challenge.date) as Date
         cdChallenge.started = challenge.started
         
         saveContext(context: context)
@@ -66,7 +66,7 @@ class CDChallenge: NSManagedObject {
         let cdChallenge = CDChallenge(context: context)
         cdChallenge.unique = attr.unique
         cdChallenge.goal = attr.goal ?? 7
-        cdChallenge.date = attr.date
+        cdChallenge.date = attr.date! as Date
         cdChallenge.started = attr.started
         
         saveContext(context: context)
@@ -99,7 +99,7 @@ class CDChallenge: NSManagedObject {
             let attr = castAttr(tuple)
             found!.unique = attr.unique
             found!.goal = attr.goal ?? found!.goal
-            found!.date = attr.date
+            found!.date = attr.date! as Date
             found!.started = attr.started
             saveContext(context: context)
             return true
