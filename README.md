@@ -9,15 +9,15 @@
 * Create up to 3 reminders
 * Dark theme
 
-## Limitation 
+## Limitation
 * The maximum goals now is limited to 31 days.
-* User can create only up to 3 reminders. 
+* User can create only up to 3 reminders.
 * User can create only up to 4 challenges.
 
 ## To Do
 
-- [X] Multiple Challenges. 
-- [X] User can select custom color.  
+- [X] Multiple Challenges.
+- [X] User can select custom color.
 - [X] Track Previous Record.
 - [ ] Calender.
 - [ ] Social Sharing.
@@ -25,10 +25,6 @@
 - [ ] Walkthrough.
 - [X] Beautiful and Clean UI. _beauty is subjective_
 
-## Feedback 
-If you encounter any issues or have any feedback:
-
-* Send me an email at choongkwern@hotmail.com
 
 
 
