@@ -111,7 +111,7 @@ class SettingsTableViewController: UITableViewController {
             button.unselect()
         }
         sender.selected()
-        Settings.colorIndex = colorButtons.index(of: sender) ?? 0
+        Settings.colorIndex = colorButtons.firstIndex(of: sender) ?? 0
         updateTintColor()
         startOnResetSwitch.customizeColor()
     }

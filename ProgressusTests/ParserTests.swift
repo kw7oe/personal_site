@@ -38,9 +38,10 @@ class DateConverterTest: XCTestCase {
 extension Date {
     
     init(date: String) {
-        let component = date.characters.split(separator: "-").map { (c) -> Int? in
+        let component = date.split(separator: "-").map { (c) -> Int? in
             Int.init(String.init(c))
         }
+        
         var dateComponent = DateComponents()
         dateComponent.year = component[0]
         dateComponent.month = component[1]
@@ -50,7 +51,7 @@ extension Date {
     }
     
     init(time: String) {
-        let component = time.characters.split(separator: ":").map { (c) -> Int? in
+        let component = time.split(separator: ":").map { (c) -> Int? in
             Int.init(String.init(c))
         }
         var dateComponent = DateComponents()

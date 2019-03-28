@@ -33,7 +33,7 @@ class AddChallengeTableViewController: UITableViewController {
             nameTextField.textColor = CustomTheme.textColor()
             // Refactor needed
             nameTextField.attributedPlaceholder =
-                NSAttributedString(string: "Challenge Name", attributes: [NSAttributedStringKey.foregroundColor : CustomTheme.placeholderColor()])
+                NSAttributedString(string: "Challenge Name", attributes: [NSAttributedString.Key.foregroundColor : CustomTheme.placeholderColor()])
             nameTextField.becomeFirstResponder()
         }
     }

@@ -26,7 +26,7 @@ class ReminderConfigurationTableViewController: UITableViewController {
             // Dark Theme
             reminderContentTextField.textColor = CustomTheme.textColor()
             reminderContentTextField.attributedPlaceholder =
-                NSAttributedString(string: "Write Some Encouraging Words For Yourself", attributes: [NSAttributedStringKey.foregroundColor : CustomTheme.placeholderColor()])
+                NSAttributedString(string: "Write Some Encouraging Words For Yourself", attributes: [NSAttributedString.Key.foregroundColor : CustomTheme.placeholderColor()])
         }
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!

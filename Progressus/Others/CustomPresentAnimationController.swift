@@ -27,7 +27,7 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
                        delay: 0,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0,
-                       options: UIViewAnimationOptions.curveEaseInOut,
+                       options: UIView.AnimationOptions.curveEaseInOut,
                        animations: { 
                         toVC.view.frame = finalFrame
         }) { (finished) in

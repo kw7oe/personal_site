@@ -36,8 +36,8 @@ class ProgressPieView: UIView {
         let endAnimation = CABasicAnimation(keyPath: "strokeEnd")
         endAnimation.duration = 1.3
         endAnimation.toValue = percentage
-        endAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        endAnimation.fillMode = kCAFillModeBoth
+        endAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        endAnimation.fillMode = CAMediaTimingFillMode.both
         endAnimation.isRemovedOnCompletion = false
         progressLayer.add(endAnimation, forKey: nil)
         setLabelText(with: percentage)
@@ -69,8 +69,8 @@ class ProgressPieView: UIView {
     }
     
     private func styleString(_ text: String, unit: String) -> NSMutableAttributedString {
-        let bold: [NSAttributedStringKey:Any] = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 36)]
-        let italic: [NSAttributedStringKey:Any] = [NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: 16)]
+        let bold: [NSAttributedString.Key:Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 36)]
+        let italic: [NSAttributedString.Key:Any] = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 16)]
         let result = NSMutableAttributedString()
         let string = NSMutableAttributedString(string: "\(text)\n", attributes: bold)
         let unitString = NSMutableAttributedString(string: unit, attributes: italic)

@@ -19,7 +19,7 @@ class CounterViewControllerTests: XCTestCase {
         super.setUp()
         context = setUpInMemoryManagedObjectContext()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        controller = storyboard.instantiateViewController(withIdentifier: "CounterViewController") as! CounterViewController
+        controller = storyboard.instantiateViewController(withIdentifier: "CounterViewController") as? CounterViewController
         
         let challenge = addAndReturnChallenge(unique: "Workout", context: context!)
         controller.context = context!

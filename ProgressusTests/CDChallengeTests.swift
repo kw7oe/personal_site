@@ -81,7 +81,7 @@ class CDChallengeTests: XCTestCase {
         XCTAssertEqual(updatedChallenge!.goal, 15)
         XCTAssertEqual(updatedChallenge!.unique, "Reading")
         XCTAssertEqual(updatedChallenge!.started, false)
-        XCTAssertEqual(updatedChallenge!.date, Date.init(date: "2017-7-17") as NSDate)
+        XCTAssertEqual(updatedChallenge!.date, Date.init(date: "2017-7-17"))
         
     }
     

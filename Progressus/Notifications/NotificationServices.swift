@@ -49,7 +49,7 @@ class NotificationServices {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: delegate.willRepeat())
         let content = UNMutableNotificationContent()
         content.body = delegate.contentOfNotification()
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         removeNotification(withIdentifiers: [delegate.nameOfIdentifiers()])
         
@@ -66,7 +66,7 @@ class NotificationServices {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
         let content = UNMutableNotificationContent()
         content.body = reminder.content
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         removeNotification(withIdentifiers: [reminder.identifier])
         

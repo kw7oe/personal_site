@@ -19,7 +19,7 @@ class EditChallengeViewControllerTests: XCTestCase {
         super.setUp()
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        controller = storyboard.instantiateViewController(withIdentifier: "AddChallengeTableViewController") as! AddChallengeTableViewController
+        controller = storyboard.instantiateViewController(withIdentifier: "AddChallengeTableViewController") as? AddChallengeTableViewController
         
         context = setUpInMemoryManagedObjectContext()
         let challenge = addAndReturnChallenge(unique: "Workout", context: context!)
@@ -49,7 +49,7 @@ class EditChallengeViewControllerTests: XCTestCase {
         let challenge = CDChallenge.all(inContext: context!)[0]
         XCTAssertEqual(challenge.unique, "Reading")
         XCTAssertEqual(challenge.goal, 13)
-        XCTAssertEqual(challenge.date, date as NSDate)
+        XCTAssertEqual(challenge.date, date)
     }
     
 }

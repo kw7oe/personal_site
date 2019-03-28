@@ -119,7 +119,7 @@ extension RemindersTableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let identifier = data![indexPath.row].identifier
             ReminderFactory.removeReminder(at: indexPath.row, withIdentifier: identifier)
@@ -127,7 +127,7 @@ extension RemindersTableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             let rowLeft = tableView.numberOfRows(inSection: 0)
             if rowLeft == 0 {
-                 tableView.reloadSections(IndexSet.init(integer: 0), with: UITableViewRowAnimation.automatic)
+                 tableView.reloadSections(IndexSet.init(integer: 0), with: UITableView.RowAnimation.automatic)
             }
            
         }

@@ -19,7 +19,7 @@ class AddChallengeViewControllerTests: XCTestCase {
         super.setUp()
         context = setUpInMemoryManagedObjectContext()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        controller = storyboard.instantiateViewController(withIdentifier: "AddChallengeTableViewController") as! AddChallengeTableViewController
+        controller = storyboard.instantiateViewController(withIdentifier: "AddChallengeTableViewController") as? AddChallengeTableViewController
         controller.context = context
         
         XCTAssertNotNil(controller.view)
